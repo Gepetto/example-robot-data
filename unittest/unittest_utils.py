@@ -50,7 +50,6 @@ def loadTalos(modelPath='/opt/openrobots/share/example-robot-data'):
 
 def loadHyQ(modelPath='/opt/openrobots/share/example-robot-data'):
     from pinocchio import JointModelFreeFlyer
-    import os
     URDF_FILENAME = "hyq_no_sensors.urdf"
     URDF_SUBPATH = "/hyq/" + URDF_FILENAME
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
