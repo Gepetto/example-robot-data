@@ -1,0 +1,5 @@
+image: gepgitlab.laas.fr:4567/Gepetto/example-robot-data
+
+test:
+  script:
+    - cd unittest && python test_all.py
