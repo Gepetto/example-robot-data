@@ -1,5 +1,5 @@
-from unittest_utils import loadTalosArm, loadTalos, loadHyQ
 import unittest
+from unittest_utils import loadHyQ, loadTalos, loadTalosArm
 
 
 class RobotTestCase(unittest.TestCase):

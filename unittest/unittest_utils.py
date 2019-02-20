@@ -1,6 +1,6 @@
+import numpy as np
 import pinocchio
 from pinocchio.robot_wrapper import RobotWrapper
-import numpy as np
 
 
 def readParamsFromSrdf(robot, SRDF_PATH, verbose):
