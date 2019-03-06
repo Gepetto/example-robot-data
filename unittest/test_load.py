@@ -1,4 +1,7 @@
+#!/usr/bin/env python2
+
 import unittest
+
 from unittest_utils import loadHyQ, loadTalos, loadTalosArm
 
 
