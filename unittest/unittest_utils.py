@@ -1,7 +1,17 @@
+from os.path import exists, join
+
 import numpy as np
 
 import pinocchio
 from pinocchio.robot_wrapper import RobotWrapper
+
+
+def getModelPath(subpath):
+    for path in ['..', '../..', '/opt/openrobots/share/example-robot-data']:
+        if exists(join(path, subpath.strip('/'))):
+            print "using %s as modelPath" % path
+            return path
+    raise IOError('%s not found' % (subpath))
 
 
 def readParamsFromSrdf(robot, SRDF_PATH, verbose):
@@ -26,11 +36,12 @@ def readParamsFromSrdf(robot, SRDF_PATH, verbose):
     return
 
 
-def loadTalosArm(modelPath='../..'):
+def loadTalosArm():
     URDF_FILENAME = "talos_left_arm.urdf"
     URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
     SRDF_FILENAME = "talos.srdf"
     SRDF_SUBPATH = "/talos_data/srdf/" + SRDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath])
 
@@ -39,11 +50,12 @@ def loadTalosArm(modelPath='../..'):
     return robot
 
 
-def loadTalos(modelPath='../..'):
+def loadTalos():
     URDF_FILENAME = "talos_reduced.urdf"
     SRDF_FILENAME = "talos.srdf"
     SRDF_SUBPATH = "/talos_data/srdf/" + SRDF_FILENAME
     URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
                                        pinocchio.JointModelFreeFlyer())
@@ -53,9 +65,10 @@ def loadTalos(modelPath='../..'):
     return robot
 
 
-def loadHyQ(modelPath='../..'):
+def loadHyQ():
     URDF_FILENAME = "hyq_no_sensors.urdf"
     URDF_SUBPATH = "/hyq_description/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
                                        pinocchio.JointModelFreeFlyer())
     # TODO define default position inside srdf
