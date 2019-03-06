@@ -88,12 +88,12 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://hyq/meshes/trunk/trunk.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/trunk/trunk.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://hyq/meshes/trunk/trunk.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/trunk/trunk.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -151,13 +151,13 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     <visual>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -171,13 +171,13 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     <visual>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/upperleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/upperleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -190,7 +190,7 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/lowerleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/lowerleg.dae" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -357,13 +357,13 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     <visual>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -377,13 +377,13 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     <visual>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/upperleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/upperleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -396,7 +396,7 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/lowerleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/lowerleg.dae" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -563,13 +563,13 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     <visual>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -583,13 +583,13 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     <visual>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/upperleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/upperleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -602,7 +602,7 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/lowerleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/lowerleg.dae" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
@@ -769,13 +769,13 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     <visual>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/hipassembly.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/hipassembly.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -789,13 +789,13 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     <visual>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/upperleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/upperleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/upperleg.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -808,7 +808,7 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://hyq/meshes/leg/lowerleg.dae" scale="1 1 1"/>
+        <mesh filename="package://hyq_description/meshes/leg/lowerleg.dae" scale="1 1 1"/>
       </geometry>
       <material name="white"/>
     </visual>
