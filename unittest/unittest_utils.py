@@ -27,9 +27,9 @@ def readParamsFromSrdf(robot, SRDF_PATH, verbose):
 
 def loadTalosArm(modelPath='/opt/openrobots/share/example-robot-data'):
     URDF_FILENAME = "talos_left_arm.urdf"
-    URDF_SUBPATH = "/talos/robots/" + URDF_FILENAME
+    URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
     SRDF_FILENAME = "talos.srdf"
-    SRDF_SUBPATH = "/talos/robots/" + SRDF_FILENAME
+    SRDF_SUBPATH = "/talos_data/srdf/" + SRDF_FILENAME
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath])
 
@@ -41,8 +41,8 @@ def loadTalosArm(modelPath='/opt/openrobots/share/example-robot-data'):
 def loadTalos(modelPath='/opt/openrobots/share/example-robot-data'):
     URDF_FILENAME = "talos_reduced.urdf"
     SRDF_FILENAME = "talos.srdf"
-    SRDF_SUBPATH = "/talos/robots/" + SRDF_FILENAME
-    URDF_SUBPATH = "/talos/robots/" + URDF_FILENAME
+    SRDF_SUBPATH = "/talos_data/srdf/" + SRDF_FILENAME
+    URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
                                        pinocchio.JointModelFreeFlyer())
@@ -54,7 +54,7 @@ def loadTalos(modelPath='/opt/openrobots/share/example-robot-data'):
 
 def loadHyQ(modelPath='/opt/openrobots/share/example-robot-data'):
     URDF_FILENAME = "hyq_no_sensors.urdf"
-    URDF_SUBPATH = "/hyq/robots/" + URDF_FILENAME
+    URDF_SUBPATH = "/hyq_description/robots/" + URDF_FILENAME
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
                                        pinocchio.JointModelFreeFlyer())
     # TODO define default position inside srdf
