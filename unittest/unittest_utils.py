@@ -26,7 +26,7 @@ def readParamsFromSrdf(robot, SRDF_PATH, verbose):
     return
 
 
-def loadTalosArm(modelPath='/opt/openrobots/share/example-robot-data'):
+def loadTalosArm(modelPath='../..'):
     URDF_FILENAME = "talos_left_arm.urdf"
     URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
     SRDF_FILENAME = "talos.srdf"
@@ -39,7 +39,7 @@ def loadTalosArm(modelPath='/opt/openrobots/share/example-robot-data'):
     return robot
 
 
-def loadTalos(modelPath='/opt/openrobots/share/example-robot-data'):
+def loadTalos(modelPath='../..'):
     URDF_FILENAME = "talos_reduced.urdf"
     SRDF_FILENAME = "talos.srdf"
     SRDF_SUBPATH = "/talos_data/srdf/" + SRDF_FILENAME
@@ -53,7 +53,7 @@ def loadTalos(modelPath='/opt/openrobots/share/example-robot-data'):
     return robot
 
 
-def loadHyQ(modelPath='/opt/openrobots/share/example-robot-data'):
+def loadHyQ(modelPath='../..'):
     URDF_FILENAME = "hyq_no_sensors.urdf"
     URDF_SUBPATH = "/hyq_description/robots/" + URDF_FILENAME
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
