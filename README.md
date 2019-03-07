@@ -20,12 +20,15 @@ If you have never added robotpkg as a softwares repository, please follow first 
 
 1. Check your distribution codename in a terminal with the following command:
 
-		$ lsb_release -c
+		lsb_release -c
 		Codename:       xenial
 
 2. Add robotpkg as source repository to apt:
 
-		sudo sh -c "echo 'deb [arch=amd64] http://robotpkg.openrobots.org/packages/debian/pub $(lsb_release -sc) robotpkg' >> /etc/apt/sources.list.d/robotpkg.list"
+		sudo tee /etc/apt/sources.list.d/robotpkg.list <<EOF
+		deb [arch=amd64] http://robotpkg.openrobots.org/wip/packages/debian/pub $(lsb_release -sc) robotpkg
+		deb [arch=amd64] http://robotpkg.openrobots.org/packages/debian/pub $(lsb_release -sc) robotpkg
+		EOF
 
 3. Register the authentication certificate of robotpkg:
 
