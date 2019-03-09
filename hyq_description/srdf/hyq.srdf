@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+<robot name="hyq">
+
+    <group name="lf">
+        <joint name="lf_haa_joint" />
+        <joint name="lf_hfe_joint" />
+        <joint name="lf_kfe_joint" />
+        <chain base_link="trunk" tip_link="lf_foot_joint" />
+    </group>
+    <group name="rf">
+        <joint name="rf_haa_joint" />
+        <joint name="rf_hfe_joint" />
+        <joint name="rf_kfe_joint" />
+        <chain base_link="trunk" tip_link="rf_foot_joint" />
+    </group>
+    <group name="lh">
+        <joint name="lh_haa_joint" />
+        <joint name="lh_hfe_joint" />
+        <joint name="lh_kfe_joint" />
+        <chain base_link="trunk" tip_link="lh_foot_joint" />
+    </group>
+    <group name="rh">
+        <joint name="rh_haa_joint" />
+        <joint name="rh_hfe_joint" />
+        <joint name="rh_kfe_joint" />
+        <chain base_link="trunk" tip_link="lh_foot_joint" />
+    </group>
+    <group name="all_legs">
+        <group name="lf" />
+        <group name="rf" />
+        <group name="lh" />
+        <group name="rh" />
+    </group>
+    <group name="right_legs">
+        <group name="rf" />
+        <group name="rh" />
+    </group>
+    <group name="left_legs">
+        <group name="lf" />
+        <group name="lh" />
+    </group>
+    <group name="front_legs">
+        <group name="lf" />
+        <group name="rf" />
+    </group>
+    <group name="hind_legs">
+        <group name="lh" />
+        <group name="rh" />
+    </group>
+    <group name="ldiag_legs">
+        <group name="lf" />
+        <group name="rh" />
+    </group>
+    <group name="rdiag_legs">
+        <group name="rf" />
+        <group name="lh" />
+    </group>
+
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="right_eef" parent_link="wrist_right_ft_tool_link" group="gripper_right" parent_group="right_arm" />
+    <end_effector name="left_eef" parent_link="wrist_left_ft_tool_link" group="gripper_left" parent_group="left_arm" />
+
+    <group_state name="half_sitting" group="all">
+        <joint name="root_joint" value="0. 0. 0.5775 0. 0. 0. 1." />
+        <joint name="lf_haa_joint" value="-0.2" />
+        <joint name="lf_hfe_joint" value="0.75" />
+        <joint name="lf_kfe_joint" value="-1.5" />
+        <joint name="rf_haa_joint" value="-0.2" />
+        <joint name="rf_hfe_joint" value="-0.75" />
+        <joint name="rf_kfe_joint" value="1.5" />
+        <joint name="lh_haa_joint" value="-0.2" />
+        <joint name="lh_hfe_joint" value="0.75" />
+        <joint name="lh_kfe_joint" value="-1.5" />
+        <joint name="rh_haa_joint" value="-0.2" />
+        <joint name="rh_hfe_joint" value="-0.75" />
+        <joint name="rh_kfe_joint" value="1.5" />
+    </group_state>
+
+    <group_state name="half_sitting_2" group="all">
+        <joint name="root_joint" value="0. 0. 0.5775 0. 0. 0. 1." />
+        <joint name="lf_haa_joint" value="0." />
+        <joint name="lf_hfe_joint" value="0.75" />
+        <joint name="lf_kfe_joint" value="-1.5" />
+        <joint name="rf_haa_joint" value="0." />
+        <joint name="rf_hfe_joint" value="-0.75" />
+        <joint name="rf_kfe_joint" value="1.5" />
+        <joint name="lh_haa_joint" value="0." />
+        <joint name="lh_hfe_joint" value="0.75" />
+        <joint name="lh_kfe_joint" value="-1.5" />
+        <joint name="rh_haa_joint" value="0." />
+        <joint name="rh_hfe_joint" value="-0.75" />
+        <joint name="rh_kfe_joint" value="1.5" />
+    </group_state>
+
+    <disable_collisions link1="lf_hipassembly" link2="lf_upperleg" reason="Adjacent" />
+    <disable_collisions link1="lf_hipassembly" link2="lf_lowerleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rf_hipassembly" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rf_upperleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rf_lowerleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="lh_hipassembly" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="lh_upperleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="lh_lowerleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rh_hipassembly" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rh_upperleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rh_lowerleg" reason="Never" />
+
+</robot>

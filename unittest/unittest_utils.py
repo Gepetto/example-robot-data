@@ -67,13 +67,13 @@ def loadTalos():
 
 def loadHyQ():
     URDF_FILENAME = "hyq_no_sensors.urdf"
+    SRDF_FILENAME = "hyq.srdf"
+    SRDF_SUBPATH = "/hyq_description/srdf/" + SRDF_FILENAME
     URDF_SUBPATH = "/hyq_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
+    # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
                                        pinocchio.JointModelFreeFlyer())
-    # TODO define default position inside srdf
-    robot.q0.flat[7:] = [-0.2, 0.75, -1.5, -0.2, -
-                         0.75, 1.5, -0.2, 0.75, -1.5, -0.2, -0.75, 1.5]
-    robot.q0[2] = 0.57750958
-    robot.model.referenceConfigurations["half_sitting"] = robot.q0
+    # Load SRDF file
+    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
     return robot
