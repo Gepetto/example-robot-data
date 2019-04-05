@@ -2,7 +2,7 @@
 
 import unittest
 
-from unittest_utils import loadHyQ, loadTalos, loadTalosArm
+from unittest_utils import loadHyQ, loadTalos, loadTalosArm, loadTiago, loadTiagoNoHand
 
 
 class RobotTestCase(unittest.TestCase):
@@ -44,6 +44,18 @@ class HyQTest(RobotTestCase):
     RobotTestCase.ROBOT = loadHyQ()
     RobotTestCase.NQ = 19
     RobotTestCase.NV = 18
+
+
+class TiagoTest(RobotTestCase):
+    RobotTestCase.ROBOT = loadTiago()
+    RobotTestCase.NQ = 50
+    RobotTestCase.NV = 48
+
+
+class TiagoNoHandTest(RobotTestCase):
+    RobotTestCase.ROBOT = loadTiagoNoHand()
+    RobotTestCase.NQ = 14
+    RobotTestCase.NV = 12
 
 
 if __name__ == '__main__':

@@ -77,3 +77,29 @@ def loadHyQ():
     # Load SRDF file
     readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
     return robot
+
+
+def loadTiago():
+    URDF_FILENAME = "tiago.urdf"
+#    SRDF_FILENAME = "tiago.srdf"
+#    SRDF_SUBPATH = "/tiago_description/srdf/" + SRDF_FILENAME
+    URDF_SUBPATH = "/tiago_description/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    # Load URDF file
+    robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath])
+    # Load SRDF file
+#    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
+    return robot
+
+
+def loadTiagoNoHand():
+    URDF_FILENAME = "tiago_no_hand.urdf"
+#    SRDF_FILENAME = "tiago.srdf"
+#    SRDF_SUBPATH = "/tiago_description/srdf/" + SRDF_FILENAME
+    URDF_SUBPATH = "/tiago_description/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    # Load URDF file
+    robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath])
+    # Load SRDF file
+#    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
+    return robot
