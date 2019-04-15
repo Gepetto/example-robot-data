@@ -106,13 +106,13 @@ def loadTiagoNoHand():
 
 def loadICub():
     URDF_FILENAME = "icub.urdf"
-#    SRDF_FILENAME = "icub.srdf"
-#    SRDF_SUBPATH = "/icub_description/srdf/" + SRDF_FILENAME
+    SRDF_FILENAME = "icub.srdf"
+    SRDF_SUBPATH = "/icub_description/srdf/" + SRDF_FILENAME
     URDF_SUBPATH = "/icub_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
                                        pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-#    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
+    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
     return robot

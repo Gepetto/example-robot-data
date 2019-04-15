@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<robot name="icub">
+
+    <group name="l_leg">
+        <joint name="l_hip_pitch" />
+        <joint name="l_hip_roll" />
+        <joint name="l_hip_yaw" />
+        <joint name="l_knee" />
+        <joint name="l_ankle_pitch" />
+        <joint name="l_ankle_roll" />
+        <chain base_link="chest" tip_link="l_foot_ft_sensor" />
+    </group>
+    <group name="r_leg">
+        <joint name="r_hip_pitch" />
+        <joint name="r_hip_roll" />
+        <joint name="r_hip_yaw" />
+        <joint name="r_knee" />
+        <joint name="r_ankle_pitch" />
+        <joint name="r_ankle_roll" />
+        <chain base_link="chest" tip_link="r_foot_ft_sensor" />    </group>
+    <group name="l_arm">
+        <joint name="l_shoulder_pitch" />
+        <joint name="l_shoulder_roll" />
+        <joint name="l_shoulder_yaw" />
+        <joint name="l_elbow" />
+        <joint name="l_wrist_prosup" />
+        <joint name="l_wrist_pitch" />
+        <joint name="l_wrist_yaw" />
+        <chain base_link="chest" tip_link="l_hand_dh_frame_fixed_joint" />
+    </group>
+    <group name="r_arm">
+        <joint name="r_shoulder_pitch" />
+        <joint name="r_shoulder_roll" />
+        <joint name="r_shoulder_yaw" />
+        <joint name="r_elbow" />
+        <joint name="r_wrist_prosup" />
+        <joint name="r_wrist_pitch" />
+        <joint name="r_wrist_yaw" />
+        <chain base_link="chest" tip_link="r_hand_dh_frame_fixed_joint" />
+    </group>
+    <group name="head">
+        <joint name="neck_pitch" />
+        <joint name="neck_roll" />
+        <joint name="neck_yaw" />
+    </group>
+    <group name="torso">
+        <joint name="torso_pitch" />
+        <joint name="torso_roll" />
+        <joint name="torso_yaw" />
+    </group>
+    <group name="all_legs">
+        <group name="l_leg" />
+        <group name="r_leg" />
+    </group>
+    <group name="all_arms">
+        <group name="l_arm" />
+        <group name="r_arm" />
+    </group>
+    <group name="all">
+        <group name="l_arm" />
+        <group name="r_arm" />
+        <group name="l_leg" />
+        <group name="r_leg" />
+        <group name="head" />
+        <group name="torso" />
+    </group>
+
+
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="right_eef" parent_link="wrist_right_ft_tool_link" group="r_hand_dh_frame_fixed_joint" parent_group="right_arm" />
+    <end_effector name="left_eef" parent_link="wrist_left_ft_tool_link" group="l_hand_dh_frame_fixed_joint" parent_group="left_arm" />
+
+    <group_state name="half_sitting" group="all">
+        <joint name="root_joint" value="0. 0. 0.60 0. 0. 0. 1." />
+        <!-- legs -->
+        <joint name="l_hip_pitch" value="0." />
+        <joint name="l_hip_roll" value="0." />
+        <joint name="l_hip_yaw" value="0." />
+        <joint name="l_knee" value="0." />
+        <joint name="l_ankle_pitch" value="0." />
+        <joint name="l_ankle_roll" value="0." />
+        <joint name="r_hip_pitch" value="0." />
+        <joint name="r_hip_roll" value="0." />
+        <joint name="r_hip_yaw" value="0." />
+        <joint name="r_knee" value="0." />
+        <joint name="r_ankle_pitch" value="0." />
+        <joint name="r_ankle_roll" value="0." />
+        <!-- arms -->
+        <joint name="l_shoulder_pitch" value="0." />
+        <joint name="l_shoulder_roll" value="0.35" />
+        <joint name="l_shoulder_yaw" value="0.5" />
+        <joint name="l_elbow" value="0.5" />
+        <joint name="l_wrist_prosup" value="0." />
+        <joint name="l_wrist_pitch" value="0." />
+        <joint name="l_wrist_yaw" value="0." />
+        <joint name="r_shoulder_pitch" value="0." />
+        <joint name="r_shoulder_roll" value="0.35" />
+        <joint name="r_shoulder_yaw" value="0.5" />
+        <joint name="r_elbow" value="0.5" />
+        <joint name="r_wrist_prosup" value="0." />
+        <joint name="r_wrist_pitch" value="0." />
+        <joint name="r_wrist_yaw" value="0." />
+        <!-- torso -->
+        <joint name="torso_pitch" value="0." />
+        <joint name="torso_roll" value="0." />
+        <joint name="torso_yaw" value="0." />
+        <!-- neck -->
+        <joint name="neck_pitch" value="0." />
+        <joint name="neck_roll" value="0." />
+        <joint name="neck_yaw" value="0." />
+    </group_state>
+
+<!--
+    <disable_collisions link1="lf_hipassembly" link2="lf_upperleg" reason="Adjacent" />
+    <disable_collisions link1="lf_hipassembly" link2="lf_lowerleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rf_hipassembly" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rf_upperleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rf_lowerleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="lh_hipassembly" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="lh_upperleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="lh_lowerleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rh_hipassembly" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rh_upperleg" reason="Never" />
+    <disable_collisions link1="lf_hipassembly" link2="rh_lowerleg" reason="Never" />
+-->
+</robot>
