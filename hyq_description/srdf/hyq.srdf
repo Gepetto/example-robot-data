@@ -65,12 +65,12 @@
         <joint name="lf_haa_joint" value="-0.2" />
         <joint name="lf_hfe_joint" value="0.75" />
         <joint name="lf_kfe_joint" value="-1.5" />
-        <joint name="rf_haa_joint" value="-0.2" />
-        <joint name="rf_hfe_joint" value="-0.75" />
-        <joint name="rf_kfe_joint" value="1.5" />
         <joint name="lh_haa_joint" value="-0.2" />
-        <joint name="lh_hfe_joint" value="0.75" />
-        <joint name="lh_kfe_joint" value="-1.5" />
+        <joint name="lh_hfe_joint" value="-0.75" />
+        <joint name="lh_kfe_joint" value="1.5" />
+        <joint name="rf_haa_joint" value="-0.2" />
+        <joint name="rf_hfe_joint" value="0.75" />
+        <joint name="rf_kfe_joint" value="-1.5" />
         <joint name="rh_haa_joint" value="-0.2" />
         <joint name="rh_hfe_joint" value="-0.75" />
         <joint name="rh_kfe_joint" value="1.5" />
@@ -81,12 +81,12 @@
         <joint name="lf_haa_joint" value="0." />
         <joint name="lf_hfe_joint" value="0.75" />
         <joint name="lf_kfe_joint" value="-1.5" />
-        <joint name="rf_haa_joint" value="0." />
-        <joint name="rf_hfe_joint" value="-0.75" />
-        <joint name="rf_kfe_joint" value="1.5" />
         <joint name="lh_haa_joint" value="0." />
-        <joint name="lh_hfe_joint" value="0.75" />
-        <joint name="lh_kfe_joint" value="-1.5" />
+        <joint name="lh_hfe_joint" value="-0.75" />
+        <joint name="lh_kfe_joint" value="1.5" />
+        <joint name="rf_haa_joint" value="0." />
+        <joint name="rf_hfe_joint" value="0.75" />
+        <joint name="rf_kfe_joint" value="-1.5" />
         <joint name="rh_haa_joint" value="0." />
         <joint name="rh_hfe_joint" value="-0.75" />
         <joint name="rh_kfe_joint" value="1.5" />
