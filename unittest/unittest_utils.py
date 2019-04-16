@@ -104,8 +104,11 @@ def loadTiagoNoHand():
 #    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
     return robot
 
-def loadICub():
-    URDF_FILENAME = "icub.urdf"
+def loadICub(reduced=True):
+    if reduced:
+        URDF_FILENAME = "icub_reduced.urdf"
+    else:
+        URDF_FILENAME = "icub.urdf"
     SRDF_FILENAME = "icub.srdf"
     SRDF_SUBPATH = "/icub_description/srdf/" + SRDF_FILENAME
     URDF_SUBPATH = "/icub_description/robots/" + URDF_FILENAME
