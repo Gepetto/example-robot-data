@@ -22,7 +22,7 @@ if DISPLAY_TALOS:
     talos.display(talos.q0)
 
 if DISPLAY_TALOS_ARM:
-    talos_arm = loadTalos()
+    talos_arm = loadTalosArm()
     talos_arm.initDisplay(loadModel=True)
     talos_arm.display(talos_arm.q0)
 
