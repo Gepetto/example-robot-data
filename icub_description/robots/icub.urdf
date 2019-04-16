@@ -392,14 +392,14 @@
     </link>
     <link name="l_wrist_1">
         <inertial>
-            <mass value="0" />
+            <mass value="0.1" />
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
         </inertial>
     </link>
     <link name="neck_1">
         <inertial>
-            <mass value="0" />
+            <mass value="0.1" />
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
         </inertial>
@@ -422,7 +422,7 @@
     </link>
     <link name="neck_2">
         <inertial>
-            <mass value="0" />
+            <mass value="0.1" />
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
         </inertial>
@@ -768,7 +768,7 @@
     </link>
     <link name="r_wrist_1">
         <inertial>
-            <mass value="0" />
+            <mass value="0.1" />
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
         </inertial>
@@ -798,14 +798,14 @@
     </link>
     <link name="torso">
         <inertial>
-            <mass value="0" />
+            <mass value="0.1" />
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
         </inertial>
     </link>
     <link name="torso_1">
         <inertial>
-            <mass value="0" />
+            <mass value="0.1" />
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <inertia ixx="0.0004544" ixy="-4.263e-05" ixz="-3.889e-08" iyy="0.001141" iyz="0" izz="0.001236" />
         </inertial>
@@ -828,7 +828,7 @@
     </link>
     <link name="torso_2">
         <inertial>
-            <mass value="0" />
+            <mass value="0.1" />
             <origin xyz="0 0 0" rpy="0 -0 0" />
             <inertia ixx="0.0005308" ixy="-1.923e-06" ixz="5.095e-05" iyy="0.002031" iyz="-3.849e-07" izz="0.001803" />
         </inertial>
