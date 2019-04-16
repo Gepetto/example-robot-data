@@ -59,7 +59,7 @@ class TiagoNoHandTest(RobotTestCase):
 
 
 class ICubTest(RobotTestCase):
-    RobotTestCase.ROBOT = loadICub()
+    RobotTestCase.ROBOT = loadICub(reduced=False)
     RobotTestCase.NQ = 39
     RobotTestCase.NV = 38
 
