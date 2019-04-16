@@ -8,7 +8,7 @@
         <joint name="l_knee" />
         <joint name="l_ankle_pitch" />
         <joint name="l_ankle_roll" />
-        <chain base_link="chest" tip_link="l_foot_dh_frame_fixed_joint" />
+        <chain base_link="chest" tip_link="l_sole" />
     </group>
     <group name="r_leg">
         <joint name="r_hip_pitch" />
@@ -17,7 +17,7 @@
         <joint name="r_knee" />
         <joint name="r_ankle_pitch" />
         <joint name="r_ankle_roll" />
-        <chain base_link="chest" tip_link="r_foot_dh_frame_fixed_joint" />
+        <chain base_link="chest" tip_link="r_sole" />
     </group>
     <group name="l_arm">
         <joint name="l_shoulder_pitch" />
@@ -27,7 +27,7 @@
         <joint name="l_wrist_prosup" />
         <joint name="l_wrist_pitch" />
         <joint name="l_wrist_yaw" />
-        <chain base_link="chest" tip_link="l_hand_dh_frame_fixed_joint" />
+        <chain base_link="chest" tip_link="l_hand" />
     </group>
     <group name="r_arm">
         <joint name="r_shoulder_pitch" />
@@ -37,7 +37,7 @@
         <joint name="r_wrist_prosup" />
         <joint name="r_wrist_pitch" />
         <joint name="r_wrist_yaw" />
-        <chain base_link="chest" tip_link="r_hand_dh_frame_fixed_joint" />
+        <chain base_link="chest" tip_link="r_hand" />
     </group>
     <group name="head">
         <joint name="neck_pitch" />
