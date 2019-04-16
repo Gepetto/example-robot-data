@@ -1,7 +1,6 @@
 from os.path import exists, join
 
 import numpy as np
-
 import pinocchio
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -28,6 +27,7 @@ def readParamsFromSrdf(robot, SRDF_PATH, verbose):
     except:
         print "loadReferenceConfigurations did not work. Please check your \
             Pinocchio Version"
+
         try:
             pinocchio.getNeutralConfiguration(rmodel, SRDF_PATH, verbose)
             robot.q0.flat[:] = rmodel.neutralConfiguration.copy()
@@ -43,10 +43,10 @@ def loadTalosArm():
     SRDF_SUBPATH = "/talos_data/srdf/" + SRDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath])
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
 
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
     return robot
 
 
@@ -57,11 +57,10 @@ def loadTalos():
     URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
-    assert((robot.model.armature[:6] == 0.).all())
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+    assert ((robot.model.armature[:6] == 0.).all())
     return robot
 
 
@@ -72,37 +71,37 @@ def loadHyQ():
     URDF_SUBPATH = "/hyq_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
     return robot
 
 
 def loadTiago():
     URDF_FILENAME = "tiago.urdf"
-#    SRDF_FILENAME = "tiago.srdf"
-#    SRDF_SUBPATH = "/tiago_description/srdf/" + SRDF_FILENAME
+    #    SRDF_FILENAME = "tiago.srdf"
+    #    SRDF_SUBPATH = "/tiago_description/srdf/" + SRDF_FILENAME
     URDF_SUBPATH = "/tiago_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath])
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
     # Load SRDF file
-#    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
+    #    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
     return robot
 
 
 def loadTiagoNoHand():
     URDF_FILENAME = "tiago_no_hand.urdf"
-#    SRDF_FILENAME = "tiago.srdf"
-#    SRDF_SUBPATH = "/tiago_description/srdf/" + SRDF_FILENAME
+    #    SRDF_FILENAME = "tiago.srdf"
+    #    SRDF_SUBPATH = "/tiago_description/srdf/" + SRDF_FILENAME
     URDF_SUBPATH = "/tiago_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath])
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
     # Load SRDF file
-#    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
+    #    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
     return robot
+
 
 def loadICub(reduced=True):
     if reduced:
@@ -114,8 +113,7 @@ def loadICub(reduced=True):
     URDF_SUBPATH = "/icub_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath+URDF_SUBPATH, [modelPath],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath+SRDF_SUBPATH, False)
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
     return robot

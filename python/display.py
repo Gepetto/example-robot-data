@@ -1,7 +1,8 @@
 import sys
-sys.path.append('/opt/openrobots/share/example-robot-data/unittest/')
-from unittest_utils import loadHyQ, loadTalos, loadTalosArm, loadTiago, loadTiagoNoHand, loadICub
 
+from unittest_utils import loadHyQ, loadICub, loadTalos, loadTalosArm, loadTiago, loadTiagoNoHand
+
+sys.path.append('/opt/openrobots/share/example-robot-data/unittest/')
 
 DISPLAY_HYQ = 'hyq' in sys.argv
 DISPLAY_TALOS = 'talos' in sys.argv
@@ -39,4 +40,3 @@ if DISPLAY_ICUB:
     icub = loadICub()
     icub.initDisplay(loadModel=True)
     icub.display(icub.q0)
-
