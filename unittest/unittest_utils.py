@@ -8,7 +8,7 @@ from pinocchio.robot_wrapper import RobotWrapper
 def getModelPath(subpath):
     for path in ['..', '../..', '/opt/openrobots/share/example-robot-data']:
         if exists(join(path, subpath.strip('/'))):
-            print "using %s as modelPath" % path
+            print("using %s as modelPath" % path)
             return path
     raise IOError('%s not found' % (subpath))
 
@@ -17,22 +17,9 @@ def readParamsFromSrdf(robot, SRDF_PATH, verbose):
     rmodel = robot.model
 
     pinocchio.loadRotorParameters(rmodel, SRDF_PATH, verbose)
-    rmodel.armature = \
-        np.multiply(rmodel.rotorInertia.flat,
-                    np.square(rmodel.rotorGearRatio.flat))
-    try:
-        pinocchio.loadReferenceConfigurations(rmodel, SRDF_PATH, verbose)
-        robot.q0.flat[:] = \
-            rmodel.referenceConfigurations["half_sitting"].copy()
-    except:
-        print "loadReferenceConfigurations did not work. Please check your \
-            Pinocchio Version"
-
-        try:
-            pinocchio.getNeutralConfiguration(rmodel, SRDF_PATH, verbose)
-            robot.q0.flat[:] = rmodel.neutralConfiguration.copy()
-        except:
-            robot.q0.flat[:] = pinocchio.neutral(rmodel)
+    rmodel.armature = np.multiply(rmodel.rotorInertia.flat, np.square(rmodel.rotorGearRatio.flat))
+    pinocchio.loadReferenceConfigurations(rmodel, SRDF_PATH, verbose)
+    robot.q0.flat[:] = rmodel.referenceConfigurations["half_sitting"].copy()
     return
 
 
