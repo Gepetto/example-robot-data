@@ -79,10 +79,8 @@
         <group name="torso" />
     </group>
 
-
-    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="right_eef" parent_link="wrist_right_ft_tool_link" group="r_hand_dh_frame_fixed_joint" parent_group="right_arm" />
-    <end_effector name="left_eef" parent_link="wrist_left_ft_tool_link" group="l_hand_dh_frame_fixed_joint" parent_group="left_arm" />
+    <end_effector name="r_foot" parent_link="r_sole" group="r_leg" />
+    <end_effector name="l_foot" parent_link="l_sole" group="l_leg" />
 
     <group_state name="half_sitting" group="all">
         <joint name="root_joint" value="0. 0. 0.60 0. 0. 1. 0." />

@@ -84,6 +84,8 @@
         <group name="torso" />
     </group>
 
+    <end_effector name="r_foot" parent_link="right_sole_link" group="r_leg" />
+    <end_effector name="l_foot" parent_link="left_sole_link" group="l_leg" />
 
     <passive_joint name="gripper_left_motor_single_joint" />
     <passive_joint name="gripper_left_inner_double_joint" />
