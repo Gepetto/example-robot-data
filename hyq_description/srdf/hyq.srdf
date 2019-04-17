@@ -1,29 +1,33 @@
 <?xml version="1.0" ?>
 <robot name="hyq">
 
-    <group name="lf">
+    <!-- left front leg -->
+    <group name="lf_leg">
         <joint name="lf_haa_joint" />
         <joint name="lf_hfe_joint" />
         <joint name="lf_kfe_joint" />
-        <chain base_link="trunk" tip_link="lf_foot_joint" />
+        <chain base_link="trunk" tip_link="lf_foot" />
     </group>
-    <group name="rf">
+    <!-- right front leg -->
+    <group name="rf_leg">
         <joint name="rf_haa_joint" />
         <joint name="rf_hfe_joint" />
         <joint name="rf_kfe_joint" />
-        <chain base_link="trunk" tip_link="rf_foot_joint" />
+        <chain base_link="trunk" tip_link="rf_foot" />
     </group>
-    <group name="lh">
+    <!-- left hind leg -->
+    <group name="lh_leg">
         <joint name="lh_haa_joint" />
         <joint name="lh_hfe_joint" />
         <joint name="lh_kfe_joint" />
-        <chain base_link="trunk" tip_link="lh_foot_joint" />
+        <chain base_link="trunk" tip_link="lh_foot" />
     </group>
-    <group name="rh">
+    <!-- right hind leg -->
+    <group name="rh_leg">
         <joint name="rh_haa_joint" />
         <joint name="rh_hfe_joint" />
         <joint name="rh_kfe_joint" />
-        <chain base_link="trunk" tip_link="lh_foot_joint" />
+        <chain base_link="trunk" tip_link="lh_foot" />
     </group>
     <group name="all_legs">
         <group name="lf" />
@@ -31,36 +35,37 @@
         <group name="lh" />
         <group name="rh" />
     </group>
-    <group name="right_legs">
+    <group name="r_legs">
         <group name="rf" />
         <group name="rh" />
     </group>
-    <group name="left_legs">
+    <group name="l_legs">
         <group name="lf" />
         <group name="lh" />
     </group>
-    <group name="front_legs">
+    <group name="f_legs">
         <group name="lf" />
         <group name="rf" />
     </group>
-    <group name="hind_legs">
+    <group name="h_legs">
         <group name="lh" />
         <group name="rh" />
     </group>
-    <group name="ldiag_legs">
+    <group name="ld_legs">
         <group name="lf" />
         <group name="rh" />
     </group>
-    <group name="rdiag_legs">
+    <group name="rd_legs">
         <group name="rf" />
         <group name="lh" />
     </group>
 
-    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="right_eef" parent_link="wrist_right_ft_tool_link" group="gripper_right" parent_group="right_arm" />
-    <end_effector name="left_eef" parent_link="wrist_left_ft_tool_link" group="gripper_left" parent_group="left_arm" />
+    <end_effector name="lf_foot" parent_link="lf_foot" group="lf_leg" />
+    <end_effector name="rf_foot" parent_link="rf_foot" group="rf_leg" />
+    <end_effector name="lh_foot" parent_link="lh_foot" group="lh_leg" />
+    <end_effector name="rh_foot" parent_link="rh_foot" group="rh_leg" />
 
-    <group_state name="half_sitting" group="all">
+    <group_state name="half_sitting" group="all_legs">
         <joint name="root_joint" value="0. 0. 0.5775 0. 0. 0. 1." />
         <joint name="lf_haa_joint" value="-0.2" />
         <joint name="lf_hfe_joint" value="0.75" />
@@ -76,7 +81,7 @@
         <joint name="rh_kfe_joint" value="1.5" />
     </group_state>
 
-    <group_state name="standing" group="all">
+    <group_state name="standing" group="all_legs">
         <joint name="root_joint" value="0. 0. 0.5775 0. 0. 0. 1." />
         <joint name="lf_haa_joint" value="0." />
         <joint name="lf_hfe_joint" value="0.75" />
