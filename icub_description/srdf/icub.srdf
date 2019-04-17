@@ -49,6 +49,14 @@
         <joint name="torso_roll" />
         <joint name="torso_yaw" />
     </group>
+    <group name="all">
+        <group name="l_arm" />
+        <group name="r_arm" />
+        <group name="l_leg" />
+        <group name="r_leg" />
+        <group name="head" />
+        <group name="torso" />
+    </group>
     <group name="all_legs">
         <group name="l_leg" />
         <group name="r_leg" />
@@ -57,12 +65,17 @@
         <group name="l_arm" />
         <group name="r_arm" />
     </group>
-    <group name="all">
+    <group name="all_arms_torso">
         <group name="l_arm" />
         <group name="r_arm" />
-        <group name="l_leg" />
-        <group name="r_leg" />
-        <group name="head" />
+        <group name="torso" />
+    </group>
+    <group name="r_arm_torso">
+        <group name="r_arm" />
+        <group name="torso" />
+    </group>
+    <group name="l_arm_torso">
+        <group name="l_arm" />
         <group name="torso" />
     </group>
 
