@@ -85,18 +85,18 @@
     <group_state name="half_sitting" group="all">
         <joint name="root_joint" value="0. 0. 0.60 0. 0. 1. 0." />
         <!-- legs -->
-        <joint name="l_hip_pitch" value="0.15" />
-        <joint name="l_hip_roll" value="0." />
+        <joint name="l_hip_pitch" value="0.20944" />
+        <joint name="l_hip_roll" value="0.08727" />
         <joint name="l_hip_yaw" value="0." />
-        <joint name="l_knee" value="-0.15" />
-        <joint name="l_ankle_pitch" value="0." />
-        <joint name="l_ankle_roll" value="0." />
-        <joint name="r_hip_pitch" value="0.15" />
-        <joint name="r_hip_roll" value="0." />
+        <joint name="l_knee" value="-0.1745" />
+        <joint name="l_ankle_pitch" value="-0.0279" />
+        <joint name="l_ankle_roll" value="-0.08726" />
+        <joint name="r_hip_pitch" value="0.20944" />
+        <joint name="r_hip_roll" value="0.08727" />
         <joint name="r_hip_yaw" value="0." />
-        <joint name="r_knee" value="-0.15" />
-        <joint name="r_ankle_pitch" value="0." />
-        <joint name="r_ankle_roll" value="0." />
+        <joint name="r_knee" value="-0.1745" />
+        <joint name="r_ankle_pitch" value="-0.0279" />
+        <joint name="r_ankle_roll" value="-0.08726" />
         <!-- arms -->
         <joint name="l_shoulder_pitch" value="0." />
         <joint name="l_shoulder_roll" value="0.35" />
@@ -115,7 +115,7 @@
         <!-- torso -->
         <joint name="torso_pitch" value="0." />
         <joint name="torso_roll" value="0." />
-        <joint name="torso_yaw" value="0." />
+        <joint name="torso_yaw" value="-0.05236" />
         <!-- neck -->
         <joint name="neck_pitch" value="0." />
         <joint name="neck_roll" value="0." />
