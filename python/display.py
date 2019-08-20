@@ -1,6 +1,6 @@
 import sys
 
-from unittest_utils import loadHyQ, loadICub, loadTalos, loadTalosArm, loadTiago, loadTiagoNoHand
+from example_robot_data import loadHyQ, loadICub, loadTalos, loadTalosArm, loadTiago, loadTiagoNoHand
 
 sys.path.append('/opt/openrobots/share/example-robot-data/unittest/')
 
