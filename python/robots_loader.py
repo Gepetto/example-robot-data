@@ -23,6 +23,17 @@ def readParamsFromSrdf(robot, SRDF_PATH, verbose):
     return
 
 
+def addFreeFlyerJointLimits(robot):
+    rmodel = robot.model
+
+    ub = rmodel.upperPositionLimit
+    ub[:7] = 1
+    rmodel.upperPositionLimit = ub
+    lb = rmodel.lowerPositionLimit
+    lb[:7] = -1
+    rmodel.lowerPositionLimit = lb
+
+
 def loadTalosArm():
     URDF_FILENAME = "talos_left_arm.urdf"
     URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
@@ -48,6 +59,8 @@ def loadTalos():
     # Load SRDF file
     readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
     assert ((robot.model.armature[:6] == 0.).all())
+     # Add the free-flyer joint limits
+    addFreeFlyerJointLimits(robot)
     return robot
 
 
@@ -61,6 +74,8 @@ def loadHyQ():
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
     readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+    # Add the free-flyer joint limits
+    addFreeFlyerJointLimits(robot)
     return robot
 
 
@@ -103,4 +118,6 @@ def loadICub(reduced=True):
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
     readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+    # Add the free-flyer joint limits
+    addFreeFlyerJointLimits(robot)
     return robot
