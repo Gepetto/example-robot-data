@@ -4,11 +4,25 @@ INCLUDE(cmake/base.cmake)
 INCLUDE(cmake/test.cmake)
 INCLUDE(cmake/python.cmake)
 
+# Set up project properties
 SET(PROJECT_NAMESPACE gepetto)
 SET(PROJECT_NAME example-robot-data)
 SET(PROJECT_DESCRIPTION "Set of robot URDFs for benchmarking and developed examples.")
-
 SET(PROJECT_URL https://gepgitlab.laas.fr/${PROJECT_NAMESPACE}/${PROJECT_NAME})
+
+# Print initial message
+MESSAGE("${PROJECT_DESCRIPTION}, version ${PROJECT_VERSION}")
+MESSAGE("Copyright (C) 2018-2019 CNRS-LAAS")
+MESSAGE("All rights reserved.")
+MESSAGE("Released under the BSD 3-Clause License.")
+
+# Set a default build type to 'Release' if none was specified
+IF(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  MESSAGE(STATUS "Setting build type to 'Release' as none was specified.")
+  SET(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+  # Set the possible values of build type for cmake-gui
+  SET_PROPERTY(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+ENDIF()
 
 SETUP_PROJECT()
 
