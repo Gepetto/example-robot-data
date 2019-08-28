@@ -1,10 +1,10 @@
 import sys
-
 import example_robot_data
 
 DISPLAY_HYQ = 'hyq' in sys.argv
 DISPLAY_TALOS = 'talos' in sys.argv
 DISPLAY_TALOS_ARM = 'talos_arm' in sys.argv
+DISPLAY_TALOS_LEGS = 'talos_legs' in sys.argv
 DISPLAY_TIAGO = 'tiago' in sys.argv
 DISPLAY_TIAGO_NO_HAND = 'tiago_no_hand' in sys.argv
 DISPLAY_ICUB = 'icub' in sys.argv
@@ -23,6 +23,11 @@ if DISPLAY_TALOS_ARM:
     talos_arm = example_robot_data.loadTalosArm()
     talos_arm.initViewer(loadModel=True)
     talos_arm.display(talos_arm.q0)
+
+if DISPLAY_TALOS_LEGS:
+    talos_legs = example_robot_data.loadTalosLegs()
+    talos_legs.initViewer(loadModel=True)
+    talos_legs.display(talos_legs.q0)
 
 if DISPLAY_TIAGO:
     tiago = example_robot_data.loadTiago()
