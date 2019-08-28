@@ -66,6 +66,61 @@ def loadTalos():
     addFreeFlyerJointLimits(robot)
     return robot
 
+def loadTalosLegs():
+    robot = loadTalos()
+    URDF_FILENAME = "talos_reduced.urdf"
+    SRDF_FILENAME = "talos.srdf"
+    SRDF_SUBPATH = "/talos_data/srdf/" + SRDF_FILENAME
+    URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+
+    legMaxId = 14
+    m1 = robot.model
+    m2 = pinocchio.Model()
+    for j, M, name, parent, Y in zip(m1.joints, m1.jointPlacements, m1.names, m1.parents, m1.inertias):
+        if j.id < legMaxId:
+            jid = m2.addJoint(parent, getattr(pinocchio, j.shortname())(), M, name)
+            up = m2.upperPositionLimit
+            down = m2.lowerPositionLimit
+            up[m2.joints[jid].idx_q:m2.joints[jid].idx_q + j.nq] = m1.upperPositionLimit[j.idx_q:j.idx_q + j.nq]
+            down[m2.joints[jid].idx_q:m2.joints[jid].idx_q + j.nq] = m1.lowerPositionLimit[j.idx_q:j.idx_q + j.nq]
+            m2.upperPositionLimit = up
+            m2.lowerPositionLimit = down
+            assert (jid == j.id)
+            m2.appendBodyToJoint(jid, Y, pinocchio.SE3.Identity())
+
+    u = m2.upperPositionLimit
+    u[:7] = 1
+    m2.upperPositionLimit = u
+    limit = m2.lowerPositionLimit
+    limit[:7] = -1
+    m2.lowerPositionLimit = limit
+
+    # q2 = robot.q0[:19]
+    for f in m1.frames:
+        if f.parent < legMaxId:
+            m2.addFrame(f)
+
+    g2 = pinocchio.GeometryModel()
+    for g in robot.visual_model.geometryObjects:
+        if g.parentJoint < 14:
+            g2.addGeometryObject(g)
+
+    robot.model = m2
+    robot.data = m2.createData()
+    robot.visual_model = g2
+    # robot.q0=q2
+    robot.visual_data = pinocchio.GeometryData(g2)
+
+    # Load SRDF file
+    robot.q0 = np.matrix(np.resize(robot.q0, robot.model.nq)).T
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+
+    assert ((m2.armature[:6] == 0.).all())
+    # Add the free-flyer joint limits
+    addFreeFlyerJointLimits(robot)
+    return robot
+
 
 def loadHyQ():
     URDF_FILENAME = "hyq_no_sensors.urdf"
