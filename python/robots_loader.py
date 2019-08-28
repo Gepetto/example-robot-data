@@ -62,7 +62,7 @@ def loadTalos():
     # Load SRDF file
     readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
     assert ((robot.model.armature[:6] == 0.).all())
-     # Add the free-flyer joint limits
+    # Add the free-flyer joint limits
     addFreeFlyerJointLimits(robot)
     return robot
 
