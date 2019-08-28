@@ -1,8 +1,7 @@
 #!/usr/bin/env python2
 
 import unittest
-
-from example_robot_data import loadHyQ, loadICub, loadTalos, loadTalosArm, loadTiago, loadTiagoNoHand
+import example_robot_data
 
 
 class RobotTestCase(unittest.TestCase):
@@ -23,43 +22,43 @@ class RobotTestCase(unittest.TestCase):
 
 
 class TalosArmTest(RobotTestCase):
-    RobotTestCase.ROBOT = loadTalosArm()
+    RobotTestCase.ROBOT = example_robot_data.loadTalosArm()
     RobotTestCase.NQ = 7
     RobotTestCase.NV = 7
 
 
 class TalosArmFloatingTest(RobotTestCase):
-    RobotTestCase.ROBOT = loadTalosArm()
+    RobotTestCase.ROBOT = example_robot_data.loadTalosArm()
     RobotTestCase.NQ = 14
     RobotTestCase.NV = 13
 
 
 class TalosTest(RobotTestCase):
-    RobotTestCase.ROBOT = loadTalos()
+    RobotTestCase.ROBOT = example_robot_data.loadTalos()
     RobotTestCase.NQ = 39
     RobotTestCase.NV = 38
 
 
 class HyQTest(RobotTestCase):
-    RobotTestCase.ROBOT = loadHyQ()
+    RobotTestCase.ROBOT = example_robot_data.loadHyQ()
     RobotTestCase.NQ = 19
     RobotTestCase.NV = 18
 
 
 class TiagoTest(RobotTestCase):
-    RobotTestCase.ROBOT = loadTiago()
+    RobotTestCase.ROBOT = example_robot_data.loadTiago()
     RobotTestCase.NQ = 50
     RobotTestCase.NV = 48
 
 
 class TiagoNoHandTest(RobotTestCase):
-    RobotTestCase.ROBOT = loadTiagoNoHand()
+    RobotTestCase.ROBOT = example_robot_data.loadTiagoNoHand()
     RobotTestCase.NQ = 14
     RobotTestCase.NV = 12
 
 
 class ICubTest(RobotTestCase):
-    RobotTestCase.ROBOT = loadICub(reduced=False)
+    RobotTestCase.ROBOT = example_robot_data.loadICub(reduced=False)
     RobotTestCase.NQ = 39
     RobotTestCase.NV = 38
 
