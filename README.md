@@ -36,3 +36,10 @@ If you have never added robotpkg as a softwares repository, please follow first 
 4. The installation of example-robot-data:
 
 		sudo apt install robotpkg-example-robot-data
+
+
+## Show the robot
+
+(you will need pinocchio and its python bindings)
+
+`python -m example_robot_data [hyq,talos,talos_arm,tiago,tiago_no_hand,icub]`
