@@ -38,10 +38,12 @@ class TalosTest(RobotTestCase):
     RobotTestCase.NQ = 39
     RobotTestCase.NV = 38
 
+
 class TalosLegsTest(RobotTestCase):
     RobotTestCase.ROBOT = example_robot_data.loadTalosLegs()
     RobotTestCase.NQ = 19
     RobotTestCase.NV = 18
+
 
 class HyQTest(RobotTestCase):
     RobotTestCase.ROBOT = example_robot_data.loadHyQ()

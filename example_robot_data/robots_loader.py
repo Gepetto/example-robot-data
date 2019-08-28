@@ -70,6 +70,7 @@ def loadTalos():
     addFreeFlyerJointLimits(robot)
     return robot
 
+
 def loadTalosLegs():
     robot = loadTalos()
     URDF_FILENAME = "talos_reduced.urdf"
