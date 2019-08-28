@@ -1,8 +1,6 @@
-#!/usr/bin/env python
-
 import sys
 
-import robots_loader
+from . import robots_loader
 
 DISPLAY_HYQ = 'hyq' in sys.argv
 DISPLAY_TALOS = 'talos' in sys.argv

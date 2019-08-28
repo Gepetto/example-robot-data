@@ -1,6 +1,6 @@
 SET(${PROJECT_NAME}_PYTHON_FILES
   robots_loader.py
-  display.py
+  __main__.py
   __init__.py
   )
 
