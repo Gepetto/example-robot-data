@@ -10,6 +10,8 @@ SET(PROJECT_NAME example-robot-data)
 SET(PROJECT_DESCRIPTION "Set of robot URDFs for benchmarking and developed examples.")
 SET(PROJECT_URL https://gepgitlab.laas.fr/${PROJECT_NAMESPACE}/${PROJECT_NAME})
 
+STRING(REGEX REPLACE "-" "_" PY_NAME ${PROJECT_NAME})
+
 # Print initial message
 MESSAGE("${PROJECT_DESCRIPTION}, version ${PROJECT_VERSION}")
 MESSAGE("Copyright (C) 2018-2019 CNRS-LAAS")
@@ -35,7 +37,7 @@ INSTALL(DIRECTORY icub_description DESTINATION share/${PROJECT_NAME})
 INSTALL(DIRECTORY talos_data DESTINATION share/${PROJECT_NAME})
 INSTALL(DIRECTORY tiago_description DESTINATION share/${PROJECT_NAME})
 
-ADD_SUBDIRECTORY(python)
+ADD_SUBDIRECTORY(${PY_NAME})
 ADD_SUBDIRECTORY(unittest)
 
 SETUP_PROJECT_FINALIZE()
