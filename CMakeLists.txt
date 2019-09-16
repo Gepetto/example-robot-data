@@ -16,6 +16,14 @@ MESSAGE("Copyright (C) 2018-2019 CNRS-LAAS")
 MESSAGE("All rights reserved.")
 MESSAGE("Released under the BSD 3-Clause License.")
 
+# Set a default build type to 'Release' if none was specified
+IF(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  MESSAGE(STATUS "Setting build type to 'Release' as none was specified.")
+  SET(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
+  # Set the possible values of build type for cmake-gui
+  SET_PROPERTY(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+ENDIF()
+
 SETUP_PROJECT()
 
 OPTION (INSTALL_DATA "Install the data" ON)
@@ -31,6 +39,7 @@ ENDIF(BUILD_PYTHON_INTERFACE)
 
 IF(INSTALL_DATA)
     INSTALL(DIRECTORY hyq_description DESTINATION share/${PROJECT_NAME})
+    INSTALL(DIRECTORY solo_description DESTINATION share/${PROJECT_NAME})
     INSTALL(DIRECTORY icub_description DESTINATION share/${PROJECT_NAME})
     INSTALL(DIRECTORY talos_data DESTINATION share/${PROJECT_NAME})
     INSTALL(DIRECTORY tiago_description DESTINATION share/${PROJECT_NAME})
