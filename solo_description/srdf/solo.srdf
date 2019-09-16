@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+<robot name="hyq">
+
+    <!-- left front leg -->
+    <group name="lf_leg">
+        <joint name="FL_HAA" />
+        <joint name="FL_HFE" />
+        <joint name="FL_KFE" />
+        <chain base_link="base_link" tip_link="FL_FOOT" />
+    </group>
+    <!-- right front leg -->
+    <group name="rf_leg">
+        <joint name="FR_HAA" />
+        <joint name="FR_HFE" />
+        <joint name="FR_KFE" />
+        <chain base_link="base_link" tip_link="FR_FOOT" />
+    </group>
+    <!-- left hind leg -->
+    <group name="lh_leg">
+        <joint name="HL_HAA" />
+        <joint name="HL_HFE" />
+        <joint name="HL_KFE" />
+        <chain base_link="base_link" tip_link="HL_FOOT" />
+    </group>
+    <!-- right hind leg -->
+    <group name="rh_leg">
+        <joint name="HR_HAA" />
+        <joint name="HR_HFE" />
+        <joint name="HR_KFE" />
+        <chain base_link="base_link" tip_link="HR_FOOT" />
+    </group>
+    <group name="all_legs">
+        <group name="lf" />
+        <group name="rf" />
+        <group name="lh" />
+        <group name="rh" />
+    </group>
+    <group name="r_legs">
+        <group name="rf" />
+        <group name="rh" />
+    </group>
+    <group name="l_legs">
+        <group name="lf" />
+        <group name="lh" />
+    </group>
+    <group name="f_legs">
+        <group name="lf" />
+        <group name="rf" />
+    </group>
+    <group name="h_legs">
+        <group name="lh" />
+        <group name="rh" />
+    </group>
+    <group name="ld_legs">
+        <group name="lf" />
+        <group name="rh" />
+    </group>
+    <group name="rd_legs">
+        <group name="rf" />
+        <group name="lh" />
+    </group>
+
+    <end_effector name="lf_foot" parent_link="FL_FOOT" group="lf_leg" />
+    <end_effector name="rf_foot" parent_link="FR_FOOT" group="rf_leg" />
+    <end_effector name="lh_foot" parent_link="HL_FOOT" group="lh_leg" />
+    <end_effector name="rh_foot" parent_link="HR_FOOT" group="rh_leg" />
+
+    <group_state name="half_sitting" group="all_legs">
+        <joint name="root_joint" value="0. 0. 0.235 0. 0. 0. 1." />
+        <joint name="FL_HAA" value="0.1" />
+        <joint name="FL_HFE" value="0.8" />
+        <joint name="FL_KFE" value="-1.6" />
+        <joint name="HL_HAA" value="0.1" />
+        <joint name="HL_HFE" value="-0.8" />
+        <joint name="HL_KFE" value="1.6" />
+        <joint name="FR_HAA" value="-0.1" />
+        <joint name="FR_HFE" value="0.8" />
+        <joint name="FR_KFE" value="-1.6" />
+        <joint name="HR_HAA" value="-0.1" />
+        <joint name="HR_HFE" value="-0.8" />
+        <joint name="HR_KFE" value="1.6" />
+    </group_state>
+
+    <group_state name="standing" group="all_legs">
+        <joint name="root_joint" value="0. 0. 0.235 0. 0. 0. 1." />
+        <joint name="FL_HAA" value="0." />
+        <joint name="FL_HFE" value="0.8" />
+        <joint name="FL_KFE" value="-1.6" />
+        <joint name="HL_HAA" value="0." />
+        <joint name="HL_HFE" value="-0.8" />
+        <joint name="HL_KFE" value="1.6" />
+        <joint name="FR_HAA" value="0." />
+        <joint name="FR_HFE" value="0.8" />
+        <joint name="FR_KFE" value="-1.6" />
+        <joint name="HR_HAA" value="0." />
+        <joint name="HR_HFE" value="-0.8" />
+        <joint name="HR_KFE" value="1.6" />
+    </group_state>
+
+</robot>

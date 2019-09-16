@@ -142,6 +142,24 @@ def loadHyQ():
     return robot
 
 
+def loadSolo(solo=True):
+    if solo:
+        URDF_FILENAME = "solo.urdf"
+    else:
+        URDF_FILENAME = "solo12.urdf"
+    SRDF_FILENAME = "solo.srdf"
+    SRDF_SUBPATH = "/solo_description/srdf/" + SRDF_FILENAME
+    URDF_SUBPATH = "/solo_description/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    # Load URDF file
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
+    # Load SRDF file
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+    # Add the free-flyer joint limits
+    addFreeFlyerJointLimits(robot)
+    return robot
+
+
 def loadTiago():
     URDF_FILENAME = "tiago.urdf"
     #    SRDF_FILENAME = "tiago.srdf"

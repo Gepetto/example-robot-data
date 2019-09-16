@@ -42,4 +42,4 @@ If you have never added robotpkg as a softwares repository, please follow first 
 
 (you will need pinocchio and its python bindings)
 
-`python -m example_robot_data [hyq,talos,talos_arm,tiago,tiago_no_hand,icub]`
+`python -m example_robot_data [hyq,talos,talos_arm,talos_legs,icub,solo,solo12,tiago,tiago_no_hand]`
