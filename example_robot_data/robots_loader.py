@@ -6,16 +6,18 @@ import pinocchio
 from pinocchio.robot_wrapper import RobotWrapper
 
 
-def getModelPath(subpath):
+def getModelPath(subpath, printmsg=False):
     base = '../../../share/example-robot-data'
     for p in sys.path:
         path = join(p, base.strip('/'))
         if exists(join(path, subpath.strip('/'))):
-            print("using %s as modelPath" % path)
+            if printmsg:
+                print("using %s as modelPath" % path)
             return path
     for path in (dirname(dirname(dirname(__file__))), dirname(dirname(__file__))):
         if exists(join(path, subpath.strip('/'))):
-            print("using %s as modelPath" % path)
+            if printmsg:
+                print("using %s as modelPath" % path)
             return path
     raise IOError('%s not found' % (subpath))
 
@@ -132,6 +134,24 @@ def loadHyQ():
     SRDF_FILENAME = "hyq.srdf"
     SRDF_SUBPATH = "/hyq_description/srdf/" + SRDF_FILENAME
     URDF_SUBPATH = "/hyq_description/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    # Load URDF file
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
+    # Load SRDF file
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+    # Add the free-flyer joint limits
+    addFreeFlyerJointLimits(robot)
+    return robot
+
+
+def loadSolo(solo=True):
+    if solo:
+        URDF_FILENAME = "solo.urdf"
+    else:
+        URDF_FILENAME = "solo12.urdf"
+    SRDF_FILENAME = "solo.srdf"
+    SRDF_SUBPATH = "/solo_description/srdf/" + SRDF_FILENAME
+    URDF_SUBPATH = "/solo_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
