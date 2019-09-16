@@ -6,16 +6,18 @@ import pinocchio
 from pinocchio.robot_wrapper import RobotWrapper
 
 
-def getModelPath(subpath):
+def getModelPath(subpath, printmsg=False):
     base = '../../../share/example-robot-data'
     for p in sys.path:
         path = join(p, base.strip('/'))
         if exists(join(path, subpath.strip('/'))):
-            print("using %s as modelPath" % path)
+            if printmsg:
+                print("using %s as modelPath" % path)
             return path
     for path in (dirname(dirname(dirname(__file__))), dirname(dirname(__file__))):
         if exists(join(path, subpath.strip('/'))):
-            print("using %s as modelPath" % path)
+            if printmsg:
+                print("using %s as modelPath" % path)
             return path
     raise IOError('%s not found' % (subpath))
 
