@@ -2,6 +2,7 @@ import sys
 from os.path import dirname, exists, join
 
 import numpy as np
+
 import pinocchio
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -22,10 +23,11 @@ def getModelPath(subpath, printmsg=False):
     raise IOError('%s not found' % (subpath))
 
 
-def readParamsFromSrdf(robot, SRDF_PATH, verbose):
+def readParamsFromSrdf(robot, SRDF_PATH, verbose, has_rotor_parameters=True):
     rmodel = robot.model
 
-    pinocchio.loadRotorParameters(rmodel, SRDF_PATH, verbose)
+    if has_rotor_parameters:
+        pinocchio.loadRotorParameters(rmodel, SRDF_PATH, verbose)
     rmodel.armature = np.multiply(rmodel.rotorInertia.flat, np.square(rmodel.rotorGearRatio.flat))
     pinocchio.loadReferenceConfigurations(rmodel, SRDF_PATH, verbose)
     robot.q0.flat[:] = rmodel.referenceConfigurations["half_sitting"].copy()
@@ -138,7 +140,7 @@ def loadHyQ():
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False)
     # Add the free-flyer joint limits
     addFreeFlyerJointLimits(robot)
     return robot
@@ -156,7 +158,7 @@ def loadSolo(solo=True):
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False)
     # Add the free-flyer joint limits
     addFreeFlyerJointLimits(robot)
     return robot
@@ -200,7 +202,7 @@ def loadICub(reduced=True):
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False)
     # Add the free-flyer joint limits
     addFreeFlyerJointLimits(robot)
     return robot
