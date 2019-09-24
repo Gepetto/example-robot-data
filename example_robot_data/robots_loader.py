@@ -206,3 +206,10 @@ def loadICub(reduced=True):
     # Add the free-flyer joint limits
     addFreeFlyerJointLimits(robot)
     return robot
+
+
+def loadUR(robot=5, limited=False):
+    URDF_FILENAME = 'ur%i%s_robot.urdf' % (robot, '_joint_limited' if limited else '')
+    URDF_SUBPATH = '/ur_description/urdf/' + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    return RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
