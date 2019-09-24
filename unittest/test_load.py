@@ -2,6 +2,7 @@
 
 import sys
 import unittest
+
 import example_robot_data
 
 
@@ -80,6 +81,12 @@ class TiagoNoHandTest(RobotTestCase):
     RobotTestCase.ROBOT = example_robot_data.loadTiagoNoHand()
     RobotTestCase.NQ = 14
     RobotTestCase.NV = 12
+
+
+class UR5Test(RobotTestCase):
+    RobotTestCase.ROBOT = example_robot_data.loadUR()
+    RobotTestCase.NQ = 6
+    RobotTestCase.NV = 6
 
 
 if __name__ == '__main__':
