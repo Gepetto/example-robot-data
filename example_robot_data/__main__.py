@@ -2,12 +2,19 @@ from argparse import ArgumentParser
 
 from . import robots_loader
 
-ROBOTS = ['hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'tiago', 'tiago_no_hand', 'icub', 'ur5']
+ROBOTS = [
+    'anymal', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'tiago', 'tiago_no_hand', 'icub', 'ur5'
+]
 
 parser = ArgumentParser()
 parser.add_argument('robot', nargs='?', default=ROBOTS[0], choices=ROBOTS)
 
 args = parser.parse_args()
+
+if args.robot == 'anymal':
+    anymal = robots_loader.loadANYmal()
+    anymal.initViewer(loadModel=True)
+    anymal.display(anymal.q0)
 
 if args.robot == 'hyq':
     hyq = robots_loader.loadHyQ()
