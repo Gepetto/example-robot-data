@@ -45,6 +45,21 @@ def addFreeFlyerJointLimits(robot):
     rmodel.lowerPositionLimit = lb
 
 
+def loadANYmal():
+    URDF_FILENAME = "anymal.urdf"
+    URDF_SUBPATH = "/anymal_b_simple_description/robots/" + URDF_FILENAME
+    SRDF_FILENAME = "anymal.srdf"
+    SRDF_SUBPATH = "/anymal_b_simple_description/srdf/" + SRDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    # Load URDF file
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
+    # Load SRDF file
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False)
+    # Add the free-flyer joint limits
+    addFreeFlyerJointLimits(robot)
+    return robot
+
+
 def loadTalosArm():
     URDF_FILENAME = "talos_left_arm.urdf"
     URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME

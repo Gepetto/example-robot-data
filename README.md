@@ -6,7 +6,7 @@ Example robot URDFs
 This repository includes a set of robot descriptions that are aimed to be used in benchmarking. These source files do not intend to substitute original their repositories.
 
 
-**Authors:**  [Carlos Mastalli](https://cmastalli.github.io/) <br />
+**Authors:**  [Carlos Mastalli](https://cmastalli.github.io/), Guilhem Saurel <br />
 **With additional support from the Gepetto team at LAAS-CNRS.**
 
 [![pipeline status](https://gepgitlab.laas.fr/gepetto/example-robot-data/badges/master/build.svg)](https://gepgitlab.laas.fr/Gepetto/example-robot-data/commits/master)
@@ -40,6 +40,6 @@ If you have never added robotpkg as a softwares repository, please follow first 
 
 ## Show the robot
 
-(you will need pinocchio and its python bindings)
+(you will need pinocchio and its Python bindings)
 
-`python -m example_robot_data [hyq,talos,talos_arm,talos_legs,icub,solo,solo12,tiago,tiago_no_hand]`
+`python -m example_robot_data [hyq,anymal,talos,talos_arm,talos_legs,icub,solo,solo12,tiago,tiago_no_hand]`

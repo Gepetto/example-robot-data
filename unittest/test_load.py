@@ -23,6 +23,12 @@ class RobotTestCase(unittest.TestCase):
         self.assertTrue(hasattr(self.ROBOT, "q0"), "It doesn't have q0")
 
 
+class ANYmalTest(RobotTestCase):
+    RobotTestCase.ROBOT = example_robot_data.loadANYmal()
+    RobotTestCase.NQ = 19
+    RobotTestCase.NV = 18
+
+
 class HyQTest(RobotTestCase):
     RobotTestCase.ROBOT = example_robot_data.loadHyQ()
     RobotTestCase.NQ = 19
@@ -91,8 +97,8 @@ class UR5Test(RobotTestCase):
 
 if __name__ == '__main__':
     test_classes_to_run = [
-        HyQTest, TalosTest, TalosArmTest, TalosArmFloatingTest, TalosLegsTest, ICubTest, SoloTest, Solo12Test,
-        TiagoTest, TiagoNoHandTest
+        ANYmalTest, HyQTest, TalosTest, TalosArmTest, TalosArmFloatingTest, TalosLegsTest, ICubTest, SoloTest,
+        Solo12Test, TiagoTest, TiagoNoHandTest
     ]
     loader = unittest.TestLoader()
     suites_list = []
