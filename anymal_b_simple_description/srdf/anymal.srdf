@@ -92,5 +92,42 @@
     <disable_collisions link1="LF_HIP" link2="RH_THIGH" reason="Never" />
     <disable_collisions link1="LF_HIP" link2="RH_SHANK" reason="Never" />
     <disable_collisions link1="LF_HIP" link2="RH_FOOT" reason="Never" />
+    
+    <disable_collisions link1="base" link2="LF_HIP" reason="Adjacent" />
+    <disable_collisions link1="base" link2="LH_HIP" reason="Adjacent" />
+    <disable_collisions link1="base" link2="RF_HIP" reason="Adjacent" />
+    <disable_collisions link1="base" link2="RH_HIP" reason="Adjacent" />
+    <disable_collisions link1="LF_HIP" link2="LF_THIGH" reason="Adjacent" />
+    <disable_collisions link1="LH_HIP" link2="LH_THIGH" reason="Adjacent" />
+    <disable_collisions link1="RF_HIP" link2="RF_THIGH" reason="Adjacent" />
+    <disable_collisions link1="RH_HIP" link2="RH_THIGH" reason="Adjacent" />
+    <disable_collisions link1="LF_THIGH" link2="LF_SHANK" reason="Adjacent" />
+    <disable_collisions link1="LH_THIGH" link2="LH_SHANK" reason="Adjacent" />
+    <disable_collisions link1="RF_THIGH" link2="RF_SHANK" reason="Adjacent" />
+    <disable_collisions link1="RH_THIGH" link2="RH_SHANK" reason="Adjacent" />
+    <disable_collisions link1="LF_SHANK" link2="LF_FOOT" reason="Adjacent" />
+    <disable_collisions link1="LH_SHANK" link2="LH_FOOT" reason="Adjacent" />
+    <disable_collisions link1="RF_SHANK" link2="RF_FOOT" reason="Adjacent" />
+    <disable_collisions link1="RH_SHANK" link2="RH_FOOT" reason="Adjacent" />
+
+    <disable_collisions link1="LF_ADAPTER" link2="LF_FOOT" reason="Adjacent" />
+    <disable_collisions link1="LH_ADAPTER" link2="LH_FOOT" reason="Adjacent" />
+    <disable_collisions link1="RF_ADAPTER" link2="RF_FOOT" reason="Adjacent" />
+    <disable_collisions link1="RH_ADAPTER" link2="RH_FOOT" reason="Adjacent" />
+
+    <disable_collisions link1="LF_ADAPTER" link2="LF_SHANK" reason="Adjacent" />
+    <disable_collisions link1="LH_ADAPTER" link2="LH_SHANK" reason="Adjacent" />
+    <disable_collisions link1="RF_ADAPTER" link2="RF_SHANK" reason="Adjacent" />
+    <disable_collisions link1="RH_ADAPTER" link2="RH_SHANK" reason="Adjacent" />
+
+    <disable_collisions link1="base" link2="imu_link" reason="Adjacent" />
+    
+    <!-- Need to check these 4 ? there may be auto-collisions ...  -->
+    <disable_collisions link1="base" link2="LF_THIGH" reason="Adjacent" />
+    <disable_collisions link1="base" link2="LH_THIGH" reason="Adjacent" />
+    <disable_collisions link1="base" link2="RF_THIGH" reason="Adjacent" />
+    <disable_collisions link1="base" link2="RH_THIGH" reason="Adjacent" />
+
+
 
 </robot>
