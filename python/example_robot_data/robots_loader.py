@@ -2,7 +2,6 @@ import sys
 from os.path import dirname, exists, join
 
 import numpy as np
-
 import pinocchio
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -15,7 +14,7 @@ def getModelPath(subpath, printmsg=False):
             if printmsg:
                 print("using %s as modelPath" % path)
             return path
-    for path in (dirname(dirname(dirname(__file__))), dirname(dirname(__file__))):
+    for path in (dirname(dirname(dirname(dirname(__file__)))), dirname(dirname(dirname(__file__)))):
         if exists(join(path, subpath.strip('/'))):
             if printmsg:
                 print("using %s as modelPath" % path)
