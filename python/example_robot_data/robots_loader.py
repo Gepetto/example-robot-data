@@ -178,6 +178,19 @@ def loadSolo(solo=True):
     return robot
 
 
+def loadKinova():
+    URDF_FILENAME = "kinova.urdf"
+    SRDF_FILENAME = "kinova.srdf"
+    SRDF_SUBPATH = "/kinova_description/srdf/" + SRDF_FILENAME
+    URDF_SUBPATH = "/kinova_description/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    # Load URDF file
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
+    # Load SRDF file
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False)
+    return robot
+
+
 def loadTiago():
     URDF_FILENAME = "tiago.urdf"
     #    SRDF_FILENAME = "tiago.srdf"
