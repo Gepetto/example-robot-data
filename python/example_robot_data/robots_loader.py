@@ -44,10 +44,14 @@ def addFreeFlyerJointLimits(robot):
     rmodel.lowerPositionLimit = lb
 
 
-def loadANYmal():
-    URDF_FILENAME = "anymal.urdf"
+def loadANYmal(withArm=None):
+    if withArm is None:
+        URDF_FILENAME = "anymal.urdf"
+        SRDF_FILENAME = "anymal.srdf"
+    elif withArm is "kinova":
+        URDF_FILENAME = "anymal-kinova.urdf"
+        SRDF_FILENAME = "anymal-kinova.srdf"
     URDF_SUBPATH = "/anymal_b_simple_description/robots/" + URDF_FILENAME
-    SRDF_FILENAME = "anymal.srdf"
     SRDF_SUBPATH = "/anymal_b_simple_description/srdf/" + SRDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file

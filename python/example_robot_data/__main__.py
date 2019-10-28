@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 from . import robots_loader
 
 ROBOTS = [
-    'anymal', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'kinova','tiago', 'tiago_no_hand', 'icub', 'ur5'
+    'anymal', 'anymal_kinova', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'kinova','tiago', 'tiago_no_hand', 'icub', 'ur5'
 ]
 
 parser = ArgumentParser()
@@ -13,6 +13,11 @@ args = parser.parse_args()
 
 if args.robot == 'anymal':
     anymal = robots_loader.loadANYmal()
+    anymal.initViewer(loadModel=True)
+    anymal.display(anymal.q0)
+
+elif args.robot == 'anymal_kinova':
+    anymal = robots_loader.loadANYmal(withArm='kinova')
     anymal.initViewer(loadModel=True)
     anymal.display(anymal.q0)
 
