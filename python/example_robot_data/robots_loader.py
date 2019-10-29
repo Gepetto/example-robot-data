@@ -59,7 +59,7 @@ def loadANYmal(withArm=None):
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False, REF_POSTURE)
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False, referencePose=REF_POSTURE)
     # Add the free-flyer joint limits
     addFreeFlyerJointLimits(robot)
     return robot
