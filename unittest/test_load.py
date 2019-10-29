@@ -29,6 +29,12 @@ class ANYmalTest(RobotTestCase):
     RobotTestCase.NV = 18
 
 
+class ANYmalKinovaTest(RobotTestCase):
+    RobotTestCase.ROBOT = example_robot_data.loadANYmal(withArm="kinova")
+    RobotTestCase.NQ = 27
+    RobotTestCase.NV = 24
+
+
 class HyQTest(RobotTestCase):
     RobotTestCase.ROBOT = example_robot_data.loadHyQ()
     RobotTestCase.NQ = 19
@@ -95,10 +101,16 @@ class UR5Test(RobotTestCase):
     RobotTestCase.NV = 6
 
 
+class KinovaTest(RobotTestCase):
+    RobotTestCase.ROBOT = example_robot_data.loadKinova()
+    RobotTestCase.NQ = 9
+    RobotTestCase.NV = 6
+
+
 if __name__ == '__main__':
     test_classes_to_run = [
-        ANYmalTest, HyQTest, TalosTest, TalosArmTest, TalosArmFloatingTest, TalosLegsTest, ICubTest, SoloTest,
-        Solo12Test, TiagoTest, TiagoNoHandTest
+        ANYmalTest, ANYmalKinovaTest, HyQTest, TalosTest, TalosArmTest, TalosArmFloatingTest, TalosLegsTest, ICubTest,
+        SoloTest, Solo12Test, TiagoTest, TiagoNoHandTest, KinovaTest
     ]
     loader = unittest.TestLoader()
     suites_list = []
