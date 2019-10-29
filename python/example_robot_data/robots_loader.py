@@ -48,7 +48,7 @@ def loadANYmal(withArm=None):
     if withArm is None:
         URDF_FILENAME = "anymal.urdf"
         SRDF_FILENAME = "anymal.srdf"
-    elif withArm is "kinova":
+    elif withArm == "kinova":
         URDF_FILENAME = "anymal-kinova.urdf"
         SRDF_FILENAME = "anymal-kinova.srdf"
     URDF_SUBPATH = "/anymal_b_simple_description/robots/" + URDF_FILENAME

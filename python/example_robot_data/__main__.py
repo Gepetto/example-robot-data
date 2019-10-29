@@ -3,7 +3,8 @@ from argparse import ArgumentParser
 from . import robots_loader
 
 ROBOTS = [
-    'anymal', 'anymal_kinova', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'kinova','tiago', 'tiago_no_hand', 'icub', 'ur5'
+    'anymal', 'anymal_kinova', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'kinova', 'tiago',
+    'tiago_no_hand', 'icub', 'ur5'
 ]
 
 parser = ArgumentParser()
