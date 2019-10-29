@@ -13,7 +13,7 @@
 
     <end_effector name="end_effector" parent_link="j2s6s200_end_effector" group="end_effector" />
 
-    <group_state name="half_sitting">
+    <group_state name="arm_up">
         <joint name="j2s6s200_joint_1" value="1.5707" />
         <joint name="j2s6s200_joint_2" value="2.618" />
         <joint name="j2s6s200_joint_3" value="-1.5707" />

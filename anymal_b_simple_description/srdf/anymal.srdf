@@ -61,7 +61,7 @@
     <end_effector name="lh_foot" parent_link="LH_FOOT" group="lh_leg" />
     <end_effector name="rh_foot" parent_link="RH_FOOT" group="rh_leg" />
 
-    <group_state name="half_sitting" group="all_legs">
+    <group_state name="standing" group="all_legs">
         <joint name="root_joint" value="0. 0. 0.4792 0. 0. 0. 1." />
         <joint name="LF_HAA" value="-0.1" />
         <joint name="LF_HFE" value="0.7" />
