@@ -45,7 +45,6 @@ def addFreeFlyerJointLimits(robot):
 
 
 def loadANYmal(withArm=None):
-    REF_POSTURE = str()
     if withArm is None:
         URDF_FILENAME = "anymal.urdf"
         SRDF_FILENAME = "anymal.srdf"
