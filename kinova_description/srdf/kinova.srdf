@@ -1,10 +1,20 @@
 <?xml version="1.0" ?>
 <robot name="kinova">
 
-    <end_effector name="lf_foot" parent_link="LF_FOOT" group="lf_leg" />
+    <group name="end_effector">
+        <joint name="j2s6s200_joint_1" />
+        <joint name="j2s6s200_joint_2" />
+        <joint name="j2s6s200_joint_3" />
+        <joint name="j2s6s200_joint_4" />
+        <joint name="j2s6s200_joint_5" />
+        <joint name="j2s6s200_joint_5" />
+        <chain base_link="base" tip_link="j2s6s200_end_effector" />
+    </group>
+
+    <end_effector name="end_effector" parent_link="j2s6s200_end_effector" group="end_effector" />
 
     <group_state name="half_sitting">
-        <joint name="j2s6s200_joint_1" value="0." />
+        <joint name="j2s6s200_joint_1" value="1.5707" />
         <joint name="j2s6s200_joint_2" value="2.618" />
         <joint name="j2s6s200_joint_3" value="-1.5707" />
         <joint name="j2s6s200_joint_4" value="3.1415" />
