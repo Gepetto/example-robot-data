@@ -225,5 +225,14 @@ def loadICub(reduced=True):
 def loadUR(robot=5, limited=False):
     URDF_FILENAME = 'ur%i%s_robot.urdf' % (robot, '_joint_limited' if limited else '')
     URDF_SUBPATH = '/ur_description/urdf/' + URDF_FILENAME
+    print URDF_SUBPATH
     modelPath = getModelPath(URDF_SUBPATH)
     return RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
+
+
+def loadHector():
+    URDF_FILENAME = "quadrotor_base.urdf"
+    URDF_SUBPATH = "/hector_description/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
+    return robot
