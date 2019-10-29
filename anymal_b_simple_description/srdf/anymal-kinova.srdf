@@ -78,7 +78,7 @@
     <end_effector name="rh_foot" parent_link="RH_FOOT" group="rh_leg" />
     <end_effector name="arm" parent_link="j2s6s200_end_effector" group="arm" />
 
-    <group_state name="standing_with_arm_up" group="all_legs">
+    <group_state name="standing_with_arm_up" group="all">
         <joint name="root_joint" value="0. 0. 0.4792 0. 0. 0. 1." />
         <joint name="LF_HAA" value="-0.1" />
         <joint name="LF_HFE" value="0.7" />
