@@ -48,11 +48,11 @@ def loadANYmal(withArm=None):
     if withArm is None:
         URDF_FILENAME = "anymal.urdf"
         SRDF_FILENAME = "anymal.srdf"
-        REF_POSTURE = 'standing'
+        REF_POSTURE = "standing"
     elif withArm == "kinova":
         URDF_FILENAME = "anymal-kinova.urdf"
         SRDF_FILENAME = "anymal-kinova.srdf"
-        REF_POSTURE = 'standing_with_arm_up'
+        REF_POSTURE = "standing_with_arm_up"
     URDF_SUBPATH = "/anymal_b_simple_description/robots/" + URDF_FILENAME
     SRDF_SUBPATH = "/anymal_b_simple_description/srdf/" + SRDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
@@ -160,7 +160,7 @@ def loadHyQ():
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False, 'standing')
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False, "standing")
     # Add the free-flyer joint limits
     addFreeFlyerJointLimits(robot)
     return robot
@@ -178,7 +178,7 @@ def loadSolo(solo=True):
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False, 'standing')
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False, "standing")
     # Add the free-flyer joint limits
     addFreeFlyerJointLimits(robot)
     return robot
@@ -193,7 +193,7 @@ def loadKinova():
     # Load URDF file
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
     # Load SRDF file
-    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False, 'arm_up')
+    readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False, False, "arm_up")
     return robot
 
 
@@ -242,7 +242,7 @@ def loadICub(reduced=True):
 
 
 def loadUR(robot=5, limited=False):
-    URDF_FILENAME = 'ur%i%s_robot.urdf' % (robot, '_joint_limited' if limited else '')
-    URDF_SUBPATH = '/ur_description/urdf/' + URDF_FILENAME
+    URDF_FILENAME = "ur%i%s_robot.urdf" % (robot, "_joint_limited" if limited else '')
+    URDF_SUBPATH = "/ur_description/urdf/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     return RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
