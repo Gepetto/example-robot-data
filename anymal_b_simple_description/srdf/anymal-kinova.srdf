@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="anymal">
+<robot name="anymal_kinova">
 
     <group name="lf_leg">
         <joint name="LF_HAA" />
@@ -25,11 +25,27 @@
         <joint name="RH_KFE" />
         <chain base_link="base" tip_link="RH_FOOT" />
     </group>
+    <group name="arm">
+        <joint name="j2s6s200_joint_1" />
+        <joint name="j2s6s200_joint_2" />
+        <joint name="j2s6s200_joint_3" />
+        <joint name="j2s6s200_joint_4" />
+        <joint name="j2s6s200_joint_5" />
+        <joint name="j2s6s200_joint_5" />
+        <chain base_link="base" tip_link="j2s6s200_end_effector" />
+    </group>
     <group name="all_legs">
         <group name="lf" />
         <group name="rf" />
         <group name="lh" />
         <group name="rh" />
+    </group>
+    <group name="all">
+        <group name="lf" />
+        <group name="rf" />
+        <group name="lh" />
+        <group name="rh" />
+        <group name="arm" />
     </group>
     <group name="r_legs">
         <group name="rf" />
@@ -60,8 +76,9 @@
     <end_effector name="rf_foot" parent_link="RF_FOOT" group="rf_leg" />
     <end_effector name="lh_foot" parent_link="LH_FOOT" group="lh_leg" />
     <end_effector name="rh_foot" parent_link="RH_FOOT" group="rh_leg" />
+    <end_effector name="arm" parent_link="j2s6s200_end_effector" group="arm" />
 
-    <group_state name="standing" group="all_legs">
+    <group_state name="standing_with_arm_up" group="all">
         <joint name="root_joint" value="0. 0. 0.4792 0. 0. 0. 1." />
         <joint name="LF_HAA" value="-0.1" />
         <joint name="LF_HFE" value="0.7" />
@@ -75,6 +92,12 @@
         <joint name="RH_HAA" value="0.1" />
         <joint name="RH_HFE" value="-0.7" />
         <joint name="RH_KFE" value="1." />
+        <joint name="j2s6s200_joint_1" value="1.5707" />
+        <joint name="j2s6s200_joint_2" value="2.618" />
+        <joint name="j2s6s200_joint_3" value="-1.5707" />
+        <joint name="j2s6s200_joint_4" value="3.1415" />
+        <joint name="j2s6s200_joint_5" value="2.618" />
+        <joint name="j2s6s200_joint_6" value="0." />
     </group_state>
 
     <disable_collisions link1="LF_HIP" link2="LF_THIGH" reason="Adjacent" />
