@@ -238,9 +238,9 @@ def loadHector():
     return robot
 
 
-def load2dof():
-    URDF_FILENAME = "2dof_planar.urdf"
-    URDF_SUBPATH = "/2dof_description/urdf/" + URDF_FILENAME
+def loadDoublePendulum():
+    URDF_FILENAME = "double_pendulum.urdf"
+    URDF_SUBPATH = "/double_pendulum_description/urdf/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
     return robot
