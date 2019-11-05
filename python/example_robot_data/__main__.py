@@ -4,7 +4,7 @@ from . import robots_loader
 
 ROBOTS = [
     'anymal', 'anymal_kinova', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'kinova', 'tiago',
-    'tiago_no_hand', 'icub', 'ur5'
+    'tiago_no_hand', 'icub', 'ur5', 'romeo'
 ]
 
 parser = ArgumentParser()
@@ -76,3 +76,8 @@ elif args.robot == 'ur5':
     ur5 = robots_loader.loadUR()
     ur5.initViewer(loadModel=True)
     ur5.display(ur5.q0)
+
+elif args.robot == 'romeo':
+    romeo = robots_loader.loadRomeo()
+    romeo.initViewer(loadModel=True)
+    romeo.display(romeo.q0)
