@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!--
+
+   Aldebaran Robotics Romeo SRDF model
+
+   This file defines semantics group of joints.
+
+   It is an alternative way of specifying semantics on the robot
+   structure.
+
+   It also provides:
+   - the half-sitting robot state,
+   TODO: - add the grippers
+   TODO: - the set of interesting collision pairs
+
+  -->
+<robot name="romeo">
+  <!-- Romeo groups -->
+
+  <!-- To remove when the grippers will be added
+  <group name="r_arm">
+    <chain base_link="torso" tip_link="r_gripper"/>
+  </group>
+
+  <group name="l_arm">
+    <chain base_link="torso" tip_link="l_gripper"/>
+  </group>
+  -->
+
+  <group name="r_leg">
+    <chain base_link="base_link" tip_link="r_sole"/>
+  </group>
+
+  <group name="l_leg">
+    <chain base_link="base_link" tip_link="l_sole"/>
+  </group>
+
+  <!-- To remove when the grippers will be added
+  <group name="arms">
+    <group name="l_arm"/>
+    <group name="r_arm"/>
+  </group>
+  -->
+
+  <group name="all">
+  </group>
+
+  <!-- Romeo end effector -->
+  <!-- To remove when the grippers will be added
+  <end_effector name="r_arm" parent_link="r_gripper" group="r_arm"/>
+  <end_effector name="l_arm" parent_link="l_gripper" group="l_arm"/>
+  -->
+  <end_effector name="r_leg" parent_link="r_sole" group="r_leg"/>
+  <end_effector name="l_leg" parent_link="l_sole" group="l_leg"/>
+
+  <!-- Romeo pre-defined states -->
+  <!-- Romeo pre-defined states -->
+  <group_state name="half_sitting" group="all">
+    <joint name="TrunkYaw"       value="0" />
+
+    <joint name="NeckYaw"        value="0" />
+    <joint name="NeckPitch"      value="0" />
+    <joint name="HeadPitch"      value="0" />
+    <joint name="HeadRoll"       value="0" />
+
+    <joint name="LShoulderPitch" value="1.5" />
+    <joint name="LShoulderYaw"   value="0.6" />
+    <joint name="LElbowRoll"     value="-0.5" />
+    <joint name="LElbowYaw"      value="-1.05" />
+    <joint name="LWristRoll"     value="-0.4" />
+    <joint name="LWristYaw"      value="-0.3" />
+    <joint name="LWristPitch"    value="-0.2" />
+
+    <joint name="RShoulderPitch" value="1.5" />
+    <joint name="RShoulderYaw"   value="-0.6" />
+    <joint name="RElbowRoll"     value="0.5" />
+    <joint name="RElbowYaw"      value="1.05" />
+    <joint name="RWristRoll"     value="-0.4" />
+    <joint name="RWristYaw"      value="-0.3" />
+    <joint name="RWristPitch"    value="-0.2" />
+
+    <joint name="LHipYaw"        value="0" />
+    <joint name="LHipRoll"       value="0" />
+    <joint name="LHipPitch"      value="-0.3490658" />
+    <joint name="LKneePitch"     value="0.6981317" />
+    <joint name="LAnklePitch"    value="-0.3490658" />
+    <joint name="LAnkleRoll"     value="0" />
+    <joint name="LToePitch"      value="0" />
+
+    <joint name="RHipYaw"        value="0" />
+    <joint name="RHipRoll"       value="0" />
+    <joint name="RHipPitch"      value="-0.3490658" />
+    <joint name="RKneePitch"     value="0.6981317" />
+    <joint name="RAnklePitch"    value="-0.3490658" />
+    <joint name="RAnkleRoll"     value="0" />
+    <joint name="RToePitch"      value="0" />
+
+    <joint name="LEyeYaw"        value="0" />
+    <joint name="LEyePitch"      value="0" />
+    <joint name="REyeYaw"        value="0" />
+    <joint name="REyePitch"      value="0" />
+  </group_state>
+
+  <specificities>
+    <feet>
+      <right>
+        <size height="0.1935" width="0.121" depth="0.0684" />
+        <anklePosition x="0.0" y="0.0" z="0.0684" />
+      </right>
+      <left>
+        <size height="0.1935" width="0.121" depth="0.0684" />
+        <anklePosition x="0.0" y="0.0" z="0.0684" />
+      </left>
+    </feet>
+  </specificities>
+
+
+</robot>

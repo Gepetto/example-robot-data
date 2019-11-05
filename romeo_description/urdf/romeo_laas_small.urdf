@@ -1,0 +1,1122 @@
+<robot name="RomeoH37">
+    <material name="LightGrey">
+        <texture />
+        <color rgba="0.9 0.9 0.9 1" />
+    </material>
+    <link name="AccelerometerDownTorso_sensor" />
+    <link name="AccelerometerHead_sensor" />
+    <link name="CameraLeft_sensor" />
+    <link name="CameraRight_sensor" />
+    <link name="GyrometerDownTorso_sensor" />
+    <link name="GyrometerHead_sensor" />
+    <link name="HeadRollCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <sphere radius="0.1275" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Head_effector" />
+    <link name="LAnkleRollCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.05" length="0.29" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="LArm_effector" />
+    <link name="LElbowYawCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.055" length="0.275" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="LFoot/FSR/CenterFront_sensor" />
+    <link name="LFoot/FSR/CenterRear_sensor" />
+    <link name="LFoot/FSR/HeelLeft_sensor" />
+    <link name="LFoot/FSR/HeelRight_sensor" />
+    <link name="LFoot/FSR/ToeFrontLeft_sensor" />
+    <link name="LFoot/FSR/ToeFrontRight_sensor" />
+    <link name="LFoot/FSR/ToeRearLeft_sensor" />
+    <link name="LFoot/FSR/ToeRearRight_sensor" />
+    <link name="l_gripper" />
+    <link name="LHipPitchCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.09" length="0.441725" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="LKneePitchCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.07" length="0.38331" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="LLeg_effector" />
+    <link name="LShoulderYawCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.06" length="0.305" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="LWristPitchPillCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.04" length="0.22" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="LWristPitchSphereCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <sphere radius="0.065" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="RAnkleRollCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.05" length="0.29" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="RArm_effector" />
+    <link name="RElbowYawCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.055" length="0.275" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="RFoot/FSR/CenterFront_sensor" />
+    <link name="RFoot/FSR/CenterRear_sensor" />
+    <link name="RFoot/FSR/HeelLeft_sensor" />
+    <link name="RFoot/FSR/HeelRight_sensor" />
+    <link name="RFoot/FSR/ToeFrontLeft_sensor" />
+    <link name="RFoot/FSR/ToeFrontRight_sensor" />
+    <link name="RFoot/FSR/ToeRearLeft_sensor" />
+    <link name="RFoot/FSR/ToeRearRight_sensor" />
+    <link name="r_gripper" />
+    <link name="RHipPitchCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.09" length="0.441725" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="RKneePitchCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.07" length="0.38331" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="RLeg_effector" />
+    <link name="RShoulderYawCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.06" length="0.305" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="RWristPitchPillCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.04" length="0.22" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="RWristPitchSphereCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <sphere radius="0.065" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="TorsoCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.165" length="0.375" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="torso">
+        <inertial>
+            <mass value="5.85463" />
+            <origin xyz="0.01512 0 0.06743" rpy="0 -0 0" />
+            <inertia ixx="0.0587116" ixy="-3.02711e-06" ixz="0.0101426" iyy="0.0326812" iyz="-0.000132541" izz="0.0637705" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/Torso.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="NeckYaw_link">
+        <inertial>
+            <mass value="0.377845" />
+            <origin xyz="-0.00635646 0 -0.030002" rpy="0 -0 0" />
+            <inertia ixx="0.000279258" ixy="-3.10908e-07" ixz="-1.49231e-05" iyy="0.000260188" iyz="-8.07538e-07" izz="8.41479e-05" />
+        </inertial>
+    </link>
+    <link name="NeckPitch_link">
+        <inertial>
+            <mass value="0.345282" />
+            <origin xyz="0.00372 0 0.04811" rpy="0 -0 0" />
+            <inertia ixx="0.000476367" ixy="-1.93678e-06" ixz="0.000128915" iyy="0.000443007" iyz="5.81865e-05" izz="0.000304636" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/NeckPitch.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="HeadPitch_link">
+        <inertial>
+            <mass value="0.158407" />
+            <origin xyz="0.0014 0 -0.00462" rpy="0 -0 0" />
+            <inertia ixx="2.57346e-05" ixy="1.51196e-07" ixz="-1.52238e-05" iyy="7.43865e-05" iyz="-4.91562e-09" izz="6.6769e-05" />
+        </inertial>
+    </link>
+    <link name="HeadRoll_link">
+        <inertial>
+            <mass value="2.07047" />
+            <origin xyz="0.01263 0 0.07498" rpy="0 -0 0" />
+            <inertia ixx="0.00933153" ixy="-3.87986e-05" ixz="0.002764" iyy="0.0110877" iyz="0.000300351" izz="0.00918888" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/HeadRoll.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="LShoulderPitch_link">
+        <inertial>
+            <mass value="0.541429" />
+            <origin xyz="-0.0112798 -0.0260712 0.00468882" rpy="0 -0 0" />
+            <inertia ixx="0.00033428" ixy="-9.92972e-05" ixz="9.98217e-06" iyy="0.000188073" iyz="2.14339e-05" izz="0.000360929" />
+        </inertial>
+    </link>
+    <link name="LShoulderYaw_link">
+        <inertial>
+            <mass value="0.861545" />
+            <origin xyz="0.0965281 0.00465308 0.00168775" rpy="0 -0 0" />
+            <inertia ixx="0.00118557" ixy="0.000596133" ixz="0.0011173" iyy="0.00312162" iyz="-2.05919e-05" izz="0.00289955" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/LShoulderYaw.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="LElbowRoll_link">
+        <inertial>
+            <mass value="0.600439" />
+            <origin xyz="-0.0348859 -0.0011589 -0.00148134" rpy="0 -0 0" />
+            <inertia ixx="0.000207598" ixy="1.2053e-05" ixz="-1.86312e-05" iyy="0.000507683" iyz="1.56171e-06" izz="0.000456309" />
+        </inertial>
+    </link>
+    <link name="LElbowYaw_link">
+        <inertial>
+            <mass value="0.460203" />
+            <origin xyz="0.068523 0.0097 0.00458766" rpy="0 -0 0" />
+            <inertia ixx="0.000503576" ixy="0.000585803" ixz="3.19975e-05" iyy="0.00127777" iyz="3.67296e-05" izz="0.00122813" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/LElbowYaw.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="LWristRoll_link">
+        <inertial>
+            <mass value="0.218316" />
+            <origin xyz="-0.0592449 6e-05 -0.00144745" rpy="0 -0 0" />
+            <inertia ixx="0.000100812" ixy="-1.81881e-06" ixz="-4.56681e-05" iyy="0.000384336" iyz="-1.11019e-07" izz="0.000366084" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/LWristRoll.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="LWristYaw_link">
+        <inertial>
+            <mass value="0.0758774" />
+            <origin xyz="-0.00657144 0.00017 -0.000115829" rpy="0 -0 0" />
+            <inertia ixx="1.55687e-05" ixy="-5.1829e-08" ixz="-8.72923e-07" iyy="3.52487e-05" iyz="1.94513e-08" izz="3.4791e-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/LWristYaw.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="l_wrist">
+        <inertial>
+            <mass value="0.442191" />
+            <origin xyz="0.07358 -0.00628 -0.00098" rpy="0 -0 0" />
+            <inertia ixx="0.000404603" ixy="-0.000404247" ixz="1.89685e-05" iyy="0.000829354" iyz="7.81042e-05" izz="0.00102014" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/LWristPitch.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="body">
+        <inertial>
+            <mass value="5.11337" />
+            <origin xyz="0.02825 0 -0.16653" rpy="0 -0 0" />
+            <inertia ixx="0.0564204" ixy="7.26322e-05" ixz="-0.0575115" iyy="0.0521042" iyz="-3.39086e-05" izz="0.021185" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/TrunkYaw.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="LHipYaw_link">
+        <inertial>
+            <mass value="0.559188" />
+            <origin xyz="-0.00922 -0.00167 0.042" rpy="0 -0 0" />
+            <inertia ixx="0.000865336" ixy="-1.1052e-06" ixz="-0.000251445" iyy="0.00143007" iyz="4.25093e-06" izz="0.000851928" />
+        </inertial>
+    </link>
+    <link name="LHipRoll_link">
+        <inertial>
+            <mass value="0.714778" />
+            <origin xyz="0.00249 -0.00205 -0.00147" rpy="0 -0 0" />
+            <inertia ixx="0.000937272" ixy="-6.73228e-06" ixz="-2.02714e-06" iyy="0.000548117" iyz="1.34974e-06" izz="0.00101855" />
+        </inertial>
+    </link>
+    <link name="LHipPitch_link">
+        <inertial>
+            <mass value="4.71096" />
+            <origin xyz="-0.02138 -0.00255 -0.14577" rpy="0 -0 0" />
+            <inertia ixx="0.0390706" ixy="-2.41786e-05" ixz="0.0250104" iyy="0.0395116" iyz="0.000712271" izz="0.0122599" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/LHipPitch.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="LKneePitch_link">
+        <inertial>
+            <mass value="2.72291" />
+            <origin xyz="-0.00415 -0.00054 -0.11011" rpy="0 -0 0" />
+            <inertia ixx="0.0159124" ixy="5.49385e-08" ixz="0.00301963" iyy="0.0158076" iyz="-6.1473e-06" izz="0.00369233" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/LKneePitch.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="LAnklePitch_link">
+        <inertial>
+            <mass value="0.464512" />
+            <origin xyz="0.00132 -0.00117 0.00015" rpy="0 -0 0" />
+            <inertia ixx="0.000367336" ixy="-1.174e-07" ixz="1.0441e-07" iyy="0.000239298" iyz="-1.23189e-06" izz="0.000425531" />
+        </inertial>
+    </link>
+    <link name="l_ankle">
+        <inertial>
+            <mass value="1.06764" />
+            <origin xyz="0.0483878 0.00120158 -0.0367645" rpy="0 -0 0" />
+            <inertia ixx="0.000978167" ixy="-4.97135e-05" ixz="-0.000879138" iyy="0.00586633" iyz="6.13291e-05" izz="0.00589599" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/LAnkleRollBasic.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="RHipYaw_link">
+        <inertial>
+            <mass value="0.559188" />
+            <origin xyz="-0.00922 0.00167 0.042" rpy="0 -0 0" />
+            <inertia ixx="0.000865336" ixy="-1.83253e-05" ixz="-0.000251445" iyy="0.00143007" iyz="8.26938e-05" izz="0.000851928" />
+        </inertial>
+    </link>
+    <link name="RHipRoll_link">
+        <inertial>
+            <mass value="0.714778" />
+            <origin xyz="0.00249 0.00205 -0.00147" rpy="0 -0 0" />
+            <inertia ixx="0.000937272" ixy="5.64884e-07" ixz="-2.02714e-06" iyy="0.000548117" iyz="-2.95823e-06" izz="0.00101855" />
+        </inertial>
+    </link>
+    <link name="RHipPitch_link">
+        <inertial>
+            <mass value="4.71096" />
+            <origin xyz="-0.02138 0.00255 -0.14577" rpy="0 -0 0" />
+            <inertia ixx="0.0390706" ixy="-0.000537853" ixz="0.0250104" iyy="0.0395116" iyz="-0.00278999" izz="0.0122599" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/RHipPitch.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="RKneePitch_link">
+        <inertial>
+            <mass value="2.72291" />
+            <origin xyz="-0.00415 0.00054 -0.11011" rpy="0 -0 0" />
+            <inertia ixx="0.0159124" ixy="-1.21492e-05" ixz="0.00301963" iyy="0.0158076" iyz="-0.000329953" izz="0.00369233" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/RKneePitch.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="RAnklePitch_link">
+        <inertial>
+            <mass value="0.464512" />
+            <origin xyz="0.00132 0.00117 0.00015" rpy="0 -0 0" />
+            <inertia ixx="0.000367336" ixy="1.31739e-06" ixz="1.0441e-07" iyy="0.000239298" iyz="-1.06885e-06" izz="0.000425531" />
+        </inertial>
+    </link>
+    <link name="r_ankle">
+        <inertial>
+            <mass value="1.06764" />
+            <origin xyz="0.0483878 -0.00120158 -0.0367645" rpy="0 -0 0" />
+            <inertia ixx="0.000978167" ixy="-0.000173863" ixz="-0.000879138" iyy="0.00586633" iyz="0.000155656" izz="0.00589599" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/RAnkleRollBasic.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="RShoulderPitch_link">
+        <inertial>
+            <mass value="0.541429" />
+            <origin xyz="-0.0112798 0.0260712 0.00468882" rpy="0 -0 0" />
+            <inertia ixx="0.00032868" ixy="0.000102539" ixz="1.9336e-05" iyy="0.000199958" iyz="-3.81835e-05" izz="0.000354645" />
+        </inertial>
+    </link>
+    <link name="RShoulderYaw_link">
+        <inertial>
+            <mass value="0.861545" />
+            <origin xyz="0.0965281 -0.00465308 0.00168775" rpy="0 -0 0" />
+            <inertia ixx="0.00118857" ixy="-0.00036285" ixz="0.001154" iyy="0.00311916" iyz="1.86519e-05" izz="0.002899" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/RShoulderYaw.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="RElbowRoll_link">
+        <inertial>
+            <mass value="0.600439" />
+            <origin xyz="-0.0348859 0.0011589 -0.00148134" rpy="0 -0 0" />
+            <inertia ixx="0.000207722" ixy="-7.62167e-06" ixz="-1.85932e-05" iyy="0.000507556" iyz="9.54211e-07" izz="0.000456313" />
+        </inertial>
+    </link>
+    <link name="RElbowYaw_link">
+        <inertial>
+            <mass value="0.460203" />
+            <origin xyz="0.068523 -0.0097 0.00458766" rpy="0 -0 0" />
+            <inertia ixx="0.000503576" ixy="-2.59661e-05" ixz="3.19975e-05" iyy="0.00127777" iyz="-4.2287e-06" izz="0.00122813" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/RElbowYaw.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="RWristRoll_link">
+        <inertial>
+            <mass value="0.218316" />
+            <origin xyz="-0.0592449 -6e-05 -0.00144745" rpy="0 -0 0" />
+            <inertia ixx="0.000100812" ixy="-2.66721e-07" ixz="-4.56681e-05" iyy="0.000384336" iyz="-7.30984e-08" izz="0.000366084" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/RWristRoll.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="RWristYaw_link">
+        <inertial>
+            <mass value="0.0758774" />
+            <origin xyz="-0.00657144 -0.00017 -0.000115829" rpy="0 -0 0" />
+            <inertia ixx="1.55687e-05" ixy="1.17703e-07" ixz="-8.72923e-07" iyy="3.52487e-05" iyz="2.24395e-08" izz="3.4791e-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/RWristYaw.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="r_wrist">
+        <inertial>
+            <mass value="0.442191" />
+            <origin xyz="0.07358 0.00628 -0.00098" rpy="0 -0 0" />
+            <inertia ixx="0.000404603" ixy="4.4107e-06" ixz="1.89685e-05" iyy="0.000829354" iyz="7.26613e-05" izz="0.00102014" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="file:///usr/Romeo/naoqi-sdk-2.3.0.14-linux64/share/alrobotmodel/meshes/romeo/RWristPitch.mesh" scale="1 1 1" />
+            </geometry>
+            <material name="LightGrey">
+                <texture />
+                <color rgba="0.9 0.9 0.9 1" />
+            </material>
+        </visual>
+    </link>
+    <link name="TrunkYawCollision_shape">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 -0 0" />
+            <geometry>
+                <cylinder radius="0.155" length="0.375" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Trunk_effector" />
+    <link name="base_link" />
+    <joint name="AccelerometerDownTorso_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.06185 0.0087 -0.1582" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="body" />
+        <child link="AccelerometerDownTorso_sensor" />
+    </joint>
+    <joint name="AccelerometerHead_sensor_fixedjoint" type="fixed">
+        <origin xyz="-0.01135 -0.04225 0.16011" rpy="0 -0 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="HeadRoll_link" />
+        <child link="AccelerometerHead_sensor" />
+    </joint>
+    <joint name="CameraLeft_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.11229 0.04 0.09938" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="HeadRoll_link" />
+        <child link="CameraLeft_sensor" />
+    </joint>
+    <joint name="CameraRight_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.11229 -0.04 0.09938" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="HeadRoll_link" />
+        <child link="CameraRight_sensor" />
+    </joint>
+    <joint name="GyrometerDownTorso_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.06185 0.0087 -0.1582" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="body" />
+        <child link="GyrometerDownTorso_sensor" />
+    </joint>
+    <joint name="GyrometerHead_sensor_fixedjoint" type="fixed">
+        <origin xyz="-0.01135 -0.04225 0.16011" rpy="0 -0 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="HeadRoll_link" />
+        <child link="GyrometerHead_sensor" />
+    </joint>
+    <joint name="HeadRollCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.026 0 0.065" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="HeadRoll_link" />
+        <child link="HeadRollCollision_shape" />
+    </joint>
+    <joint name="Head_effector_fixedjoint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="HeadRoll_link" />
+        <child link="Head_effector" />
+    </joint>
+    <joint name="LAnkleRollCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.055 0 -0.035" rpy="1.5708 5.55112e-17 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LAnkleRollCollision_shape" />
+    </joint>
+    <joint name="LArm_effector_fixedjoint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_wrist" />
+        <child link="LArm_effector" />
+    </joint>
+    <joint name="LElbowYawCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.0825 0 0.005" rpy="1.5708 5.55112e-17 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="LElbowYaw_link" />
+        <child link="LElbowYawCollision_shape" />
+    </joint>
+    <joint name="LFoot/FSR/CenterFront_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.07498 0.01275 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LFoot/FSR/CenterFront_sensor" />
+    </joint>
+    <joint name="LFoot/FSR/CenterRear_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.01448 0.0145 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LFoot/FSR/CenterRear_sensor" />
+    </joint>
+    <joint name="LFoot/FSR/HeelLeft_sensor_fixedjoint" type="fixed">
+        <origin xyz="-0.04602 0.017 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LFoot/FSR/HeelLeft_sensor" />
+    </joint>
+    <joint name="LFoot/FSR/HeelRight_sensor_fixedjoint" type="fixed">
+        <origin xyz="-0.04602 -0.017 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LFoot/FSR/HeelRight_sensor" />
+    </joint>
+    <joint name="LFoot/FSR/ToeFrontLeft_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.16098 0.024 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LFoot/FSR/ToeFrontLeft_sensor" />
+    </joint>
+    <joint name="LFoot/FSR/ToeFrontRight_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.17298 -0.023 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LFoot/FSR/ToeFrontRight_sensor" />
+    </joint>
+    <joint name="LFoot/FSR/ToeRearLeft_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.11898 0.0335 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LFoot/FSR/ToeRearLeft_sensor" />
+    </joint>
+    <joint name="LFoot/FSR/ToeRearRight_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.12698 -0.0315 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LFoot/FSR/ToeRearRight_sensor" />
+    </joint>
+    <joint name="l_gripper_joint" type="revolute">
+        <origin xyz="-0.0579412 -0.0159 -0.00260997" rpy="1.5708 0.0450146 -3.14159" />
+        <axis xyz="1 0 0" />
+        <parent link="l_wrist" />
+        <child link="l_gripper" />
+        <limit effort="0.649997" velocity="59.8925" lower="0" upper="1" />
+    </joint>
+    <joint name="LHipPitchCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="-0.005 0 -0.13" rpy="3.02672 -0 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="LHipPitch_link" />
+        <child link="LHipPitchCollision_shape" />
+    </joint>
+    <joint name="LKneePitchCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.01 0 -0.12" rpy="2.97644 -0 -1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="LKneePitch_link" />
+        <child link="LKneePitchCollision_shape" />
+    </joint>
+    <joint name="LLeg_effector_fixedjoint" type="fixed">
+        <origin xyz="0 0 -0.0651" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_ankle" />
+        <child link="LLeg_effector" />
+    </joint>
+    <joint name="LShoulderYawCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.0925 0 -0.005" rpy="1.5708 5.55112e-17 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="LShoulderYaw_link" />
+        <child link="LShoulderYawCollision_shape" />
+    </joint>
+    <joint name="LWristPitchPillCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.09 0 0" rpy="1.5708 5.55112e-17 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="l_wrist" />
+        <child link="LWristPitchPillCollision_shape" />
+    </joint>
+    <joint name="LWristPitchSphereCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.095 -0.01 -0.005" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="l_wrist" />
+        <child link="LWristPitchSphereCollision_shape" />
+    </joint>
+    <joint name="NeckYaw_joint" type="revolute">
+        <origin xyz="0.0548 0 0.1675" rpy="0 -2.98023e-08 0" />
+        <axis xyz="0.173651 0 0.984807" />
+        <parent link="torso" />
+        <child link="NeckYaw_link" />
+        <limit effort="7.324" velocity="4" lower="-2.0595" upper="2.0595" />
+    </joint>
+    <joint name="NeckPitch_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -2.98023e-08 0" />
+        <axis xyz="0 1 0" />
+        <parent link="NeckYaw_link" />
+        <child link="NeckPitch_link" />
+        <limit effort="5.956" velocity="2.2" lower="-0.3142" upper="0.6632" />
+    </joint>
+    <joint name="HeadPitch_joint" type="revolute">
+        <origin xyz="0 0 0.0951" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="NeckPitch_link" />
+        <child link="HeadPitch_link" />
+        <limit effort="2.57" velocity="1.9" lower="-0.2571" upper="0.2971" />
+    </joint>
+    <joint name="HeadRoll_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="1 0 0" />
+        <parent link="HeadPitch_link" />
+        <child link="HeadRoll_link" />
+        <limit effort="3.748" velocity="1.5" lower="-0.4887" upper="0.4887" />
+    </joint>
+    <joint name="LShoulderPitch_joint" type="revolute">
+        <origin xyz="0.049862 0.19 0.073851" rpy="1.49012e-08 7.45058e-09 0" />
+        <axis xyz="0.417025 0.895055 -0.15801" />
+        <parent link="torso" />
+        <child link="LShoulderPitch_link" />
+        <limit effort="19.095" velocity="2.2" lower="-1.3491" upper="2.2462" />
+    </joint>
+    <joint name="LShoulderYaw_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="2.98023e-08 1.11759e-08 -5.58793e-08" />
+        <axis xyz="0.0401398 0.155542 0.987013" />
+        <parent link="LShoulderPitch_link" />
+        <child link="LShoulderYaw_link" />
+        <limit effort="9.031" velocity="4" lower="-0.5768" upper="0.9242" />
+    </joint>
+    <joint name="LElbowRoll_joint" type="revolute">
+        <origin xyz="0.210824 7.40511e-09 -0.008631" rpy="-2.56114e-09 -0 -9.31322e-09" />
+        <axis xyz="0.998889 0.0139984 0.044995" />
+        <parent link="LShoulderYaw_link" />
+        <child link="LElbowRoll_link" />
+        <limit effort="7.404" velocity="3.7" lower="-2.2148" upper="1.9042" />
+    </joint>
+    <joint name="LElbowYaw_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="-1.49504e-08 -1.86264e-08 2.12577e-09" />
+        <axis xyz="-0.0449994 0 0.998987" />
+        <parent link="LElbowRoll_link" />
+        <child link="LElbowYaw_link" />
+        <limit effort="6.02" velocity="4" lower="-1.5228" upper="0.0044" />
+    </joint>
+    <joint name="LWristRoll_joint" type="revolute">
+        <origin xyz="0.190404 -4.65661e-10 0.008631" rpy="1.6234e-11 -7.45058e-09 9.32998e-10" />
+        <axis xyz="0.998987 0 0.0449994" />
+        <parent link="LElbowYaw_link" />
+        <child link="LWristRoll_link" />
+        <limit effort="2.177" velocity="1.1" lower="-3.6303" upper="0.4887" />
+    </joint>
+    <joint name="LWristYaw_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="-0.0449994 0 0.998987" />
+        <parent link="LWristRoll_link" />
+        <child link="LWristYaw_link" />
+        <limit effort="0.862" velocity="2.26" lower="-0.37" upper="0.37" />
+    </joint>
+    <joint name="LWristPitch_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="LWristYaw_link" />
+        <child link="l_wrist" />
+        <limit effort="0.6" velocity="3.75" lower="-0.988" upper="0.8969" />
+    </joint>
+    <joint name="TrunkYaw" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="body" />
+        <child link="torso" />
+        <limit effort="28.021" velocity="1.5" lower="-0.7575" upper="0.7575" />
+    </joint>
+    <joint name="LHipYaw_joint" type="revolute">
+        <origin xyz="0.05 0.096 -0.3375" rpy="0 -0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="body" />
+        <child link="LHipYaw_link" />
+        <limit effort="25.42" velocity="1.045" lower="-0.2618" upper="0.2618" />
+    </joint>
+    <joint name="LHipRoll_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="1 0 0" />
+        <parent link="LHipYaw_link" />
+        <child link="LHipRoll_link" />
+        <limit effort="46.6" velocity="2.09" lower="-0.2618" upper="0.5236" />
+    </joint>
+    <joint name="LHipPitch_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="LHipRoll_link" />
+        <child link="LHipPitch_link" />
+        <limit effort="46.6" velocity="2.09" lower="-1.6581" upper="0.4014" />
+    </joint>
+    <joint name="LKneePitch_joint" type="revolute">
+        <origin xyz="0 0 -0.322" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="LHipPitch_link" />
+        <child link="LKneePitch_link" />
+        <limit effort="38.17" velocity="6" lower="-0.0218" upper="1.9722" />
+    </joint>
+    <joint name="LAnklePitch_joint" type="revolute">
+        <origin xyz="0 0 -0.29" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="LKneePitch_link" />
+        <child link="LAnklePitch_link" />
+        <limit effort="25.76" velocity="2.1" lower="-0.5149" upper="0.7505" />
+    </joint>
+    <joint name="LAnkleRoll_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="1 0 0" />
+        <parent link="LAnklePitch_link" />
+        <child link="l_ankle" />
+        <limit effort="25.76" velocity="2.1" lower="-0.3491" upper="0.3491" />
+    </joint>
+    <joint name="RHipYaw_joint" type="revolute">
+        <origin xyz="0.05 -0.096 -0.3375" rpy="0 -0 0" />
+        <axis xyz="0 0 1" />
+        <parent link="body" />
+        <child link="RHipYaw_link" />
+        <limit effort="25.42" velocity="1.045" lower="-0.2618" upper="0.2618" />
+    </joint>
+    <joint name="RHipRoll_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="1 0 0" />
+        <parent link="RHipYaw_link" />
+        <child link="RHipRoll_link" />
+        <limit effort="46.6" velocity="2.09" lower="-0.5236" upper="0.2618" />
+    </joint>
+    <joint name="RHipPitch_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="RHipRoll_link" />
+        <child link="RHipPitch_link" />
+        <limit effort="46.6" velocity="2.09" lower="-1.6581" upper="0.4014" />
+    </joint>
+    <joint name="RKneePitch_joint" type="revolute">
+        <origin xyz="0 0 -0.322" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="RHipPitch_link" />
+        <child link="RKneePitch_link" />
+        <limit effort="38.17" velocity="6" lower="-0.0218" upper="1.9722" />
+    </joint>
+    <joint name="RAnklePitch_joint" type="revolute">
+        <origin xyz="0 0 -0.29" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="RKneePitch_link" />
+        <child link="RAnklePitch_link" />
+        <limit effort="25.76" velocity="2.1" lower="-0.5149" upper="0.7505" />
+    </joint>
+    <joint name="RAnkleRoll_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="1 0 0" />
+        <parent link="RAnklePitch_link" />
+        <child link="r_ankle" />
+        <limit effort="25.76" velocity="2.1" lower="-0.3491" upper="0.3491" />
+    </joint>
+    <joint name="RShoulderPitch_joint" type="revolute">
+        <origin xyz="0.049862 -0.19 0.073851" rpy="-1.49012e-08 7.45058e-09 0" />
+        <axis xyz="-0.417025 0.895055 0.15801" />
+        <parent link="torso" />
+        <child link="RShoulderPitch_link" />
+        <limit effort="19.095" velocity="2.2" lower="-1.4554" upper="2.1399" />
+    </joint>
+    <joint name="RShoulderYaw_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="-2.98023e-08 1.49012e-08 -6.42613e-08" />
+        <axis xyz="0.0401398 -0.155542 0.987014" />
+        <parent link="RShoulderPitch_link" />
+        <child link="RShoulderYaw_link" />
+        <limit effort="9.031" velocity="4" lower="-1.0985" upper="0.4025" />
+    </joint>
+    <joint name="RElbowRoll_joint" type="revolute">
+        <origin xyz="0.210824 -1.48548e-08 -0.008631" rpy="6.69388e-09 7.45058e-09 -7.91624e-08" />
+        <axis xyz="0.998889 -0.0139984 0.044995" />
+        <parent link="RShoulderYaw_link" />
+        <child link="RElbowRoll_link" />
+        <limit effort="7.404" velocity="3.7" lower="-1.9047" upper="2.2143" />
+    </joint>
+    <joint name="RElbowYaw_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="1.49504e-08 -1.86264e-08 -2.12577e-09" />
+        <axis xyz="-0.0449994 0 0.998987" />
+        <parent link="RElbowRoll_link" />
+        <child link="RElbowYaw_link" />
+        <limit effort="6.02" velocity="4" lower="-0.0047" upper="1.5225" />
+    </joint>
+    <joint name="RWristRoll_joint" type="revolute">
+        <origin xyz="0.190404 4.65661e-10 0.008631" rpy="-1.6234e-11 -7.45058e-09 -9.32998e-10" />
+        <axis xyz="0.998987 0 0.0449994" />
+        <parent link="RElbowYaw_link" />
+        <child link="RWristRoll_link" />
+        <limit effort="2.177" velocity="1.1" lower="-0.4887" upper="3.6303" />
+    </joint>
+    <joint name="RWristYaw_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="-0.0449994 0 0.998987" />
+        <parent link="RWristRoll_link" />
+        <child link="RWristYaw_link" />
+        <limit effort="0.862" velocity="2.26" lower="-0.37" upper="0.37" />
+    </joint>
+    <joint name="RWristPitch_joint" type="revolute">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 1 0" />
+        <parent link="RWristYaw_link" />
+        <child link="r_wrist" />
+        <limit effort="0.6" velocity="3.75" lower="-0.9868" upper="0.8981" />
+    </joint>
+    <joint name="RAnkleRollCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.055 0 -0.035" rpy="1.5708 5.55112e-17 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RAnkleRollCollision_shape" />
+    </joint>
+    <joint name="RArm_effector_fixedjoint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_wrist" />
+        <child link="RArm_effector" />
+    </joint>
+    <joint name="RElbowYawCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.0825 0 0.005" rpy="1.5708 5.55112e-17 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="RElbowYaw_link" />
+        <child link="RElbowYawCollision_shape" />
+    </joint>
+    <joint name="RFoot/FSR/CenterFront_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.07498 -0.01275 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RFoot/FSR/CenterFront_sensor" />
+    </joint>
+    <joint name="RFoot/FSR/CenterRear_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.01448 -0.0145 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RFoot/FSR/CenterRear_sensor" />
+    </joint>
+    <joint name="RFoot/FSR/HeelLeft_sensor_fixedjoint" type="fixed">
+        <origin xyz="-0.04602 0.017 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RFoot/FSR/HeelLeft_sensor" />
+    </joint>
+    <joint name="RFoot/FSR/HeelRight_sensor_fixedjoint" type="fixed">
+        <origin xyz="-0.04602 -0.017 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RFoot/FSR/HeelRight_sensor" />
+    </joint>
+    <joint name="RFoot/FSR/ToeFrontLeft_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.17298 0.023 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RFoot/FSR/ToeFrontLeft_sensor" />
+    </joint>
+    <joint name="RFoot/FSR/ToeFrontRight_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.16098 -0.024 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RFoot/FSR/ToeFrontRight_sensor" />
+    </joint>
+    <joint name="RFoot/FSR/ToeRearLeft_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.12698 0.0315 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RFoot/FSR/ToeRearLeft_sensor" />
+    </joint>
+    <joint name="RFoot/FSR/ToeRearRight_sensor_fixedjoint" type="fixed">
+        <origin xyz="0.11898 -0.0335 -0.06226" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RFoot/FSR/ToeRearRight_sensor" />
+    </joint>
+    <joint name="r_gripper_joint" type="revolute">
+        <origin xyz="-0.0579412 -0.0159 -0.00260997" rpy="1.5708 0.0450146 -3.14159" />
+        <axis xyz="1 0 0" />
+        <parent link="r_wrist" />
+        <child link="r_gripper" />
+        <limit effort="0.649997" velocity="59.8925" lower="0" upper="1" />
+    </joint>
+    <joint name="RHipPitchCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="-0.005 0 -0.13" rpy="3.02672 -0 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="RHipPitch_link" />
+        <child link="RHipPitchCollision_shape" />
+    </joint>
+    <joint name="RKneePitchCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.01 0 -0.12" rpy="2.97644 -0 -1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="RKneePitch_link" />
+        <child link="RKneePitchCollision_shape" />
+    </joint>
+    <joint name="RLeg_effector_fixedjoint" type="fixed">
+        <origin xyz="0 0 -0.0651" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_ankle" />
+        <child link="RLeg_effector" />
+    </joint>
+    <joint name="RShoulderYawCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.0925 0 -0.005" rpy="1.5708 5.55112e-17 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="RShoulderYaw_link" />
+        <child link="RShoulderYawCollision_shape" />
+    </joint>
+    <joint name="RWristPitchPillCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.09 0 0" rpy="1.5708 5.55112e-17 1.5708" />
+        <axis xyz="0 0 0" />
+        <parent link="r_wrist" />
+        <child link="RWristPitchPillCollision_shape" />
+    </joint>
+    <joint name="RWristPitchSphereCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.095 0.01 -0.005" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="r_wrist" />
+        <child link="RWristPitchSphereCollision_shape" />
+    </joint>
+    <joint name="TorsoCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.02 0 0.0225" rpy="-3.14159 7.88861e-31 -3.14159" />
+        <axis xyz="0 0 0" />
+        <parent link="torso" />
+        <child link="TorsoCollision_shape" />
+    </joint>
+    <joint name="TrunkYawCollision_shape_fixedjoint" type="fixed">
+        <origin xyz="0.04 0 -0.1975" rpy="-3.14159 7.88861e-31 -3.14159" />
+        <axis xyz="0 0 0" />
+        <parent link="body" />
+        <child link="TrunkYawCollision_shape" />
+    </joint>
+    <joint name="Trunk_effector_fixedjoint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="body" />
+        <child link="Trunk_effector" />
+    </joint>
+    <joint name="waist" type="fixed">
+        <origin xyz="0 0 0" rpy="0 -0 0" />
+        <axis xyz="0 0 0" />
+        <parent link="base_link" />
+        <child link="body" />
+    </joint>
+    <joint name="l_sole_joint" type="fixed">
+     <parent link="l_ankle"/>
+     <child link="l_sole"/>
+     <origin rpy="0 0 0" xyz="0 0 -0.0684"/>
+    </joint>
+    <link name="l_sole"/>
+    <joint name="r_sole_joint" type="fixed">
+     <parent link="r_ankle"/>
+     <child link="r_sole"/>
+     <origin rpy="0 0 0" xyz="0 0 -0.0684"/>
+    </joint>
+    <link name="r_sole"/>
+    <joint name="gaze_joint" type="fixed">
+     <parent link="HeadRoll_link"/>
+     <child link="gaze"/>
+     <origin rpy="0 0 0" xyz="0.11017 0 0.05426"/>
+    </joint>
+    <link name="gaze"/>
+</robot>
