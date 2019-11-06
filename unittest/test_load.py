@@ -101,6 +101,18 @@ class UR5Test(RobotTestCase):
     RobotTestCase.NV = 6
 
 
+class UR5LimitedTest(RobotTestCase):
+    RobotTestCase.ROBOT = example_robot_data.loadUR(limited=True)
+    RobotTestCase.NQ = 6
+    RobotTestCase.NV = 6
+
+
+class UR5GripperTest(RobotTestCase):
+    RobotTestCase.ROBOT = example_robot_data.loadUR(gripper=True)
+    RobotTestCase.NQ = 6
+    RobotTestCase.NV = 6
+
+
 class KinovaTest(RobotTestCase):
     RobotTestCase.ROBOT = example_robot_data.loadKinova()
     RobotTestCase.NQ = 9
