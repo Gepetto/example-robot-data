@@ -128,7 +128,8 @@ class RomeoTest(RobotTestCase):
 if __name__ == '__main__':
     test_classes_to_run = [
         ANYmalTest, ANYmalKinovaTest, HyQTest, TalosTest, TalosArmTest, TalosArmFloatingTest, TalosLegsTest, ICubTest,
-        SoloTest, Solo12Test, TiagoTest, TiagoNoHandTest, KinovaTest, RomeoTest
+        SoloTest, Solo12Test, TiagoTest, TiagoNoHandTest, UR5Test, UR5LimitedTest, UR5GripperTest, KinovaTest,
+        RomeoTest
     ]
     loader = unittest.TestLoader()
     suites_list = []
