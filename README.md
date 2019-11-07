@@ -7,7 +7,7 @@ This repository includes a set of robot descriptions that are aimed to be used i
 
 
 **Authors:**  [Carlos Mastalli](https://cmastalli.github.io/), Guilhem Saurel <br />
-**With additional support from the Gepetto team at LAAS-CNRS.**
+**With additional support from the Gepetto team at LAAS-CNRS and The University of Edinburgh.**
 
 [![pipeline status](https://gepgitlab.laas.fr/gepetto/example-robot-data/badges/master/build.svg)](https://gepgitlab.laas.fr/Gepetto/example-robot-data/commits/master)
 

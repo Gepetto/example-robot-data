@@ -12,7 +12,7 @@ INCLUDE(cmake/python.cmake)
 
 # Print initial message
 MESSAGE("${PROJECT_DESCRIPTION}, version ${PROJECT_VERSION}")
-MESSAGE("Copyright (C) 2018-2019 CNRS-LAAS")
+MESSAGE("Copyright (C) 2018-2020 CNRS-LAAS / University of Edinburgh")
 MESSAGE("All rights reserved.")
 MESSAGE("Released under the BSD 3-Clause License.")
 

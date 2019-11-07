@@ -5,6 +5,8 @@
   <description>Set of robot URDFs for benchmarking and developed examples.</description>
   <!-- The maintainer listed here is for the ROS release to receive emails for the buildfarm.
   Please check the repository URL for project maintainer. -->
+  <developer email="carlos.mastalli@ed.ac.uk">Carlos Mastalli</developer>
+  <maintainer email="guilhem.saurel@laas.fr">Guilhem Saurel</maintainer>
   <maintainer email="wolfgang.merkt@ed.ac.uk">Wolfgang Merkt</maintainer>
   <license>BSD</license>
 
