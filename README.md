@@ -7,7 +7,7 @@ This repository includes a set of robot descriptions that are aimed to be used i
 
 
 **Authors:**  [Carlos Mastalli](https://cmastalli.github.io/), Guilhem Saurel <br />
-**With additional support from the Gepetto team at LAAS-CNRS.**
+**With additional support from the Gepetto team at LAAS-CNRS and The University of Edinburgh.**
 
 [![pipeline status](https://gepgitlab.laas.fr/gepetto/example-robot-data/badges/master/build.svg)](https://gepgitlab.laas.fr/Gepetto/example-robot-data/commits/master)
 
@@ -46,7 +46,7 @@ If you have never added robotpkg as a softwares repository, please follow first 
 
 (you will need pinocchio and its Python bindings)
 
-`python -m example_robot_data [anymal,hyq,solo,solo12,talos,talos_arm,talos_legs,tiago,tiago_no_hand,icub,ur5]`
+`python -m example_robot_data [anymal,anymal_kinova,hyq,solo,solo12,talos,talos_arm,talos_legs,tiago,tiago_no_hand,icub,ur5]`
 
 This will work from the `python` subdirectory inside this repository, or if this package has been installed on your
 system.

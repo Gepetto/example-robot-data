@@ -1,8 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-
-INCLUDE(cmake/base.cmake)
-INCLUDE(cmake/test.cmake)
-INCLUDE(cmake/python.cmake)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
 # Set up project properties
 SET(PROJECT_NAMESPACE gepetto)
@@ -10,9 +6,13 @@ SET(PROJECT_NAME example-robot-data)
 SET(PROJECT_DESCRIPTION "Set of robot URDFs for benchmarking and developed examples.")
 SET(PROJECT_URL https://gepgitlab.laas.fr/${PROJECT_NAMESPACE}/${PROJECT_NAME})
 
+INCLUDE(cmake/base.cmake)
+INCLUDE(cmake/test.cmake)
+INCLUDE(cmake/python.cmake)
+
 # Print initial message
 MESSAGE("${PROJECT_DESCRIPTION}, version ${PROJECT_VERSION}")
-MESSAGE("Copyright (C) 2018-2019 CNRS-LAAS")
+MESSAGE("Copyright (C) 2018-2020 CNRS-LAAS / University of Edinburgh")
 MESSAGE("All rights reserved.")
 MESSAGE("Released under the BSD 3-Clause License.")
 
@@ -24,7 +24,10 @@ IF(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
   SET_PROPERTY(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 ENDIF()
 
-SETUP_PROJECT()
+SET(CUSTOM_HEADER_DIR ${PROJECT_NAME})
+
+CMAKE_POLICY(SET CMP0048 NEW)
+PROJECT(${PROJECT_NAME} VERSION ${PROJECT_VERSION_FULL} LANGUAGES CXX)
 
 OPTION (BUILD_PYTHON_INTERFACE "Build the python unit tests and helpers" ON)
 OPTION (INSTALL_PYTHON_INTERFACE_ONLY "Install *ONLY* the python interface" OFF)
@@ -43,10 +46,9 @@ IF(NOT INSTALL_PYTHON_INTERFACE_ONLY)
   INSTALL(DIRECTORY solo_description DESTINATION share/${PROJECT_NAME})
   INSTALL(DIRECTORY icub_description DESTINATION share/${PROJECT_NAME})
   INSTALL(DIRECTORY talos_data DESTINATION share/${PROJECT_NAME})
+  INSTALL(DIRECTORY kinova_description DESTINATION share/${PROJECT_NAME})
   INSTALL(DIRECTORY tiago_description DESTINATION share/${PROJECT_NAME})
   INSTALL(DIRECTORY ur_description DESTINATION share/${PROJECT_NAME})
   INSTALL(DIRECTORY hector_description DESTINATION share/${PROJECT_NAME})
   INSTALL(DIRECTORY double_pendulum_description DESTINATION share/${PROJECT_NAME})
 ENDIF(NOT INSTALL_PYTHON_INTERFACE_ONLY)
-
-SETUP_PROJECT_FINALIZE()
