@@ -3,8 +3,9 @@ from argparse import ArgumentParser
 from . import robots_loader
 
 ROBOTS = [
-    'anymal', 'anymal_kinova', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'kinova', 'tiago',
-    'tiago_no_hand', 'icub', 'ur5', 'romeo'
+    'anymal', 'anymal_kinova', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm',
+    'talos_legs', 'kinova', 'tiago', 'tiago_no_hand', 'icub', 'ur5', 'romeo',
+    'hector', 'double_pendulum'
 ]
 
 parser = ArgumentParser()
@@ -81,3 +82,13 @@ elif args.robot == 'romeo':
     romeo = robots_loader.loadRomeo()
     romeo.initViewer(loadModel=True)
     romeo.display(romeo.q0)
+
+if args.robot == 'hector':
+    hector = robots_loader.loadHector()
+    hector.initViewer(loadModel=True)
+    hector.display(hector.q0)
+
+if args.robot == 'double_pendulum':
+    planar2dof = robots_loader.load2dof()
+    planar2dof.initViewer(loadModel=True)
+    planar2dof.display(planar2dof.q0)
