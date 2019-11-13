@@ -88,6 +88,6 @@ if args.robot == 'hector':
     hector.display(hector.q0)
 
 if args.robot == 'double_pendulum':
-    planar2dof = robots_loader.load2dof()
-    planar2dof.initViewer(loadModel=True)
-    planar2dof.display(planar2dof.q0)
+    pendulum = robots_loader.loadDoublePendulum()
+    pendulum.initViewer(loadModel=True)
+    pendulum.display(pendulum.q0)
