@@ -7,7 +7,7 @@ from pinocchio.robot_wrapper import RobotWrapper
 
 
 def getModelPath(subpath, printmsg=False):
-    base = '../../../share/example-robot-data'
+    base = '../../../share/example-robot-data/robots'
     main_dir = dirname(dirname(dirname(__file__)))
     for path in [join(dirname(main_dir), 'robots'), join(main_dir, 'robots')
                  ] + [join(p, base.strip('/')) for p in sys.path]:
