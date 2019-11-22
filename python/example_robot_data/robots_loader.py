@@ -7,9 +7,10 @@ from pinocchio.robot_wrapper import RobotWrapper
 
 
 def getModelPath(subpath, printmsg=False):
-    base = '../../../share/example-robot-data'
-    for path in [dirname(dirname(dirname(dirname(__file__)))),
-                 dirname(dirname(dirname(__file__)))] + [join(p, base.strip('/')) for p in sys.path]:
+    base = '../../../share/example-robot-data/robots'
+    main_dir = dirname(dirname(dirname(__file__)))
+    for path in [join(dirname(main_dir), 'robots'), join(main_dir, 'robots')
+                 ] + [join(p, base.strip('/')) for p in sys.path]:
         if exists(join(path, subpath.strip('/'))):
             if printmsg:
                 print("using %s as modelPath" % path)
