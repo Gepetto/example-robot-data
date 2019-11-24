@@ -92,12 +92,12 @@
         <joint name="RH_HAA" value="0.1" />
         <joint name="RH_HFE" value="-0.7" />
         <joint name="RH_KFE" value="1." />
-        <joint name="j2s6s200_joint_1" value="1.5707" />
-        <joint name="j2s6s200_joint_2" value="2.618" />
-        <joint name="j2s6s200_joint_3" value="-1.5707" />
-        <joint name="j2s6s200_joint_4" value="3.1415" />
-        <joint name="j2s6s200_joint_5" value="2.618" />
-        <joint name="j2s6s200_joint_6" value="0." />
+        <joint name="j2s6s200_joint_1" value="4.71238898038469" /><!-- 3π / 2 -->
+        <joint name="j2s6s200_joint_2" value="3.665191429188092" /><!-- 7π / 6 -->
+        <joint name="j2s6s200_joint_3" value="1.0471975511965976" /><!-- 1π / 3 -->
+        <joint name="j2s6s200_joint_4" value="0.0" />
+        <joint name="j2s6s200_joint_5" value="2.0943951023931953" /><!-- 2π / 3 -->
+        <joint name="j2s6s200_joint_6" value="0.0" />
     </group_state>
 
     <disable_collisions link1="LF_HIP" link2="LF_THIGH" reason="Adjacent" />
