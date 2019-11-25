@@ -53,3 +53,6 @@ IF(NOT INSTALL_PYTHON_INTERFACE_ONLY)
   INSTALL(DIRECTORY robots/hector_description DESTINATION share/${PROJECT_NAME}/robots)
   INSTALL(DIRECTORY robots/double_pendulum_description DESTINATION share/${PROJECT_NAME}/robots)
 ENDIF(NOT INSTALL_PYTHON_INTERFACE_ONLY)
+
+# Install catkin package.xml
+INSTALL(FILES package.xml DESTINATION share/${PROJECT_NAME})
