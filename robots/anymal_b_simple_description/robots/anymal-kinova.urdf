@@ -904,7 +904,7 @@
             <inertia ixx="0.00152031725204" ixy="0" ixz="0" iyy="0.00152031725204" iyz="0" izz="0.00059816"/>
         </inertial>
     </link>
-    <joint name="j2s6s200_joint_1" type="continuous">
+    <joint name="j2s6s200_joint_1" type="revolute">
         <parent link="j2s6s200_link_base"/>
         <child link="j2s6s200_link_1"/>
         <axis xyz="0 0 1"/>
@@ -1033,7 +1033,7 @@
             <inertia ixx="0.0004321316048" ixy="0" ixz="0" iyy="0.0004321316048" iyz="0" izz="9.26e-05"/>
         </inertial>
     </link>
-    <joint name="j2s6s200_joint_4" type="continuous">
+    <joint name="j2s6s200_joint_4" type="revolute">
         <parent link="j2s6s200_link_3"/>
         <child link="j2s6s200_link_4"/>
         <axis xyz="0 0 1"/>
@@ -1119,7 +1119,7 @@
             <inertia ixx="0.0003453236187" ixy="0" ixz="0" iyy="0.0003453236187" iyz="0" izz="0.0005816"/>
         </inertial>
     </link>
-    <joint name="j2s6s200_joint_6" type="continuous">
+    <joint name="j2s6s200_joint_6" type="revolute">
         <parent link="j2s6s200_link_5"/>
         <child link="j2s6s200_link_6"/>
         <axis xyz="0 0 1"/>
