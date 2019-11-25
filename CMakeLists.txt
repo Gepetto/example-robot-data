@@ -42,17 +42,7 @@ ENDIF(BUILD_PYTHON_INTERFACE)
 
 IF(NOT INSTALL_PYTHON_INTERFACE_ONLY)
   ADD_SUBDIRECTORY(include/${CUSTOM_HEADER_DIR})
-  INSTALL(DIRECTORY robots/anymal_b_simple_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/hyq_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/solo_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/icub_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/talos_data DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/kinova_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/tiago_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/ur_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/romeo_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/hector_description DESTINATION share/${PROJECT_NAME}/robots)
-  INSTALL(DIRECTORY robots/double_pendulum_description DESTINATION share/${PROJECT_NAME}/robots)
+  INSTALL(DIRECTORY robots DESTINATION share/${PROJECT_NAME})
 ENDIF(NOT INSTALL_PYTHON_INTERFACE_ONLY)
 
 # Install catkin package.xml
