@@ -73,6 +73,10 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
   <!-- Links -->
   <!-- Footprint link -->
   <link name="base_link">
+    <inertial>
+      <mass value="1e-6"/>
+      <inertia ixx="1e-6" ixy="1e-6" ixz="1e-6" iyy="1e-6" iyz="1e-6" izz="1e-6"/>
+    </inertial>
     <visual>
       <geometry>
         <cylinder length="0.01" radius="0.01"/>
@@ -203,6 +207,15 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
   </link>
   <!-- Foot link -->
   <link name="lf_foot">
+    <contact>
+      <lateral_friction value="1"/>
+      <stiffness value="30000"/>
+      <damping value="1000"/>
+    </contact>
+    <inertial>
+      <mass value="1e-6"/>
+      <inertia ixx="1e-6" ixy="1e-6" ixz="1e-6" iyy="1e-6" iyz="1e-6" izz="1e-6"/>
+    </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -409,6 +422,15 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
   </link>
   <!-- Foot link -->
   <link name="rf_foot">
+    <contact>
+      <lateral_friction value="1"/>
+      <stiffness value="30000"/>
+      <damping value="1000"/>
+    </contact>
+    <inertial>
+      <mass value="1e-6"/>
+      <inertia ixx="1e-6" ixy="1e-6" ixz="1e-6" iyy="1e-6" iyz="1e-6" izz="1e-6"/>
+    </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -615,6 +637,15 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
   </link>
   <!-- Foot link -->
   <link name="lh_foot">
+    <contact>
+      <lateral_friction value="1"/>
+      <stiffness value="30000"/>
+      <damping value="1000"/>
+    </contact>
+    <inertial>
+      <mass value="1e-6"/>
+      <inertia ixx="1e-6" ixy="1e-6" ixz="1e-6" iyy="1e-6" iyz="1e-6" izz="1e-6"/>
+    </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -821,6 +852,15 @@ is the world frame). For more, see http://ros.org/wiki/xacro -->
   </link>
   <!-- Foot link -->
   <link name="rh_foot">
+    <contact>
+      <lateral_friction value="1"/>
+      <stiffness value="30000"/>
+      <damping value="1000"/>
+    </contact>
+    <inertial>
+      <mass value="1e-6"/>
+      <inertia ixx="1e-6" ixy="1e-6" ixz="1e-6" iyy="1e-6" iyz="1e-6" izz="1e-6"/>
+    </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
