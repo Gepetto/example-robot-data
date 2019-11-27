@@ -2,20 +2,30 @@ import sys
 from os.path import dirname, exists, join
 
 import numpy as np
+
 import pinocchio
 from pinocchio.robot_wrapper import RobotWrapper
 
+pinocchio.switchToNumpyArray()
+
 
 def getModelPath(subpath, printmsg=False):
-    base = '../../../share/example-robot-data/robots'
-    main_dir = dirname(dirname(dirname(__file__)))
-    for path in [join(dirname(main_dir), 'robots'), join(main_dir, 'robots')
-                 ] + [join(p, base.strip('/')) for p in sys.path]:
+    paths = [
+        join(dirname(dirname(dirname(dirname(__file__)))), 'robots'),
+        join(dirname(dirname(dirname(__file__))), 'robots')
+    ]
+    try:
+        from .path import EXAMPLE_ROBOT_DATA_MODEL_DIR
+        paths.append(EXAMPLE_ROBOT_DATA_MODEL_DIR)
+    except ImportError:
+        pass
+    paths += [join(p, '../../../share/example-robot-data/robots') for p in sys.path]
+    for path in paths:
         if exists(join(path, subpath.strip('/'))):
             if printmsg:
                 print("using %s as modelPath" % path)
             return path
-    raise IOError('%s not found' % (subpath))
+    raise IOError('%s not found' % subpath)
 
 
 def readParamsFromSrdf(robot, SRDF_PATH, verbose, has_rotor_parameters=True, referencePose='half_sitting'):
@@ -138,7 +148,7 @@ def loadTalosLegs():
     robot.visual_data = pinocchio.GeometryData(g2)
 
     # Load SRDF file
-    robot.q0 = np.matrix(np.resize(robot.q0, robot.model.nq)).T
+    robot.q0 = np.array(np.resize(robot.q0, robot.model.nq)).T
     readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
 
     assert ((m2.armature[:6] == 0.).all())
