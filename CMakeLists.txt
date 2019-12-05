@@ -6,15 +6,15 @@ SET(PROJECT_NAME example-robot-data)
 SET(PROJECT_DESCRIPTION "Set of robot URDFs for benchmarking and developed examples.")
 SET(PROJECT_URL https://gepgitlab.laas.fr/${PROJECT_NAMESPACE}/${PROJECT_NAME})
 
-INCLUDE(cmake/base.cmake)
-INCLUDE(cmake/test.cmake)
-INCLUDE(cmake/python.cmake)
-
 # Print initial message
 MESSAGE("${PROJECT_DESCRIPTION}, version ${PROJECT_VERSION}")
 MESSAGE("Copyright (C) 2018-2020 CNRS-LAAS / University of Edinburgh")
 MESSAGE("All rights reserved.")
 MESSAGE("Released under the BSD 3-Clause License.")
+
+INCLUDE(cmake/base.cmake)
+INCLUDE(cmake/test.cmake)
+INCLUDE(cmake/python.cmake)
 
 # Set a default build type to 'Release' if none was specified
 IF(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
