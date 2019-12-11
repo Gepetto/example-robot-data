@@ -1,6 +1,10 @@
 from argparse import ArgumentParser
 
+import eigenpy
+
 from . import robots_loader
+
+eigenpy.switchToNumpyMatrix()
 
 ROBOTS = [
     'anymal', 'anymal_kinova', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'kinova', 'tiago',
