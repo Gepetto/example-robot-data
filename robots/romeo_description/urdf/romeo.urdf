@@ -35,12 +35,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/NeckPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/NeckPitch.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/NeckPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/NeckPitch.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -73,12 +73,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/HeadRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/HeadRoll.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/HeadRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/HeadRoll.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -131,12 +131,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LHipPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LHipPitch.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LHipPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LHipPitch.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -155,12 +155,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LKneePitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LKneePitch.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LKneePitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LKneePitch.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -193,12 +193,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LAnkleRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LAnkleRoll.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LAnkleRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LAnkleRoll.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -251,12 +251,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RHipPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RHipPitch.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RHipPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RHipPitch.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -275,12 +275,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RKneePitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RKneePitch.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RKneePitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RKneePitch.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -313,12 +313,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RAnkleRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RAnkleRoll.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RAnkleRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RAnkleRoll.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -342,12 +342,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Torso.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Torso.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Torso.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Torso.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -366,12 +366,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/TrunkYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/TrunkYaw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/TrunkYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/TrunkYaw.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -404,12 +404,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LShoulderYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LShoulderYaw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LShoulderYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LShoulderYaw.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -442,12 +442,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LElbowYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LElbowYaw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LElbowYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LElbowYaw.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -466,12 +466,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LWristRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LWristRoll.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LWristRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LWristRoll.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -490,12 +490,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LWristYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LWristYaw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LWristYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LWristYaw.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -514,12 +514,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LWristPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LWristPitch.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LWristPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LWristPitch.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -552,12 +552,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RShoulderYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RShoulderYaw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RShoulderYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RShoulderYaw.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -590,12 +590,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RElbowYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RElbowYaw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RElbowYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RElbowYaw.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -614,12 +614,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RWristRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RWristRoll.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RWristRoll.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RWristRoll.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -638,12 +638,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RWristYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RWristYaw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RWristYaw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RWristYaw.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -662,12 +662,12 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RWristPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RWristPitch.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RWristPitch.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RWristPitch.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -812,13 +812,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -831,13 +831,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -850,13 +850,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
       </geometry>
     </collision>
   </link>
@@ -869,13 +869,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -888,13 +888,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -907,13 +907,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
       </geometry>
     </collision>
   </link>
@@ -926,13 +926,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -945,13 +945,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -964,13 +964,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
       </geometry>
     </collision>
   </link>
@@ -983,13 +983,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/LThumb.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/LThumb.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/LThumb.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/LThumb.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1002,13 +1002,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1021,13 +1021,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1040,13 +1040,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1059,13 +1059,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1078,13 +1078,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1097,13 +1097,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1116,13 +1116,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1135,13 +1135,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1154,13 +1154,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1173,13 +1173,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1192,13 +1192,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1211,13 +1211,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/RThumb.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/RThumb.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/RThumb.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/RThumb.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1230,13 +1230,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/Phalax.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/Phalax.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/Phalax.dae"/>
       </geometry>
     </collision>
   </link>
@@ -1249,13 +1249,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/visual/PhalaxEnd.dae"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
+        <mesh filename="package://example-robot-data/robots/romeo_description/meshes/V1/collision/PhalaxEnd.dae"/>
       </geometry>
     </collision>
   </link>
