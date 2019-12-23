@@ -287,3 +287,10 @@ def loadRomeo():
     URDF_SUBPATH = "/romeo_description/urdf/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     return RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
+
+def loadIris():
+    URDF_FILENAME = "iris_simple.urdf"
+    URDF_SUBPATH = "/iris_description/robots/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath], pinocchio.JointModelFreeFlyer())
+    return robot
