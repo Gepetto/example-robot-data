@@ -154,7 +154,7 @@ def loadTalosLegs():
     robot.visual_data = pinocchio.GeometryData(g2)
 
     # Load SRDF file
-    robot.q0 = np.array(np.resize(robot.q0, robot.model.nq)).T
+    robot.q0 = robot.q0[:robot.model.nq]
     readParamsFromSrdf(robot, modelPath + SRDF_SUBPATH, False)
 
     assert ((m2.armature[:6] == 0.).all())
