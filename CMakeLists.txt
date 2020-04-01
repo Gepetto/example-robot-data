@@ -21,10 +21,10 @@ INCLUDE(cmake/base.cmake)
 INCLUDE(cmake/python.cmake)
 
 # Print initial message
-MESSAGE("${PROJECT_DESCRIPTION}, version ${PROJECT_VERSION}")
-MESSAGE("Copyright (C) 2018-2020 LAAS-CNRS / University of Edinburgh")
-MESSAGE("All rights reserved.")
-MESSAGE("Released under the BSD 3-Clause License.")
+MESSAGE(STATUS "${PROJECT_DESCRIPTION}, version ${PROJECT_VERSION}")
+MESSAGE(STATUS "Copyright (C) 2018-2020 LAAS-CNRS / University of Edinburgh")
+MESSAGE(STATUS "All rights reserved.")
+MESSAGE(STATUS "Released under the BSD 3-Clause License.")
 
 # Project definition
 COMPUTE_PROJECT_ARGS(PROJECT_ARGS LANGUAGES CXX)
