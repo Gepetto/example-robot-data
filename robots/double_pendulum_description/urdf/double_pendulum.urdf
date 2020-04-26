@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://double_pendulum_description/meshes/base_link.stl" />
+          filename="package://example-robot-data/robots/double_pendulum_description/meshes/base_link.stl" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://double_pendulum_description/meshes/base_link.stl" />
+          filename="package://example-robot-data/robots/double_pendulum_description/meshes/base_link.stl" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://double_pendulum_description/meshes/link1.stl" />
+          filename="package://example-robot-data/robots/double_pendulum_description/meshes/link1.stl" />
       </geometry>
       <material
         name="">
@@ -80,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://double_pendulum_description/meshes/link1.stl" />
+          filename="package://example-robot-data/robots/double_pendulum_description/meshes/link1.stl" />
       </geometry>
     </collision>
   </link>
@@ -126,7 +126,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://double_pendulum_description/meshes/link2.stl" />
+          filename="package://example-robot-data/robots/double_pendulum_description/meshes/link2.stl" />
       </geometry>
       <material
         name="">
@@ -140,7 +140,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://double_pendulum_description/meshes/link2.stl" />
+          filename="package://example-robot-data/robots/double_pendulum_description/meshes/link2.stl" />
       </geometry>
     </collision>
   </link>
