@@ -50,7 +50,7 @@
     <visual name="iris__base_link_inertia_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://iris_description/meshes/iris.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/iris_description/meshes/iris.stl" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -76,7 +76,7 @@
     <visual name="iris__rotor_0_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://iris_description/meshes/iris_prop_ccw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/iris_description/meshes/iris_prop_ccw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -95,7 +95,7 @@
     <visual name="iris__rotor_1_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://iris_description/meshes/iris_prop_ccw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/iris_description/meshes/iris_prop_ccw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -114,7 +114,7 @@
     <visual name="iris__rotor_2_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://iris_description/meshes/iris_prop_cw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/iris_description/meshes/iris_prop_cw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -133,7 +133,7 @@
     <visual name="iris__rotor_3_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://iris_description/meshes/iris_prop_cw.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/iris_description/meshes/iris_prop_cw.dae" scale="1 1 1"/>
       </geometry>
     </visual>
   </link>
