@@ -42,24 +42,7 @@ Unless you got this package from catkin, you will need to set `ROS_PACKAGE_PATH`
 
 ## :robot: Show a robot with [gepetto-gui](https://github.com/gepetto/gepetto-viewer-corba)
 
-`python -m example_robot_data <robot>`
-
-Where `<robot>` can be:
-
-- `anymal`
-- `anymal_kinova`
-- `hector`
-- `hyq`
-- `iris`
-- `solo`
-- `solo12`
-- `talos`
-- `talos_arm`
-- `talos_legs`
-- `tiago`
-- `tiago_no_hand`
-- `icub`
-- `ur5`
+`python -m example_robot_data -h` to list available robots.
 
 ## :copyright: Credits
 
