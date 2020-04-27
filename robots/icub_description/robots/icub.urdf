@@ -9,7 +9,7 @@
         <visual>
             <origin xyz="-0.0055 -6.93889e-18 -1.72085e-18" rpy="0 -1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_chest.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_chest.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -19,7 +19,7 @@
         <collision>
             <origin xyz="-0.0055 -6.93889e-18 -1.72085e-18" rpy="0 -1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_chest.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_chest.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -46,7 +46,7 @@
         <visual>
             <origin xyz="0.0045 -0.0235 9.42554e-13" rpy="0 1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_head.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_head.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -56,7 +56,7 @@
         <collision>
             <origin xyz="0.0045 -0.0235 9.42554e-13" rpy="0 1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_head.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_head.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -76,7 +76,7 @@
         <visual>
             <origin xyz="1.11022e-16 -5.54343e-12 4.45647e-12" rpy="1.5708 1.53106e-11 1.53105e-11" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_ankle_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_ankle_1.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -86,7 +86,7 @@
         <collision>
             <origin xyz="1.11022e-16 -5.54343e-12 4.45647e-12" rpy="1.5708 1.53106e-11 1.53105e-11" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_ankle_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_ankle_1.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -113,7 +113,7 @@
         <visual>
             <origin xyz="-0.008 -5.54343e-12 -0.0553" rpy="0 1.5708 1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_foot.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_foot.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -123,7 +123,7 @@
         <collision>
             <origin xyz="-0.008 -5.54343e-12 -0.0553" rpy="0 1.5708 1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_foot.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_foot.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -143,7 +143,7 @@
         <visual>
             <origin xyz="-0.000143922 -1.25977e-12 0.0204334" rpy="0 1.5708 3.1416" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_forearm.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_forearm.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -153,7 +153,7 @@
         <collision>
             <origin xyz="-0.000143922 -1.25977e-12 0.0204334" rpy="0 1.5708 3.1416" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_forearm.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_forearm.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -180,7 +180,7 @@
         <visual>
             <origin xyz="-1.25981e-12 0.0204334 -0.000143922" rpy="5.10195e-12 -2.64173e-12 1.49623e-11" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_hand.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_hand.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -190,7 +190,7 @@
         <collision>
             <origin xyz="-1.25981e-12 0.0204334 -0.000143922" rpy="5.10195e-12 -2.64173e-12 1.49623e-11" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_hand.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_hand.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -210,7 +210,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_hip_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_hip_1.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -220,7 +220,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_hip_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_hip_1.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -233,7 +233,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 -1.5708 3.14159" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_hip_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_hip_2.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -243,7 +243,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 -1.5708 3.14159" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_hip_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_hip_2.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -263,7 +263,7 @@
         <visual>
             <origin xyz="5.55112e-17 2.28232e-12 2.2823e-12" rpy="-1.5708 3.1416 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_shank.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_shank.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -273,7 +273,7 @@
         <collision>
             <origin xyz="5.55112e-17 2.28232e-12 2.2823e-12" rpy="-1.5708 3.1416 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_shank.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_shank.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -286,7 +286,7 @@
         <visual>
             <origin xyz="3.08087e-14 0.109285 -0.00521101" rpy="0 1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_shoulder_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_shoulder_1.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -296,7 +296,7 @@
         <collision>
             <origin xyz="3.08087e-14 0.109285 -0.00521101" rpy="0 1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_shoulder_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_shoulder_1.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -309,7 +309,7 @@
         <visual>
             <origin xyz="-0.00154529 -0.00521101 -1.11181e-12" rpy="0 1.5708 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_shoulder_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_shoulder_2.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -319,7 +319,7 @@
         <collision>
             <origin xyz="-0.00154529 -0.00521101 -1.11181e-12" rpy="0 1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_shoulder_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_shoulder_2.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -346,7 +346,7 @@
         <visual>
             <origin xyz="-0.0204334 0.000143922 -0.068" rpy="-1.5708 0 -1.309" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_arm.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_arm.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -356,7 +356,7 @@
         <collision>
             <origin xyz="-0.0204334 0.000143922 -0.068" rpy="-1.5708 0 -1.309" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_arm.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_arm.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -376,7 +376,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 1.5708 -3.1416" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_l_thigh.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_l_thigh.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -386,7 +386,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 1.5708 3.1416" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_l_thigh.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_l_thigh.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -406,7 +406,7 @@
         <visual>
             <origin xyz="-1.11022e-16 9.62964e-13 -0.0055" rpy="0 -1.5708 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_neck_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_neck_1.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -416,7 +416,7 @@
         <collision>
             <origin xyz="-1.11022e-16 9.62964e-13 -0.0055" rpy="0 -1.5708 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_neck_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_neck_1.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -429,7 +429,7 @@
         <visual>
             <origin xyz="-9.62967e-13 0.0055 0.0235" rpy="0 -1.5708 1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_neck_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_neck_2.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -439,7 +439,7 @@
         <collision>
             <origin xyz="-9.62967e-13 0.0055 0.0235" rpy="0 -1.5708 1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_neck_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_neck_2.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -452,7 +452,7 @@
         <visual>
             <origin xyz="1.11022e-16 -1.08717e-12 -4.45647e-12" rpy="-1.5708 -1.53106e-11 5.10376e-12" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_ankle_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_ankle_1.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -462,7 +462,7 @@
         <collision>
             <origin xyz="1.11022e-16 -1.08717e-12 -4.45647e-12" rpy="-1.5708 -1.53106e-11 5.10376e-12" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_ankle_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_ankle_1.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -489,7 +489,7 @@
         <visual>
             <origin xyz="-0.008 1.08717e-12 -0.0553" rpy="0 1.5708 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_foot.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_foot.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -499,7 +499,7 @@
         <collision>
             <origin xyz="-0.008 1.08717e-12 -0.0553" rpy="0 1.5708 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_foot.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_foot.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -519,7 +519,7 @@
         <visual>
             <origin xyz="0.000143922 -1.07216e-12 -0.0204334" rpy="0 1.5708 3.1416" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_forearm.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_forearm.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -529,7 +529,7 @@
         <collision>
             <origin xyz="0.000143922 -1.07216e-12 -0.0204334" rpy="0 1.5708 3.1416" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_forearm.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_forearm.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -556,7 +556,7 @@
         <visual>
             <origin xyz="1.07207e-12 0.0204334 0.000143922" rpy="1.53098e-11 2.00665e-11 -3.14159" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_hand.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_hand.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -566,7 +566,7 @@
         <collision>
             <origin xyz="1.07207e-12 0.0204334 0.000143922" rpy="1.53098e-11 2.00665e-11 -3.14159" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_hand.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_hand.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -586,7 +586,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="-1.5708 -1.5708 4.71239" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_hip_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_hip_1.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -596,7 +596,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="-1.5708 -1.5708 4.71239" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_hip_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_hip_1.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -609,7 +609,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 -1.5708 1.02066e-11" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_hip_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_hip_2.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -619,7 +619,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 -1.5708 1.02066e-11" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_hip_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_hip_2.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -639,7 +639,7 @@
         <visual>
             <origin xyz="5.55112e-17 2.28232e-12 -8.32667e-17" rpy="-1.5708 3.1416 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_shank.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_shank.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -649,7 +649,7 @@
         <collision>
             <origin xyz="5.55112e-17 2.28232e-12 -8.32667e-17" rpy="-1.5708 3.1416 -1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_shank.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_shank.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -662,7 +662,7 @@
         <visual>
             <origin xyz="-3.08642e-14 0.109285 0.00521101" rpy="0 1.5708 1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_shoulder_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_shoulder_1.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -672,7 +672,7 @@
         <collision>
             <origin xyz="-3.08642e-14 0.109285 0.00521101" rpy="0 1.5708 1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_shoulder_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_shoulder_1.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -685,7 +685,7 @@
         <visual>
             <origin xyz="-0.00154529 -0.00521101 -1.11186e-12" rpy="0 -1.5708 1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_shoulder_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_shoulder_2.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -695,7 +695,7 @@
         <collision>
             <origin xyz="-0.00154529 -0.00521101 -1.11186e-12" rpy="0 -1.5708 1.5708" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_shoulder_2.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_shoulder_2.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -722,7 +722,7 @@
         <visual>
             <origin xyz="-0.0204334 -0.000143922 -0.068" rpy="1.5708 0 1.309" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_arm.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_arm.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -732,7 +732,7 @@
         <collision>
             <origin xyz="-0.0204334 -0.000143922 -0.068" rpy="1.5708 0 1.309" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_arm.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_arm.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -752,7 +752,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 -1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_r_thigh.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_r_thigh.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -762,7 +762,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 -1.5708 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_r_thigh.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_r_thigh.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -782,7 +782,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_root_link.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_root_link.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -792,7 +792,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="-1.5708 -0 0" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_root_link.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_root_link.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>
@@ -812,7 +812,7 @@
         <visual>
             <origin xyz="0 0 0" rpy="3.1416 5.10314e-12 1.11022e-16" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/visual/icub_lap_belt_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/visual/icub_lap_belt_1.dae" scale="1 1 1" />
             </geometry>
             <material name="material.metal">
                 <texture />
@@ -822,7 +822,7 @@
         <collision>
             <origin xyz="0 0 0" rpy="3.1416 5.10314e-12 1.11022e-16" />
             <geometry>
-                <mesh filename="package://icub_description/meshes/upmc/collision/icub_simple_collision_lap_belt_1.dae" scale="1 1 1" />
+                <mesh filename="package://example-robot-data/robots/icub_description/meshes/upmc/collision/icub_simple_collision_lap_belt_1.dae" scale="1 1 1" />
             </geometry>
         </collision>
     </link>

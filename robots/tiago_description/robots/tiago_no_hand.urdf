@@ -113,14 +113,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/base/base.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/base/base.stl"/>
       </geometry>
       <material name="White"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/base/base_collision.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/base/base_collision.stl"/>
       </geometry>
       <material name="White"/>
     </collision>
@@ -144,7 +144,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/base/base_ring.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/base/base_ring.stl"/>
       </geometry>
       <material name="Orange"/>
     </visual>
@@ -166,7 +166,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/objects/antenna.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/objects/antenna.stl"/>
       </geometry>
       <material name="Black"/>
     </visual>
@@ -195,7 +195,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/objects/antenna.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/objects/antenna.stl"/>
       </geometry>
       <material name="Black"/>
     </visual>
@@ -265,7 +265,7 @@
     <visual>
       <origin rpy="-0.0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/wheel.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/wheel.stl"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -315,7 +315,7 @@
     <visual>
       <origin rpy="-3.14159265359 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/wheel.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/wheel.stl"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -365,7 +365,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/caster_1.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/caster_1.stl"/>
       </geometry>
       <material name="Grey"/>
     </visual>
@@ -379,7 +379,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/caster_2.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/caster_2.stl"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -435,7 +435,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/caster_1.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/caster_1.stl"/>
       </geometry>
       <material name="Grey"/>
     </visual>
@@ -449,7 +449,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/caster_2.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/caster_2.stl"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -505,7 +505,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/caster_1.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/caster_1.stl"/>
       </geometry>
       <material name="Grey"/>
     </visual>
@@ -519,7 +519,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/caster_2.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/caster_2.stl"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -575,7 +575,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/caster_1.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/caster_1.stl"/>
       </geometry>
       <material name="Grey"/>
     </visual>
@@ -589,7 +589,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/pmb2/wheels/caster_2.stl"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/pmb2/wheels/caster_2.stl"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -646,7 +646,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/torso/torso_fix.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/torso/torso_fix.stl" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
@@ -710,28 +710,28 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/torso/torso_lift_with_arm.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/torso/torso_lift_with_arm.stl" scale="1 1 1"/>
       </geometry>
       <material name="White"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_core.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/torso/torso_lift_collision_core.dae" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </collision>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_shoulder.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/torso/torso_lift_collision_shoulder.dae" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </collision>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/torso/torso_lift_collision_neck.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/torso/torso_lift_collision_neck.dae" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </collision>
@@ -765,14 +765,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/head/head_1.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/head/head_1.stl" scale="1 1 1"/>
       </geometry>
       <material name="White"/>
     </visual>
     <collision>
       <origin rpy="0 0 0.0" xyz="0.0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/head/head_1_collision.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/head/head_1_collision.dae" scale="1 1 1"/>
       </geometry>
       <material name="White"/>
     </collision>
@@ -813,14 +813,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/head/head_2.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/head/head_2.stl" scale="1 1 1"/>
       </geometry>
       <material name="White"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/head/head_2_collision.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/head/head_2_collision.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -860,7 +860,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://tiago_description/meshes/sensors/xtion_pro_live/xtion_pro_live.dae" />
+          <mesh filename="package://example-robot-data/robots/tiago_description/meshes/sensors/xtion_pro_live/xtion_pro_live.dae" />
         </geometry>
         <material name="Grey">
           <color rgba="0.5 0.5 0.5 1"/>
@@ -985,14 +985,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_1.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_1.stl" scale="1 1 1"/>
       </geometry>
       <material name="White"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_1_collision.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_1_collision.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -1015,7 +1015,7 @@
       <!-- <origin xyz="0 0 0" rpy="${180 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" /> -->
       <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_2.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_2.stl" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
@@ -1023,7 +1023,7 @@
       <!-- <origin xyz="0 0 0" rpy="${180 * deg_to_rad} ${0 * deg_to_rad} ${-90 * deg_to_rad}" /> -->
       <origin rpy="0.0 0.0 0.0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_2_collision.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_2_collision.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -1045,14 +1045,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_3.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_3.stl" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_3_collision.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_3_collision.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -1077,14 +1077,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_4.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_4.stl" scale="1 1 1"/>
       </geometry>
       <material name="DarkGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_4_collision.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_4_collision.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -1141,14 +1141,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_5.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_5.stl" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_5_collision.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_5_collision.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -1170,14 +1170,14 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_6.stl" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_6.stl" scale="1 1 1"/>
       </geometry>
       <material name="LightGrey"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://tiago_description/meshes/arm/arm_6_collision.dae" scale="1 1 1"/>
+        <mesh filename="package://example-robot-data/robots/tiago_description/meshes/arm/arm_6_collision.dae" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
