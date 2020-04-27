@@ -5,13 +5,6 @@
 This repository includes a set of robot descriptions that are aimed to be used in benchmarking, unit-tests, teachings,
 tutorials or show-cases. These source files do not intend to substitute their original repositories.
 
-### :construction_worker: Authors
-
-- [Carlos Mastalli](https://cmastalli.github.io/)
-- Guilhem Saurel
-
-With additional support from the Gepetto team at LAAS-CNRS :fr: and The University of Edinburgh :uk:
-
 ## :penguin: Installation
 
 ### :package: From Debian / Ubuntu packages, with [robotpkg](http://robotpkg.openrobots.org)
@@ -56,3 +49,18 @@ Where `<robot>` can be:
 - `tiago_no_hand`
 - `icub`
 - `ur5`
+
+## :copyright: Credits
+
+### :writing_hand: Written by
+
+- [Carlos Mastalli](https://cmastalli.github.io/), The University of Edinburgh :uk:
+- [Guilhem Saurel](https://github.com/nim65s), LAAS-CNRS :fr:
+
+### :construction_worker: With contributions from
+
+- [Justin Carpentier](https://jcarpent.github.io/), INRIA :fr:
+- [Pierre Fernbach](https://pfernbach.github.io/), LAAS-CNRS :fr:
+- [Florent Lamiraux](https://gepettoweb.laas.fr/index.php/Members/FlorentLamiraux), LAAS-CNRS :fr:
+- [Wolfgang Merkt](http://www.wolfgangmerkt.com/research/), University of Oxford :uk:
+- [Josep Martí Saumell](https://www.iri.upc.edu/staff/jmarti), IRI: CSIC-UPC :es:
