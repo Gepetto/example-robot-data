@@ -17,7 +17,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_body.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_body.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -27,7 +27,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_body.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_body.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -62,7 +62,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_upper_leg_left_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_upper_leg_left_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -72,7 +72,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_upper_leg_left_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_upper_leg_left_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -107,7 +107,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_lower_leg_left_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_lower_leg_left_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -117,7 +117,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_lower_leg_left_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_lower_leg_left_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -152,7 +152,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_foot.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_foot.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -162,7 +162,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_foot.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_foot.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -197,7 +197,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_upper_leg_right_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_upper_leg_right_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -207,7 +207,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_upper_leg_right_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_upper_leg_right_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -242,7 +242,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_lower_leg_right_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_lower_leg_right_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -252,7 +252,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_lower_leg_right_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_lower_leg_right_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -287,7 +287,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_foot.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_foot.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -297,7 +297,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_foot.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_foot.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -332,7 +332,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_upper_leg_left_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_upper_leg_left_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -342,7 +342,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_upper_leg_left_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_upper_leg_left_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -377,7 +377,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_lower_leg_left_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_lower_leg_left_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -387,7 +387,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_lower_leg_left_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_lower_leg_left_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -422,7 +422,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_foot.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_foot.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -432,7 +432,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_foot.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_foot.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -467,7 +467,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_upper_leg_right_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_upper_leg_right_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -477,7 +477,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_upper_leg_right_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_upper_leg_right_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -512,7 +512,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_lower_leg_right_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_lower_leg_right_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -522,7 +522,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_lower_leg_right_side.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_lower_leg_right_side.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -557,7 +557,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_foot.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_foot.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -567,7 +567,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://solo_description/meshes/obj/with_foot/solo_foot.obj"/>
+        <mesh filename="package://example-robot-data/robots/solo_description/meshes/obj/with_foot/solo_foot.obj"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -581,4 +581,3 @@
   </link>
   <!-- END LOWER LEG LINK -->
 </robot>
-
