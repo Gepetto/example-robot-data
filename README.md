@@ -24,6 +24,17 @@ tutorials or show-cases. These source files do not intend to substitute their or
    sudo apt install robotpkg-py3\*-example-robot-data
    ```
 
+### :turtle: With ROS
+
+Just clone it (with `--recursive`) into a catkin workspace.
+
+### :file_folder: From source
+
+Clone it (with `--recursive`), create a `build` directory inside, and:
+```bash
+cmake .. && make && make install
+```
+
 ## :gear: Configuration
 
 Unless you got this package from catkin, you will need to set `ROS_PACKAGE_PATH` to your `$CMAKE_INSTALL_PREFIX/share`
