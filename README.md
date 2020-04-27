@@ -29,7 +29,7 @@ tutorials or show-cases. These source files do not intend to substitute their or
 Unless you got this package from catkin, you will need to set `ROS_PACKAGE_PATH` to your `$CMAKE_INSTALL_PREFIX/share`
 (eg. `/usr/local/share` by default, or `/opt/openrobots/share` with robotpkg).
 
-## :robot: Show a robot
+## :robot: Show a robot with [gepetto-gui](https://github.com/gepetto/gepetto-viewer-corba)
 
 `python -m example_robot_data <robot>`
 
