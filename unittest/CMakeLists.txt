@@ -1,3 +1,8 @@
+IF(NOT pinocchio_FOUND)
+  MESSAGE(FATAL_ERROR "Pinocchio is required to build unit tests\n"
+  "please either install Pinocchio or reconfigure without unit tests (-DBUILD_TESTING=OFF)")
+ENDIF(NOT pinocchio_FOUND)
+
 SET(${PROJECT_NAME}_PYTHON_TESTS
   load
   )
