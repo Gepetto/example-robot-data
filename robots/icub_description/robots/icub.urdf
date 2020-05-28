@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <robot name="iCub">
     <link name="base_link" />
     <link name="chest">
