@@ -1,6 +1,11 @@
 <?xml version="1.0" ?>
 <robot name="iCub">
-    <link name="base_link" />
+    <link name="base_link">
+        <inertial>
+            <mass value="1e-6"/>
+            <inertia ixx="1e-6" ixy="1e-6" ixz="1e-6" iyy="1e-6" iyz="1e-6" izz="1e-6"/>
+        </inertial>
+    </link>
     <link name="chest">
         <inertial>
             <mass value="4.81" />
