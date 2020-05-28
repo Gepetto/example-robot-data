@@ -101,25 +101,24 @@
       </geometry>
     </collision>
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.001960558279 -0.001413217745 0.050207125344"/>
-      <mass value="16.793507758"/>
-      <inertia ixx="0.217391101503" ixy="-0.00132873239126" ixz="-0.00228200226173" iyy="0.639432546734" iyz="-0.00138078263145" izz="0.62414077654"/>
+      <mass value="1e-6"/>
+      <inertia ixx="1e-6" ixy="1e-6" ixz="1e-6" iyy="1e-6" iyz="1e-6" izz="1e-6"/>
     </inertial>
   </link>
   <!-- Fixed joint to add dummy inertia link -->
-  <!-- <joint name="base_to_base_inertia" type="fixed">
+  <joint name="base_to_base_inertia" type="fixed">
     <parent link="base"/>
     <child link="base_inertia"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
-  </joint> -->
+  </joint>
   <!-- Dummy inertia link, because KDL cannot have inertia on the base link -->
-  <!-- <link name="base_inertia">
+  <link name="base_inertia">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.001960558279 -0.001413217745 0.050207125344"/>
       <mass value="16.793507758"/>
       <inertia ixx="0.217391101503" ixy="-0.00132873239126" ixz="-0.00228200226173" iyy="0.639432546734" iyz="-0.00138078263145" izz="0.62414077654"/>
     </inertial>
-  </link> -->
+  </link>
   <!-- Xacro:Properties -->
   <!-- [kg * m^2] -->
   <!-- [A] -->
