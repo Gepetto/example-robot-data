@@ -12,11 +12,16 @@
 
   <url type="repository">https://github.com/gepetto/example-robot-data</url>
 
+  <!-- The following tags are recommended by REP-136 -->
+  <exec_depend condition="$ROS_VERSION == 1">catkin</exec_depend>
+  <exec_depend condition="$ROS_VERSION == 2">ament_cmake</exec_depend>
   <build_depend>git</build_depend>
   <depend condition="$ROS_PYTHON_VERSION == 2">python</depend>
   <depend condition="$ROS_PYTHON_VERSION == 3">python3</depend>
   <depend condition="$ROS_PYTHON_VERSION == 2">python-numpy</depend>
   <depend condition="$ROS_PYTHON_VERSION == 3">python3-numpy</depend>
+  <!-- The default setting has BUILD_TESTING=ON, as thus we need to explicitly depend on Pinocchio -->
+  <build_depend>pinocchio</build_depend>
   <exec_depend>pinocchio</exec_depend>
 
   <buildtool_depend>cmake</buildtool_depend>
