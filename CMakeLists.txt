@@ -4,7 +4,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
 SET(PROJECT_ORG gepetto)
 SET(PROJECT_NAME example-robot-data)
 SET(PROJECT_DESCRIPTION "Set of robot URDFs for benchmarking and developed examples.")
-SET(PROJECT_URL https://gepgitlab.laas.fr/${PROJECT_ORG}/${PROJECT_NAME})
+SET(PROJECT_URL https://github.com/${PROJECT_ORG}/${PROJECT_NAME})
 
 # Project options
 OPTION(BUILD_PYTHON_INTERFACE "Build the python unit tests and helpers" ON)
