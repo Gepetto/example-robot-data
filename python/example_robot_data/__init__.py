@@ -1,4 +1,4 @@
 # flake8: noqa
-from .robots_loader import (getModelPath, loadANYmal, loadHyQ, loadICub, loadKinova, loadRomeo, loadSolo, loadTalos,
-                            loadTalosArm, loadTalosLegs, loadTiago, loadTiagoNoHand, loadUR, readParamsFromSrdf,
-                            loadHector, loadDoublePendulum, loadIris, loadPanda)
+from .robots_loader import (getModelPath, loadANYmal, loadDoublePendulum, loadHector, loadHyQ, loadICub, loadIris,
+                            loadKinova, loadPanda, loadRomeo, loadSolo, loadTalos, loadTalosArm, loadTalosLegs,
+                            loadTiago, loadTiagoNoHand, loadUR, readParamsFromSrdf)
