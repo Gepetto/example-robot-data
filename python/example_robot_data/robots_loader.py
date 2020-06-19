@@ -250,6 +250,14 @@ def loadICub(reduced=True):
     return robot
 
 
+def loadPanda():
+    URDF_FILENAME = "panda.urdf"
+    URDF_SUBPATH = "/panda_description/urdf/" + URDF_FILENAME
+    modelPath = getModelPath(URDF_SUBPATH)
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [modelPath])
+
+    return robot
+
 def loadUR(robot=5, limited=False, gripper=False):
     assert (not (gripper and (robot == 10 or limited)))
     URDF_FILENAME = "ur%i%s_%s.urdf" % (robot, "_joint_limited" if limited else '', 'gripper' if gripper else 'robot')
