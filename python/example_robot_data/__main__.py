@@ -8,7 +8,7 @@ eigenpy.switchToNumpyMatrix()
 
 ROBOTS = [
     'anymal', 'anymal_kinova', 'hyq', 'solo', 'solo12', 'talos', 'talos_arm', 'talos_legs', 'kinova', 'tiago',
-    'tiago_no_hand', 'icub', 'ur5', 'romeo', 'hector', 'double_pendulum', 'iris'
+    'tiago_no_hand', 'icub', 'ur5', 'romeo', 'hector', 'double_pendulum', 'iris', 'panda'
 ]
 
 parser = ArgumentParser()
@@ -100,3 +100,8 @@ if args.robot == 'iris':
     iris = robots_loader.loadIris()
     iris.initViewer(loadModel=True)
     iris.display(iris.q0)
+
+if args.robot == 'panda':
+    panda = robots_loader.loadPanda()
+    panda.initViewer(loadModel=True)
+    panda.display(panda.q0)

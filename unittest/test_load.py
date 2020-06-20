@@ -125,11 +125,17 @@ class RomeoTest(RobotTestCase):
     RobotTestCase.NV = 61
 
 
+class PandaTest(RobotTestCase):
+    RobotTestCase.ROBOT = example_robot_data.loadPanda()
+    RobotTestCase.NQ = 9
+    RobotTestCase.NV = 9
+
+
 if __name__ == '__main__':
     test_classes_to_run = [
         ANYmalTest, ANYmalKinovaTest, HyQTest, TalosTest, TalosArmTest, TalosArmFloatingTest, TalosLegsTest, ICubTest,
         SoloTest, Solo12Test, TiagoTest, TiagoNoHandTest, UR5Test, UR5LimitedTest, UR5GripperTest, KinovaTest,
-        RomeoTest
+        RomeoTest, PandaTest
     ]
     loader = unittest.TestLoader()
     suites_list = []
