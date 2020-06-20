@@ -35,11 +35,6 @@ Clone it (with `--recursive`), create a `build` directory inside, and:
 cmake .. && make && make install
 ```
 
-## :gear: Configuration
-
-Unless you got this package from catkin, you will need to set `ROS_PACKAGE_PATH` to your `$CMAKE_INSTALL_PREFIX/share`
-(eg. `/usr/local/share` by default, or `/opt/openrobots/share` with robotpkg).
-
 ## :robot: Show a robot with [gepetto-gui](https://github.com/gepetto/gepetto-viewer-corba)
 
 `python -m example_robot_data -h` to list available robots.
