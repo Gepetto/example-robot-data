@@ -89,10 +89,7 @@ def loadANYmal(withArm=None):
 
 
 def loadTalosArm():
-    URDF_FILENAME = "talos_left_arm.urdf"
-    SRDF_FILENAME = "talos.srdf"
-
-    return robot_loader('talos_data', URDF_FILENAME, SRDF_FILENAME)
+    return robot_loader('talos_data', "talos_left_arm.urdf", "talos.srdf")
 
 
 def loadTalos(legs=False):
@@ -168,55 +165,39 @@ def loadTalosLegs():
 
 
 def loadHyQ():
-    URDF_FILENAME = "hyq_no_sensors.urdf"
-    SRDF_FILENAME = "hyq.srdf"
-
-    return robot_loader('hyq_description', URDF_FILENAME, SRDF_FILENAME, ref_posture="standing", free_flyer=True)
+    return robot_loader('hyq_description', "hyq_no_sensors.urdf", "hyq.srdf", ref_posture="standing", free_flyer=True)
 
 
 def loadSolo(solo=True):
-    if solo:
-        URDF_FILENAME = "solo.urdf"
-    else:
-        URDF_FILENAME = "solo12.urdf"
-    SRDF_FILENAME = "solo.srdf"
-
-    return robot_loader('solo_description', URDF_FILENAME, SRDF_FILENAME, ref_posture="standing", free_flyer=True)
+    return robot_loader('solo_description',
+                        "solo.urdf" if solo else "solo12.urdf",
+                        "solo.srdf",
+                        ref_posture="standing",
+                        free_flyer=True)
 
 
 def loadKinova():
-    URDF_FILENAME = "kinova.urdf"
-    SRDF_FILENAME = "kinova.srdf"
-
-    return robot_loader('kinova_description', URDF_FILENAME, SRDF_FILENAME, ref_posture="arm_up")
+    return robot_loader('kinova_description', "kinova.urdf", "kinova.srdf", ref_posture="arm_up")
 
 
-def loadTiago():
-    URDF_FILENAME = "tiago.urdf"
-    # SRDF_FILENAME = "tiago.srdf"
-    return robot_loader('tiago_description', URDF_FILENAME)
+def loadTiago(hand=True):
+    return robot_loader('tiago_description', "tiago.urdf" if hand else "tiago_no_hand.urdf")
 
 
 def loadTiagoNoHand():
-    URDF_FILENAME = "tiago_no_hand.urdf"
-    # SRDF_FILENAME = "tiago.srdf"
-    return robot_loader('tiago_description', URDF_FILENAME)
+    warnings.warn("`loadTiagoNoHand()` is deprecated. Please use `loadTiago(hand=False)`", DeprecationWarning, 2)
+    return loadTiago(hand=False)
 
 
 def loadICub(reduced=True):
-    if reduced:
-        URDF_FILENAME = "icub_reduced.urdf"
-    else:
-        URDF_FILENAME = "icub.urdf"
-    SRDF_FILENAME = "icub.srdf"
-
-    return robot_loader('icub_description', URDF_FILENAME, SRDF_FILENAME, free_flyer=True)
+    return robot_loader('icub_description',
+                        "icub_reduced.urdf" if reduced else "icub.urdf",
+                        "icub.srdf",
+                        free_flyer=True)
 
 
 def loadPanda():
-    URDF_FILENAME = "panda.urdf"
-
-    return robot_loader('panda_description', URDF_FILENAME, urdf_subpath='urdf')
+    return robot_loader('panda_description', "panda.urdf", urdf_subpath='urdf')
 
 
 def loadUR(robot=5, limited=False, gripper=False):
@@ -231,24 +212,16 @@ def loadUR(robot=5, limited=False, gripper=False):
 
 
 def loadHector():
-    URDF_FILENAME = "quadrotor_base.urdf"
-
-    return robot_loader('hector_description', URDF_FILENAME, free_flyer=True)
+    return robot_loader('hector_description', "quadroto_base.urdf", free_flyer=True)
 
 
 def loadDoublePendulum():
-    URDF_FILENAME = "double_pendulum.urdf"
-
-    return robot_loader('double_pendulum_description', URDF_FILENAME, urdf_subpath='urdf')
+    return robot_loader('double_pendulum_description', "double_pendulum.urdf", urdf_subpath='urdf')
 
 
 def loadRomeo():
-    URDF_FILENAME = "romeo.urdf"
-
-    return robot_loader('romeo_description', URDF_FILENAME, urdf_subpath='urdf', free_flyer=True)
+    return robot_loader('romeo_description', "romeo.urdf", urdf_subpath='urdf', free_flyer=True)
 
 
 def loadIris():
-    URDF_FILENAME = "iris_simple.urdf"
-
-    return robot_loader('iris_description', URDF_FILENAME, free_flyer=True)
+    return robot_loader('iris_description', "iris_simple.urdf", free_flyer=True)

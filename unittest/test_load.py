@@ -90,7 +90,7 @@ class TiagoTest(RobotTestCase):
 
 
 class TiagoNoHandTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTiagoNoHand()
+    RobotTestCase.ROBOT = example_robot_data.loadTiago(hand=False)
     RobotTestCase.NQ = 14
     RobotTestCase.NV = 12
 
