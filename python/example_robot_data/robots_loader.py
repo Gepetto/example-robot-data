@@ -121,7 +121,7 @@ def loadTalos(legs=False):
                 m2.upperPositionLimit = upperPos
                 m2.lowerPositionLimit = lowerPos
                 m2.effortLimit = effort
-                assert (jid == j.id)
+                assert jid == j.id
                 m2.appendBodyToJoint(jid, Y, pin.SE3.Identity())
 
         upperPos = m2.upperPositionLimit
@@ -155,7 +155,7 @@ def loadTalos(legs=False):
         model_path = getModelPath(join('talos_data/robots', URDF_FILENAME))
         robot.q0 = readParamsFromSrdf(robot.model, join(model_path, 'talos_data/srdf', SRDF_FILENAME), False)
 
-        assert ((m2.armature[:6] == 0.).all())
+        assert (m2.armature[:6] == 0.).all()
         # Add the free-flyer joint limits to the new model
         addFreeFlyerJointLimits(robot.model)
 
@@ -220,7 +220,7 @@ def loadPanda():
 
 
 def loadUR(robot=5, limited=False, gripper=False):
-    assert (not (gripper and (robot == 10 or limited)))
+    assert not (gripper and (robot == 10 or limited))
     URDF_FILENAME = "ur%i%s_%s.urdf" % (robot, "_joint_limited" if limited else '', 'gripper' if gripper else 'robot')
     if robot == 5 or robot == 3 and gripper:
         SRDF_FILENAME = "ur%i%s.srdf" % (robot, '_gripper' if gripper else '')
