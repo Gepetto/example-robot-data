@@ -88,12 +88,8 @@ def loadANYmal(withArm=None):
                         free_flyer=True)
 
 
-def loadTalosArm():
-    return robot_loader('talos_data', "talos_left_arm.urdf", "talos.srdf")
-
-
-def loadTalos(legs=False):
-    URDF_FILENAME = "talos_reduced.urdf"
+def loadTalos(legs=False, arm=False):
+    URDF_FILENAME = "talos_left_arm.urdf" if arm else "talos_reduced.urdf"
     SRDF_FILENAME = "talos.srdf"
 
     robot = robot_loader('talos_data', URDF_FILENAME, SRDF_FILENAME, free_flyer=True)
@@ -162,6 +158,11 @@ def loadTalos(legs=False):
 def loadTalosLegs():
     warnings.warn("`loadTalosLegs()` is deprecated. Please use `loadTalos(legs=True)`", DeprecationWarning, 2)
     return loadTalos(legs=True)
+
+
+def loadTalosArm():
+    warnings.warn("`loadTalosArm()` is deprecated. Please use `loadTalos(arm=True)`", DeprecationWarning, 2)
+    return loadTalos(arm=True)
 
 
 def loadHyQ():

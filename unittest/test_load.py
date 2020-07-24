@@ -48,13 +48,13 @@ class TalosTest(RobotTestCase):
 
 
 class TalosArmTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalosArm()
+    RobotTestCase.ROBOT = example_robot_data.loadTalos(arm=True)
     RobotTestCase.NQ = 7
     RobotTestCase.NV = 7
 
 
 class TalosArmFloatingTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalosArm()
+    RobotTestCase.ROBOT = example_robot_data.loadTalos(arm=True)
     RobotTestCase.NQ = 14
     RobotTestCase.NV = 13
 
