@@ -60,7 +60,7 @@ class TalosArmFloatingTest(RobotTestCase):
 
 
 class TalosLegsTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalosLegs()
+    RobotTestCase.ROBOT = example_robot_data.loadTalos(legs=True)
     RobotTestCase.NQ = 19
     RobotTestCase.NV = 18
 
