@@ -2,10 +2,10 @@ import sys
 from os.path import dirname, exists, join
 
 import numpy as np
-import pinocchio
+import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
-pinocchio.switchToNumpyArray()
+pin.switchToNumpyArray()
 
 
 def getModelPath(subpath, printmsg=False):
@@ -33,10 +33,10 @@ def getVisualPath(modelPath):
 
 def readParamsFromSrdf(model, SRDF_PATH, verbose=False, has_rotor_parameters=True, referencePose='half_sitting'):
     if has_rotor_parameters:
-        pinocchio.loadRotorParameters(model, SRDF_PATH, verbose)
+        pin.loadRotorParameters(model, SRDF_PATH, verbose)
     model.armature = np.multiply(model.rotorInertia.flat, np.square(model.rotorGearRatio.flat))
-    pinocchio.loadReferenceConfigurations(model, SRDF_PATH, verbose)
-    q0 = pinocchio.neutral(model)
+    pin.loadReferenceConfigurations(model, SRDF_PATH, verbose)
+    q0 = pin.neutral(model)
     if referencePose is not None:
         q0 = model.referenceConfigurations[referencePose].copy()
     return q0
@@ -64,8 +64,7 @@ def loadANYmal(withArm=None):
     SRDF_SUBPATH = "/anymal_b_simple_description/srdf/" + SRDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)], pin.JointModelFreeFlyer())
     # Load SRDF file
     robot.q0 = readParamsFromSrdf(robot.model, modelPath + SRDF_SUBPATH, False, False, referencePose=REF_POSTURE)
     # Add the free-flyer joint limits
@@ -94,8 +93,7 @@ def loadTalos():
     URDF_SUBPATH = "/talos_data/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)], pin.JointModelFreeFlyer())
     # Load SRDF file
     robot.q0 = readParamsFromSrdf(robot.model, modelPath + SRDF_SUBPATH, False)
     assert ((robot.model.armature[:6] == 0.).all())
@@ -114,10 +112,10 @@ def loadTalosLegs():
 
     legMaxId = 14
     m1 = robot.model
-    m2 = pinocchio.Model()
+    m2 = pin.Model()
     for j, M, name, parent, Y in zip(m1.joints, m1.jointPlacements, m1.names, m1.parents, m1.inertias):
         if j.id < legMaxId:
-            jid = m2.addJoint(parent, getattr(pinocchio, j.shortname())(), M, name)
+            jid = m2.addJoint(parent, getattr(pin, j.shortname())(), M, name)
             upperPos = m2.upperPositionLimit
             lowerPos = m2.lowerPositionLimit
             effort = m2.effortLimit
@@ -128,7 +126,7 @@ def loadTalosLegs():
             m2.lowerPositionLimit = lowerPos
             m2.effortLimit = effort
             assert (jid == j.id)
-            m2.appendBodyToJoint(jid, Y, pinocchio.SE3.Identity())
+            m2.appendBodyToJoint(jid, Y, pin.SE3.Identity())
 
     upperPos = m2.upperPositionLimit
     upperPos[:7] = 1
@@ -145,7 +143,7 @@ def loadTalosLegs():
         if f.parent < legMaxId:
             m2.addFrame(f)
 
-    g2 = pinocchio.GeometryModel()
+    g2 = pin.GeometryModel()
     for g in robot.visual_model.geometryObjects:
         if g.parentJoint < 14:
             g2.addGeometryObject(g)
@@ -154,7 +152,7 @@ def loadTalosLegs():
     robot.data = m2.createData()
     robot.visual_model = g2
     # robot.q0=q2
-    robot.visual_data = pinocchio.GeometryData(g2)
+    robot.visual_data = pin.GeometryData(g2)
 
     # Load SRDF file
     robot.q0 = robot.q0[:robot.model.nq]
@@ -173,8 +171,7 @@ def loadHyQ():
     URDF_SUBPATH = "/hyq_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)], pin.JointModelFreeFlyer())
     # Load SRDF file
     robot.q0 = readParamsFromSrdf(robot.model, modelPath + SRDF_SUBPATH, False, False, "standing")
     # Add the free-flyer joint limits
@@ -192,8 +189,7 @@ def loadSolo(solo=True):
     URDF_SUBPATH = "/solo_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)], pin.JointModelFreeFlyer())
     # Load SRDF file
     robot.q0 = readParamsFromSrdf(robot.model, modelPath + SRDF_SUBPATH, False, False, "standing")
     # Add the free-flyer joint limits
@@ -250,8 +246,7 @@ def loadICub(reduced=True):
     URDF_SUBPATH = "/icub_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
     # Load URDF file
-    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)], pin.JointModelFreeFlyer())
     # Load SRDF file
     robot.q0 = readParamsFromSrdf(robot.model, modelPath + SRDF_SUBPATH, False, False)
     # Add the free-flyer joint limits
@@ -285,8 +280,7 @@ def loadHector():
     URDF_FILENAME = "quadrotor_base.urdf"
     URDF_SUBPATH = "/hector_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
-    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)], pin.JointModelFreeFlyer())
     return robot
 
 
@@ -302,14 +296,12 @@ def loadRomeo():
     URDF_FILENAME = "romeo.urdf"
     URDF_SUBPATH = "/romeo_description/urdf/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
-    return RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)],
-                                      pinocchio.JointModelFreeFlyer())
+    return RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)], pin.JointModelFreeFlyer())
 
 
 def loadIris():
     URDF_FILENAME = "iris_simple.urdf"
     URDF_SUBPATH = "/iris_description/robots/" + URDF_FILENAME
     modelPath = getModelPath(URDF_SUBPATH)
-    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)],
-                                       pinocchio.JointModelFreeFlyer())
+    robot = RobotWrapper.BuildFromURDF(modelPath + URDF_SUBPATH, [getVisualPath(modelPath)], pin.JointModelFreeFlyer())
     return robot
