@@ -97,4 +97,18 @@
         <joint name="HR_KFE" value="1.6" />
     </group_state>
 
+    <disable_collisions link1="FL_SHOULDER" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="FR_SHOULDER" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="HL_SHOULDER" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="HR_SHOULDER" link2="base_link" reason="Adjacent" />
+
+    <disable_collisions link1="FL_UPPER_LEG" link2="FL_SHOULDER" reason="Adjacent" />
+    <disable_collisions link1="FR_UPPER_LEG" link2="FR_SHOULDER" reason="Adjacent" />
+    <disable_collisions link1="HL_UPPER_LEG" link2="HL_SHOULDER" reason="Adjacent" />
+    <disable_collisions link1="HR_UPPER_LEG" link2="HR_SHOULDER" reason="Adjacent" />
+
+    <disable_collisions link1="FL_LOWER_LEG" link2="FL_UPPER_LEG" reason="Adjacent" />
+    <disable_collisions link1="FR_LOWER_LEG" link2="FR_UPPER_LEG" reason="Adjacent" />
+    <disable_collisions link1="HL_LOWER_LEG" link2="HL_UPPER_LEG" reason="Adjacent" />
+    <disable_collisions link1="HR_LOWER_LEG" link2="HR_UPPER_LEG" reason="Adjacent" />
 </robot>
