@@ -48,19 +48,19 @@ class TalosTest(RobotTestCase):
 
 
 class TalosArmTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalosArm()
+    RobotTestCase.ROBOT = example_robot_data.loadTalos(arm=True)
     RobotTestCase.NQ = 7
     RobotTestCase.NV = 7
 
 
 class TalosArmFloatingTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalosArm()
+    RobotTestCase.ROBOT = example_robot_data.loadTalos(arm=True)
     RobotTestCase.NQ = 14
     RobotTestCase.NV = 13
 
 
 class TalosLegsTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalosLegs()
+    RobotTestCase.ROBOT = example_robot_data.loadTalos(legs=True)
     RobotTestCase.NQ = 19
     RobotTestCase.NV = 18
 
@@ -90,7 +90,7 @@ class TiagoTest(RobotTestCase):
 
 
 class TiagoNoHandTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTiagoNoHand()
+    RobotTestCase.ROBOT = example_robot_data.loadTiago(hand=False)
     RobotTestCase.NQ = 14
     RobotTestCase.NV = 12
 
