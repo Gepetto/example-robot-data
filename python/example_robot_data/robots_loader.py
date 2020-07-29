@@ -237,7 +237,12 @@ ROBOTS = {
     'double_pendulum': (loadDoublePendulum, {}),
     'hector': (loadHector, {}),
     'hyq': (loadHyQ, {}),
-    'icub': (loadICub, {}),
+    'icub': (loadICub, {
+        'reduced': False
+    }),
+    'icub_reduced': (loadICub, {
+        'reduced': True
+    }),
     'iris': (loadIris, {}),
     'kinova': (loadKinova, {}),
     'panda': (loadPanda, {}),
@@ -258,6 +263,12 @@ ROBOTS = {
         'hand': False
     }),
     'ur5': (loadUR, {}),
+    'ur5_gripper': (loadUR, {
+        'gripper': True
+    }),
+    'ur5_limited': (loadUR, {
+        'limited': True
+    }),
 }
 
 
