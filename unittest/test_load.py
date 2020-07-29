@@ -19,8 +19,38 @@ class RobotTestCase(unittest.TestCase):
     def test_anymal_kinova(self):
         self.check('anymal_kinova', 25, 24)
 
+    def test_double_pendulum(self):
+        self.check('double_pendulum', 2, 2)
+
+    # def test_hector(self):
+    # self.check('hector', 0, 0)
+
     def test_hyq(self):
         self.check('hyq', 19, 18)
+
+    def test_icub(self):
+        self.check('icub', 39, 38)
+
+    def test_icub_reduced(self):
+        self.check('icub_reduced', 36, 35)
+
+    def test_iris(self):
+        self.check('iris', 7, 6)
+
+    def test_kinova(self):
+        self.check('kinova', 9, 6)
+
+    def test_panda(self):
+        self.check('panda', 9, 9)
+
+    def test_romeo(self):
+        self.check('romeo', 62, 61)
+
+    def test_solo(self):
+        self.check('solo', 15, 14)
+
+    def test_solo12(self):
+        self.check('solo12', 19, 18)
 
     def test_talos(self):
         self.check('talos', 39, 38)
@@ -31,18 +61,6 @@ class RobotTestCase(unittest.TestCase):
     def test_talos_legs(self):
         self.check('talos_legs', 19, 18)
 
-    def test_icub(self):
-        self.check('icub', 39, 38)
-
-    def test_icub_reduced(self):
-        self.check('icub_reduced', 36, 35)
-
-    def test_solo(self):
-        self.check('solo', 15, 14)
-
-    def test_solo12(self):
-        self.check('solo12', 19, 18)
-
     def test_tiago(self):
         self.check('tiago', 50, 48)
 
@@ -52,20 +70,11 @@ class RobotTestCase(unittest.TestCase):
     def test_ur5(self):
         self.check('ur5', 6, 6)
 
-    def test_ur5_limited(self):
-        self.check('ur5_limited', 6, 6)
-
     def test_ur5_gripper(self):
         self.check('ur5_gripper', 6, 6)
 
-    def test_kinova(self):
-        self.check('kinova', 9, 6)
-
-    def test_romeo(self):
-        self.check('romeo', 62, 61)
-
-    def test_panda(self):
-        self.check('panda', 9, 9)
+    def test_ur5_limited(self):
+        self.check('ur5_limited', 6, 6)
 
 
 if __name__ == '__main__':
