@@ -227,3 +227,45 @@ def loadRomeo():
 
 def loadIris():
     return robot_loader('iris_description', "iris_simple.urdf", free_flyer=True)
+
+
+ROBOTS = {
+    'anymal': (loadANYmal, {}),
+    'anymal_kinova': (loadANYmal, {
+        'withArm': 'kinova'
+    }),
+    'double_pendulum': (loadDoublePendulum, {}),
+    'hector': (loadHector, {}),
+    'hyq': (loadHyQ, {}),
+    'icub': (loadICub, {}),
+    'iris': (loadIris, {}),
+    'kinova': (loadKinova, {}),
+    'panda': (loadPanda, {}),
+    'romeo': (loadRomeo, {}),
+    'solo': (loadSolo, {}),
+    'solo12': (loadSolo, {
+        'solo': False
+    }),
+    'talos': (loadTalos, {}),
+    'talos_arm': (loadTalos, {
+        'arm': True
+    }),
+    'talos_legs': (loadTalos, {
+        'legs': True
+    }),
+    'tiago': (loadTiago, {}),
+    'tiago_no_hand': (loadTiago, {
+        'hand': False
+    }),
+    'ur5': (loadUR, {}),
+}
+
+
+def load(name, display=False):
+    """Load a robot by its name, and optionnaly display it in a viewer."""
+    loader, kwargs = ROBOTS[name]
+    robot = loader(**kwargs)
+    if display:
+        robot.initViewer(loadModel=True)
+        robot.display(robot.q0)
+    return robot
