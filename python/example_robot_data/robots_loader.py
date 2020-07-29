@@ -3,6 +3,7 @@ import warnings
 from os.path import dirname, exists, join
 
 import numpy as np
+
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -92,7 +93,7 @@ def loadTalos(legs=False, arm=False):
     URDF_FILENAME = "talos_left_arm.urdf" if arm else "talos_reduced.urdf"
     SRDF_FILENAME = "talos.srdf"
 
-    robot = robot_loader('talos_data', URDF_FILENAME, SRDF_FILENAME, free_flyer=True)
+    robot = robot_loader('talos_data', URDF_FILENAME, SRDF_FILENAME, free_flyer=not arm)
 
     assert (robot.model.armature[:6] == 0.).all()
 
