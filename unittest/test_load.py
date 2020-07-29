@@ -1,148 +1,68 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
-import sys
 import unittest
 
-import example_robot_data
+import example_robot_data as erd
 
 
 class RobotTestCase(unittest.TestCase):
-    ROBOT = None
-    NQ = None
-    NV = None
+    def check(self, robot, expected_nq, expected_nv):
+        """Helper function for the real tests"""
+        self.assertEqual(robot.model.nq, expected_nq)
+        self.assertEqual(robot.model.nv, expected_nv)
+        self.assertTrue(hasattr(robot, "q0"))
 
-    def test_nq(self):
-        model = self.ROBOT.model
-        self.assertEqual(model.nq, self.NQ, "Wrong nq value.")
+    def test_anymal(self):
+        self.check(erd.loadANYmal(), 19, 18)
 
-    def test_nv(self):
-        model = self.ROBOT.model
-        self.assertEqual(model.nv, self.NV, "Wrong nv value.")
+    def test_anymal_kinova(self):
+        self.check(erd.loadANYmal(withArm="kinova"), 25, 24)
 
-    def test_q0(self):
-        self.assertTrue(hasattr(self.ROBOT, "q0"), "It doesn't have q0")
+    def test_hyq(self):
+        self.check(erd.loadHyQ(), 19, 18)
 
+    def test_talos(self):
+        self.check(erd.loadTalos(), 39, 38)
 
-class ANYmalTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadANYmal()
-    RobotTestCase.NQ = 19
-    RobotTestCase.NV = 18
+    def test_talos_arm(self):
+        self.check(erd.loadTalos(arm=True), 7, 7)
 
+    def test_talos_legs(self):
+        self.check(erd.loadTalos(legs=True), 19, 18)
 
-class ANYmalKinovaTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadANYmal(withArm="kinova")
-    RobotTestCase.NQ = 27
-    RobotTestCase.NV = 24
+    def test_icub(self):
+        self.check(erd.loadICub(reduced=False), 39, 38)
 
+    def test_solo(self):
+        self.check(erd.loadSolo(), 15, 14)
 
-class HyQTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadHyQ()
-    RobotTestCase.NQ = 19
-    RobotTestCase.NV = 18
+    def test_solo12(self):
+        self.check(erd.loadSolo(False), 19, 18)
 
+    def test_tiago(self):
+        self.check(erd.loadTiago(), 50, 48)
 
-class TalosTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalos()
-    RobotTestCase.NQ = 39
-    RobotTestCase.NV = 38
+    def test_tiago_no_hand(self):
+        self.check(erd.loadTiago(hand=False), 14, 12)
 
+    def test_ur5(self):
+        self.check(erd.loadUR(), 6, 6)
 
-class TalosArmTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalos(arm=True)
-    RobotTestCase.NQ = 7
-    RobotTestCase.NV = 7
+    def test_ur5_limited(self):
+        self.check(erd.loadUR(limited=True), 6, 6)
 
+    def test_ur5_gripper(self):
+        self.check(erd.loadUR(gripper=True), 6, 6)
 
-class TalosArmFloatingTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalos(arm=True)
-    RobotTestCase.NQ = 14
-    RobotTestCase.NV = 13
+    def test_kinova(self):
+        self.check(erd.loadKinova(), 9, 6)
 
+    def test_romeo(self):
+        self.check(erd.loadRomeo(), 62, 61)
 
-class TalosLegsTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTalos(legs=True)
-    RobotTestCase.NQ = 19
-    RobotTestCase.NV = 18
-
-
-class ICubTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadICub(reduced=False)
-    RobotTestCase.NQ = 39
-    RobotTestCase.NV = 38
-
-
-class SoloTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadSolo()
-    RobotTestCase.NQ = 15
-    RobotTestCase.NV = 14
-
-
-class Solo12Test(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadSolo(False)
-    RobotTestCase.NQ = 19
-    RobotTestCase.NV = 18
-
-
-class TiagoTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTiago()
-    RobotTestCase.NQ = 50
-    RobotTestCase.NV = 48
-
-
-class TiagoNoHandTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadTiago(hand=False)
-    RobotTestCase.NQ = 14
-    RobotTestCase.NV = 12
-
-
-class UR5Test(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadUR()
-    RobotTestCase.NQ = 6
-    RobotTestCase.NV = 6
-
-
-class UR5LimitedTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadUR(limited=True)
-    RobotTestCase.NQ = 6
-    RobotTestCase.NV = 6
-
-
-class UR5GripperTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadUR(gripper=True)
-    RobotTestCase.NQ = 6
-    RobotTestCase.NV = 6
-
-
-class KinovaTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadKinova()
-    RobotTestCase.NQ = 9
-    RobotTestCase.NV = 6
-
-
-class RomeoTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadRomeo()
-    RobotTestCase.NQ = 62
-    RobotTestCase.NV = 61
-
-
-class PandaTest(RobotTestCase):
-    RobotTestCase.ROBOT = example_robot_data.loadPanda()
-    RobotTestCase.NQ = 9
-    RobotTestCase.NV = 9
+    def test_panda(self):
+        self.check(erd.loadPanda(), 9, 9)
 
 
 if __name__ == '__main__':
-    test_classes_to_run = [
-        ANYmalTest, ANYmalKinovaTest, HyQTest, TalosTest, TalosArmTest, TalosArmFloatingTest, TalosLegsTest, ICubTest,
-        SoloTest, Solo12Test, TiagoTest, TiagoNoHandTest, UR5Test, UR5LimitedTest, UR5GripperTest, KinovaTest,
-        RomeoTest, PandaTest
-    ]
-    loader = unittest.TestLoader()
-    suites_list = []
-    for test_class in test_classes_to_run:
-        suite = loader.loadTestsFromTestCase(test_class)
-        suites_list.append(suite)
-    big_suite = unittest.TestSuite(suites_list)
-    runner = unittest.TextTestRunner()
-    results = runner.run(big_suite)
-    sys.exit(not results.wasSuccessful())
+    unittest.main()
