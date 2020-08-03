@@ -3,7 +3,6 @@ import warnings
 from os.path import dirname, exists, join
 
 import numpy as np
-
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -11,13 +10,16 @@ pin.switchToNumpyArray()
 
 
 def getModelPath(subpath, printmsg=False):
+    source = dirname(dirname(dirname(__file__)))  # top level source directory
     paths = [
-        join(dirname(dirname(dirname(dirname(__file__)))), 'robots'),
-        join(dirname(dirname(dirname(__file__))), 'robots')
+        join(dirname(dirname(dirname(source))), 'robots'),  # function called from "make release" in build/ dir
+        join(dirname(source), 'robots'),  # function called from a build/ dir inside top level source
+        join(source, 'robots')  # function called from top level source dir
     ]
     try:
-        from .path import EXAMPLE_ROBOT_DATA_MODEL_DIR
-        paths.append(EXAMPLE_ROBOT_DATA_MODEL_DIR)
+        from .path import EXAMPLE_ROBOT_DATA_MODEL_DIR, EXAMPLE_ROBOT_DATA_SOURCE_DIR
+        paths.append(EXAMPLE_ROBOT_DATA_MODEL_DIR)  # function called from installed project
+        paths.append(EXAMPLE_ROBOT_DATA_SOURCE_DIR)  # function called from off-tree build dir
     except ImportError:
         pass
     paths += [join(p, '../../../share/example-robot-data/robots') for p in sys.path]
