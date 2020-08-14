@@ -23,6 +23,13 @@ tutorials or show-cases. These source files do not intend to substitute their or
    ```bash
    sudo apt install robotpkg-py3\*-example-robot-data
    ```
+   
+### :snake: From <img src="https://s3.amazonaws.com/conda-dev/conda_logo.svg" height="18">
+
+As simple as that:
+```bash
+   conda install example-robot-data -c conda-forge
+```
 
 ### :turtle: With ROS
 
