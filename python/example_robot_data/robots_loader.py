@@ -3,6 +3,7 @@ import warnings
 from os.path import dirname, exists, join
 
 import numpy as np
+
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -91,8 +92,13 @@ def loadANYmal(withArm=None):
                         free_flyer=True)
 
 
-def loadTalos(legs=False, arm=False):
-    URDF_FILENAME = "talos_left_arm.urdf" if arm else "talos_reduced.urdf"
+def loadTalos(legs=False, arm=False, full=False):
+    if arm:
+        URDF_FILENAME = "talos_left_arm.urdf"
+    elif full:
+        URDF_FILENAME = "talos_full_v2.urdf"
+    else:
+        URDF_FILENAME = "talos_reduced.urdf"
     SRDF_FILENAME = "talos.srdf"
 
     robot = robot_loader('talos_data', URDF_FILENAME, SRDF_FILENAME, free_flyer=not arm)
@@ -259,6 +265,9 @@ ROBOTS = {
     }),
     'talos_legs': (loadTalos, {
         'legs': True
+    }),
+    'talos_full': (loadTalos, {
+        'full': True
     }),
     'tiago': (loadTiago, {}),
     'tiago_no_hand': (loadTiago, {
