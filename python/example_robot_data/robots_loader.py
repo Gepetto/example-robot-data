@@ -3,7 +3,6 @@ import warnings
 from os.path import dirname, exists, join
 
 import numpy as np
-
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -222,7 +221,7 @@ def loadUR(robot=5, limited=False, gripper=False):
 
 
 def loadHector():
-    return robot_loader('hector_description', "quadroto_base.urdf", free_flyer=True)
+    return robot_loader('hector_description', "quadrotor_base.urdf", free_flyer=True)
 
 
 def loadDoublePendulum():
