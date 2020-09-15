@@ -96,8 +96,24 @@
         <joint name="rh_hfe_joint" value="-0.75" />
         <joint name="rh_kfe_joint" value="1.5" />
     </group_state>
-
-    <disable_collisions link1="lf_hipassembly" link2="lf_upperleg" reason="Adjacent" />
+    
+    <disable_collisions link1="lf_hipassembly" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="lh_hipassembly" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="rf_hipassembly" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="rh_hipassembly" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="lf_hipassembly" link2="lf_upperleg" reason="Adjacent"/>
+    <disable_collisions link1="lh_hipassembly" link2="lh_upperleg" reason="Adjacent"/>
+    <disable_collisions link1="rf_hipassembly" link2="rf_upperleg" reason="Adjacent"/>
+    <disable_collisions link1="rh_hipassembly" link2="rh_upperleg" reason="Adjacent"/>
+    <disable_collisions link1="lf_lowerleg" link2="lf_upperleg" reason="Adjacent"/>
+    <disable_collisions link1="lh_lowerleg" link2="lh_upperleg" reason="Adjacent"/>
+    <disable_collisions link1="rf_lowerleg" link2="rf_upperleg" reason="Adjacent"/>
+    <disable_collisions link1="rh_lowerleg" link2="rh_upperleg" reason="Adjacent"/>
+    <disable_collisions link1="lf_lowerleg" link2="lf_foot" reason="Adjacent"/>
+    <disable_collisions link1="lh_lowerleg" link2="lh_foot" reason="Adjacent"/>
+    <disable_collisions link1="rf_lowerleg" link2="rf_foot" reason="Adjacent"/>
+    <disable_collisions link1="rh_lowerleg" link2="rh_foot" reason="Adjacent"/>
+    
     <disable_collisions link1="lf_hipassembly" link2="lf_lowerleg" reason="Never" />
     <disable_collisions link1="lf_hipassembly" link2="rf_hipassembly" reason="Never" />
     <disable_collisions link1="lf_hipassembly" link2="rf_upperleg" reason="Never" />
@@ -108,5 +124,35 @@
     <disable_collisions link1="lf_hipassembly" link2="rh_hipassembly" reason="Never" />
     <disable_collisions link1="lf_hipassembly" link2="rh_upperleg" reason="Never" />
     <disable_collisions link1="lf_hipassembly" link2="rh_lowerleg" reason="Never" />
+    
+    <disable_collisions link1="rf_hipassembly" link2="rf_lowerleg" reason="Never" />
+    <disable_collisions link1="rf_hipassembly" link2="lf_upperleg" reason="Never" />
+    <disable_collisions link1="rf_hipassembly" link2="lf_lowerleg" reason="Never" />
+    <disable_collisions link1="rf_hipassembly" link2="lh_hipassembly" reason="Never" />
+    <disable_collisions link1="rf_hipassembly" link2="lh_upperleg" reason="Never" />
+    <disable_collisions link1="rf_hipassembly" link2="lh_lowerleg" reason="Never" />
+    <disable_collisions link1="rf_hipassembly" link2="rh_hipassembly" reason="Never" />
+    <disable_collisions link1="rf_hipassembly" link2="rh_upperleg" reason="Never" />
+    <disable_collisions link1="rf_hipassembly" link2="rh_lowerleg" reason="Never" />
+    
+    <disable_collisions link1="lh_hipassembly" link2="lh_lowerleg" reason="Never" />
+    <disable_collisions link1="lh_hipassembly" link2="rf_hipassembly" reason="Never" />
+    <disable_collisions link1="lh_hipassembly" link2="rf_upperleg" reason="Never" />
+    <disable_collisions link1="lh_hipassembly" link2="rf_lowerleg" reason="Never" />
+    <disable_collisions link1="lh_hipassembly" link2="lf_upperleg" reason="Never" />
+    <disable_collisions link1="lh_hipassembly" link2="lf_lowerleg" reason="Never" />
+    <disable_collisions link1="lh_hipassembly" link2="rh_hipassembly" reason="Never" />
+    <disable_collisions link1="lh_hipassembly" link2="rh_upperleg" reason="Never" />
+    <disable_collisions link1="lh_hipassembly" link2="rh_lowerleg" reason="Never" />
+    
+    <disable_collisions link1="rh_hipassembly" link2="rh_lowerleg" reason="Never" />
+    <disable_collisions link1="rh_hipassembly" link2="rf_hipassembly" reason="Never" />
+    <disable_collisions link1="rh_hipassembly" link2="rf_upperleg" reason="Never" />
+    <disable_collisions link1="rh_hipassembly" link2="rf_lowerleg" reason="Never" />
+    <disable_collisions link1="rh_hipassembly" link2="lh_hipassembly" reason="Never" />
+    <disable_collisions link1="rh_hipassembly" link2="lh_upperleg" reason="Never" />
+    <disable_collisions link1="rh_hipassembly" link2="lh_lowerleg" reason="Never" />
+    <disable_collisions link1="rh_hipassembly" link2="lf_upperleg" reason="Never" />
+    <disable_collisions link1="rh_hipassembly" link2="lf_lowerleg" reason="Never" />
 
 </robot>
