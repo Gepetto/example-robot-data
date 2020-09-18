@@ -2141,9 +2141,9 @@
       <material name="Grey"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.21 0.13 0.02"/>
+        <mesh filename="package://example-robot-data/robots/talos_data/meshes/v2/ankle_X_collision.stl" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>
@@ -2458,9 +2458,9 @@
       <material name="Grey"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.21 0.13 0.02"/>
+        <mesh filename="package://example-robot-data/robots/talos_data/meshes/v2/ankle_X_collision.stl" scale="1 -1 1"/>
       </geometry>
     </collision>
   </link>

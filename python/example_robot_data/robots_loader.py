@@ -91,13 +91,17 @@ def loadANYmal(withArm=None):
                         free_flyer=True)
 
 
-def loadTalos(legs=False, arm=False, full=False):
+def loadTalos(legs=False, arm=False, full=False, box=False):
     if arm:
         URDF_FILENAME = "talos_left_arm.urdf"
     elif full:
         URDF_FILENAME = "talos_full_v2.urdf"
+        if box:
+            URDF_FILENAME = "talos_full_v2_box.urdf"
     else:
         URDF_FILENAME = "talos_reduced.urdf"
+        if box:
+            URDF_FILENAME = "talos_reduced_box.urdf"
     SRDF_FILENAME = "talos.srdf"
 
     robot = robot_loader('talos_data', URDF_FILENAME, SRDF_FILENAME, free_flyer=not arm)
@@ -259,6 +263,9 @@ ROBOTS = {
         'solo': False
     }),
     'talos': (loadTalos, {}),
+    'talos_box': (loadTalos, {
+        'box' : True
+    }),
     'talos_arm': (loadTalos, {
         'arm': True
     }),
@@ -267,6 +274,10 @@ ROBOTS = {
     }),
     'talos_full': (loadTalos, {
         'full': True
+    }),
+    'talos_full_box': (loadTalos, {
+        'full': True,
+        'box' : True
     }),
     'tiago': (loadTiago, {}),
     'tiago_no_hand': (loadTiago, {
