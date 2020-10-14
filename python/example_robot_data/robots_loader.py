@@ -264,7 +264,7 @@ ROBOTS = {
     }),
     'talos': (loadTalos, {}),
     'talos_box': (loadTalos, {
-        'box' : True
+        'box': True
     }),
     'talos_arm': (loadTalos, {
         'arm': True
@@ -277,7 +277,7 @@ ROBOTS = {
     }),
     'talos_full_box': (loadTalos, {
         'full': True,
-        'box' : True
+        'box': True
     }),
     'tiago': (loadTiago, {}),
     'tiago_no_hand': (loadTiago, {
