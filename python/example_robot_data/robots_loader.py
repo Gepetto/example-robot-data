@@ -470,24 +470,28 @@ ROBOTS = {
 }
 
 
-def loader(name, display=False):
+def loader(name, display=False, rootNodeName=''):
     """Load a robot by its name, and optionnaly display it in a viewer."""
     if name not in ROBOTS:
         robots = ", ".join(sorted(ROBOTS.keys()))
         raise ValueError("Robot '%s' not found. Possible values are %s" % (name, robots))
     inst = ROBOTS[name]()
     if display:
-        inst.robot.initViewer(loadModel=True)
-        inst.robot.display(inst.q0)
+        if rootNodeName:
+            inst.robot.initViewer()
+            inst.robot.viz.loadViewerModel(rootNodeName=rootNodeName)
+        else:
+            inst.robot.initViewer(loadModel=True)
+        inst.robot.display(inst.robot.q0)
     return inst
 
 
-def load(name, display=False):
+def load(name, display=False, rootNodeName=''):
     """Load a robot by its name, and optionnaly display it in a viewer."""
-    return loader(name, display).robot
+    return loader(name, display, rootNodeName).robot
 
 
-def load_full(name, display=False):
+def load_full(name, display=False, rootNodeName=''):
     """Load a robot by its name, optionnaly display it in a viewer, and provide its q0 and paths."""
-    inst = loader(name, display)
+    inst = loader(name, display, rootNodeName)
     return inst.robot, inst.q0, inst.urdf_path, inst.srdf_path
