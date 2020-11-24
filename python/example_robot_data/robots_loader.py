@@ -9,6 +9,10 @@ from pinocchio.robot_wrapper import RobotWrapper
 pin.switchToNumpyArray()
 
 
+def _depr_msg(deprecated, key):
+    return "`%s` is deprecated. Please use `load('%s')`" % (deprecated, key)
+
+
 def getModelPath(subpath, printmsg=False):
     source = dirname(dirname(dirname(__file__)))  # top level source directory
     paths = [
@@ -42,75 +46,97 @@ def readParamsFromSrdf(model, SRDF_PATH, verbose=False, has_rotor_parameters=Tru
     return q0
 
 
-def addFreeFlyerJointLimits(model):
-    ub = model.upperPositionLimit
-    ub[:7] = 1
-    model.upperPositionLimit = ub
-    lb = model.lowerPositionLimit
-    lb[:7] = -1
-    model.lowerPositionLimit = lb
+class RobotLoader(object):
+    path = ''
+    urdf_filename = ''
+    srdf_filename = ''
+    urdf_subpath = 'robots'
+    srdf_subpath = 'srdf'
+    ref_posture = 'half_sitting'
+    has_rotor_parameters = False
+    free_flyer = False
+    verbose = False
+
+    def __init__(self):
+        urdf_path = join(self.path, self.urdf_subpath, self.urdf_filename)
+        self.model_path = getModelPath(urdf_path, self.verbose)
+        self.urdf_path = join(self.model_path, urdf_path)
+        self.robot = RobotWrapper.BuildFromURDF(self.urdf_path, [join(self.model_path, '../..')],
+                                                pin.JointModelFreeFlyer() if self.free_flyer else None)
+
+        if self.srdf_filename:
+            self.srdf_path = join(self.model_path, self.path, self.srdf_subpath, self.srdf_filename)
+            self.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose, self.has_rotor_parameters,
+                                         self.ref_posture)
+        else:
+            self.srdf_path = None
+            self.q0 = None
+
+        if self.free_flyer:
+            self.addFreeFlyerJointLimits()
+
+    def addFreeFlyerJointLimits(self):
+        ub = self.robot.model.upperPositionLimit
+        ub[:7] = 1
+        self.robot.model.upperPositionLimit = ub
+        lb = self.robot.model.lowerPositionLimit
+        lb[:7] = -1
+        self.robot.model.lowerPositionLimit = lb
 
 
-def robot_loader(path,
-                 urdf_filename,
-                 srdf_filename=None,
-                 urdf_subpath='robots',
-                 verbose=False,
-                 has_rotor_parameters=False,
-                 ref_posture='half_sitting',
-                 free_flyer=False):
-    """Helper function to load a robot."""
-    urdf_path = join(path, urdf_subpath, urdf_filename)
-    model_path = getModelPath(urdf_path)
-    robot = RobotWrapper.BuildFromURDF(join(model_path, urdf_path), [join(model_path, '../..')],
-                                       pin.JointModelFreeFlyer() if free_flyer else None)
+class ANYmalLoader(RobotLoader):
+    path = 'anymal_b_simple_description'
+    urdf_filename = "anymal.urdf"
+    srdf_filename = "anymal.srdf"
+    ref_posture = "standing"
+    free_flyer = True
 
-    if srdf_filename is not None:
-        robot.q0 = readParamsFromSrdf(robot.model, join(model_path, path, 'srdf', srdf_filename), verbose,
-                                      has_rotor_parameters, ref_posture)
-    if free_flyer:
-        addFreeFlyerJointLimits(robot.model)
 
-    return robot
+class ANYmalKinovaLoader(ANYmalLoader):
+    urdf_filename = "anymal-kinova.urdf"
+    srdf_filename = "anymal-kinova.srdf"
+    ref_posture = "standing_with_arm_up"
 
 
 def loadANYmal(withArm=None):
-    if withArm is None:
-        URDF_FILENAME = "anymal.urdf"
-        SRDF_FILENAME = "anymal.srdf"
-        REF_POSTURE = "standing"
-    elif withArm == "kinova":
-        URDF_FILENAME = "anymal-kinova.urdf"
-        SRDF_FILENAME = "anymal-kinova.srdf"
-        REF_POSTURE = "standing_with_arm_up"
-
-    return robot_loader('anymal_b_simple_description',
-                        URDF_FILENAME,
-                        SRDF_FILENAME,
-                        ref_posture=REF_POSTURE,
-                        free_flyer=True)
-
-
-def loadTalos(legs=False, arm=False, full=False, box=False):
-    if arm:
-        URDF_FILENAME = "talos_left_arm.urdf"
-    elif full:
-        URDF_FILENAME = "talos_full_v2.urdf"
-        if box:
-            URDF_FILENAME = "talos_full_v2_box.urdf"
+    if withArm:
+        warnings.warn(_depr_msg('loadANYmal()', 'anymal'), DeprecationWarning, 2)
+        loader = ANYmalKinovaLoader
     else:
-        URDF_FILENAME = "talos_reduced.urdf"
-        if box:
-            URDF_FILENAME = "talos_reduced_box.urdf"
-    SRDF_FILENAME = "talos.srdf"
+        warnings.warn(_depr_msg('loadANYmal(kinova)', 'anymal_kinova'), DeprecationWarning, 2)
+        loader = ANYmalLoader
+    return loader().robot
 
-    robot = robot_loader('talos_data', URDF_FILENAME, SRDF_FILENAME, free_flyer=not arm)
 
-    assert (robot.model.armature[:6] == 0.).all()
+class TalosLoader(RobotLoader):
+    path = 'talos_data'
+    urdf_filename = "talos_reduced.urdf"
+    srdf_filename = "talos.srdf"
+    free_flyer = True
 
-    if legs:
+
+class TalosBoxLoader(TalosLoader):
+    urdf_filename = "talos_reduced_box.urdf"
+
+
+class TalosFullLoader(TalosLoader):
+    urdf_filename = "talos_full_v2.urdf"
+
+
+class TalosFullBoxLoader(TalosLoader):
+    urdf_filename = "talos_full_v2_box.urdf"
+
+
+class TalosArmLoader(TalosLoader):
+    urdf_filename = "talos_left_arm.urdf"
+    free_flyer = False
+
+
+class TalosLegsLoader(TalosLoader):
+    def __init__(self):
+        super(TalosLegsLoader, self).__init__()
         legMaxId = 14
-        m1 = robot.model
+        m1 = self.robot.model
         m2 = pin.Model()
         for j, M, name, parent, Y in zip(m1.joints, m1.jointPlacements, m1.names, m1.parents, m1.inertias):
             if j.id < legMaxId:
@@ -139,165 +165,329 @@ def loadTalos(legs=False, arm=False, full=False, box=False):
         effort[:6] = np.inf
         m2.effortLimit = effort
 
-        # q2 = robot.q0[:19]
+        # q2 = self.robot.q0[:19]
         for f in m1.frames:
             if f.parent < legMaxId:
                 m2.addFrame(f)
 
         g2 = pin.GeometryModel()
-        for g in robot.visual_model.geometryObjects:
+        for g in self.robot.visual_model.geometryObjects:
             if g.parentJoint < 14:
                 g2.addGeometryObject(g)
 
-        robot.model = m2
-        robot.data = m2.createData()
-        robot.visual_model = g2
-        # robot.q0=q2
-        robot.visual_data = pin.GeometryData(g2)
+        self.robot.model = m2
+        self.robot.data = m2.createData()
+        self.robot.visual_model = g2
+        # self.robot.q0=q2
+        self.robot.visual_data = pin.GeometryData(g2)
 
         # Load SRDF file
-        robot.q0 = robot.q0[:robot.model.nq]
-        model_path = getModelPath(join('talos_data/robots', URDF_FILENAME))
-        robot.q0 = readParamsFromSrdf(robot.model, join(model_path, 'talos_data/srdf', SRDF_FILENAME), False)
+        self.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose, self.has_rotor_parameters,
+                                     self.ref_posture)
 
         assert (m2.armature[:6] == 0.).all()
         # Add the free-flyer joint limits to the new model
-        addFreeFlyerJointLimits(robot.model)
+        self.addFreeFlyerJointLimits()
 
-    return robot
+
+def loadTalos(legs=False, arm=False, full=False, box=False):
+    if legs:
+        warnings.warn(_depr_msg('loadTalos(legs)', 'talos_legs'), DeprecationWarning, 2)
+        loader = TalosLegsLoader
+    elif arm:
+        warnings.warn(_depr_msg('loadTalos(arm)', 'talos_arm'), DeprecationWarning, 2)
+        loader = TalosArmLoader
+    elif full:
+        if box:
+            warnings.warn(_depr_msg('loadTalos(full, box)', 'talos_full_box'), DeprecationWarning, 2)
+            loader = TalosFullBoxLoader
+        else:
+            warnings.warn(_depr_msg('loadTalos(full)', 'talos_full'), DeprecationWarning, 2)
+            loader = TalosFullLoader
+    else:
+        if box:
+            warnings.warn(_depr_msg('loadTalos(box)', 'talos_box'), DeprecationWarning, 2)
+            loader = TalosBoxLoader
+        else:
+            warnings.warn(_depr_msg('loadTalos()', 'talos'), DeprecationWarning, 2)
+            loader = TalosLoader
+    return loader().robot
 
 
 def loadTalosLegs():
-    warnings.warn("`loadTalosLegs()` is deprecated. Please use `loadTalos(legs=True)`", DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadTalosLegs()', 'talos_legs'), DeprecationWarning, 2)
     return loadTalos(legs=True)
 
 
 def loadTalosArm():
-    warnings.warn("`loadTalosArm()` is deprecated. Please use `loadTalos(arm=True)`", DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadTalosArm()', 'talos_arm'), DeprecationWarning, 2)
     return loadTalos(arm=True)
 
 
+class HyQLoader(RobotLoader):
+    path = "hyq_description"
+    urdf_filename = "hyq_no_sensors.urdf"
+    srdf_filename = "hyq.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
 def loadHyQ():
-    return robot_loader('hyq_description', "hyq_no_sensors.urdf", "hyq.srdf", ref_posture="standing", free_flyer=True)
+    warnings.warn(_depr_msg('loadHyQ()', 'hyq'), DeprecationWarning, 2)
+    return HyQLoader().robot
+
+
+class SoloLoader(RobotLoader):
+    path = 'solo_description'
+    urdf_filename = "solo.urdf"
+    srdf_filename = "solo.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
+class Solo12Loader(SoloLoader):
+    urdf_filename = "solo12.urdf"
 
 
 def loadSolo(solo=True):
-    return robot_loader('solo_description',
-                        "solo.urdf" if solo else "solo12.urdf",
-                        "solo.srdf",
-                        ref_posture="standing",
-                        free_flyer=True)
+    warnings.warn(_depr_msg('loadSolo()', 'solo'), DeprecationWarning, 2)
+    loader = SoloLoader if solo else Solo12Loader
+    return loader().robot
+
+
+class KinovaLoader(RobotLoader):
+    path = "kinova_description"
+    urdf_filename = "kinova.urdf"
+    srdf_filename = "kinova.srdf"
+    ref_posture = "arm_up"
 
 
 def loadKinova():
-    return robot_loader('kinova_description', "kinova.urdf", "kinova.srdf", ref_posture="arm_up")
+    warnings.warn(_depr_msg('loadKinova()', 'kinova'), DeprecationWarning, 2)
+    return KinovaLoader().robot
+
+
+class TiagoLoader(RobotLoader):
+    path = "tiago_description"
+    urdf_filename = "tiago.urdf"
+
+
+class TiagoNoHandLoader(TiagoLoader):
+    urdf_filename = "tiago_no_hand.urdf"
 
 
 def loadTiago(hand=True):
-    return robot_loader('tiago_description', "tiago.urdf" if hand else "tiago_no_hand.urdf")
+    if hand:
+        warnings.warn(_depr_msg('loadTiago()', 'tiago'), DeprecationWarning, 2)
+        loader = TiagoLoader
+    else:
+        warnings.warn(_depr_msg('loadTiago(hand=False)', 'tiago_no_hand'), DeprecationWarning, 2)
+        loader = TiagoNoHandLoader
+    return loader().robot
 
 
 def loadTiagoNoHand():
-    warnings.warn("`loadTiagoNoHand()` is deprecated. Please use `loadTiago(hand=False)`", DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadTiagoNoHand()', 'tiago_no_hand'), DeprecationWarning, 2)
     return loadTiago(hand=False)
 
 
+class ICubLoader(RobotLoader):
+    path = "icub_description"
+    urdf_filename = "icub.urdf"
+    srdf_filename = "icub.srdf"
+    free_flyer = True
+
+
+class ICubReducedLoader(ICubLoader):
+    urdf_filename = "icub_reduced.urdf"
+
+
 def loadICub(reduced=True):
-    return robot_loader('icub_description',
-                        "icub_reduced.urdf" if reduced else "icub.urdf",
-                        "icub.srdf",
-                        free_flyer=True)
+    if reduced:
+        warnings.warn(_depr_msg('loadICub()', 'icub_reduced'), DeprecationWarning, 2)
+        loader = ICubReducedLoader
+    else:
+        warnings.warn(_depr_msg('loadICub(reduced=False)', 'icub'), DeprecationWarning, 2)
+        loader = ICubLoader
+    return loader().robot
+
+
+class PandaLoader(RobotLoader):
+    path = "panda_description"
+    urdf_filename = "panda.urdf"
+    urdf_subpath = "urdf"
 
 
 def loadPanda():
-    return robot_loader('panda_description', "panda.urdf", urdf_subpath='urdf')
+    warnings.warn(_depr_msg('loadPanda()', 'panda'), DeprecationWarning, 2)
+    return PandaLoader().robot
+
+
+class UR3Loader(RobotLoader):
+    path = "ur_description"
+    urdf_filename = "ur3_robot.urdf"
+    urdf_subpath = "urdf"
+    ref_posture = None
+
+
+class UR3GripperLoader(UR3Loader):
+    urdf_filename = "ur3_gripper.urdf"
+    srdf_filename = "ur3_gripper.srdf"
+
+
+class UR3LimitedLoader(UR3Loader):
+    urdf_filename = "ur3_joint_limited_robot.urdf"
+
+
+class UR5Loader(UR3Loader):
+    urdf_filename = "ur5_robot.urdf"
+    srdf_filename = "ur5.srdf"
+
+
+class UR5GripperLoader(UR5Loader):
+    urdf_filename = "ur5_gripper.urdf"
+    srdf_filename = "ur5_gripper.srdf"
+
+
+class UR5LimitedLoader(UR5Loader):
+    urdf_filename = "ur5_joint_limited_robot.urdf"
+
+
+class UR10Loader(UR3Loader):
+    urdf_filename = "ur10_robot.urdf"
+
+
+class UR10LimitedLoader(UR10Loader):
+    urdf_filename = "ur10_joint_limited_robot.urdf"
 
 
 def loadUR(robot=5, limited=False, gripper=False):
-    assert not (gripper and (robot == 10 or limited))
-    URDF_FILENAME = "ur%i%s_%s.urdf" % (robot, "_joint_limited" if limited else '', 'gripper' if gripper else 'robot')
-    if robot == 5 or robot == 3 and gripper:
-        SRDF_FILENAME = "ur%i%s.srdf" % (robot, '_gripper' if gripper else '')
-    else:
-        SRDF_FILENAME = None
+    if robot == 3:
+        if limited:
+            warnings.warn(_depr_msg('loadUr(3, limited)', 'ur3_limited'), DeprecationWarning, 2)
+            loader = UR3LimitedLoader
+        elif gripper:
+            warnings.warn(_depr_msg('loadUr(3, gripper)', 'ur3_gripper'), DeprecationWarning, 2)
+            loader = UR3GripperLoader
+        else:
+            warnings.warn(_depr_msg('loadUr(3)', 'ur3'), DeprecationWarning, 2)
+            loader = UR3Loader
+    elif robot == 5:
+        if limited:
+            warnings.warn(_depr_msg('loadUr(limited)', 'ur5_limited'), DeprecationWarning, 2)
+            loader = UR5LimitedLoader
+        elif gripper:
+            warnings.warn(_depr_msg('loadUr(gripper)', 'ur5_gripper'), DeprecationWarning, 2)
+            loader = UR5GripperLoader
+        else:
+            warnings.warn(_depr_msg('loadUr()', 'ur5'), DeprecationWarning, 2)
+            loader = UR5Loader
+    elif robot == 10:
+        if limited:
+            warnings.warn(_depr_msg('loadUr(10, limited)', 'ur10_limited'), DeprecationWarning, 2)
+            loader = UR10LimitedLoader
+        else:
+            warnings.warn(_depr_msg('loadUr(10)', 'ur10'), DeprecationWarning, 2)
+            loader = UR10Loader
+    return loader().robot
 
-    return robot_loader('ur_description', URDF_FILENAME, SRDF_FILENAME, urdf_subpath='urdf', ref_posture=None)
+
+class HectorLoader(RobotLoader):
+    path = "hector_description"
+    urdf_filename = "quadrotor_base.urdf"
+    free_flyer = True
 
 
 def loadHector():
-    return robot_loader('hector_description', "quadrotor_base.urdf", free_flyer=True)
+    warnings.warn(_depr_msg('loadHector()', 'hector'), DeprecationWarning, 2)
+    return HectorLoader().robot
+
+
+class DoublePendulumLoader(RobotLoader):
+    path = "double_pendulum_description"
+    urdf_filename = "double_pendulum.urdf"
+    urdf_subpath = "urdf"
 
 
 def loadDoublePendulum():
-    return robot_loader('double_pendulum_description', "double_pendulum.urdf", urdf_subpath='urdf')
+    warnings.warn(_depr_msg('loadDoublePendulum()', 'double_pendulum'), DeprecationWarning, 2)
+    return DoublePendulumLoader().robot
+
+
+class RomeoLoader(RobotLoader):
+    path = "romeo_description"
+    urdf_filename = "romeo.urdf"
+    urdf_subpath = "urdf"
+    free_flyer = True
 
 
 def loadRomeo():
-    return robot_loader('romeo_description', "romeo.urdf", urdf_subpath='urdf', free_flyer=True)
+    warnings.warn(_depr_msg('loadRomeo()', 'romeo'), DeprecationWarning, 2)
+    return RomeoLoader().robot
+
+
+class IrisLoader(RobotLoader):
+    path = "iris_description"
+    urdf_filename = "iris_simple.urdf"
+    free_flyer = True
 
 
 def loadIris():
-    return robot_loader('iris_description', "iris_simple.urdf", free_flyer=True)
+    warnings.warn(_depr_msg('loadIris()', 'iris'), DeprecationWarning, 2)
+    return IrisLoader().robot
 
 
 ROBOTS = {
-    'anymal': (loadANYmal, {}),
-    'anymal_kinova': (loadANYmal, {
-        'withArm': 'kinova'
-    }),
-    'double_pendulum': (loadDoublePendulum, {}),
-    'hector': (loadHector, {}),
-    'hyq': (loadHyQ, {}),
-    'icub': (loadICub, {
-        'reduced': False
-    }),
-    'icub_reduced': (loadICub, {
-        'reduced': True
-    }),
-    'iris': (loadIris, {}),
-    'kinova': (loadKinova, {}),
-    'panda': (loadPanda, {}),
-    'romeo': (loadRomeo, {}),
-    'solo': (loadSolo, {}),
-    'solo12': (loadSolo, {
-        'solo': False
-    }),
-    'talos': (loadTalos, {}),
-    'talos_box': (loadTalos, {
-        'box': True
-    }),
-    'talos_arm': (loadTalos, {
-        'arm': True
-    }),
-    'talos_legs': (loadTalos, {
-        'legs': True
-    }),
-    'talos_full': (loadTalos, {
-        'full': True
-    }),
-    'talos_full_box': (loadTalos, {
-        'full': True,
-        'box': True
-    }),
-    'tiago': (loadTiago, {}),
-    'tiago_no_hand': (loadTiago, {
-        'hand': False
-    }),
-    'ur5': (loadUR, {}),
-    'ur5_gripper': (loadUR, {
-        'gripper': True
-    }),
-    'ur5_limited': (loadUR, {
-        'limited': True
-    }),
+    'anymal': ANYmalLoader,
+    'anymal_kinova': ANYmalKinovaLoader,
+    'double_pendulum': DoublePendulumLoader,
+    'hector': HectorLoader,
+    'hyq': HyQLoader,
+    'icub': ICubLoader,
+    'icub_reduced': ICubReducedLoader,
+    'iris': IrisLoader,
+    'kinova': KinovaLoader,
+    'panda': PandaLoader,
+    'romeo': RomeoLoader,
+    'solo': SoloLoader,
+    'solo12': Solo12Loader,
+    'talos': TalosLoader,
+    'talos_box': TalosBoxLoader,
+    'talos_arm': TalosArmLoader,
+    'talos_legs': TalosLegsLoader,
+    'talos_full': TalosFullLoader,
+    'talos_full_box': TalosFullBoxLoader,
+    'tiago': TiagoLoader,
+    'tiago_no_hand': TiagoNoHandLoader,
+    'ur3': UR5Loader,
+    'ur3_gripper': UR3GripperLoader,
+    'ur3_limited': UR3LimitedLoader,
+    'ur5': UR5Loader,
+    'ur5_gripper': UR5GripperLoader,
+    'ur5_limited': UR5LimitedLoader,
+    'ur10': UR10Loader,
+    'ur10_limited': UR10LimitedLoader,
 }
+
+
+def loader(name, display=False):
+    """Load a robot by its name, and optionnaly display it in a viewer."""
+    if name not in ROBOTS:
+        robots = ", ".join(sorted(ROBOTS.keys()))
+        raise ValueError("Robot '%s' not found. Possible values are %s" % (name, robots))
+    inst = ROBOTS[name]()
+    if display:
+        inst.robot.initViewer(loadModel=True)
+        inst.robot.display(inst.q0)
+    return inst
 
 
 def load(name, display=False):
     """Load a robot by its name, and optionnaly display it in a viewer."""
-    loader, kwargs = ROBOTS[name]
-    robot = loader(**kwargs)
-    if display:
-        robot.initViewer(loadModel=True)
-        robot.display(robot.q0)
-    return robot
+    return loader(name, display).robot
+
+
+def load_full(name, display=False):
+    """Load a robot by its name, optionnaly display it in a viewer, and provide its q0 and paths."""
+    inst = loader(name, display)
+    return inst.robot, inst.q0, inst.urdf_path, inst.srdf_path
