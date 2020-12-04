@@ -100,10 +100,10 @@ class ANYmalKinovaLoader(ANYmalLoader):
 
 def loadANYmal(withArm=None):
     if withArm:
-        warnings.warn(_depr_msg('loadANYmal()', 'anymal'), FutureWarning, 2)
+        warnings.warn(_depr_msg('loadANYmal(kinova)', 'anymal_kinova'), FutureWarning, 2)
         loader = ANYmalKinovaLoader
     else:
-        warnings.warn(_depr_msg('loadANYmal(kinova)', 'anymal_kinova'), FutureWarning, 2)
+        warnings.warn(_depr_msg('loadANYmal()', 'anymal'), FutureWarning, 2)
         loader = ANYmalLoader
     return loader().robot
 
