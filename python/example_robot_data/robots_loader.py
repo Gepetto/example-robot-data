@@ -100,10 +100,10 @@ class ANYmalKinovaLoader(ANYmalLoader):
 
 def loadANYmal(withArm=None):
     if withArm:
-        warnings.warn(_depr_msg('loadANYmal()', 'anymal'), DeprecationWarning, 2)
+        warnings.warn(_depr_msg('loadANYmal(kinova)', 'anymal_kinova'), FutureWarning, 2)
         loader = ANYmalKinovaLoader
     else:
-        warnings.warn(_depr_msg('loadANYmal(kinova)', 'anymal_kinova'), DeprecationWarning, 2)
+        warnings.warn(_depr_msg('loadANYmal()', 'anymal'), FutureWarning, 2)
         loader = ANYmalLoader
     return loader().robot
 
@@ -192,35 +192,35 @@ class TalosLegsLoader(TalosLoader):
 
 def loadTalos(legs=False, arm=False, full=False, box=False):
     if legs:
-        warnings.warn(_depr_msg('loadTalos(legs)', 'talos_legs'), DeprecationWarning, 2)
+        warnings.warn(_depr_msg('loadTalos(legs)', 'talos_legs'), FutureWarning, 2)
         loader = TalosLegsLoader
     elif arm:
-        warnings.warn(_depr_msg('loadTalos(arm)', 'talos_arm'), DeprecationWarning, 2)
+        warnings.warn(_depr_msg('loadTalos(arm)', 'talos_arm'), FutureWarning, 2)
         loader = TalosArmLoader
     elif full:
         if box:
-            warnings.warn(_depr_msg('loadTalos(full, box)', 'talos_full_box'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadTalos(full, box)', 'talos_full_box'), FutureWarning, 2)
             loader = TalosFullBoxLoader
         else:
-            warnings.warn(_depr_msg('loadTalos(full)', 'talos_full'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadTalos(full)', 'talos_full'), FutureWarning, 2)
             loader = TalosFullLoader
     else:
         if box:
-            warnings.warn(_depr_msg('loadTalos(box)', 'talos_box'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadTalos(box)', 'talos_box'), FutureWarning, 2)
             loader = TalosBoxLoader
         else:
-            warnings.warn(_depr_msg('loadTalos()', 'talos'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadTalos()', 'talos'), FutureWarning, 2)
             loader = TalosLoader
     return loader().robot
 
 
 def loadTalosLegs():
-    warnings.warn(_depr_msg('loadTalosLegs()', 'talos_legs'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadTalosLegs()', 'talos_legs'), FutureWarning, 2)
     return loadTalos(legs=True)
 
 
 def loadTalosArm():
-    warnings.warn(_depr_msg('loadTalosArm()', 'talos_arm'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadTalosArm()', 'talos_arm'), FutureWarning, 2)
     return loadTalos(arm=True)
 
 
@@ -233,7 +233,7 @@ class HyQLoader(RobotLoader):
 
 
 def loadHyQ():
-    warnings.warn(_depr_msg('loadHyQ()', 'hyq'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadHyQ()', 'hyq'), FutureWarning, 2)
     return HyQLoader().robot
 
 
@@ -250,7 +250,7 @@ class Solo12Loader(SoloLoader):
 
 
 def loadSolo(solo=True):
-    warnings.warn(_depr_msg('loadSolo()', 'solo'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadSolo()', 'solo'), FutureWarning, 2)
     loader = SoloLoader if solo else Solo12Loader
     return loader().robot
 
@@ -263,7 +263,7 @@ class KinovaLoader(RobotLoader):
 
 
 def loadKinova():
-    warnings.warn(_depr_msg('loadKinova()', 'kinova'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadKinova()', 'kinova'), FutureWarning, 2)
     return KinovaLoader().robot
 
 
@@ -278,16 +278,16 @@ class TiagoNoHandLoader(TiagoLoader):
 
 def loadTiago(hand=True):
     if hand:
-        warnings.warn(_depr_msg('loadTiago()', 'tiago'), DeprecationWarning, 2)
+        warnings.warn(_depr_msg('loadTiago()', 'tiago'), FutureWarning, 2)
         loader = TiagoLoader
     else:
-        warnings.warn(_depr_msg('loadTiago(hand=False)', 'tiago_no_hand'), DeprecationWarning, 2)
+        warnings.warn(_depr_msg('loadTiago(hand=False)', 'tiago_no_hand'), FutureWarning, 2)
         loader = TiagoNoHandLoader
     return loader().robot
 
 
 def loadTiagoNoHand():
-    warnings.warn(_depr_msg('loadTiagoNoHand()', 'tiago_no_hand'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadTiagoNoHand()', 'tiago_no_hand'), FutureWarning, 2)
     return loadTiago(hand=False)
 
 
@@ -304,10 +304,10 @@ class ICubReducedLoader(ICubLoader):
 
 def loadICub(reduced=True):
     if reduced:
-        warnings.warn(_depr_msg('loadICub()', 'icub_reduced'), DeprecationWarning, 2)
+        warnings.warn(_depr_msg('loadICub()', 'icub_reduced'), FutureWarning, 2)
         loader = ICubReducedLoader
     else:
-        warnings.warn(_depr_msg('loadICub(reduced=False)', 'icub'), DeprecationWarning, 2)
+        warnings.warn(_depr_msg('loadICub(reduced=False)', 'icub'), FutureWarning, 2)
         loader = ICubLoader
     return loader().robot
 
@@ -319,7 +319,7 @@ class PandaLoader(RobotLoader):
 
 
 def loadPanda():
-    warnings.warn(_depr_msg('loadPanda()', 'panda'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadPanda()', 'panda'), FutureWarning, 2)
     return PandaLoader().robot
 
 
@@ -364,30 +364,30 @@ class UR10LimitedLoader(UR10Loader):
 def loadUR(robot=5, limited=False, gripper=False):
     if robot == 3:
         if limited:
-            warnings.warn(_depr_msg('loadUr(3, limited)', 'ur3_limited'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadUr(3, limited)', 'ur3_limited'), FutureWarning, 2)
             loader = UR3LimitedLoader
         elif gripper:
-            warnings.warn(_depr_msg('loadUr(3, gripper)', 'ur3_gripper'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadUr(3, gripper)', 'ur3_gripper'), FutureWarning, 2)
             loader = UR3GripperLoader
         else:
-            warnings.warn(_depr_msg('loadUr(3)', 'ur3'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadUr(3)', 'ur3'), FutureWarning, 2)
             loader = UR3Loader
     elif robot == 5:
         if limited:
-            warnings.warn(_depr_msg('loadUr(limited)', 'ur5_limited'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadUr(limited)', 'ur5_limited'), FutureWarning, 2)
             loader = UR5LimitedLoader
         elif gripper:
-            warnings.warn(_depr_msg('loadUr(gripper)', 'ur5_gripper'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadUr(gripper)', 'ur5_gripper'), FutureWarning, 2)
             loader = UR5GripperLoader
         else:
-            warnings.warn(_depr_msg('loadUr()', 'ur5'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadUr()', 'ur5'), FutureWarning, 2)
             loader = UR5Loader
     elif robot == 10:
         if limited:
-            warnings.warn(_depr_msg('loadUr(10, limited)', 'ur10_limited'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadUr(10, limited)', 'ur10_limited'), FutureWarning, 2)
             loader = UR10LimitedLoader
         else:
-            warnings.warn(_depr_msg('loadUr(10)', 'ur10'), DeprecationWarning, 2)
+            warnings.warn(_depr_msg('loadUr(10)', 'ur10'), FutureWarning, 2)
             loader = UR10Loader
     return loader().robot
 
@@ -399,7 +399,7 @@ class HectorLoader(RobotLoader):
 
 
 def loadHector():
-    warnings.warn(_depr_msg('loadHector()', 'hector'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadHector()', 'hector'), FutureWarning, 2)
     return HectorLoader().robot
 
 
@@ -410,7 +410,7 @@ class DoublePendulumLoader(RobotLoader):
 
 
 def loadDoublePendulum():
-    warnings.warn(_depr_msg('loadDoublePendulum()', 'double_pendulum'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadDoublePendulum()', 'double_pendulum'), FutureWarning, 2)
     return DoublePendulumLoader().robot
 
 
@@ -422,7 +422,7 @@ class RomeoLoader(RobotLoader):
 
 
 def loadRomeo():
-    warnings.warn(_depr_msg('loadRomeo()', 'romeo'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadRomeo()', 'romeo'), FutureWarning, 2)
     return RomeoLoader().robot
 
 
@@ -433,7 +433,7 @@ class IrisLoader(RobotLoader):
 
 
 def loadIris():
-    warnings.warn(_depr_msg('loadIris()', 'iris'), DeprecationWarning, 2)
+    warnings.warn(_depr_msg('loadIris()', 'iris'), FutureWarning, 2)
     return IrisLoader().robot
 
 
