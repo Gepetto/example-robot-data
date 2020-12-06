@@ -1,6 +1,10 @@
 # Example robot URDFs
 
 [![pipeline status](https://gitlab.laas.fr/gepetto/example-robot-data/badges/master/pipeline.svg)](https://gitlab.laas.fr/gepetto/example-robot-data/-/commits/master)
+[![conde version](https://img.shields.io/conda/vn/conda-forge/example-robot-data.svg)](https://anaconda.org/conda-forge/example-robot-data)
+[![conde install](https://anaconda.org/conda-forge/example-robot-data/badges/installer/conda.svg)](https://anaconda.org/conda-forge/example-robot-data)
+[![conde download](https://anaconda.org/conda-forge/example-robot-data/badges/downloads.svg)](https://anaconda.org/conda-forge/example-robot-data)
+
 
 This repository includes a set of robot descriptions that are aimed to be used in benchmarking, unit-tests, teachings,
 tutorials or show-cases. These source files do not intend to substitute their original repositories.
