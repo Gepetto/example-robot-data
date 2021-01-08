@@ -1,5 +1,14 @@
 <?xml version="1.0" ?>
-<robot name="anymal_kinova">
+<robot name="anymal">
+    <group name="whole_body">
+        <joint name="root_joint"/>
+        <group name="whole_body_fixed"/>
+    </group>
+    <group name="whole_body_fixed">
+        <group name="all_legs"/>
+        <group name="arm"/>
+    </group>
+    <virtual_joint name="root_joint" type="floating" parent_frame="world_frame" child_link="base" />
 
     <group name="lf_leg">
         <joint name="LF_HAA" />
@@ -31,45 +40,38 @@
         <joint name="j2s6s200_joint_3" />
         <joint name="j2s6s200_joint_4" />
         <joint name="j2s6s200_joint_5" />
-        <joint name="j2s6s200_joint_5" />
+        <joint name="j2s6s200_joint_6" />
         <chain base_link="base" tip_link="j2s6s200_end_effector" />
     </group>
     <group name="all_legs">
-        <group name="lf" />
-        <group name="rf" />
-        <group name="lh" />
-        <group name="rh" />
-    </group>
-    <group name="all">
-        <group name="lf" />
-        <group name="rf" />
-        <group name="lh" />
-        <group name="rh" />
-        <group name="arm" />
+        <group name="lf_leg" />
+        <group name="rf_leg" />
+        <group name="lh_leg" />
+        <group name="rh_leg" />
     </group>
     <group name="r_legs">
-        <group name="rf" />
-        <group name="rh" />
+        <group name="rf_leg" />
+        <group name="rh_leg" />
     </group>
     <group name="l_legs">
-        <group name="lf" />
-        <group name="lh" />
+        <group name="lf_leg" />
+        <group name="lh_leg" />
     </group>
     <group name="f_legs">
-        <group name="lf" />
-        <group name="rf" />
+        <group name="lf_leg" />
+        <group name="rf_leg" />
     </group>
     <group name="h_legs">
-        <group name="lh" />
-        <group name="rh" />
+        <group name="lh_leg" />
+        <group name="rh_leg" />
     </group>
     <group name="ld_legs">
-        <group name="lf" />
-        <group name="rh" />
+        <group name="lf_leg" />
+        <group name="rh_leg" />
     </group>
     <group name="rd_legs">
-        <group name="rf" />
-        <group name="lh" />
+        <group name="rf_leg" />
+        <group name="lh_leg" />
     </group>
 
     <end_effector name="lf_foot" parent_link="LF_FOOT" group="lf_leg" />
@@ -78,7 +80,7 @@
     <end_effector name="rh_foot" parent_link="RH_FOOT" group="rh_leg" />
     <end_effector name="arm" parent_link="j2s6s200_end_effector" group="arm" />
 
-    <group_state name="standing_with_arm_up" group="all">
+    <group_state name="standing_with_arm_up" group="whole_body">
         <joint name="root_joint" value="0. 0. 0.4792 0. 0. 0. 1." />
         <joint name="LF_HAA" value="-0.1" />
         <joint name="LF_HFE" value="0.7" />
@@ -115,7 +117,7 @@
     <disable_collisions link1="LF_HIP" link2="RH_THIGH" reason="Never" />
     <disable_collisions link1="LF_HIP" link2="RH_SHANK" reason="Never" />
     <disable_collisions link1="LF_HIP" link2="RH_FOOT" reason="Never" />
-    
+
     <disable_collisions link1="base" link2="LF_HIP" reason="Adjacent" />
     <disable_collisions link1="base" link2="LH_HIP" reason="Adjacent" />
     <disable_collisions link1="base" link2="RF_HIP" reason="Adjacent" />
@@ -144,13 +146,10 @@
     <disable_collisions link1="RH_ADAPTER" link2="RH_SHANK" reason="Adjacent" />
 
     <disable_collisions link1="base" link2="imu_link" reason="Adjacent" />
-    
+
     <!-- Need to check these 4 ? there may be auto-collisions ...  -->
     <disable_collisions link1="base" link2="LF_THIGH" reason="Adjacent" />
     <disable_collisions link1="base" link2="LH_THIGH" reason="Adjacent" />
     <disable_collisions link1="base" link2="RF_THIGH" reason="Adjacent" />
     <disable_collisions link1="base" link2="RH_THIGH" reason="Adjacent" />
-
-
-
 </robot>
