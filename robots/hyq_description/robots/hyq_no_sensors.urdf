@@ -4,6 +4,12 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="hyq" xmlns:xacro="http://ros.org/wiki/xacro">
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
   <!-- This argument allows us to load joint sensors that measure the internal wrenches -->
   <!-- The following included files set up definitions of parts of the robot body -->
   <!-- kin limits (sign ref is RH leg)-->
