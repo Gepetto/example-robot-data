@@ -15,6 +15,9 @@
   <material name="Hey5DarkGrey">
     <color rgba="0.1 0.1 0.1 1.0"/>
   </material>
+  <material name="FlatBlack">
+    <color rgba="0.1 0.1 0.1 1"/>
+  </material>
   <!--TODO: Check-->
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
