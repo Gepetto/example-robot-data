@@ -40,9 +40,21 @@
     <!-- Xacro:Properties -->
     <!-- [m] -->
     <!-- Base link -->
-    <link name="base"/>
+    <link name="base">
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+    </link>
 
     <link name="jaco_front_hatch_support_v2">
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/kinova_description/meshes/jaco_front_hatch_support_v2.dae"/>
@@ -56,11 +68,17 @@
     </joint>
 
     <link name="jaco_mounting_block">
-        <visual>
-            <geometry>
-                <mesh filename="package://example-robot-data/robots/kinova_description/meshes/jaco_mounting_block.dae"/>
-            </geometry>
-        </visual>
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+
+      <visual>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/kinova_description/meshes/jaco_mounting_block.dae"/>
+        </geometry>
+      </visual>
     </link>
     <joint name="jaco_support_to_jaco_mounting_block" type="fixed">
         <parent link="jaco_front_hatch_support_v2"/>
@@ -354,7 +372,13 @@
             <mechanicalReduction>160</mechanicalReduction>
         </actuator>
     </transmission>
-    <link name="j2s6s200_end_effector"/>
+    <link name="j2s6s200_end_effector">
+      <inertial>
+        <mass value="0.0"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+      </inertial>
+    </link>
     <joint name="j2s6s200_joint_end_effector" type="fixed">
         <parent link="j2s6s200_link_6"/>
         <child link="j2s6s200_end_effector"/>
