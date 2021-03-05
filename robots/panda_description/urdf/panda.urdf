@@ -17,6 +17,11 @@
         </collision>
     </link>
     <link name="panda_link1">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/link1.dae" />
@@ -37,6 +42,11 @@
         <limit effort="87" lower="-2.9671" upper="2.9671" velocity="2.3925" />
     </joint>
     <link name="panda_link2">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/link2.dae" />
@@ -57,6 +67,11 @@
         <limit effort="87" lower="-1.8326" upper="1.8326" velocity="2.3925" />
     </joint>
     <link name="panda_link3">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/link3.dae" />
@@ -77,6 +92,11 @@
         <limit effort="87" lower="-2.9671" upper="2.9671" velocity="2.3925" />
     </joint>
     <link name="panda_link4">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/link4.dae" />
@@ -97,6 +117,11 @@
         <limit effort="87" lower="-3.1416" upper="0.0873" velocity="2.3925" />
     </joint>
     <link name="panda_link5">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/link5.dae" />
@@ -117,6 +142,11 @@
         <limit effort="12" lower="-2.9671" upper="2.9671" velocity="2.8710" />
     </joint>
     <link name="panda_link6">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/link6.dae" />
@@ -137,6 +167,11 @@
         <limit effort="12" lower="-0.0873" upper="3.8223" velocity="2.8710" />
     </joint>
     <link name="panda_link7">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/link7.dae" />
@@ -156,7 +191,13 @@
         <axis xyz="0 0 1" />
         <limit effort="12" lower="-2.9671" upper="2.9671" velocity="2.8710" />
     </joint>
-    <link name="panda_link8" />
+    <link name="panda_link8">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <joint name="panda_joint8" type="fixed">
         <origin rpy="0 0 0" xyz="0 0 0.107" />
         <parent link="panda_link7" />
@@ -169,6 +210,11 @@
         <origin rpy="0 0 -0.785398163397" xyz="0 0 0" />
     </joint>
     <link name="panda_hand">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/hand.dae" />
@@ -181,6 +227,11 @@
         </collision>
     </link>
     <link name="panda_leftfinger">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/finger.dae" />
@@ -193,6 +244,11 @@
         </collision>
     </link>
     <link name="panda_rightfinger">
+        <inertial>
+          <mass value="0"/>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
         <visual>
             <origin rpy="0 0 3.14159265359" xyz="0 0 0" />
             <geometry>
