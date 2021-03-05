@@ -16,7 +16,7 @@
       <timeout>5</timeout>
       <powerStateTopic>power_state</powerStateTopic>
       <powerStateRate>10.0</powerStateRate>
-      <fullChargeCapacity>87.78</fullChargeCapacity>     
+      <fullChargeCapacity>87.78</fullChargeCapacity>
       <dischargeRate>-474</dischargeRate>
       <chargeRate>525</chargeRate>
       <dischargeVoltage>15.52</dischargeVoltage>
@@ -232,6 +232,11 @@
     <origin rpy="0.0 0.0 1.57079632679" xyz="0.0 0.0823 0.0"/>
   </joint>
   <link name="ee_link">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
     <collision>
       <geometry>
         <box size="0.01 0.01 0.01"/>
@@ -315,7 +320,13 @@
     <selfCollide>true</selfCollide>
   </gazebo>
   <!-- ROS base_link to UR 'Base' Coordinates transform -->
-  <link name="base"/>
+  <link name="base">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <joint name="base_link-base_fixed_joint" type="fixed">
     <!-- NOTE: this rotation is only needed as long as base_link itself is
                  not corrected wrt the real robot (ie: rotated over 180
@@ -326,7 +337,13 @@
     <child link="base"/>
   </joint>
   <!-- Frame coincident with all-zeros TCP on UR controller -->
-  <link name="tool0"/>
+  <link name="tool0">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <joint name="wrist_3_link-tool0_fixed_joint" type="fixed">
     <origin rpy="-1.57079632679 0 0" xyz="0 0.0823 0"/>
     <parent link="wrist_3_link"/>
