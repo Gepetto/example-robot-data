@@ -325,26 +325,50 @@
     <parent link="rgbd_link"/>
     <child link="rgbd_depth_frame"/>
   </joint>
-  <link name="rgbd_depth_frame"/>
+  <link name="rgbd_depth_frame">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <joint name="rgbd_depth_optical_joint" type="fixed">
     <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0 0 0"/>
     <parent link="rgbd_depth_frame"/>
     <child link="rgbd_depth_optical_frame"/>
   </joint>
-  <link name="rgbd_depth_optical_frame"/>
+  <link name="rgbd_depth_optical_frame">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <!-- frames of the rgb sensor -->
   <joint name="rgbd_rgb_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.0 0.01251 0.0"/>
     <parent link="rgbd_link"/>
     <child link="rgbd_rgb_frame"/>
   </joint>
-  <link name="rgbd_rgb_frame"/>
+  <link name="rgbd_rgb_frame">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <joint name="rgbd_rgb_optical_joint" type="fixed">
     <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0 0 0"/>
     <parent link="rgbd_rgb_frame"/>
     <child link="rgbd_rgb_optical_frame"/>
   </joint>
-  <link name="rgbd_rgb_optical_frame"/>
+  <link name="rgbd_rgb_optical_frame">
+    <inertial>
+      <mass value="0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
   <!-- extensions -->
   <gazebo reference="rgbd_link">
     <!-- IR + depth -->
@@ -2193,8 +2217,8 @@
         <geometry>
           <mesh filename="package://example-robot-data/robots/talos_data/meshes/v2/ankle_X_collision.stl" scale="1 ${reflect*1} 1"/>
         </geometry>
-      </collision> 
-      
+      </collision>
+
       -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.1"/>
@@ -2519,8 +2543,8 @@
         <geometry>
           <mesh filename="package://example-robot-data/robots/talos_data/meshes/v2/ankle_X_collision.stl" scale="1 ${reflect*1} 1"/>
         </geometry>
-      </collision> 
-      
+      </collision>
+
       -->
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.1"/>
@@ -2786,4 +2810,3 @@
     <color rgba="1.0 0.5 0.0 1.0"/>
   </material>
 </robot>
-
