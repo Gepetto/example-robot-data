@@ -426,6 +426,19 @@ def loadRomeo():
     return RomeoLoader().robot
 
 
+class SimpleHumanoidLoader(RobotLoader):
+    path = 'simple_humanoid_description'
+    urdf_subpath = 'urdf'
+    urdf_filename = 'simple_humanoid.urdf'
+    srdf_filename = 'simple_humanoid.srdf'
+    free_flyer = True
+
+
+class SimpleHumanoidClassicalLoader(SimpleHumanoidLoader):
+    urdf_filename = 'simple_humanoid_classical.urdf'
+    srdf_filename = 'simple_humanoid_classical.srdf'
+
+
 class IrisLoader(RobotLoader):
     path = "iris_description"
     urdf_filename = "iris_simple.urdf"
@@ -449,6 +462,8 @@ ROBOTS = {
     'kinova': KinovaLoader,
     'panda': PandaLoader,
     'romeo': RomeoLoader,
+    'simple_humanoid': SimpleHumanoidLoader,
+    'simple_humanoid_classical': SimpleHumanoidClassicalLoader,
     'solo': SoloLoader,
     'solo12': Solo12Loader,
     'talos': TalosLoader,
