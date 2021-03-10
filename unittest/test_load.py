@@ -5,7 +5,7 @@ import unittest
 try:
     import pybullet
 except ImportError:
-    pass
+    pybullet = False
 
 from example_robot_data import load_full
 
