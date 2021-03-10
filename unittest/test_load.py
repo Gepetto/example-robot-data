@@ -2,16 +2,34 @@
 
 import unittest
 
-from example_robot_data import load
+try:
+    import pybullet
+except ImportError:
+    pybullet = False
+
+from example_robot_data import load_full
 
 
 class RobotTestCase(unittest.TestCase):
-    def check(self, name, expected_nq, expected_nv):
+    def check(self, name, expected_nq, expected_nv, one_kg_bodies=[]):
         """Helper function for the real tests"""
-        robot = load(name, display=False)
+        robot, _, urdf, _ = load_full(name, display=False)
         self.assertEqual(robot.model.nq, expected_nq)
         self.assertEqual(robot.model.nv, expected_nv)
         self.assertTrue(hasattr(robot, "q0"))
+        if pybullet:
+            self.check_pybullet(urdf, one_kg_bodies)
+
+    def check_pybullet(self, urdf, one_kg_bodies):
+        client_id = pybullet.connect(pybullet.DIRECT)
+        robot_id = pybullet.loadURDF(urdf, physicsClientId=client_id)
+        for joint_id in range(pybullet.getNumJoints(robot_id, client_id)):
+            dynamics = pybullet.getDynamicsInfo(robot_id, joint_id, client_id)
+            if dynamics[0] == 1:
+                joint = pybullet.getJointInfo(robot_id, joint_id, client_id)
+                # with self.subTest():  # uncomment on python >= 3.4 to get full list of wrong bodies at once
+                self.assertIn(joint[12].decode(), one_kg_bodies)
+        pybullet.disconnect(client_id)
 
     def test_anymal(self):
         self.check('anymal', 19, 18)

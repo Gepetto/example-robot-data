@@ -289,17 +289,6 @@
       <!-- inertia tensor computed analytically for a solid cuboid -->
       <inertia ixx="0.000030" ixy="0.0" ixz="0.0" iyy="0.000030" iyz="0.0" izz="0.000002"/>
     </inertial>
-      <!--
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-	  <geometry>
-          <mesh filename="package://example-robot-data/robots/talos_data/meshes/sensors/orbbec/orbbec.STL"/>
-      </geometry>
-      <material name="DarkGrey">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
-    </visual>
-      -->
     <collision>
       <origin rpy="0 0 0" xyz="-0.01 0.0025 0"/>
       <geometry>
@@ -325,26 +314,50 @@
     <parent link="rgbd_link"/>
     <child link="rgbd_depth_frame"/>
   </joint>
-  <link name="rgbd_depth_frame"/>
+  <link name="rgbd_depth_frame">
+    <inertial>
+      <mass value="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
   <joint name="rgbd_depth_optical_joint" type="fixed">
     <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0 0 0"/>
     <parent link="rgbd_depth_frame"/>
     <child link="rgbd_depth_optical_frame"/>
   </joint>
-  <link name="rgbd_depth_optical_frame"/>
+  <link name="rgbd_depth_optical_frame">
+    <inertial>
+      <mass value="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
   <!-- frames of the rgb sensor -->
   <joint name="rgbd_rgb_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.0 0.01251 0.0"/>
     <parent link="rgbd_link"/>
     <child link="rgbd_rgb_frame"/>
   </joint>
-  <link name="rgbd_rgb_frame"/>
+  <link name="rgbd_rgb_frame">
+    <inertial>
+      <mass value="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
   <joint name="rgbd_rgb_optical_joint" type="fixed">
     <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0 0 0"/>
     <parent link="rgbd_rgb_frame"/>
     <child link="rgbd_rgb_optical_frame"/>
   </joint>
-  <link name="rgbd_rgb_optical_frame"/>
+  <link name="rgbd_rgb_optical_frame" >
+    <inertial>
+      <mass value="0.0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
   <!-- extensions -->
   <gazebo reference="rgbd_link">
     <!-- IR + depth -->
@@ -449,7 +462,6 @@
     <!-- TODO: Missing reflects of inertias -->
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.01346 0.0913 0.04812"/>
-      <!-- <mass value="1.52896"/> -->
       <mass value="1.42896"/>
       <inertia ixx="0.00555100000" ixy="-0.00073100000" ixz="0.00000800000" iyy="0.00167300000" iyz="-0.00006000000" izz="0.00582200000"/>
     </inertial>
@@ -482,7 +494,6 @@
   <link name="arm_left_2_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="0.02607 0.00049 -0.05209"/>
-      <!-- <mass value="1.77729"/> -->
       <mass value="1.67729"/>
       <inertia ixx="0.00708700000" ixy="-0.00001400000" ixz="0.00214200000" iyy="0.00793600000" iyz="0.00003000000" izz="0.00378800000"/>
     </inertial>
@@ -515,7 +526,6 @@
   <link name="arm_left_3_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="0.00841 0.01428 -0.22291"/>
-      <!-- <mass value="1.57029"/> -->
       <mass value="1.47029"/>
       <inertia ixx="0.00433200000" ixy="0.00015300000" ixz="-0.00049600000" iyy="0.00434000000" iyz="-0.00060900000" izz="0.00254300000"/>
     </inertial>
@@ -551,7 +561,6 @@
   <link name="arm_left_4_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00655 -0.02107 -0.02612"/>
-      <!-- <mass value="1.20216"/> -->
       <mass value="1.10216"/>
       <inertia ixx="0.00221700000" ixy="-0.00010100000" ixz="0.00028800000" iyy="0.00241800000" iyz="-0.00039300000" izz="0.00111500000"/>
     </inertial>
@@ -622,7 +631,6 @@
   <link name="arm_left_5_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00006 0.00326 0.07963"/>
-      <!-- <mass value="1.87792"/> -->
       <mass value="1.77792"/>
       <inertia ixx="0.00349500000" ixy="-0.00001300000" ixz="-0.00001000000" iyy="0.00436800000" iyz="0.00009700000" izz="0.00228300000"/>
     </inertial>
@@ -655,7 +663,6 @@
   <link name="arm_left_6_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="0.00002 -0.00197 -0.00059"/>
-      <!-- <mass value="0.40931"/> -->
       <mass value="0.30931"/>
       <inertia ixx="0.00010700000" ixy="0.00000000000" ixz="0.00000000000" iyy="0.00014100000" iyz="-0.00000000000" izz="0.00015400000"/>
     </inertial>
@@ -686,15 +693,6 @@
                           soft_upper_limit="${80.00000 * deg_to_rad - eps_radians}" /> -->
   </joint>
   <link name="arm_left_7_link">
-    <!-- WRONG VALUES
-      <inertial>
-        <origin xyz="-0.00089 0.00365 -0.07824" rpy="0.00000 0.00000 0.00000"/>
-        <mass value="1.02604"/>
-        <inertia ixx="0.00151400000" ixy="0.00000600000" ixz="0.00006600000"
-                 iyy="0.00146400000" iyz="0.00001200000"
-                 izz="0.00090300000"/>
-      </inertial>
-      -->
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="0.007525 0.001378 -0.024630"/>
       <mass value="0.308441"/>
@@ -833,7 +831,6 @@
     <!-- TODO: Missing reflects of inertias -->
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.01346 -0.0913 0.04812"/>
-      <!-- <mass value="1.52896"/> -->
       <mass value="1.42896"/>
       <inertia ixx="0.00555100000" ixy="-0.00073100000" ixz="0.00000800000" iyy="0.00167300000" iyz="-0.00006000000" izz="0.00582200000"/>
     </inertial>
@@ -866,7 +863,6 @@
   <link name="arm_right_2_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="0.02607 0.00049 -0.05209"/>
-      <!-- <mass value="1.77729"/> -->
       <mass value="1.67729"/>
       <inertia ixx="0.00708700000" ixy="-0.00001400000" ixz="0.00214200000" iyy="0.00793600000" iyz="0.00003000000" izz="0.00378800000"/>
     </inertial>
@@ -899,7 +895,6 @@
   <link name="arm_right_3_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="0.00841 0.01428 -0.22291"/>
-      <!-- <mass value="1.57029"/> -->
       <mass value="1.47029"/>
       <inertia ixx="0.00433200000" ixy="0.00015300000" ixz="-0.00049600000" iyy="0.00434000000" iyz="-0.00060900000" izz="0.00254300000"/>
     </inertial>
@@ -935,7 +930,6 @@
   <link name="arm_right_4_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00655 -0.02107 -0.02612"/>
-      <!-- <mass value="1.20216"/> -->
       <mass value="1.10216"/>
       <inertia ixx="0.00221700000" ixy="-0.00010100000" ixz="0.00028800000" iyy="0.00241800000" iyz="-0.00039300000" izz="0.00111500000"/>
     </inertial>
@@ -1006,7 +1000,6 @@
   <link name="arm_right_5_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00006 0.00326 0.07963"/>
-      <!-- <mass value="1.87792"/> -->
       <mass value="1.77792"/>
       <inertia ixx="0.00349500000" ixy="-0.00001300000" ixz="-0.00001000000" iyy="0.00436800000" iyz="0.00009700000" izz="0.00228300000"/>
     </inertial>
@@ -1039,7 +1032,6 @@
   <link name="arm_right_6_link">
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="0.00002 -0.00197 -0.00059"/>
-      <!-- <mass value="0.40931"/> -->
       <mass value="0.30931"/>
       <inertia ixx="0.00010700000" ixy="0.00000000000" ixz="0.00000000000" iyy="0.00014100000" iyz="-0.00000000000" izz="0.00015400000"/>
     </inertial>
@@ -1070,15 +1062,6 @@
                           soft_upper_limit="${80.00000 * deg_to_rad - eps_radians}" /> -->
   </joint>
   <link name="arm_right_7_link">
-    <!-- WRONG VALUES
-      <inertial>
-        <origin xyz="-0.00089 0.00365 -0.07824" rpy="0.00000 0.00000 0.00000"/>
-        <mass value="1.02604"/>
-        <inertia ixx="0.00151400000" ixy="0.00000600000" ixz="0.00006600000"
-                 iyy="0.00146400000" iyz="0.00001200000"
-                 izz="0.00090300000"/>
-      </inertial>
-      -->
     <inertial>
       <origin rpy="0.00000 0.00000 0.00000" xyz="0.007525 0.001378 -0.024630"/>
       <mass value="0.308441"/>

@@ -132,7 +132,13 @@
     <material>Gazebo/White</material>
   </gazebo>
   <!-- Base footprint -->
-  <link name="base_footprint"/>
+  <link name="base_footprint">
+    <inertial>
+      <mass value="0.0"/>
+      <origin xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
   <joint name="base_footprint_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0.0985"/>
     <child link="base_link"/>
@@ -2959,7 +2965,13 @@
       <mechanicalReduction>0.0739176962651</mechanicalReduction>
     </actuator>
   </transmission>
-  <link name="hand_grasping_frame"/>
+  <link name="hand_grasping_frame">
+    <inertial>
+      <mass value="0.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0" izz="0.0"/>
+    </inertial>
+  </link>
   <joint name="hand_grasping_fixed_joint" type="fixed">
     <parent link="hand_palm_link"/>
     <child link="hand_grasping_frame"/>
