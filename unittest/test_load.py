@@ -64,6 +64,12 @@ class RobotTestCase(unittest.TestCase):
     def test_romeo(self):
         self.check('romeo', 62, 61)
 
+    def test_simple_humanoid(self):
+        self.check('simple_humanoid', 36, 35, one_kg_bodies=['LARM_LINK3', 'RARM_LINK3'])
+
+    def test_simple_humanoid_classical(self):
+        self.check('simple_humanoid_classical', 36, 35, one_kg_bodies=['LARM_LINK3', 'RARM_LINK3'])
+
     def test_solo(self):
         self.check('solo', 15, 14)
 
