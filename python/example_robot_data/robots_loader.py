@@ -18,7 +18,8 @@ def getModelPath(subpath, printmsg=False):
     paths = [
         join(dirname(dirname(dirname(source))), 'robots'),  # function called from "make release" in build/ dir
         join(dirname(source), 'robots'),  # function called from a build/ dir inside top level source
-        join(source, 'robots')  # function called from top level source dir
+        join(source, 'robots'),  # function called from top level source dir
+        join(dirname(dirname(__file__)), 'openrobots.share', 'example-robot-data', 'robots')  # from installed wheel
     ]
     try:
         from .path import EXAMPLE_ROBOT_DATA_MODEL_DIR, EXAMPLE_ROBOT_DATA_SOURCE_DIR
