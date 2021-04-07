@@ -66,8 +66,8 @@ class RobotLoader(object):
 
         if self.srdf_filename:
             self.srdf_path = join(self.model_path, self.path, self.srdf_subpath, self.srdf_filename)
-            self.robot.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose, self.has_rotor_parameters,
-                                         self.ref_posture)
+            self.robot.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose,
+                                               self.has_rotor_parameters, self.ref_posture)
         else:
             self.srdf_path = None
             self.robot.q0 = None
@@ -182,8 +182,8 @@ class TalosLegsLoader(TalosLoader):
         self.robot.visual_data = pin.GeometryData(g2)
 
         # Load SRDF file
-        self.robot.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose, self.has_rotor_parameters,
-                                     self.ref_posture)
+        self.robot.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose,
+                                           self.has_rotor_parameters, self.ref_posture)
 
         assert (m2.armature[:6] == 0.).all()
         # Add the free-flyer joint limits to the new model
