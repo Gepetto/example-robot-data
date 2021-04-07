@@ -66,11 +66,11 @@ class RobotLoader(object):
 
         if self.srdf_filename:
             self.srdf_path = join(self.model_path, self.path, self.srdf_subpath, self.srdf_filename)
-            self.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose, self.has_rotor_parameters,
+            self.robot.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose, self.has_rotor_parameters,
                                          self.ref_posture)
         else:
             self.srdf_path = None
-            self.q0 = None
+            self.robot.q0 = None
 
         if self.free_flyer:
             self.addFreeFlyerJointLimits()
@@ -182,7 +182,7 @@ class TalosLegsLoader(TalosLoader):
         self.robot.visual_data = pin.GeometryData(g2)
 
         # Load SRDF file
-        self.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose, self.has_rotor_parameters,
+        self.robot.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose, self.has_rotor_parameters,
                                      self.ref_posture)
 
         assert (m2.armature[:6] == 0.).all()
@@ -509,4 +509,4 @@ def load(name, display=False, rootNodeName=''):
 def load_full(name, display=False, rootNodeName=''):
     """Load a robot by its name, optionnaly display it in a viewer, and provide its q0 and paths."""
     inst = loader(name, display, rootNodeName)
-    return inst.robot, inst.q0, inst.urdf_path, inst.srdf_path
+    return inst.robot, inst.robot.q0, inst.urdf_path, inst.srdf_path
