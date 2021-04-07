@@ -83,6 +83,11 @@ class RobotLoader(object):
         lb[:7] = -1
         self.robot.model.lowerPositionLimit = lb
 
+    @property
+    def q0(self):
+        warnings.warn("`q0` is deprecated. Please use `robot.q0`", FutureWarning, 2)
+        return self.robot.q0
+
 
 class ANYmalLoader(RobotLoader):
     path = 'anymal_b_simple_description'
