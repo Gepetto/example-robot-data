@@ -100,6 +100,15 @@ class RobotTestCase(unittest.TestCase):
     def test_tiago_no_hand(self):
         self.check('tiago_no_hand', 14, 12)
 
+    def test_ur3(self):
+        self.check('ur3', 6, 6)
+
+    def test_ur3_gripper(self):
+        self.check('ur3_gripper', 6, 6)
+
+    def test_ur3_limited(self):
+        self.check('ur3_limited', 6, 6)
+
     def test_ur5(self):
         self.check('ur5', 6, 6)
 
@@ -108,6 +117,12 @@ class RobotTestCase(unittest.TestCase):
 
     def test_ur5_limited(self):
         self.check('ur5_limited', 6, 6)
+
+    def test_ur10(self):
+        self.check('ur10', 6, 6)
+
+    def test_ur10_limited(self):
+        self.check('ur10_limited', 6, 6)
 
 
 if __name__ == '__main__':
