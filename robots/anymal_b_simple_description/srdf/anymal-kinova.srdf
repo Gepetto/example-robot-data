@@ -102,54 +102,198 @@
         <joint name="j2s6s200_joint_6" value="0.0" />
     </group_state>
 
-    <disable_collisions link1="LF_HIP" link2="LF_THIGH" reason="Adjacent" />
-    <disable_collisions link1="LF_HIP" link2="LF_SHANK" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="LF_FOOT" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="RF_HIP" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="RF_THIGH" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="RF_SHANK" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="RF_FOOT" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="LH_HIP" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="LH_THIGH" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="LH_SHANK" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="LH_FOOT" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="RH_HIP" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="RH_THIGH" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="RH_SHANK" reason="Never" />
-    <disable_collisions link1="LF_HIP" link2="RH_FOOT" reason="Never" />
-
-    <disable_collisions link1="base" link2="LF_HIP" reason="Adjacent" />
-    <disable_collisions link1="base" link2="LH_HIP" reason="Adjacent" />
-    <disable_collisions link1="base" link2="RF_HIP" reason="Adjacent" />
-    <disable_collisions link1="base" link2="RH_HIP" reason="Adjacent" />
-    <disable_collisions link1="LF_HIP" link2="LF_THIGH" reason="Adjacent" />
-    <disable_collisions link1="LH_HIP" link2="LH_THIGH" reason="Adjacent" />
-    <disable_collisions link1="RF_HIP" link2="RF_THIGH" reason="Adjacent" />
-    <disable_collisions link1="RH_HIP" link2="RH_THIGH" reason="Adjacent" />
-    <disable_collisions link1="LF_THIGH" link2="LF_SHANK" reason="Adjacent" />
-    <disable_collisions link1="LH_THIGH" link2="LH_SHANK" reason="Adjacent" />
-    <disable_collisions link1="RF_THIGH" link2="RF_SHANK" reason="Adjacent" />
-    <disable_collisions link1="RH_THIGH" link2="RH_SHANK" reason="Adjacent" />
-    <disable_collisions link1="LF_SHANK" link2="LF_FOOT" reason="Adjacent" />
-    <disable_collisions link1="LH_SHANK" link2="LH_FOOT" reason="Adjacent" />
-    <disable_collisions link1="RF_SHANK" link2="RF_FOOT" reason="Adjacent" />
-    <disable_collisions link1="RH_SHANK" link2="RH_FOOT" reason="Adjacent" />
-
-    <disable_collisions link1="LF_ADAPTER" link2="LF_FOOT" reason="Adjacent" />
-    <disable_collisions link1="LH_ADAPTER" link2="LH_FOOT" reason="Adjacent" />
-    <disable_collisions link1="RF_ADAPTER" link2="RF_FOOT" reason="Adjacent" />
-    <disable_collisions link1="RH_ADAPTER" link2="RH_FOOT" reason="Adjacent" />
-
-    <disable_collisions link1="LF_ADAPTER" link2="LF_SHANK" reason="Adjacent" />
-    <disable_collisions link1="LH_ADAPTER" link2="LH_SHANK" reason="Adjacent" />
-    <disable_collisions link1="RF_ADAPTER" link2="RF_SHANK" reason="Adjacent" />
-    <disable_collisions link1="RH_ADAPTER" link2="RH_SHANK" reason="Adjacent" />
-
-    <disable_collisions link1="base" link2="imu_link" reason="Adjacent" />
-
-    <!-- Need to check these 4 ? there may be auto-collisions ...  -->
-    <disable_collisions link1="base" link2="LF_THIGH" reason="Adjacent" />
-    <disable_collisions link1="base" link2="LH_THIGH" reason="Adjacent" />
-    <disable_collisions link1="base" link2="RF_THIGH" reason="Adjacent" />
-    <disable_collisions link1="base" link2="RH_THIGH" reason="Adjacent" />
+    <disable_collisions link1="LF_ADAPTER" link2="LF_FOOT" reason="Adjacent"/>
+    <disable_collisions link1="LF_ADAPTER" link2="LF_HIP" reason="Never"/>
+    <disable_collisions link1="LF_ADAPTER" link2="LF_SHANK" reason="Adjacent"/>
+    <disable_collisions link1="LF_ADAPTER" link2="LF_THIGH" reason="Never"/>
+    <disable_collisions link1="LF_ADAPTER" link2="LH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_ADAPTER" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="LF_HIP" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="LF_SHANK" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="LF_THIGH" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="LH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="LF_SHANK" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="LF_THIGH" reason="Adjacent"/>
+    <disable_collisions link1="LF_HIP" link2="LH_ADAPTER" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="LH_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="LH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="LH_SHANK" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="LH_THIGH" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="RF_HIP" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="RH_ADAPTER" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="RH_SHANK" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="RH_THIGH" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="base" reason="Adjacent"/>
+    <disable_collisions link1="LF_HIP" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="j2s6s200_link_2" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="LF_HIP" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="LF_SHANK" link2="LF_THIGH" reason="Adjacent"/>
+    <disable_collisions link1="LF_SHANK" link2="LH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_SHANK" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_THIGH" link2="LH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_THIGH" link2="LH_THIGH" reason="Never"/>
+    <disable_collisions link1="LF_THIGH" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="LF_THIGH" link2="RH_THIGH" reason="Never"/>
+    <disable_collisions link1="LF_THIGH" link2="base" reason="Default"/>
+    <disable_collisions link1="LH_ADAPTER" link2="LH_FOOT" reason="Adjacent"/>
+    <disable_collisions link1="LH_ADAPTER" link2="LH_HIP" reason="Never"/>
+    <disable_collisions link1="LH_ADAPTER" link2="LH_SHANK" reason="Adjacent"/>
+    <disable_collisions link1="LH_ADAPTER" link2="LH_THIGH" reason="Never"/>
+    <disable_collisions link1="LH_ADAPTER" link2="RF_HIP" reason="Never"/>
+    <disable_collisions link1="LH_ADAPTER" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="LH_ADAPTER" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="LH_ADAPTER" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="LH_HIP" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="LH_SHANK" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="LH_THIGH" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RF_HIP" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="LH_SHANK" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="LH_THIGH" reason="Adjacent"/>
+    <disable_collisions link1="LH_HIP" link2="RF_ADAPTER" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="RF_HIP" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="RF_SHANK" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="RF_THIGH" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="base" reason="Adjacent"/>
+    <disable_collisions link1="LH_HIP" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="j2s6s200_link_2" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="j2s6s200_link_3" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="LH_HIP" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="LH_SHANK" link2="LH_THIGH" reason="Adjacent"/>
+    <disable_collisions link1="LH_SHANK" link2="RF_HIP" reason="Never"/>
+    <disable_collisions link1="LH_SHANK" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="LH_SHANK" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="LH_SHANK" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="LH_SHANK" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="LH_THIGH" link2="RF_HIP" reason="Never"/>
+    <disable_collisions link1="LH_THIGH" link2="RF_THIGH" reason="Never"/>
+    <disable_collisions link1="LH_THIGH" link2="base" reason="Default"/>
+    <disable_collisions link1="LH_THIGH" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LH_THIGH" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="LH_THIGH" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="LH_THIGH" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="LH_THIGH" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="RF_ADAPTER" link2="RF_FOOT" reason="Adjacent"/>
+    <disable_collisions link1="RF_ADAPTER" link2="RF_HIP" reason="Never"/>
+    <disable_collisions link1="RF_ADAPTER" link2="RF_SHANK" reason="Adjacent"/>
+    <disable_collisions link1="RF_ADAPTER" link2="RF_THIGH" reason="Never"/>
+    <disable_collisions link1="RF_ADAPTER" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="RF_HIP" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="RF_SHANK" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="RF_THIGH" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="RF_SHANK" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="RF_THIGH" reason="Adjacent"/>
+    <disable_collisions link1="RF_HIP" link2="RH_ADAPTER" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="RH_SHANK" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="RH_THIGH" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="base" reason="Adjacent"/>
+    <disable_collisions link1="RF_HIP" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="j2s6s200_link_2" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="RF_HIP" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="RF_SHANK" link2="RF_THIGH" reason="Adjacent"/>
+    <disable_collisions link1="RF_SHANK" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="RF_THIGH" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="RF_THIGH" link2="RH_THIGH" reason="Never"/>
+    <disable_collisions link1="RF_THIGH" link2="base" reason="Default"/>
+    <disable_collisions link1="RH_ADAPTER" link2="RH_FOOT" reason="Adjacent"/>
+    <disable_collisions link1="RH_ADAPTER" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="RH_ADAPTER" link2="RH_SHANK" reason="Adjacent"/>
+    <disable_collisions link1="RH_ADAPTER" link2="RH_THIGH" reason="Never"/>
+    <disable_collisions link1="RH_ADAPTER" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="RH_ADAPTER" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="RH_ADAPTER" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="RH_HIP" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="RH_SHANK" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="RH_THIGH" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="RH_HIP" link2="RH_SHANK" reason="Never"/>
+    <disable_collisions link1="RH_HIP" link2="RH_THIGH" reason="Adjacent"/>
+    <disable_collisions link1="RH_HIP" link2="base" reason="Adjacent"/>
+    <disable_collisions link1="RH_HIP" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RH_HIP" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="RH_HIP" link2="j2s6s200_link_2" reason="Never"/>
+    <disable_collisions link1="RH_HIP" link2="j2s6s200_link_3" reason="Never"/>
+    <disable_collisions link1="RH_HIP" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="RH_HIP" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="RH_HIP" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="RH_SHANK" link2="RH_THIGH" reason="Adjacent"/>
+    <disable_collisions link1="RH_SHANK" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="RH_SHANK" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="RH_SHANK" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="RH_SHANK" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="RH_THIGH" link2="base" reason="Default"/>
+    <disable_collisions link1="RH_THIGH" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RH_THIGH" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="RH_THIGH" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="RH_THIGH" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="RH_THIGH" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="base" link2="imu_link" reason="Adjacent"/>
+    <disable_collisions link1="base" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="base" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="base" link2="jaco_front_hatch_support_v2" reason="Adjacent"/>
+    <disable_collisions link1="base" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="j2s6s200_link_1" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_1" link2="j2s6s200_link_2" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_1" link2="j2s6s200_link_3" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_1" link2="j2s6s200_link_base" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_1" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_1" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_2" link2="j2s6s200_link_3" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_2" link2="j2s6s200_link_4" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_2" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_2" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_2" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_3" link2="j2s6s200_link_4" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_3" link2="j2s6s200_link_base" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_3" link2="j2s6s200_link_finger_1" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_3" link2="j2s6s200_link_finger_2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_3" link2="jaco_front_hatch_support_v2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_3" link2="jaco_mounting_block" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_4" link2="j2s6s200_link_5" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_4" link2="j2s6s200_link_finger_1" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_4" link2="j2s6s200_link_finger_2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_4" link2="j2s6s200_link_finger_tip_1" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_4" link2="j2s6s200_link_finger_tip_2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_5" link2="j2s6s200_link_6" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_5" link2="j2s6s200_link_finger_1" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_5" link2="j2s6s200_link_finger_2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_5" link2="j2s6s200_link_finger_tip_1" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_5" link2="j2s6s200_link_finger_tip_2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_6" link2="j2s6s200_link_finger_1" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_6" link2="j2s6s200_link_finger_2" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_6" link2="j2s6s200_link_finger_tip_1" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_6" link2="j2s6s200_link_finger_tip_2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_base" link2="jaco_front_hatch_support_v2" reason="Default"/>
+    <disable_collisions link1="j2s6s200_link_base" link2="jaco_mounting_block" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_finger_1" link2="j2s6s200_link_finger_2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_finger_1" link2="j2s6s200_link_finger_tip_1" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_finger_1" link2="j2s6s200_link_finger_tip_2" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_finger_2" link2="j2s6s200_link_finger_tip_1" reason="Never"/>
+    <disable_collisions link1="j2s6s200_link_finger_2" link2="j2s6s200_link_finger_tip_2" reason="Adjacent"/>
+    <disable_collisions link1="j2s6s200_link_finger_tip_1" link2="j2s6s200_link_finger_tip_2" reason="Never"/>
+    <disable_collisions link1="jaco_front_hatch_support_v2" link2="jaco_mounting_block" reason="Adjacent"/>
 </robot>
