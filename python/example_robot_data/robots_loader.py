@@ -70,7 +70,7 @@ class RobotLoader(object):
                                                self.has_rotor_parameters, self.ref_posture)
         else:
             self.srdf_path = None
-            self.robot.q0 = None
+            self.robot.q0 = pin.neutral(self.robot.model)
 
         if self.free_flyer:
             self.addFreeFlyerJointLimits()
