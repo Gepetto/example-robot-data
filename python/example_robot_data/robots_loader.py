@@ -103,6 +103,12 @@ class ANYmalKinovaLoader(ANYmalLoader):
     ref_posture = "standing_with_arm_up"
 
 
+class BaxterLoader(RobotLoader):
+    path = "baxter_description"
+    urdf_filename = "baxter.urdf"
+    urdf_subpath = "urdf"
+
+
 def loadANYmal(withArm=None):
     if withArm:
         warnings.warn(_depr_msg('loadANYmal(kinova)', 'anymal_kinova'), FutureWarning, 2)
@@ -458,6 +464,7 @@ def loadIris():
 ROBOTS = {
     'anymal': ANYmalLoader,
     'anymal_kinova': ANYmalKinovaLoader,
+    'baxter': BaxterLoader,
     'double_pendulum': DoublePendulumLoader,
     'hector': HectorLoader,
     'hyq': HyQLoader,

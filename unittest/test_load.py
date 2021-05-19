@@ -37,6 +37,9 @@ class RobotTestCase(unittest.TestCase):
     def test_anymal_kinova(self):
         self.check('anymal_kinova', 25, 24)
 
+    def test_baxter(self):
+        self.check('baxter', 15, 15)
+
     def test_double_pendulum(self):
         self.check('double_pendulum', 2, 2)
 
