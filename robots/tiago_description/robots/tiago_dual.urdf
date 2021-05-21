@@ -3101,7 +3101,13 @@
       <mechanicalReduction>0.07391769626507355</mechanicalReduction>
     </actuator>
   </transmission>
-  <link name="hand_left_grasping_frame"/>
+  <link name="hand_left_grasping_frame">
+    <inertial>
+      <mass value="0.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0" izz="0.0"/>
+    </inertial>
+  </link>
   <joint name="hand_left_grasping_fixed_joint" type="fixed">
     <parent link="hand_left_palm_link"/>
     <child link="hand_left_grasping_frame"/>
@@ -5297,7 +5303,13 @@
       <mechanicalReduction>0.07391769626507355</mechanicalReduction>
     </actuator>
   </transmission>
-  <link name="hand_right_grasping_frame"/>
+  <link name="hand_right_grasping_frame">
+    <inertial>
+      <mass value="0.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0" izz="0.0"/>
+    </inertial>
+  </link>
   <joint name="hand_right_grasping_fixed_joint" type="fixed">
     <parent link="hand_right_palm_link"/>
     <child link="hand_right_grasping_frame"/>
