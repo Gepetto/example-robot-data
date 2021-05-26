@@ -100,6 +100,9 @@ class RobotTestCase(unittest.TestCase):
     def test_tiago(self):
         self.check('tiago', 50, 48)
 
+    def test_tiago_dual(self):
+        self.check('tiago_dual', 111, 101)
+
     def test_tiago_no_hand(self):
         self.check('tiago_no_hand', 14, 12)
 
