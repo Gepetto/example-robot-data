@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>example-robot-data</name>
-  <version>3.9.0</version>
+  <version>3.9.1</version>
   <description>Set of robot URDFs for benchmarking and developed examples.</description>
   <!-- The maintainer listed here is for the ROS release to receive emails for the buildfarm.
   Please check the repository URL for project maintainer. -->
