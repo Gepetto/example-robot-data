@@ -68,6 +68,16 @@ class RobotLoader(object):
             self.srdf_path = join(self.model_path, self.path, self.srdf_subpath, self.srdf_filename)
             self.robot.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose,
                                                self.has_rotor_parameters, self.ref_posture)
+
+            if pin.WITH_HPP_FCL and pin.WITH_HPP_FCL_BINDINGS:
+                # Add all collision pairs
+                self.robot.collision_model.addAllCollisionPairs()
+
+                # Remove collision pairs per SRDF
+                pin.removeCollisionPairs(self.robot.model, self.robot.collision_model, self.srdf_path, False)
+
+                # Recreate collision data since the collision pairs changed
+                self.robot.collision_data = self.robot.collision_model.createData()
         else:
             self.srdf_path = None
             self.robot.q0 = pin.neutral(self.robot.model)
