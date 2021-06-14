@@ -265,6 +265,7 @@ def loadSolo(solo=True):
     loader = SoloLoader if solo else Solo12Loader
     return loader().robot
 
+
 class FingerEduLoader(RobotLoader):
     path = 'finger_edu_description'
     urdf_filename = "finger_edu.urdf"
