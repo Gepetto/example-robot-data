@@ -265,6 +265,13 @@ def loadSolo(solo=True):
     loader = SoloLoader if solo else Solo12Loader
     return loader().robot
 
+class FingerEduLoader(RobotLoader):
+    path = 'finger_edu_description'
+    urdf_filename = "finger_edu.urdf"
+    srdf_filename = "finger_edu.srdf"
+    ref_posture = "hanging"
+    free_flyer = False
+
 
 class KinovaLoader(RobotLoader):
     path = "kinova_description"
@@ -482,6 +489,7 @@ ROBOTS = {
     'simple_humanoid_classical': SimpleHumanoidClassicalLoader,
     'solo': SoloLoader,
     'solo12': Solo12Loader,
+    'finger_edu': FingerEduLoader,
     'talos': TalosLoader,
     'talos_box': TalosBoxLoader,
     'talos_arm': TalosArmLoader,
