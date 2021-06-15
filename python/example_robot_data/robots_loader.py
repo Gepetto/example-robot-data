@@ -258,7 +258,7 @@ def loadHyQ():
     return HyQLoader().robot
 
 
-class SoloLoader(RobotLoader):
+class Solo8Loader(RobotLoader):
     path = 'solo_description'
     urdf_filename = "solo.urdf"
     srdf_filename = "solo.srdf"
@@ -266,13 +266,13 @@ class SoloLoader(RobotLoader):
     free_flyer = True
 
 
-class Solo12Loader(SoloLoader):
+class Solo12Loader(Solo8Loader):
     urdf_filename = "solo12.urdf"
 
 
-def loadSolo(solo=True):
-    warnings.warn(_depr_msg('loadSolo()', 'solo'), FutureWarning, 2)
-    loader = SoloLoader if solo else Solo12Loader
+def loadSolo(solo8=True):
+    warnings.warn(_depr_msg('loadSolo()', 'solo8'), FutureWarning, 2)
+    loader = Solo8Loader if solo8 else Solo12Loader
     return loader().robot
 
 
