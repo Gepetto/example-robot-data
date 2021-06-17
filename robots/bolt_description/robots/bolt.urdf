@@ -17,7 +17,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_body.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_body.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -27,7 +27,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_body.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_body.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -72,7 +72,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_hip_fe_left_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_hip_fe_left_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -82,7 +82,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_hip_fe_left_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_hip_fe_left_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -115,7 +115,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/upper_leg_200mm_left_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/upper_leg_200mm_left_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -125,7 +125,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/upper_leg_200mm_left_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/upper_leg_200mm_left_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -160,7 +160,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/lower_leg_200mm_left_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/lower_leg_200mm_left_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -170,7 +170,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/lower_leg_200mm_left_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/lower_leg_200mm_left_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -205,7 +205,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_foot.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_foot.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -215,7 +215,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_foot.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_foot.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -257,7 +257,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_hip_fe_right_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_hip_fe_right_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -267,7 +267,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_hip_fe_right_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_hip_fe_right_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -300,7 +300,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/upper_leg_200mm_right_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/upper_leg_200mm_right_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -310,7 +310,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/upper_leg_200mm_right_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/upper_leg_200mm_right_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -345,7 +345,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/lower_leg_200mm_right_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/lower_leg_200mm_right_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -355,7 +355,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/lower_leg_200mm_right_side.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/lower_leg_200mm_right_side.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -390,7 +390,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_foot.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_foot.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
@@ -400,7 +400,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://example-robot-data/robots/bolt/meshes/stl/bolt_foot.stl"/>
+        <mesh filename="package://example-robot-data/robots/bolt_description/meshes/stl/bolt_foot.stl"/>
       </geometry>
       <material name="grey">
         <color rgba="0.8 0.8 0.8 1.0"/>
