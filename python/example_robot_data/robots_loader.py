@@ -258,7 +258,7 @@ def loadHyQ():
     return HyQLoader().robot
 
 
-class SoloLoader(RobotLoader):
+class Solo8Loader(RobotLoader):
     path = 'solo_description'
     urdf_filename = "solo.urdf"
     srdf_filename = "solo.srdf"
@@ -266,13 +266,19 @@ class SoloLoader(RobotLoader):
     free_flyer = True
 
 
-class Solo12Loader(SoloLoader):
+class SoloLoader(Solo8Loader):
+    def __init__(self, *args, **kwargs):
+        warnings.warn('"solo" is deprecated, please try to load "solo8"')
+        return super(SoloLoader, self).__init__(*args, **kwargs)
+
+
+class Solo12Loader(Solo8Loader):
     urdf_filename = "solo12.urdf"
 
 
 def loadSolo(solo=True):
-    warnings.warn(_depr_msg('loadSolo()', 'solo'), FutureWarning, 2)
-    loader = SoloLoader if solo else Solo12Loader
+    warnings.warn(_depr_msg('loadSolo()', 'solo8'), FutureWarning, 2)
+    loader = Solo8Loader if solo else Solo12Loader
     return loader().robot
 
 
@@ -499,6 +505,7 @@ ROBOTS = {
     'simple_humanoid': SimpleHumanoidLoader,
     'simple_humanoid_classical': SimpleHumanoidClassicalLoader,
     'solo': SoloLoader,
+    'solo8': Solo8Loader,
     'solo12': Solo12Loader,
     'finger_edu': FingerEduLoader,
     'talos': TalosLoader,
