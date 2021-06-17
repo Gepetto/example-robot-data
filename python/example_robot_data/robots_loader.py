@@ -258,6 +258,14 @@ def loadHyQ():
     return HyQLoader().robot
 
 
+class BoltLoader(RobotLoader):
+    path = 'bolt_description'
+    urdf_filename = "bolt.urdf"
+    srdf_filename = "bolt.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
 class Solo8Loader(RobotLoader):
     path = 'solo_description'
     urdf_filename = "solo.urdf"
@@ -504,6 +512,7 @@ ROBOTS = {
     'romeo': RomeoLoader,
     'simple_humanoid': SimpleHumanoidLoader,
     'simple_humanoid_classical': SimpleHumanoidClassicalLoader,
+    'bolt': BoltLoader,
     'solo': SoloLoader,
     'solo8': Solo8Loader,
     'solo12': Solo12Loader,

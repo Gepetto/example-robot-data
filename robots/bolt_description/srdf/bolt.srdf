@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<robot name="finger_edu">
+
+    <!-- left leg -->
+    <group name="left_leg">
+        <joint name="FL_HAA" />
+        <joint name="FL_HFE" />
+        <joint name="FL_KFE" />
+        <chain base_link="base_link" tip_link="FL_FOOT" />
+    </group>
+    <!-- right leg -->
+    <group name="right_leg">
+        <joint name="FR_HAA" />
+        <joint name="FR_HFE" />
+        <joint name="FR_KFE" />
+        <chain base_link="base_link" tip_link="FR_FOOT" />
+    </group>
+
+    <group name="all_legs">
+        <group name="left_leg" />
+        <group name="right_leg" />
+    </group>
+
+    <end_effector name="left_foot" parent_link="FL_FOOT" group="left_leg" />
+    <end_effector name="right_foot" parent_link="FR_FOOT" group="right_leg" />
+
+    <group_state name="standing" group="all_legs">
+        <joint name="root_joint" value="0. 0. 0.35487417 0. 0. 0. 1." />
+        <joint name="FL_HAA" value="-0.3" />
+        <joint name="FL_HFE" value="0.78539816" />
+        <joint name="FL_KFE" value="-1.57079633" />
+        <joint name="FR_HAA" value="0.3" />
+        <joint name="FR_HFE" value="0.78539816" />
+        <joint name="FR_KFE" value="-1.57079633" />
+    </group_state>
+
+    <disable_collisions link1="FL_SHOULDER" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="FR_SHOULDER" link2="base_link" reason="Adjacent" />
+
+    <disable_collisions link1="FL_UPPER_LEG" link2="FL_SHOULDER" reason="Adjacent" />
+    <disable_collisions link1="FR_UPPER_LEG" link2="FR_SHOULDER" reason="Adjacent" />
+
+    <disable_collisions link1="FL_LOWER_LEG" link2="FL_UPPER_LEG" reason="Adjacent" />
+    <disable_collisions link1="FR_LOWER_LEG" link2="FR_UPPER_LEG" reason="Adjacent" />
+</robot>
