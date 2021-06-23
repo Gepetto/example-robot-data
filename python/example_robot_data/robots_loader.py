@@ -162,17 +162,11 @@ class TalosLegsLoader(TalosLoader):
         for j, M, name, parent, Y in zip(m1.joints, m1.jointPlacements, m1.names, m1.parents, m1.inertias):
             if j.id < legMaxId:
                 jid = m2.addJoint(parent, getattr(pin, j.shortname())(), M, name)
-                upperPos = m2.upperPositionLimit
-                lowerPos = m2.lowerPositionLimit
-                effort = m2.effortLimit
-                upperPos[m2.joints[jid].idx_q:m2.joints[jid].idx_q + j.nq] = m1.upperPositionLimit[j.idx_q:j.idx_q +
-                                                                                                   j.nq]
-                lowerPos[m2.joints[jid].idx_q:m2.joints[jid].idx_q + j.nq] = m1.lowerPositionLimit[j.idx_q:j.idx_q +
-                                                                                                   j.nq]
-                effort[m2.joints[jid].idx_v:m2.joints[jid].idx_v + j.nv] = m1.effortLimit[j.idx_v:j.idx_v + j.nv]
-                m2.upperPositionLimit = upperPos
-                m2.lowerPositionLimit = lowerPos
-                m2.effortLimit = effort
+                idx_q, idx_v = m2.joints[jid].idx_q, m2.joints[jid].idx_v
+                m2.upperPositionLimit[idx_q:idx_q + j.nq] = m1.upperPositionLimit[j.idx_q:j.idx_q + j.nq]
+                m2.lowerPositionLimit[idx_q:idx_q + j.nq] = m1.lowerPositionLimit[j.idx_q:j.idx_q + j.nq]
+                m2.velocityLimit[idx_v:idx_v + j.nv] = m1.velocityLimit[j.idx_v:j.idx_v + j.nv]
+                m2.effortLimit[idx_v:idx_v + j.nv] = m1.effortLimit[j.idx_v:j.idx_v + j.nv]
                 assert jid == j.id
                 m2.appendBodyToJoint(jid, Y, pin.SE3.Identity())
 
