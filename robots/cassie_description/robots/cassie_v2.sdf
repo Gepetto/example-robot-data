@@ -35,7 +35,7 @@
       <visual name="pelvis_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/pelvis.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/pelvis.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -69,7 +69,7 @@
       <visual name="left-hip-roll_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/hip-roll.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-roll.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -110,7 +110,7 @@
       <visual name="left-hip-yaw_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/hip-yaw.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -151,7 +151,7 @@
       <visual name="left-hip-pitch_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/hip-pitch.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -201,7 +201,7 @@
       <visual name="left-achilles_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/achilles-rod.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/achilles-rod.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -239,7 +239,7 @@
       <visual name="left-knee_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/knee.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/knee.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -280,7 +280,7 @@
       <visual name="left-shin_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/shin.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/shin.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -332,7 +332,7 @@
       <visual name="left-tarsus_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/tarsus.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/tarsus.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -382,7 +382,7 @@
       <visual name="left-heel-spring_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/heel-spring.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/heel-spring.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -421,7 +421,7 @@
       <visual name ="left-foot-crank_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/foot-crank.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/foot-crank.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -462,7 +462,7 @@
       <visual name="left-plantar-rod_visual">
         <geometry>
           <mesh>
-            <uri>model://cassie/meshes/plantar-rod.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/plantar-rod.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -497,7 +497,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/foot.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/foot.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -555,7 +555,7 @@
         <geometry>
           <mesh>
             <scale>1 -1 1</scale>
-            <uri>model://cassie/meshes/hip-roll.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-roll.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -597,7 +597,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/hip-yaw.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-yaw.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -639,7 +639,7 @@
         <geometry>
           <mesh>
             <scale>1 1 -1</scale>
-            <uri>model://cassie/meshes/hip-pitch.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-pitch.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -690,7 +690,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/achilles-rod.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/achilles-rod.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -729,7 +729,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/knee.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/knee.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -771,7 +771,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/shin.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/shin.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -824,7 +824,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/tarsus.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/tarsus.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -875,7 +875,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/heel-spring.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/heel-spring.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -914,7 +914,7 @@
         <geometry>
           <mesh>
             <scale>1 1 -1</scale>
-            <uri>model://cassie/meshes/foot-crank.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/foot-crank.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -956,7 +956,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://cassie/meshes/plantar-rod.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/plantar-rod.stl</uri>
           </mesh>
         </geometry>
         <material>
@@ -991,7 +991,7 @@
         <geometry>
           <mesh>
             <scale>1 1 -1</scale>
-            <uri>model://cassie/meshes/foot.stl</uri>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/foot.stl</uri>
           </mesh>
         </geometry>
         <material>
