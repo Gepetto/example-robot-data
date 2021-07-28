@@ -225,7 +225,6 @@ class TalosLegsLoader(TalosLoader):
         # Add the free-flyer joint limits to the new model
         self.addFreeFlyerJointLimits()
 
-
 def loadTalos(legs=False, arm=False, full=False, box=False):
     if legs:
         warnings.warn(_depr_msg('loadTalos(legs)', 'talos_legs'), FutureWarning, 2)
@@ -259,6 +258,50 @@ def loadTalosArm():
     warnings.warn(_depr_msg('loadTalosArm()', 'talos_arm'), FutureWarning, 2)
     return loadTalos(arm=True)
 
+
+class CassieLoader(RobotLoader):
+    path = 'cassie_description'
+    sdf_subpath = 'robots'
+    sdf_filename = "cassie_v2.sdf"
+    free_flyer = True
+    verbose=False
+
+    def __init__(self):
+        sdf_path = join(self.path, self.sdf_subpath, self.sdf_filename)
+        self.model_path = getModelPath(sdf_path, self.verbose)
+        self.sdf_path = join(self.model_path, sdf_path)
+        self.robot = RobotWrapper.BuildFromSDF(self.sdf_path, [join(self.model_path, '../..')],
+                                                pin.JointModelFreeFlyer() if self.free_flyer else None)
+        q0 = pin.neutral(self.robot.model)
+        q0[2] = 1.104;    q0[9] = 0.298;    q0[20] = 0.298;    q0[17] = -1.398
+        q0[28] = -1.398;    q0[26] = -1.398; q0[27] = -q0[26];
+        q0[15] = -1.398; q0[16] = -q0[15]
+        self.robot.q0 = q0
+        
+        if self.srdf_filename:
+            self.srdf_path = join(self.model_path, self.path, self.srdf_subpath, self.srdf_filename)
+            self.robot.q0 = readParamsFromSrdf(self.robot.model, self.srdf_path, self.verbose,
+                                               self.has_rotor_parameters, self.ref_posture)
+
+            if pin.WITH_HPP_FCL and pin.WITH_HPP_FCL_BINDINGS:
+                # Add all collision pairs
+                self.robot.collision_model.addAllCollisionPairs()
+
+                # Remove collision pairs per SRDF
+                pin.removeCollisionPairs(self.robot.model, self.robot.collision_model, self.srdf_path, False)
+
+                # Recreate collision data since the collision pairs changed
+                self.robot.collision_data = self.robot.collision_model.createData()
+        else:
+            self.srdf_path = None
+
+        if self.free_flyer:
+            self.addFreeFlyerJointLimits()
+
+def loadCassie():
+    warnings.warn(_depr_msg('loadANYmal()', 'anymal'), FutureWarning, 2)
+    loader = CassieLoader
+    return loader().robot
 
 class HyQLoader(RobotLoader):
     path = "hyq_description"
@@ -517,6 +560,7 @@ ROBOTS = {
     'anymal': ANYmalLoader,
     'anymal_kinova': ANYmalKinovaLoader,
     'baxter': BaxterLoader,
+    'cassie': CassieLoader,
     'double_pendulum': DoublePendulumLoader,
     'hector': HectorLoader,
     'hyq': HyQLoader,
