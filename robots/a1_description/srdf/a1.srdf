@@ -78,7 +78,7 @@
   <end_effector name="rh_foot" parent_link="RR_foot" group="rh_leg"/>
 
   <group_state name="standing" group="whole_body">
-    <joint name="root_joint" value="0. 0. 0.3 0. 0. 0. 1."/>
+    <joint name="root_joint" value="0. 0. 0.26 0. 0. 0. 1."/>
     <joint name="FL_hip_joint" value="0."/>
     <joint name="FL_thigh_joint" value="0.8"/>
     <joint name="FL_calf_joint" value="-1.81"/>
