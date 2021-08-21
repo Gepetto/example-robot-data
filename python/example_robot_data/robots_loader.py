@@ -101,7 +101,7 @@ class RobotLoader(object):
 
 class A1Loader(RobotLoader):
     path = 'a1_description'
-    urdf_filename= "a1.urdf"
+    urdf_filename = "a1.urdf"
     urdf_subpath = "urdf"
     srdf_filename = "a1.srdf"
     ref_posture = "standing"
