@@ -99,6 +99,15 @@ class RobotLoader(object):
         return self.robot.q0
 
 
+class A1Loader(RobotLoader):
+    path = 'a1_description'
+    urdf_filename = "a1.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "a1.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
 class ANYmalLoader(RobotLoader):
     path = 'anymal_b_simple_description'
     urdf_filename = "anymal.urdf"
@@ -492,6 +501,7 @@ def loadIris():
 
 
 ROBOTS = {
+    'a1': A1Loader,
     'anymal': ANYmalLoader,
     'anymal_kinova': ANYmalKinovaLoader,
     'baxter': BaxterLoader,
