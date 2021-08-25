@@ -4,6 +4,7 @@
 [![conde version](https://img.shields.io/conda/vn/conda-forge/example-robot-data.svg)](https://anaconda.org/conda-forge/example-robot-data)
 [![conde install](https://anaconda.org/conda-forge/example-robot-data/badges/installer/conda.svg)](https://anaconda.org/conda-forge/example-robot-data)
 [![conde download](https://anaconda.org/conda-forge/example-robot-data/badges/downloads.svg)](https://anaconda.org/conda-forge/example-robot-data)
+[![PyPI version](https://badge.fury.io/py/example-robot-data.svg)](https://badge.fury.io/py/example-robot-data)
 
 
 This repository includes a set of robot descriptions that are aimed to be used in benchmarking, unit-tests, teachings,
@@ -27,7 +28,7 @@ tutorials or show-cases. These source files do not intend to substitute their or
    ```bash
    sudo apt install robotpkg-py3\*-example-robot-data
    ```
-   
+
 ### :snake: From <img src="https://s3.amazonaws.com/conda-dev/conda_logo.svg" height="18">
 
 As simple as that:
