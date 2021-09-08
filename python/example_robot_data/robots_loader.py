@@ -70,7 +70,7 @@ class RobotLoader(object):
             try:
                 builder = RobotWrapper.BuildFromSDF
             except AttributeError:
-                raise ImportError("Building SDF models require pinocchio >= 2.9.2")
+                raise ImportError("Building SDF models require pinocchio >= 3.0.0")
         self.model_path = getModelPath(df_path, self.verbose)
         self.df_path = join(self.model_path, df_path)
         self.robot = builder(self.df_path, [join(self.model_path, '../..')],
