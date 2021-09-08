@@ -61,6 +61,8 @@ class RobotLoader(object):
 
     def __init__(self):
         if self.urdf_filename:
+            if self.sdf_filename:
+                raise AttributeError("Please choose between URDF *or* SDF")
             df_path = join(self.path, self.urdf_subpath, self.urdf_filename)
             builder = RobotWrapper.BuildFromURDF
         else:
