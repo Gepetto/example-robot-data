@@ -50,19 +50,31 @@ class RobotLoader(object):
     path = ''
     urdf_filename = ''
     srdf_filename = ''
+    sdf_filename = ''
     urdf_subpath = 'robots'
     srdf_subpath = 'srdf'
+    sdf_subpath = ''
     ref_posture = 'half_sitting'
     has_rotor_parameters = False
     free_flyer = False
     verbose = False
 
     def __init__(self):
-        urdf_path = join(self.path, self.urdf_subpath, self.urdf_filename)
-        self.model_path = getModelPath(urdf_path, self.verbose)
-        self.urdf_path = join(self.model_path, urdf_path)
-        self.robot = RobotWrapper.BuildFromURDF(self.urdf_path, [join(self.model_path, '../..')],
-                                                pin.JointModelFreeFlyer() if self.free_flyer else None)
+        if self.urdf_filename:
+            if self.sdf_filename:
+                raise AttributeError("Please choose between URDF *or* SDF")
+            df_path = join(self.path, self.urdf_subpath, self.urdf_filename)
+            builder = RobotWrapper.BuildFromURDF
+        else:
+            df_path = join(self.path, self.sdf_subpath, self.sdf_filename)
+            try:
+                builder = RobotWrapper.BuildFromSDF
+            except AttributeError:
+                raise ImportError("Building SDF models require pinocchio >= 3.0.0")
+        self.model_path = getModelPath(df_path, self.verbose)
+        self.df_path = join(self.model_path, df_path)
+        self.robot = builder(self.df_path, [join(self.model_path, '../..')],
+                             pin.JointModelFreeFlyer() if self.free_flyer else None)
 
         if self.srdf_filename:
             self.srdf_path = join(self.model_path, self.path, self.srdf_subpath, self.srdf_filename)
@@ -565,4 +577,4 @@ def load(name, display=False, rootNodeName=''):
 def load_full(name, display=False, rootNodeName=''):
     """Load a robot by its name, optionnaly display it in a viewer, and provide its q0 and paths."""
     inst = loader(name, display, rootNodeName)
-    return inst.robot, inst.robot.q0, inst.urdf_path, inst.srdf_path
+    return inst.robot, inst.robot.q0, inst.df_path, inst.srdf_path
