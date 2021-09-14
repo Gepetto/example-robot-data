@@ -48,7 +48,7 @@ class RobotTestCase(unittest.TestCase):
             self.check('cassie', 29, 28)
         except ImportError:
             import pinocchio
-            self.assertGreaterEqual(int(pinocchio.__version__.split('.')[0]), 3)
+            self.assertLess(int(pinocchio.__version__.split('.')[0]), 3)
 
     def test_double_pendulum(self):
         self.check('double_pendulum', 2, 2)
