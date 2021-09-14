@@ -268,6 +268,7 @@ def loadTalosArm():
     warnings.warn(_depr_msg('loadTalosArm()', 'talos_arm'), FutureWarning, 2)
     return loadTalos(arm=True)
 
+
 class HyQLoader(RobotLoader):
     path = "hyq_description"
     urdf_filename = "hyq_no_sensors.urdf"
