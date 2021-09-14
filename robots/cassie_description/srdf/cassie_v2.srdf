@@ -38,7 +38,7 @@
     <joint name="left-tarsus-spring-joint"   value="4.68025202e-01" />
     <joint name="left-achilles-spring-joint" value="-6.79067787e-01" />
     <joint name="left-tarsus-crank-joint"    value="-1.46111523e+00" />
-    <joint name="left-crank-rod-joint1"      value="1.46110617e+00" />
+    <joint name="left-crank-rod-joint"       value="1.46110617e+00" />
     <joint name="left-foot-op"               value="-1.46114565e+00" />
     <joint name="right-roll-op"              value="-1.04086943e-03" />
     <joint name="right-yaw-op"               value="-1.69133207e-04" />         
