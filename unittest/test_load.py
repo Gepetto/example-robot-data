@@ -43,8 +43,11 @@ class RobotTestCase(unittest.TestCase):
     def test_baxter(self):
         self.check('baxter', 19, 19)
         
-    # def test_cassie(self):
-    #     self.check('cassie', 29, 28)
+    def test_cassie(self):
+        try:
+            self.check('cassie', 29, 28)
+        except ImportError:
+            self.assertGreaterEqual(int(pin.__version__.split('.')[0]), 3)
         
     def test_double_pendulum(self):
         self.check('double_pendulum', 2, 2)
