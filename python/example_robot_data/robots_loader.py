@@ -150,6 +150,15 @@ def loadANYmal(withArm=None):
     return loader().robot
 
 
+class CassieLoader(RobotLoader):
+    path = 'cassie_description'
+    sdf_filename = "cassie_v2.sdf"
+    sdf_subpath = 'robots'
+    srdf_filename = "cassie_v2.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
 class TalosLoader(RobotLoader):
     path = 'talos_data'
     urdf_filename = "talos_reduced.urdf"
@@ -517,6 +526,7 @@ ROBOTS = {
     'anymal': ANYmalLoader,
     'anymal_kinova': ANYmalKinovaLoader,
     'baxter': BaxterLoader,
+    'cassie': CassieLoader,
     'double_pendulum': DoublePendulumLoader,
     'hector': HectorLoader,
     'hyq': HyQLoader,

@@ -1,0 +1,1017 @@
+<!-- *
+ * Copyright (c) 2018 Agility Robotics
+ *
+ * Permission to use, copy, modify, and distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ * -->
+
+<sdf version="1.6">
+  <model name="cassie">
+    <self_collide>1</self_collide>
+
+    <link name='pelvis'>
+      <pose>0 0 1.01 0 0 0</pose>
+      <inertial>
+        <pose>0.05066 0.000346 0.02841 0 0 0</pose>
+        <mass>10.33</mass>
+        <inertia>
+          <ixx>0.085821</ixx>
+          <iyy>0.049222</iyy>
+          <izz>0.08626</izz>
+          <ixy>1.276e-05</ixy>
+          <ixz>-0.00016022</ixz>
+          <iyz>-0.000414</iyz>
+        </inertia>
+      </inertial>
+      <visual name="pelvis_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/pelvis.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="pelvis_collision">
+        <pose frame="">0.02 0 0.04 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.14</radius>
+          </sphere>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name='left-hip-roll'>
+      <pose>0.021 0.135 1.01 0 1.5708 0</pose>
+      <inertial>
+        <pose>-0.01793 0.0001 -0.04428 0 0 0</pose>
+        <mass>1.82</mass>
+        <inertia>
+          <ixx>0.003431</ixx>
+          <iyy>0.003793</iyy>
+          <izz>0.002135</izz>
+          <ixy>-6.65e-07</ixy>
+          <ixz>-0.00084</ixz>
+          <iyz>3.99e-06</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-hip-roll_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-roll.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left-roll-op" type="revolute">
+      <child>left-hip-roll</child>
+      <parent>pelvis</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.2618</lower>
+          <upper>0.3491</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-hip-yaw'>
+      <pose>-0.049 0.135 1.01 0 0 0</pose>
+      <inertial>
+        <pose>0 -1e-05 -0.034277 0 0 0</pose>
+        <mass>1.171</mass>
+        <inertia>
+          <ixx>0.002443</ixx>
+          <iyy>0.002803</iyy>
+          <izz>0.000842</izz>
+          <ixy>-4e-08</ixy>
+          <ixz>2.462e-07</ixz>
+          <iyz>-2.71e-08</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-hip-yaw_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-yaw.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left-yaw-op" type="revolute">
+      <child>left-hip-yaw</child>
+      <parent>left-hip-roll</parent>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-0.3840</lower>
+          <upper>0.3840</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-hip-pitch'>
+      <pose>-0.049 0.135 0.92 0 1.5708 -1.57</pose>
+      <inertial>
+        <pose>0.05946 5e-05 -0.03581 0 0 0</pose>
+        <mass>5.52</mass>
+        <inertia>
+          <ixx>0.010898</ixx>
+          <iyy>0.029714</iyy>
+          <izz>0.030257</izz>
+          <ixy>-0.0002669</ixy>
+          <ixz>-5.721e-05</ixz>
+          <iyz>9.17e-06</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-hip-pitch_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-pitch.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="left-hip-pitch_collision">
+        <pose frame="">0.053 0.0 -0.0379 0 1.57 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="left-pitch-op" type="revolute">
+      <child>left-hip-pitch</child>
+      <parent>left-hip-yaw</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.8727</lower>
+          <upper>1.3963</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-achilles-rod'>
+      <pose>-0.049 0.09 0.92 -1.7199 0.91441 3.0232</pose>
+      <inertial>
+        <pose>0.24719 0 0 0 0 0</pose>
+        <mass>0.1567</mass>
+        <inertia>
+          <ixx>3.754e-06</ixx>
+          <iyy>0.004487</iyy>
+          <izz>0.004488</izz>
+          <ixy>-3.74e-08</ixy>
+          <ixz>-1.61e-08</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-achilles_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/achilles-rod.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left-pitch-rod-joint" type="ball">
+      <pose> 0 0 0.045 -0.0545114 0.0726228 -0.652947</pose>
+      <parent>left-achilles-rod</parent>
+      <child>left-hip-pitch</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-knee'>
+      <pose>-0.049 0.1305 0.8 -1.5708 0.7854 3.1416</pose>
+      <inertial>
+        <pose>0.023 0.03207 -0.002181 0 0 0</pose>
+        <mass>0.7578</mass>
+        <inertia>
+          <ixx>0.001376</ixx>
+          <iyy>0.0010335</iyy>
+          <izz>0.0021637</izz>
+          <ixy>-0.00039744</ixy>
+          <ixz>-4.085e-05</ixz>
+          <iyz>-5.374e-05</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-knee_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/knee.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left-knee-op" type="revolute">
+      <child>left-knee</child>
+      <parent>left-hip-pitch</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.07694</lower>
+          <upper>0.13963</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-shin'>
+      <pose>-0.058383 0.1305 0.72357 -1.5708 0.7854 3.1416</pose>
+      <inertial>
+        <pose>0.18338 0.001169 0.0002123 0 0 0</pose>
+        <mass>0.577</mass>
+        <inertia>
+          <ixx>0.00035939</ixx>
+          <iyy>0.014728</iyy>
+          <izz>0.014707</izz>
+          <ixy>-0.00020981</ixy>
+          <ixz>2.266e-05</ixz>
+          <iyz>-1.2e-07</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-shin_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/shin.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="left-shin_collision">
+        <pose frame="">0.22 0.01 0.0 0 1.57 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.44</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="left-knee-shin-joint" type="revolute">
+      <child>left-shin</child>
+      <parent>left-knee</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.34907</lower>
+          <upper>0.34907</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>1500</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-tarsus'>
+      <pose>-0.35166 0.1305 0.402 1.5708 1.3439 0</pose>
+      <inertial>
+        <pose>0.11046 -0.03058 -0.00131 0 0 0</pose>
+        <mass>0.782</mass>
+        <inertia>
+          <ixx>0.00039238</ixx>
+          <iyy>0.013595</iyy>
+          <izz>0.013674</izz>
+          <ixy>0.00023651</ixy>
+          <ixz>-4.987e-05</ixz>
+          <iyz>-4.82e-06</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-tarsus_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/tarsus.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="left-tarsus_collision">
+        <pose frame="">0.21 -0.03 0.0 0 1.57 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.38</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="left-shin-tarsus-joint" type="revolute">
+      <child>left-tarsus</child>
+      <parent>left-shin</parent>
+      <axis>
+        <xyz> 0 0 1</xyz>
+        <limit>
+          <lower>-0.13963</lower>
+          <upper>1.95477</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-heel-spring'>
+      <pose>-0.38432 0.12958 0.40749 1.6878 -1.3734 -0.18949</pose>
+      <inertial>
+        <pose>0.081 0.0022 0 0 0 0</pose>
+        <mass>0.126</mass>
+        <inertia>
+          <ixx>2.959e-05</ixx>
+          <iyy>0.00022231</iyy>
+          <izz>0.0002007</izz>
+          <ixy>7.15e-06</ixy>
+          <ixz>-6e-07</ixz>
+          <iyz>1e-07</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-heel-spring_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/heel-spring.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left-tarsus-spring-joint" type="revolute">
+      <child>left-heel-spring</child>
+      <parent>left-tarsus</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>1250</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-foot-crank'>
+      <pose>-0.37174 0.10775 0.33784 1.5708 1.3439 0</pose>
+      <inertial>
+        <pose>0.00493 2e-05 -0.00215 0 0 0</pose>
+        <mass>0.1261</mass>
+        <inertia>
+          <ixx>2.6941e-05</ixx>
+          <iyy>4.9621e-05</iyy>
+          <izz>6.3362e-05</izz>
+          <ixy>-2.1e-09</ixy>
+          <ixz>-3.9623e-06</ixz>
+          <iyz>-1.09e-08</iyz>
+        </inertia>
+      </inertial>
+      <visual name ="left-foot-crank_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/foot-crank.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left-tarsus-crank-joint" type="revolute">
+      <child>left-foot-crank</child>
+      <parent>left-tarsus</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.4435</lower>
+          <upper>-0.6109</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='left-plantar-rod'>
+      <pose>-0.35937 0.11566 0.28425 1.5708 1.3639 0.1</pose>
+      <inertial>
+        <pose>0.17792 0 0 0 0 0</pose>
+        <mass>0.1186</mass>
+        <inertia>
+          <ixx>2.779e-06</ixx>
+          <iyy>0.001774</iyy>
+          <izz>0.001775</izz>
+          <ixy>-2.34e-08</ixy>
+          <ixz>-8.1e-09</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-plantar-rod_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/plantar-rod.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="left-crank-rod-joint" type="revolute">
+      <child>left-plantar-rod</child>
+      <parent>left-foot-crank</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name='left-foot'>
+      <pose>-0.29886 0.1305 -0.0045361 1.5708 1.3439 0</pose>
+      <inertial>
+        <pose>0.00474 0.02748 -0.00014 0 0 0</pose>
+        <mass>0.1498</mass>
+        <inertia>
+          <ixx>0.00017388</ixx>
+          <iyy>0.00016793</iyy>
+          <izz>0.00033261</izz>
+          <ixy>0.00011814</ixy>
+          <ixz>1.36e-06</ixz>
+          <iyz>-4e-07</iyz>
+        </inertia>
+      </inertial>
+      <visual name="left-foot_visual">
+        <geometry>
+          <mesh>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/foot.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="left-foot_collision">
+        <pose frame="">0.01 0.045 0 0 1.57 -0.695</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.0168</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <min_depth>0.005</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+    </link>
+
+    <joint name="left-foot-op" type="revolute">
+      <child>left-foot</child>
+      <parent>left-tarsus</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.4435</lower>
+          <upper>-0.6109</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-hip-roll'>
+      <pose>0.021 -0.135 1.01 0 1.5708 0</pose>
+      <inertial>
+        <pose>-0.01793 -0.0001 -0.04428 0 0 0</pose>
+        <mass>1.82</mass>
+        <inertia>
+          <ixx>0.003431</ixx>
+          <iyy>0.003793</iyy>
+          <izz>0.002135</izz>
+          <ixy>6.65e-07</ixy>
+          <ixz>-0.00084</ixz>
+          <iyz>-3.99e-06</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-hip-yaw_visual">
+        <geometry>
+          <mesh>
+            <scale>1 -1 1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-roll.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="right-roll-op" type="revolute">
+      <child>right-hip-roll</child>
+      <parent>pelvis</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.3491</lower>
+          <upper>0.2618</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-hip-yaw'>
+      <pose>-0.049 -0.135 1.01 0 0 0</pose>
+      <inertial>
+        <pose>0 1e-05 -0.034277 0 0 0</pose>
+        <mass>1.171</mass>
+        <inertia>
+          <ixx>0.002443</ixx>
+          <iyy>0.002803</iyy>
+          <izz>0.000842</izz>
+          <ixy>4e-08</ixy>
+          <ixz>2.462e-07</ixz>
+          <iyz>2.71e-08</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-hip-yaw_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-yaw.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="right-yaw-op" type="revolute">
+      <child>right-hip-yaw</child>
+      <parent>right-hip-roll</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.3840</lower>
+          <upper>0.3840</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-hip-pitch'>
+      <pose>-0.049 -0.135 0.92 0 1.5708 -1.57</pose>
+      <inertial>
+        <pose>0.05946 5e-05 0.03581 0 0 0</pose>
+        <mass>5.52</mass>
+        <inertia>
+          <ixx>0.010898</ixx>
+          <iyy>0.029714</iyy>
+          <izz>0.030257</izz>
+          <ixy>-0.0002669</ixy>
+          <ixz>5.721e-05</ixz>
+          <iyz>-9.17e-06</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-hip-pitch_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 -1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/hip-pitch.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="right-hip-pitch_collision">
+        <pose frame="">0.053 0.0 0.0379 0 1.57 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.06</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="right-pitch-op" type="revolute">
+      <child>right-hip-pitch</child>
+      <parent>right-hip-yaw</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.8727</lower>
+          <upper>1.3963</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-achilles-rod'>
+      <pose>-0.049 -0.09 0.92 -1.4217 0.91441 -3.0232</pose>
+      <inertial>
+        <pose>0.24719 0 0 0 0 0</pose>
+        <mass>0.1567</mass>
+        <inertia>
+          <ixx>3.754e-06</ixx>
+          <iyy>0.004487</iyy>
+          <izz>0.004488</izz>
+          <ixy>-3.74e-08</ixy>
+          <ixz>1.61e-08</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-achilles-rod_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/achilles-rod.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="right-pitch-rod-joint" type="ball">
+      <pose>0 0 -0.045 0.0557801 -0.0716652 -0.653039</pose>
+      <parent>right-achilles-rod</parent>
+      <child>right-hip-pitch</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <dynamics>
+          <damping>0.01</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-knee'>
+      <pose>-0.049 -0.1305 0.8 -1.5708 0.7854 3.1416</pose>
+      <inertial>
+        <pose>0.023 0.03207 0.002181 0 0 0</pose>
+        <mass>0.7578</mass>
+        <inertia>
+          <ixx>0.001376</ixx>
+          <iyy>0.0010335</iyy>
+          <izz>0.0021637</izz>
+          <ixy>-0.00039744</ixy>
+          <ixz>4.085e-05</ixz>
+          <iyz>5.374e-05</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-knee_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/knee.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="right-knee-op" type="revolute">
+      <child>right-knee</child>
+      <parent>right-hip-pitch</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.07694</lower>
+          <upper>0.13963</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-shin'>
+      <pose>-0.058383 -0.1305 0.72357 -1.5708 0.7854 3.1416</pose>
+      <inertial>
+        <pose>0.18338 0.001169 -0.0002123 0 0 0</pose>
+        <mass>0.577</mass>
+        <inertia>
+          <ixx>0.00035939</ixx>
+          <iyy>0.014728</iyy>
+          <izz>0.014707</izz>
+          <ixy>-0.00020981</ixy>
+          <ixz>-2.266e-05</ixz>
+          <iyz>1.2e-07</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-shin_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/shin.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="right-shin_collision">
+        <pose frame="">0.22 0.01 0.0 0 1.57 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.44</length>
+            <radius>0.04</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="right-knee-shin-joint" type="revolute">
+      <child>right-shin</child>
+      <parent>right-knee</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.34907</lower>
+          <upper>0.34907</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>1500</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-tarsus'>
+      <pose>-0.35166 -0.1305 0.402 1.5708 1.3439 0</pose>
+      <inertial>
+        <pose>0.11046 -0.03058 0.00131 0 0 0</pose>
+        <mass>0.782</mass>
+        <inertia>
+          <ixx>0.00039238</ixx>
+          <iyy>0.013595</iyy>
+          <izz>0.013674</izz>
+          <ixy>0.00023651</ixy>
+          <ixz>4.987e-05</ixz>
+          <iyz>4.82e-06</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-tarsus_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/tarsus.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="right-tarsus_collision">
+        <pose frame="">0.21 -0.03 0.0 0 1.57 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.38</length>
+            <radius>0.02</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="right-shin-tarsus-joint" type="revolute">
+      <child>right-tarsus</child>
+      <parent>right-shin</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.13963</lower>
+          <upper>1.95477</upper>
+        </limit>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-heel-spring'>
+      <pose>-0.38432 -0.12958 0.40749 1.4538 -1.3734 0.18949</pose>
+      <inertial>
+        <pose>0.081 0.0022 0 0 0 0</pose>
+        <mass>0.126</mass>
+        <inertia>
+          <ixx>2.959e-05</ixx>
+          <iyy>0.00022231</iyy>
+          <izz>0.0002007</izz>
+          <ixy>7.15e-06</ixy>
+          <ixz>6e-07</ixz>
+          <iyz>-1e-07</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-heel-spring_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/heel-spring.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="right-tarsus-spring-joint" type="revolute">
+      <child>right-heel-spring</child>
+      <parent>right-tarsus</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>1250</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-foot-crank'>
+      <pose>-0.37174 -0.10775 0.33784 1.5708 1.3439 0</pose>
+      <inertial>
+        <pose>0.00493 2e-05 0.00215 0 0 0</pose>
+        <mass>0.1261</mass>
+        <inertia>
+          <ixx>2.6941e-05</ixx>
+          <iyy>4.9621e-05</iyy>
+          <izz>6.3362e-05</izz>
+          <ixy>-2.1e-09</ixy>
+          <ixz>3.9623e-06</ixz>
+          <iyz>1.09e-08</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-foot-crank_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 -1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/foot-crank.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="right-tarsus-crank-joint" type="revolute">
+      <child>right-foot-crank</child>
+      <parent>right-tarsus</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.4435</lower>
+          <upper>-0.6109</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <link name='right-plantar-rod'>
+      <pose>-0.35937 -0.11566 0.28425 1.5708 1.364 -0.1</pose>
+      <inertial>
+        <pose>0.17792 0 0 0 0 0</pose>
+        <mass>0.1186</mass>
+        <inertia>
+          <ixx>2.779e-06</ixx>
+          <iyy>0.001774</iyy>
+          <izz>0.001775</izz>
+          <ixy>-2.34e-08</ixy>
+          <ixz>8.1e-09</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-plantar-rod_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/plantar-rod.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="right-crank-rod-joint" type="revolute">
+      <child>right-plantar-rod</child>
+      <parent>right-foot-crank</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <link name='right-foot'>
+      <pose>-0.29886 -0.1305 -0.0045361 1.5708 1.364 0</pose>
+      <inertial>
+        <pose>0.00474 0.02748 0.00014 0 0 0</pose>
+        <mass>0.1498</mass>
+        <inertia>
+          <ixx>0.00017388</ixx>
+          <iyy>0.00016793</iyy>
+          <izz>0.00033261</izz>
+          <ixy>0.00011814</ixy>
+          <ixz>-1.36e-06</ixz>
+          <iyz>4e-07</iyz>
+        </inertia>
+      </inertial>
+      <visual name="right-foot_visual">
+        <geometry>
+          <mesh>
+            <scale>1 1 -1</scale>
+            <uri>model://example-robot-data/robots/cassie_description/meshes/foot.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="right-foot_collision">
+        <pose frame="">0.01 0.045 0 0 1.57 -0.695</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.0168</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+        <contact>
+          <ode>
+            <min_depth>0.005</min_depth>
+          </ode>
+        </contact>
+      </surface>
+      </collision>
+    </link>
+
+    <joint name="right-foot-op" type="revolute">
+      <child>right-foot</child>
+      <parent>right-tarsus</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-2.4435</lower>
+          <upper>-0.6109</upper>
+        </limit>
+        <dynamics>
+          <damping>1</damping>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <joint name="right-achilles-spring-joint" type="revolute">
+      <pose>0.501187 0.00132299 -0.00170135 0.0864423 -0.0521164 -2.68467</pose>
+      <parent>right-heel-spring</parent>
+      <child>right-achilles-rod</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="right-plantar-foot-joint" type="ball">
+      <pose>0.055 0 -0.008 0 0 0</pose>
+      <parent>right-plantar-rod</parent>
+      <child>right-foot</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="left-achilles-spring-joint" type="revolute">
+      <pose>0.501187 0.00132298 0.00170128 -0.0864415 0.0521197 -2.68468</pose>
+      <parent>left-heel-spring</parent>
+      <child>left-achilles-rod</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="left-plantar-foot-joint" type="ball">
+      <pose>0.055 0 0.008 0 0 0</pose>
+      <parent>left-plantar-rod</parent>
+      <child>left-foot</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="static" type="prismatic">
+      <parent>world</parent>
+      <child>pelvis</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.2</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <!-- Attach the plugin to this model -->
+    <plugin filename="libcassie_plugin.so" name="CassiePlugin">
+    </plugin>
+
+</model>
+</sdf>
