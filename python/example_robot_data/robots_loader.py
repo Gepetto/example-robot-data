@@ -164,6 +164,7 @@ class TalosLoader(RobotLoader):
     urdf_filename = "talos_reduced.urdf"
     srdf_filename = "talos.srdf"
     free_flyer = True
+    has_rotor_parameters = True
 
 
 class TalosBoxLoader(TalosLoader):
