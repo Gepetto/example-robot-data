@@ -28,28 +28,28 @@
   </group>
 
   <group_state name="standing" group="whole_body">
-    <joint name="root_joint"                 value="-8.84376603e-04  2.01947521e-05  1.03234704e+00  3.76613677e-04 8.54066138e-02 -1.18694658e-05  9.96346109e-01" />
-    <joint name="left-roll-op"               value="-1.04031254e-03" />
-    <joint name="left-yaw-op"                value="1.68090673e-04" />
-    <joint name="left-pitch-op"              value="7.41104603e-01" />
-    <joint name="left-knee-op"               value="-2.71448998e-02" />
-    <joint name="left-knee-shin-joint"       value="-3.90872643e-01" />
-    <joint name="left-shin-tarsus-joint"     value="2.09080249e-01" />
-    <joint name="left-tarsus-spring-joint"   value="4.68025202e-01" />
-    <joint name="left-achilles-spring-joint" value="-6.79067787e-01" />
-    <joint name="left-tarsus-crank-joint"    value="-1.46111523e+00" />
-    <joint name="left-crank-rod-joint"       value="1.46110617e+00" />
-    <joint name="left-foot-op"               value="-1.46114565e+00" />
-    <joint name="right-roll-op"              value="-1.04086943e-03" />
-    <joint name="right-yaw-op"               value="-1.69133207e-04" />         
-    <joint name="right-pitch-op"             value="7.42278082e-01" />     
-    <joint name="right-knee-op"              value="-2.83885130e-02" /> 
-    <joint name="right-knee-shin-joint"      value="-3.91207267e-01" />
-    <joint name="right-shin-tarsus-joint"    value="2.09642093e-01" />
-    <joint name="right-tarsus-spring-joint"  value="4.69313644e-01" />
-    <joint name="right-achilles-spring-joint"value="-6.80943430e-01" />
-    <joint name="right-tarsus-crank-joint"   value="-1.48154922e+00" />
-    <joint name="right-crank-rod-joint"      value="1.48470113e+00" />
-    <joint name="right-foot-op"              value="-1.46130274e+00" />
+    <joint name="root_joint"                 value="-0.00992617 -0.00004808 1.02458068 0.0 0.0 0.0 1.0" />
+    <joint name="left-roll-op"               value="-0.00513955" />
+    <joint name="left-yaw-op"                value="0.00459357" />
+    <joint name="left-pitch-op"              value="0.59575303" />
+    <joint name="left-knee-op"               value="0.03162615" />
+    <joint name="left-knee-shin-joint"       value="-0.51390881" />
+    <joint name="left-shin-tarsus-joint"     value="0.25810122" />
+    <joint name="left-tarsus-spring-joint"   value="0.53679290" />
+    <joint name="left-achilles-spring-joint" value="-0.79073525" />
+    <joint name="left-tarsus-crank-joint"    value="-1.44545535" />
+    <joint name="left-crank-rod-joint"       value="1.44544632" />
+    <joint name="left-foot-op"               value="-1.44548599" />
+    <joint name="right-roll-op"              value="0.00529991" />
+    <joint name="right-yaw-op"               value=" 0.00443722" />         
+    <joint name="right-pitch-op"             value="0.59614815" />     
+    <joint name="right-knee-op"              value="0.03053357" /> 
+    <joint name="right-knee-shin-joint"      value="-0.51316503" />
+    <joint name="right-shin-tarsus-joint"    value="0.25804492" />
+    <joint name="right-tarsus-spring-joint"  value="0.53716726" />
+    <joint name="right-achilles-spring-joint"value="-0.79113522" />
+    <joint name="right-tarsus-crank-joint"   value="-1.46635249" />
+    <joint name="right-crank-rod-joint"      value="1.46950485" />
+    <joint name="right-foot-op"              value="-1.44610592" />
   </group_state>
 </robot>
