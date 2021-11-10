@@ -93,7 +93,7 @@ class RobotTestCase(unittest.TestCase):
         self.check('solo12', 19, 18)
 
     def test_finger_edu(self):
-        self.check('finger_edu', 3, 3)
+        self.check('finger_edu', 3, 3, one_kg_bodies=['finger_base_link'])
 
     def test_talos(self):
         self.check('talos', 39, 38)
