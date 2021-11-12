@@ -58,6 +58,7 @@ class RobotLoader(object):
     has_rotor_parameters = False
     free_flyer = False
     verbose = False
+    model_path = None
 
     def __init__(self):
         if self.urdf_filename:
@@ -71,7 +72,8 @@ class RobotLoader(object):
                 builder = RobotWrapper.BuildFromSDF
             except AttributeError:
                 raise ImportError("Building SDF models require pinocchio >= 3.0.0")
-        self.model_path = getModelPath(df_path, self.verbose)
+        if self.model_path is None:
+            self.model_path = getModelPath(df_path, self.verbose)
         self.df_path = join(self.model_path, df_path)
         self.robot = builder(self.df_path, [join(self.model_path, '../..')],
                              pin.JointModelFreeFlyer() if self.free_flyer else None)
