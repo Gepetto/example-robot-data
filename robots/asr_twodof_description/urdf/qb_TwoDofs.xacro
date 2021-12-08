@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot name="qbTwoDofs" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find qb_move_description)/urdf/qbmove.utils.xacro" ns="qbmove"/>
+
+  <link name="world"/>
+  <joint name="basement" type="fixed">
+    <origin xyz="0 0 0.3" rpy="-1.57 0 0"/>
+    <parent link="world"/>
+    <child link="root_link"/>
+  </joint>
+  <link name="root_link">
+      <visual>
+          <origin xyz="-0.1 -0.04 0" rpy="1.57 0 1.57"/>
+          <geometry>
+      <mesh filename="package://twodofs_description/meshes/twodofs/dae/Base2Dof_4040_m.dae"/>
+          </geometry> 
+      </visual>
+      <visual>
+        <origin xyz="0 0.011 0.133" rpy="-1.57 -1.57 0"/>
+        <geometry>
+      <mesh filename="package://simplecube_description/meshes/qb_meshes/dae/qb_base_flange_m.dae" />
+        </geometry> 
+      </visual> 
+  </link>
+  <xacro:qbmove.build_move_from_yaml namespace="cube1" parent="root">
+    <origin xyz="0 0.045 0.1" rpy="0 0 3.14"/>
+  </xacro:qbmove.build_move_from_yaml>
+  <xacro:qbmove.build_flange_from_yaml flange="c_flange_axis" namespace="cube1" parent="cube1_shaft"/>
+
+  <xacro:qbmove.build_move_from_yaml namespace="cube2" parent="cube1_c_flange_axis">
+    <origin xyz="-0.033 0 0.033" rpy="-1.57 0 -1.57"/>
+  </xacro:qbmove.build_move_from_yaml>
+  <xacro:qbmove.build_flange_from_yaml flange="c_flange_axis" namespace="cube2" parent="cube2_shaft"/>
+
+<!--   <xacro:qbmove.build_move_from_yaml namespace="cube3" parent="cube2_c_flange_axis">
+    <origin xyz="-0.033 0 0.033" rpy="-1.57 0 -1.57"/>
+  </xacro:qbmove.build_move_from_yaml> -->
+
+  <gazebo>
+      <self_collide>1</self_collide>
+  </gazebo>
+
+</robot>
