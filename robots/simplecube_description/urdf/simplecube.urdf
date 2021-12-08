@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot name="simpleCube">
+
+    <link name="world">
+    </link> 
+    
+    <joint name="dummy_base" type="floating">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="world"/>
+        <child link="cube_base"/>
+    </joint>
+
+    <link name="cube_base">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+				<mesh filename="package://example-robot-data/robots/simplecube_description/meshes/qb_meshes/dae/qb_base_flange_m.dae" />
+            </geometry>	
+        </visual> 
+		<visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+				<mesh filename="package://example-robot-data/robots/simplecube_description/meshes/qb_meshes/dae/qbmove_frame_m.dae" />
+            </geometry>	
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://example-robot-data/robots/simplecube_description/meshes/qb_meshes/stl/qbmove_frame_m.stl" />
+            </geometry> 
+        </collision>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://example-robot-data/robots/simplecube_description/meshes/qb_meshes/stl/qb_base_flange_m.stl" />
+            </geometry> 
+        </collision>
+    </link>
+
+    <joint name="J1" type="revolute">
+        <origin xyz="0 0 0.033" rpy="0 0 0"/>
+        <parent link="cube_base"/>
+        <child link="Link1"/>
+		<limit effort="300" velocity="100" lower="-3.14" upper="3.14" />
+        <axis xyz="0 0 1"/>
+    </joint>
+
+    <link name="Link1"> 
+        <inertial>
+            <origin xyz="-0.035 0 0.038" rpy="0 0 0"/>
+            <mass value="0.20"/>
+            <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+        </inertial>	
+        <visual>
+            <origin xyz="0 0 0.022" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="package://example-robot-data/robots/simplecube_description/meshes/qb_meshes/dae/qbmove_pulley_m.dae" />
+            </geometry>		
+        </visual>
+		<visual>
+            <origin xyz="-0.035 0 0.038" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://example-robot-data/robots/simplecube_description/meshes/onedof/dae/demoshaft.dae" />
+            </geometry>		
+        </visual>
+        <collision>
+            <origin xyz="-0.035 0 0.038" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://example-robot-data/robots/simplecube_description/meshes/onedof/demoshaft.stl" />
+            </geometry> 
+        </collision>
+    </link>  
+
+    <gazebo>
+        <self_collide>1</self_collide>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="advanced_vsa_j1" filename="libadvanced_plugin.so">
+            <joint>J1</joint>
+            <control_type>1</control_type>
+            <pub_eltau>false</pub_eltau>
+            <pub_state>true</pub_state>
+            <sub_ext_tau>false</sub_ext_tau>
+        </plugin>
+    </gazebo>
+</robot>

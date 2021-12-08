@@ -1,0 +1,2 @@
+## Namespace of the robot
+namespace: "simple_1dof"      # default = "toBEassigend"
