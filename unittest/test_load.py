@@ -58,7 +58,7 @@ class RobotTestCase(unittest.TestCase):
         self.check('double_pendulum_continuous', 4, 2)
 
     def test_asr(self):
-        self.check('asr_two_dof', 2, 2)
+        self.check('asr_twodof', 2, 2)
 
     def test_hector(self):
         self.check('hector', 7, 6)
