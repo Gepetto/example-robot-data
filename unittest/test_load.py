@@ -11,6 +11,7 @@ from example_robot_data import load_full
 
 
 class RobotTestCase(unittest.TestCase):
+
     def check(self, name, expected_nq, expected_nv, one_kg_bodies=[]):
         """Helper function for the real tests"""
         robot, _, urdf, _ = load_full(name, display=False)

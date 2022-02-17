@@ -187,6 +187,7 @@ class TalosArmLoader(TalosLoader):
 
 
 class TalosLegsLoader(TalosLoader):
+
     def __init__(self):
         super(TalosLegsLoader, self).__init__()
         legMaxId = 14
@@ -302,6 +303,7 @@ class Solo8Loader(RobotLoader):
 
 
 class SoloLoader(Solo8Loader):
+
     def __init__(self, *args, **kwargs):
         warnings.warn('"solo" is deprecated, please try to load "solo8"')
         return super(SoloLoader, self).__init__(*args, **kwargs)
