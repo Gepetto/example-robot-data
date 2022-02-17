@@ -11,6 +11,7 @@ from example_robot_data import load_full
 
 
 class RobotTestCase(unittest.TestCase):
+
     def check(self, name, expected_nq, expected_nv, one_kg_bodies=[]):
         """Helper function for the real tests"""
         robot, _, urdf, _ = load_full(name, display=False)
@@ -52,6 +53,9 @@ class RobotTestCase(unittest.TestCase):
 
     def test_double_pendulum(self):
         self.check('double_pendulum', 2, 2)
+
+    def test_double_pendulum_continuous(self):
+        self.check('double_pendulum_continuous', 4, 2)
 
     def test_hector(self):
         self.check('hector', 7, 6)
