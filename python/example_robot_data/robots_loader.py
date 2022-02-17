@@ -483,6 +483,10 @@ class DoublePendulumLoader(RobotLoader):
     urdf_subpath = "urdf"
 
 
+class DoublePendulumContinuousLoader(DoublePendulumLoader):
+    urdf_filename = "double_pendulum_continuous.urdf"
+
+
 def loadDoublePendulum():
     warnings.warn(_depr_msg('loadDoublePendulum()', 'double_pendulum'), FutureWarning, 2)
     return DoublePendulumLoader().robot
@@ -531,6 +535,7 @@ ROBOTS = {
     'baxter': BaxterLoader,
     'cassie': CassieLoader,
     'double_pendulum': DoublePendulumLoader,
+    'double_pendulum_continuous': DoublePendulumContinuousLoader,
     'hector': HectorLoader,
     'hyq': HyQLoader,
     'icub': ICubLoader,
