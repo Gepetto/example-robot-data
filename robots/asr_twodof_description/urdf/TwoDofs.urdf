@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <robot name="twodofs">
 
-    <!-- # Base and support  -->	
+    <!-- # Base and support  -->
     <link name="world">
-    </link> 
+    </link>
     <joint name="ground_fixed" type="fixed">
-        <origin xyz="0 0 0" rpy="0 0 -1.57"/> 
+        <origin xyz="0 0 0" rpy="0 0 -1.57"/>
         <parent link="world"/>
         <child link="ground"/>
         <axis xyz="0 0 0"/>
@@ -20,22 +20,22 @@
             <origin xyz="-0.1 -0.04 0" rpy="1.57 0 1.57"/>
             <geometry>
 				<mesh filename="package://example-robot-data/robots/asr_twodof_description/meshes/twodofs/dae/Base2Dof_4040_m.dae"/>
-            </geometry>	
+            </geometry>
         </visual>
 		 <visual>
             <origin xyz="0 0.011 0.18" rpy="-1.57 -1.57 0"/>
             <geometry>
 				<mesh filename="package://example-robot-data/robots/asr_twodof_description/qb_meshes/dae/qb_base_flange_m.dae" />
-            </geometry>	
-        </visual> 
+            </geometry>
+        </visual>
 		<visual>
             <origin xyz="0 0.044 0.1470" rpy="0 0 0"/>
             <geometry>
 				<mesh filename="package://example-robot-data/robots/asr_twodof_description/qb_meshes/dae/qbmove_frame_m.dae" />
-            </geometry>	
+            </geometry>
         </visual>
     </link>
-    
+
 	<!-- # First  -->
     <joint name="J1" type="revolute">
         <origin xyz="0 0.044 0.18" rpy="0 0 0"/>
@@ -44,27 +44,27 @@
 		<limit effort="30" velocity="1.0" lower="-3.14" upper="3.14" />
         <axis xyz="0 0 1"/>
     </joint>
-    
-    <link name="Link1"> 
+
+    <link name="Link1">
         <inertial>
             <origin xyz="0 0.085 0" rpy="0 0 0"/>
             <mass value="0.55"/>
             <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
-        </inertial>	
+        </inertial>
         <visual>
             <origin xyz="0 0.056 0" rpy="0 -1.57 -1.57"/>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/asr_twodof_description/qb_meshes/dae/qb_c_flange_m.dae" />
-            </geometry>		
+            </geometry>
         </visual>
 		<visual>
             <origin xyz="0 0.089 -0.033" rpy="0 0 0"/>
             <geometry>
 				<mesh filename="package://example-robot-data/robots/asr_twodof_description/qb_meshes/dae/qbmove_frame_m.dae" />
-            </geometry>		
+            </geometry>
         </visual>
-    </link>  
-	
+    </link>
+
 	<!-- # Second -->
     <joint name="J2" type="revolute">
         <origin xyz="0 0.089 0" rpy="0 0 0"/>
@@ -73,26 +73,26 @@
 		<limit effort="30" velocity="1.0" lower="-3.14" upper="3.14" />
         <axis xyz="0 0 1"/>
     </joint>
-    
-    <link name="Link2"> 
+
+    <link name="Link2">
         <inertial>
             <origin xyz="0 0.085 0" rpy="0 0 0"/>
             <mass value="0.55"/>
             <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
-        </inertial>	
+        </inertial>
         <visual>
             <origin xyz="0 0.056 0" rpy="0 -1.57 -1.57"/>
             <geometry>
                 <mesh filename="package://example-robot-data/robots/asr_twodof_description/qb_meshes/dae/qb_c_flange_m.dae" />
-            </geometry>		
+            </geometry>
         </visual>
 		<visual>
             <origin xyz="0 0.089 -0.033" rpy="0 0 0"/>
             <geometry>
 				<mesh filename="package://example-robot-data/robots/asr_twodof_description/qb_meshes/dae/qbmove_frame_m.dae" />
-            </geometry>	
+            </geometry>
         </visual>
-    </link>  
+    </link>
 
 	<!-- # End effector -->
     <joint name="EE" type="fixed">
@@ -101,9 +101,14 @@
         <child link="Tip"/>
         <axis xyz="0 0 1"/>
     </joint>
-	<link name="Tip"> 
-	</link> 
-	
+	<link name="Tip">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0"/>
+        </inertial>
+	</link>
+
     <gazebo>
         <self_collide>1</self_collide>
     </gazebo>
