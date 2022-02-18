@@ -169,6 +169,12 @@ class TalosLoader(RobotLoader):
     has_rotor_parameters = True
 
 
+class AsrTwoDofLoader(RobotLoader):
+    path = 'asr_twodof_description'
+    urdf_filename = "TwoDofs.urdf"
+    urdf_subpath = "urdf"
+
+
 class TalosBoxLoader(TalosLoader):
     urdf_filename = "talos_reduced_box.urdf"
 
@@ -534,6 +540,7 @@ ROBOTS = {
     'a1': A1Loader,
     'anymal': ANYmalLoader,
     'anymal_kinova': ANYmalKinovaLoader,
+    'asr_twodof': AsrTwoDofLoader,
     'baxter': BaxterLoader,
     'cassie': CassieLoader,
     'double_pendulum': DoublePendulumLoader,
