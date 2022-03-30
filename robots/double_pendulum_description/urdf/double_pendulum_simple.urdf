@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Thus URDF was modified from `double_pendulum.urdf to avoid mehses.
+    Modifications by Justin Beri (https://github.com/justinberi) -->
 <robot
   name="2dof_planar">
   <link
