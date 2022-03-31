@@ -4,6 +4,8 @@
 [![conde version](https://img.shields.io/conda/vn/conda-forge/example-robot-data.svg)](https://anaconda.org/conda-forge/example-robot-data)
 [![conde download](https://anaconda.org/conda-forge/example-robot-data/badges/downloads.svg)](https://anaconda.org/conda-forge/example-robot-data)
 [![PyPI version](https://badge.fury.io/py/example-robot-data.svg)](https://badge.fury.io/py/example-robot-data)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/gepetto/example-robot-data/master.svg)](https://results.pre-commit.ci/latest/github/gepetto/example-robot-data/master)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
 This repository includes a set of robot descriptions that are aimed to be used in benchmarking, unit-tests, teachings,
