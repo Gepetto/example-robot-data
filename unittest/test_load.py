@@ -57,6 +57,9 @@ class RobotTestCase(unittest.TestCase):
     def test_double_pendulum_continuous(self):
         self.check('double_pendulum_continuous', 4, 2)
 
+    def test_double_pendulum_simple(self):
+        self.check('double_pendulum_simple', 2, 2)
+
     def test_asr(self):
         self.check('asr_twodof', 2, 2, one_kg_bodies=['ground'])
 
