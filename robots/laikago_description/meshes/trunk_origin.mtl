@@ -1,0 +1,36 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v5.0.639693989)
+
+newmtl MaterialFBXASC032FBXASC03528
+Kd 0.933333  0.392157 0.211765
+Ka 0.933333  0.392157 0.211765
+Ks 0 0 0
+Ke 0 0 0
+Tf 1 1 1
+d 1
+Ni 1
+Ns 2
+illum 2
+
+newmtl MaterialFBXASC032FBXASC03529
+Kd 0.203922 0.203922 0.203922
+Ka 0.203922 0.203922 0.203922
+Ks 0 0 0
+Ke 0 0 0
+Tf 1 1 1
+d 1
+Ni 1
+Ns 2
+illum 2
+
+newmtl MaterialFBXASC032FBXASC03530
+Kd 0.50196099 0.50196099 0.50196099
+Ka 0.50196099 0.50196099 0.50196099
+Ks 0 0 0
+Ke 0 0 0
+Tf 1 1 1
+d 1
+Ni 1
+Ns 2
+illum 2
+
