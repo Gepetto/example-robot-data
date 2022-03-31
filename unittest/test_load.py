@@ -108,6 +108,9 @@ class RobotTestCase(unittest.TestCase):
     def test_talos(self):
         self.check('talos', 39, 38)
 
+    def test_laikago(self):
+        self.check('laikago', 19, 18)
+        
     def test_talos_box(self):
         self.check('talos_box', 39, 38)
 
