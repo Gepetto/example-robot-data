@@ -129,6 +129,7 @@ class ANYmalLoader(RobotLoader):
     ref_posture = "standing"
     free_flyer = True
 
+
 class LaikagoLoader(RobotLoader):
     path = 'laikago_description'
     urdf_subpath = "urdf"
