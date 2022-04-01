@@ -1067,18 +1067,6 @@
       </axis>
     </joint>
 
-    <joint name="static" type="prismatic">
-      <parent>world</parent>
-      <child>pelvis</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.2</upper>
-        </limit>
-      </axis>
-    </joint>
-
     <!-- Attach the plugin to this model -->
     <plugin filename="libcassie_plugin.so" name="CassiePlugin">
     </plugin>
