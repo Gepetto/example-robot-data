@@ -93,6 +93,11 @@
         <cylinder length="0.08" radius="0.044"/>
       </geometry>
     </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
   </link>
   <joint name="FR_thigh_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 -0.037 0"/>
@@ -215,6 +220,11 @@
         <cylinder length="0.08" radius="0.044"/>
       </geometry>
     </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
   </link>
   <joint name="FL_thigh_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 0.037 0"/>
@@ -337,6 +347,11 @@
         <cylinder length="0.08" radius="0.044"/>
       </geometry>
     </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
   </link>
   <joint name="RR_thigh_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 -0.037 0"/>
@@ -459,6 +474,11 @@
         <cylinder length="0.08" radius="0.044"/>
       </geometry>
     </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
   </link>
   <joint name="RL_thigh_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0 0.037 0"/>
