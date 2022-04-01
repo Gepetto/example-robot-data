@@ -43,6 +43,7 @@ def readParamsFromSrdf(model, SRDF_PATH, verbose=False, has_rotor_parameters=Tru
     q0 = pin.neutral(model)
     if referencePose is not None:
         q0 = model.referenceConfigurations[referencePose].copy()
+    q0 = pin.normalize(model, q0)
     return q0
 
 
@@ -51,6 +52,8 @@ class RobotLoader(object):
     urdf_filename = ''
     srdf_filename = ''
     sdf_filename = ''
+    sdf_root_link_name = ''
+    sdf_parent_guidance = []
     urdf_subpath = 'robots'
     srdf_subpath = 'srdf'
     sdf_subpath = ''
@@ -66,17 +69,30 @@ class RobotLoader(object):
                 raise AttributeError("Please choose between URDF *or* SDF")
             df_path = join(self.path, self.urdf_subpath, self.urdf_filename)
             builder = RobotWrapper.BuildFromURDF
+            if self.model_path is None:
+                self.model_path = getModelPath(df_path, self.verbose)
+            self.df_path = join(self.model_path, df_path)
+            self.robot = builder(self.df_path, [join(self.model_path, '../..')],
+                                 pin.JointModelFreeFlyer() if self.free_flyer else None)
         else:
             df_path = join(self.path, self.sdf_subpath, self.sdf_filename)
             try:
                 builder = RobotWrapper.BuildFromSDF
+                if self.model_path is None:
+                    self.model_path = getModelPath(df_path, self.verbose)
+                self.df_path = join(self.model_path, df_path)
+                if tuple(int(i) for i in pin.__version__.split('.')) > (2, 9, 1):
+                    self.robot = builder(self.df_path,
+                                         package_dirs=[join(self.model_path, '../..')],
+                                         root_joint=pin.JointModelFreeFlyer() if self.free_flyer else None,
+                                         root_link_name=self.sdf_root_link_name,
+                                         parent_guidance=self.sdf_parent_guidance)
+                else:
+                    self.robot = builder(self.df_path,
+                                         package_dirs=[join(self.model_path, '../..')],
+                                         root_joint=pin.JointModelFreeFlyer() if self.free_flyer else None)
             except AttributeError:
                 raise ImportError("Building SDF models require pinocchio >= 3.0.0")
-        if self.model_path is None:
-            self.model_path = getModelPath(df_path, self.verbose)
-        self.df_path = join(self.model_path, df_path)
-        self.robot = builder(self.df_path, [join(self.model_path, '../..')],
-                             pin.JointModelFreeFlyer() if self.free_flyer else None)
 
         if self.srdf_filename:
             self.srdf_path = join(self.model_path, self.path, self.srdf_subpath, self.srdf_filename)
@@ -161,11 +177,20 @@ def loadANYmal(withArm=None):
 
 class CassieLoader(RobotLoader):
     path = 'cassie_description'
-    sdf_filename = "cassie_v2.sdf"
+    if tuple(int(i) for i in pin.__version__.split('.')) > (2, 9, 1):
+        sdf_filename = "cassie.sdf"
+    else:
+        sdf_filename = "cassie_v2.sdf"
     sdf_subpath = 'robots'
     srdf_filename = "cassie_v2.srdf"
     ref_posture = "standing"
     free_flyer = True
+    sdf_root_link_name = "pelvis"
+    sdf_parent_guidance = [
+        "left-roll-op", "left-yaw-op", "left-pitch-op", "left-knee-op", "left-tarsus-spring-joint", "left-foot-op",
+        "right-roll-op", "right-yaw-op", "right-pitch-op", "right-knee-op", "right-tarsus-spring-joint",
+        "right-foot-op"
+    ]
 
 
 class TalosLoader(RobotLoader):

@@ -38,6 +38,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/pelvis.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>
       </visual>
       <collision name="pelvis_collision">
         <pose frame="">0.02 0 0.04 0 0 0</pose>
@@ -69,6 +72,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/hip-roll.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>
       </visual>
     </link>
 
@@ -156,6 +162,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/hip-yaw.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -243,6 +252,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/hip-pitch.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
       <collision name="left-hip-pitch_collision">
         <pose frame="">0.053 0.0 -0.0379 0 1.57 0</pose>
@@ -339,6 +351,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/achilles-rod.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -374,6 +389,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/knee.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -493,6 +511,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/shin.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>        
       </visual>
       <collision name="left-shin_collision">
         <pose frame="">0.22 0.01 0.0 0 1.57 0</pose>
@@ -543,6 +564,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>        
       </visual>
       <collision name="left-tarsus_collision">
         <pose frame="">0.21 -0.03 0.0 0 1.57 0</pose>
@@ -591,6 +615,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/heel-spring.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -628,6 +655,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/foot-crank.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -667,6 +697,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/plantar-rod.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -696,9 +729,13 @@
       <visual name="left-foot_visual">
         <geometry>
           <mesh>
+            <scale>1 1 1</scale>
             <uri>model://example-robot-data/robots/cassie_description/meshes/foot.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
       <collision name="left-foot_collision">
         <pose frame="">0.01 0.045 0 0 1.57 -0.695</pose>
@@ -803,6 +840,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/hip-roll.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -891,6 +931,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/hip-yaw.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -979,6 +1022,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/hip-pitch.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
       <collision name="right-hip-pitch_collision">
         <pose frame="">0.053 0.0 0.0379 0 1.57 0</pose>
@@ -1076,6 +1122,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/achilles-rod.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -1112,6 +1161,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/knee.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -1234,6 +1286,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/shin.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>        
       </visual>
       <collision name="right-shin_collision">
         <pose frame="">0.22 0.01 0.0 0 1.57 0</pose>
@@ -1285,6 +1340,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/tarsus.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>        
       </visual>
       <collision name="right-tarsus_collision">
         <pose frame="">0.21 -0.03 0.0 0 1.57 0</pose>
@@ -1334,6 +1392,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/heel-spring.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -1371,6 +1432,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/foot-crank.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.35 0.35 0.35 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -1411,6 +1475,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/plantar-rod.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
     </link>
 
@@ -1444,6 +1511,9 @@
             <uri>model://example-robot-data/robots/cassie_description/meshes/foot.stl</uri>
           </mesh>
         </geometry>
+        <material>
+            <ambient>0.75 0.75 0.75 1</ambient>
+        </material>        
       </visual>
       <collision name="right-foot_collision">
         <pose frame="">0.01 0.045 0 0 1.57 -0.695</pose>
@@ -1584,18 +1654,6 @@
       <child>left-foot</child>
       <axis>
         <xyz>0 0 1</xyz>
-      </axis>
-    </joint>
-
-    <joint name="static" type="prismatic">
-      <parent>world</parent>
-      <child>pelvis</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.2</upper>
-        </limit>
       </axis>
     </joint>
 
