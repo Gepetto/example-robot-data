@@ -9,10 +9,6 @@ from pinocchio.robot_wrapper import RobotWrapper
 pin.switchToNumpyArray()
 
 
-def _depr_msg(deprecated, key):
-    return "`%s` is deprecated. Please use `load('%s')`" % (deprecated, key)
-
-
 def getModelPath(subpath, printmsg=False):
     source = dirname(dirname(dirname(__file__)))  # top level source directory
     paths = [
@@ -165,16 +161,6 @@ class BaxterLoader(RobotLoader):
     urdf_subpath = "urdf"
 
 
-def loadANYmal(withArm=None):
-    if withArm:
-        warnings.warn(_depr_msg('loadANYmal(kinova)', 'anymal_kinova'), FutureWarning, 2)
-        loader = ANYmalKinovaLoader
-    else:
-        warnings.warn(_depr_msg('loadANYmal()', 'anymal'), FutureWarning, 2)
-        loader = ANYmalLoader
-    return loader().robot
-
-
 class CassieLoader(RobotLoader):
     path = 'cassie_description'
     if tuple(int(i) for i in pin.__version__.split('.')) > (2, 9, 1):
@@ -277,51 +263,12 @@ class TalosLegsLoader(TalosLoader):
         self.addFreeFlyerJointLimits()
 
 
-def loadTalos(legs=False, arm=False, full=False, box=False):
-    if legs:
-        warnings.warn(_depr_msg('loadTalos(legs)', 'talos_legs'), FutureWarning, 2)
-        loader = TalosLegsLoader
-    elif arm:
-        warnings.warn(_depr_msg('loadTalos(arm)', 'talos_arm'), FutureWarning, 2)
-        loader = TalosArmLoader
-    elif full:
-        if box:
-            warnings.warn(_depr_msg('loadTalos(full, box)', 'talos_full_box'), FutureWarning, 2)
-            loader = TalosFullBoxLoader
-        else:
-            warnings.warn(_depr_msg('loadTalos(full)', 'talos_full'), FutureWarning, 2)
-            loader = TalosFullLoader
-    else:
-        if box:
-            warnings.warn(_depr_msg('loadTalos(box)', 'talos_box'), FutureWarning, 2)
-            loader = TalosBoxLoader
-        else:
-            warnings.warn(_depr_msg('loadTalos()', 'talos'), FutureWarning, 2)
-            loader = TalosLoader
-    return loader().robot
-
-
-def loadTalosLegs():
-    warnings.warn(_depr_msg('loadTalosLegs()', 'talos_legs'), FutureWarning, 2)
-    return loadTalos(legs=True)
-
-
-def loadTalosArm():
-    warnings.warn(_depr_msg('loadTalosArm()', 'talos_arm'), FutureWarning, 2)
-    return loadTalos(arm=True)
-
-
 class HyQLoader(RobotLoader):
     path = "hyq_description"
     urdf_filename = "hyq_no_sensors.urdf"
     srdf_filename = "hyq.srdf"
     ref_posture = "standing"
     free_flyer = True
-
-
-def loadHyQ():
-    warnings.warn(_depr_msg('loadHyQ()', 'hyq'), FutureWarning, 2)
-    return HyQLoader().robot
 
 
 class BoltLoader(RobotLoader):
@@ -351,12 +298,6 @@ class Solo12Loader(Solo8Loader):
     urdf_filename = "solo12.urdf"
 
 
-def loadSolo(solo=True):
-    warnings.warn(_depr_msg('loadSolo()', 'solo8'), FutureWarning, 2)
-    loader = Solo8Loader if solo else Solo12Loader
-    return loader().robot
-
-
 class FingerEduLoader(RobotLoader):
     path = 'finger_edu_description'
     urdf_filename = "finger_edu.urdf"
@@ -372,11 +313,6 @@ class KinovaLoader(RobotLoader):
     ref_posture = "arm_up"
 
 
-def loadKinova():
-    warnings.warn(_depr_msg('loadKinova()', 'kinova'), FutureWarning, 2)
-    return KinovaLoader().robot
-
-
 class TiagoLoader(RobotLoader):
     path = "tiago_description"
     urdf_filename = "tiago.urdf"
@@ -390,21 +326,6 @@ class TiagoNoHandLoader(TiagoLoader):
     urdf_filename = "tiago_no_hand.urdf"
 
 
-def loadTiago(hand=True):
-    if hand:
-        warnings.warn(_depr_msg('loadTiago()', 'tiago'), FutureWarning, 2)
-        loader = TiagoLoader
-    else:
-        warnings.warn(_depr_msg('loadTiago(hand=False)', 'tiago_no_hand'), FutureWarning, 2)
-        loader = TiagoNoHandLoader
-    return loader().robot
-
-
-def loadTiagoNoHand():
-    warnings.warn(_depr_msg('loadTiagoNoHand()', 'tiago_no_hand'), FutureWarning, 2)
-    return loadTiago(hand=False)
-
-
 class ICubLoader(RobotLoader):
     path = "icub_description"
     urdf_filename = "icub.urdf"
@@ -416,25 +337,10 @@ class ICubReducedLoader(ICubLoader):
     urdf_filename = "icub_reduced.urdf"
 
 
-def loadICub(reduced=True):
-    if reduced:
-        warnings.warn(_depr_msg('loadICub()', 'icub_reduced'), FutureWarning, 2)
-        loader = ICubReducedLoader
-    else:
-        warnings.warn(_depr_msg('loadICub(reduced=False)', 'icub'), FutureWarning, 2)
-        loader = ICubLoader
-    return loader().robot
-
-
 class PandaLoader(RobotLoader):
     path = "panda_description"
     urdf_filename = "panda.urdf"
     urdf_subpath = "urdf"
-
-
-def loadPanda():
-    warnings.warn(_depr_msg('loadPanda()', 'panda'), FutureWarning, 2)
-    return PandaLoader().robot
 
 
 class UR3Loader(RobotLoader):
@@ -475,46 +381,10 @@ class UR10LimitedLoader(UR10Loader):
     urdf_filename = "ur10_joint_limited_robot.urdf"
 
 
-def loadUR(robot=5, limited=False, gripper=False):
-    if robot == 3:
-        if limited:
-            warnings.warn(_depr_msg('loadUr(3, limited)', 'ur3_limited'), FutureWarning, 2)
-            loader = UR3LimitedLoader
-        elif gripper:
-            warnings.warn(_depr_msg('loadUr(3, gripper)', 'ur3_gripper'), FutureWarning, 2)
-            loader = UR3GripperLoader
-        else:
-            warnings.warn(_depr_msg('loadUr(3)', 'ur3'), FutureWarning, 2)
-            loader = UR3Loader
-    elif robot == 5:
-        if limited:
-            warnings.warn(_depr_msg('loadUr(limited)', 'ur5_limited'), FutureWarning, 2)
-            loader = UR5LimitedLoader
-        elif gripper:
-            warnings.warn(_depr_msg('loadUr(gripper)', 'ur5_gripper'), FutureWarning, 2)
-            loader = UR5GripperLoader
-        else:
-            warnings.warn(_depr_msg('loadUr()', 'ur5'), FutureWarning, 2)
-            loader = UR5Loader
-    elif robot == 10:
-        if limited:
-            warnings.warn(_depr_msg('loadUr(10, limited)', 'ur10_limited'), FutureWarning, 2)
-            loader = UR10LimitedLoader
-        else:
-            warnings.warn(_depr_msg('loadUr(10)', 'ur10'), FutureWarning, 2)
-            loader = UR10Loader
-    return loader().robot
-
-
 class HectorLoader(RobotLoader):
     path = "hector_description"
     urdf_filename = "quadrotor_base.urdf"
     free_flyer = True
-
-
-def loadHector():
-    warnings.warn(_depr_msg('loadHector()', 'hector'), FutureWarning, 2)
-    return HectorLoader().robot
 
 
 class DoublePendulumLoader(RobotLoader):
@@ -531,21 +401,11 @@ class DoublePendulumSimpleLoader(DoublePendulumLoader):
     urdf_filename = "double_pendulum_simple.urdf"
 
 
-def loadDoublePendulum():
-    warnings.warn(_depr_msg('loadDoublePendulum()', 'double_pendulum'), FutureWarning, 2)
-    return DoublePendulumLoader().robot
-
-
 class RomeoLoader(RobotLoader):
     path = "romeo_description"
     urdf_filename = "romeo.urdf"
     urdf_subpath = "urdf"
     free_flyer = True
-
-
-def loadRomeo():
-    warnings.warn(_depr_msg('loadRomeo()', 'romeo'), FutureWarning, 2)
-    return RomeoLoader().robot
 
 
 class SimpleHumanoidLoader(RobotLoader):
@@ -565,11 +425,6 @@ class IrisLoader(RobotLoader):
     path = "iris_description"
     urdf_filename = "iris_simple.urdf"
     free_flyer = True
-
-
-def loadIris():
-    warnings.warn(_depr_msg('loadIris()', 'iris'), FutureWarning, 2)
-    return IrisLoader().robot
 
 
 ROBOTS = {
