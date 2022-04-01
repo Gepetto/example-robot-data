@@ -292,7 +292,7 @@
     <axis xyz="0 1 0"/>
     <parent link="RLEG_LINK3"/>
     <child link="RLEG_LINK4"/>
-    <limit effort="300" lower="0" upper="2.618" velocity="7"/>    
+    <limit effort="300" lower="0" upper="2.618" velocity="7"/>
   </joint>
 
   <joint name="RLEG_ANKLE_P" type="revolute">
@@ -308,7 +308,7 @@
     <axis xyz="1 0 0"/>
     <parent link="RLEG_LINK5"/>
     <child link="r_ankle"/>
-    <limit effort="160" lower="-1.27" upper="0.68" velocity="5.8"/>    
+    <limit effort="160" lower="-1.27" upper="0.68" velocity="5.8"/>
   </joint>
 
   <joint name="RARM_SHOULDER_P" type="revolute">
@@ -316,7 +316,7 @@
     <axis xyz="0 1 0"/>
     <parent link="torso"/>
     <child link="RARM_LINK1"/>
-    <limit effort="100.0" lower="-1.57079632679" upper="0.785398163397" velocity="2.7"/>        
+    <limit effort="100.0" lower="-1.57079632679" upper="0.785398163397" velocity="2.7"/>
   </joint>
 
   <joint name="RARM_SHOULDER_R" type="revolute">
@@ -332,7 +332,7 @@
     <axis xyz="0 0 1"/>
     <parent link="RARM_LINK2"/>
     <child link="RARM_LINK3"/>
-    <limit effort="70.0" lower="-2.42600766027" upper="2.42600766027" velocity="4.58"/>    
+    <limit effort="70.0" lower="-2.42600766027" upper="2.42600766027" velocity="4.58"/>
   </joint>
 
   <joint name="RARM_ELBOW" type="revolute">
@@ -340,7 +340,7 @@
     <axis xyz="0 1 0"/>
     <parent link="RARM_LINK3"/>
     <child link="RARM_LINK4"/>
-    <limit effort="70.0" lower="-2.23402144255" upper="0.00349065850399" velocity="4.58"/>  
+    <limit effort="70.0" lower="-2.23402144255" upper="0.00349065850399" velocity="4.58"/>
   </joint>
 
   <joint name="RARM_WRIST_Y" type="revolute">
@@ -356,7 +356,7 @@
     <axis xyz="0 1 0"/>
     <parent link="RARM_LINK5"/>
     <child link="RARM_LINK6"/>
-    <limit effort="8.0" lower="-1.37008346282" upper="1.37008346282" velocity="1.76"/>    
+    <limit effort="8.0" lower="-1.37008346282" upper="1.37008346282" velocity="1.76"/>
   </joint>
 
   <joint name="RARM_WRIST_R" type="revolute">
@@ -364,7 +364,7 @@
     <axis xyz="1 0 0"/>
     <parent link="RARM_LINK6"/>
     <child link="r_wrist"/>
-    <limit effort="8.0" lower="-0.680678408278" upper="0.680678408278" velocity="1.76"/>    
+    <limit effort="8.0" lower="-0.680678408278" upper="0.680678408278" velocity="1.76"/>
   </joint>
 
   <joint name="LLEG_HIP_Y" type="revolute">
@@ -372,7 +372,7 @@
     <axis xyz="0 0 1"/>
     <parent link="BODY"/>
     <child link="LLEG_LINK1"/>
-    <limit effort="100" lower="-0.349065850399" upper="1.57079632679" velocity="3.87"/>    
+    <limit effort="100" lower="-0.349065850399" upper="1.57079632679" velocity="3.87"/>
   </joint>
 
   <joint name="LLEG_HIP_R" type="revolute">
@@ -380,7 +380,7 @@
     <axis xyz="1 0 0"/>
     <parent link="LLEG_LINK1"/>
     <child link="LLEG_LINK2"/>
-    <limit effort="100" lower="-0.349065850399" upper="1.57079632679" velocity="3.87"/>        
+    <limit effort="100" lower="-0.349065850399" upper="1.57079632679" velocity="3.87"/>
   </joint>
 
   <joint name="LLEG_HIP_P" type="revolute">
@@ -388,7 +388,7 @@
     <axis xyz="0 1 0"/>
     <parent link="LLEG_LINK2"/>
     <child link="LLEG_LINK3"/>
-    <limit effort="160" lower="-0.5236" upper="0.5236" velocity="5.8"/>    
+    <limit effort="160" lower="-0.5236" upper="0.5236" velocity="5.8"/>
   </joint>
 
   <joint name="LLEG_KNEE" type="revolute">
@@ -396,7 +396,7 @@
     <axis xyz="0 1 0"/>
     <parent link="LLEG_LINK3"/>
     <child link="LLEG_LINK4"/>
-    <limit effort="160" lower="-2.095" upper="0.7" velocity="5.8"/>    
+    <limit effort="160" lower="-2.095" upper="0.7" velocity="5.8"/>
   </joint>
 
   <joint name="LLEG_ANKLE_P" type="revolute">
@@ -404,7 +404,7 @@
     <axis xyz="0 1 0"/>
     <parent link="LLEG_LINK4"/>
     <child link="LLEG_LINK5"/>
-    <limit effort="300" lower="0" upper="2.618" velocity="7"/>    
+    <limit effort="300" lower="0" upper="2.618" velocity="7"/>
   </joint>
 
   <joint name="LLEG_ANKLE_R" type="revolute">
@@ -412,7 +412,7 @@
     <axis xyz="1 0 0"/>
     <parent link="LLEG_LINK5"/>
     <child link="l_ankle"/>
-    <limit effort="160" lower="-1.27" upper="0.68" velocity="5.8"/>    
+    <limit effort="160" lower="-1.27" upper="0.68" velocity="5.8"/>
   </joint>
 
   <joint name="LARM_SHOULDER_P" type="revolute">
@@ -420,7 +420,7 @@
     <axis xyz="0 1 0"/>
     <parent link="torso"/>
     <child link="LARM_LINK1"/>
-    <limit effort="100.0" lower="-1.57079632679" upper="0.785398163397" velocity="2.7"/>    
+    <limit effort="100.0" lower="-1.57079632679" upper="0.785398163397" velocity="2.7"/>
   </joint>
 
   <joint name="LARM_SHOULDER_R" type="revolute">
@@ -436,7 +436,7 @@
     <axis xyz="0 0 1"/>
     <parent link="LARM_LINK2"/>
     <child link="LARM_LINK3"/>
-    <limit effort="100.0" lower="-1.57079632679" upper="0.785398163397" velocity="2.7"/>                
+    <limit effort="100.0" lower="-1.57079632679" upper="0.785398163397" velocity="2.7"/>
   </joint>
 
   <joint name="LARM_ELBOW" type="revolute">
@@ -452,7 +452,7 @@
     <axis xyz="0 0 1"/>
     <parent link="LARM_LINK4"/>
     <child link="LARM_LINK5"/>
-    <limit effort="70.0" lower="-2.23402144255" upper="0.00349065850399" velocity="4.58"/>    
+    <limit effort="70.0" lower="-2.23402144255" upper="0.00349065850399" velocity="4.58"/>
   </joint>
 
   <joint name="LARM_WRIST_P" type="revolute">

@@ -115,7 +115,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -156,7 +156,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
       <collision name="left-hip-pitch_collision">
         <pose frame="">0.053 0.0 -0.0379 0 1.57 0</pose>
@@ -206,7 +206,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -244,7 +244,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -285,7 +285,7 @@
         </geometry>
         <material>
             <ambient>0.35 0.35 0.35 1</ambient>
-        </material>        
+        </material>
       </visual>
       <collision name="left-shin_collision">
         <pose frame="">0.22 0.01 0.0 0 1.57 0</pose>
@@ -337,7 +337,7 @@
         </geometry>
         <material>
             <ambient>0.35 0.35 0.35 1</ambient>
-        </material>        
+        </material>
       </visual>
       <collision name="left-tarsus_collision">
         <pose frame="">0.21 -0.03 0.0 0 1.57 0</pose>
@@ -387,7 +387,7 @@
         </geometry>
         <material>
             <ambient>0.35 0.35 0.35 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -426,7 +426,7 @@
         </geometry>
         <material>
             <ambient>0.35 0.35 0.35 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -467,7 +467,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -502,7 +502,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
       <collision name="left-foot_collision">
         <pose frame="">0.01 0.045 0 0 1.57 -0.695</pose>
@@ -560,7 +560,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -602,7 +602,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -644,7 +644,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
       <collision name="right-hip-pitch_collision">
         <pose frame="">0.053 0.0 0.0379 0 1.57 0</pose>
@@ -695,7 +695,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -734,7 +734,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -776,7 +776,7 @@
         </geometry>
         <material>
             <ambient>0.35 0.35 0.35 1</ambient>
-        </material>        
+        </material>
       </visual>
       <collision name="right-shin_collision">
         <pose frame="">0.22 0.01 0.0 0 1.57 0</pose>
@@ -829,7 +829,7 @@
         </geometry>
         <material>
             <ambient>0.35 0.35 0.35 1</ambient>
-        </material>        
+        </material>
       </visual>
       <collision name="right-tarsus_collision">
         <pose frame="">0.21 -0.03 0.0 0 1.57 0</pose>
@@ -880,7 +880,7 @@
         </geometry>
         <material>
             <ambient>0.35 0.35 0.35 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -919,7 +919,7 @@
         </geometry>
         <material>
             <ambient>0.35 0.35 0.35 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -961,7 +961,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
     </link>
 
@@ -996,7 +996,7 @@
         </geometry>
         <material>
             <ambient>0.75 0.75 0.75 1</ambient>
-        </material>        
+        </material>
       </visual>
       <collision name="right-foot_collision">
         <pose frame="">0.01 0.045 0 0 1.57 -0.695</pose>

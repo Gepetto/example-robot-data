@@ -2175,7 +2175,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/talos_data/meshes/v2/ankle_X_collision.stl" scale="1 1 1"/>
       </geometry>
-    </collision> 
+    </collision>
   </link>
   <joint name="leg_left_6_joint" type="revolute">
     <parent link="leg_left_5_link"/>
@@ -2492,7 +2492,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/talos_data/meshes/v2/ankle_X_collision.stl" scale="1 -1 1"/>
       </geometry>
-    </collision> 
+    </collision>
   </link>
   <joint name="leg_right_6_joint" type="revolute">
     <parent link="leg_right_5_link"/>
@@ -2751,4 +2751,3 @@
     <color rgba="1.0 0.5 0.0 1.0"/>
   </material>
 </robot>
-

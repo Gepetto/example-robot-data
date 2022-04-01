@@ -166,7 +166,7 @@
         <joint name="torso_1_joint" mass="1e-5" gear_ratio="100." />
         <joint name="torso_2_joint" mass="1e-5" gear_ratio="100." />
    </rotor_params>
-    
+
 
     <!--
        Talos Specificities.
@@ -661,5 +661,5 @@
       <link name="gripper_right_base_link" />
       <joint name="gripper_right_joint" />
       <torque_constant value="48e-3" unit="N.m/A"/>
-    </gripper> 
+    </gripper>
 </robot>

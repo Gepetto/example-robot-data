@@ -496,7 +496,6 @@ ROBOTS = {
     "simple_humanoid": SimpleHumanoidLoader,
     "simple_humanoid_classical": SimpleHumanoidClassicalLoader,
     "bolt": BoltLoader,
-    "solo": SoloLoader,
     "solo8": Solo8Loader,
     "solo12": Solo12Loader,
     "finger_edu": FingerEduLoader,
@@ -544,6 +543,7 @@ def load(name, display=False, rootNodeName=""):
 
 
 def load_full(name, display=False, rootNodeName=""):
-    """Load a robot by its name, optionnaly display it in a viewer, and provide its q0 and paths."""
+    """Load a robot by its name, optionnaly display it in a viewer,
+    and provide its q0 and paths."""
     inst = loader(name, display, rootNodeName)
     return inst.robot, inst.robot.q0, inst.df_path, inst.srdf_path

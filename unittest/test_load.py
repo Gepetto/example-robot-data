@@ -27,7 +27,8 @@ class RobotTestCase(unittest.TestCase):
             dynamics = pybullet.getDynamicsInfo(robot_id, joint_id, client_id)
             if dynamics[0] == 1:
                 joint = pybullet.getJointInfo(robot_id, joint_id, client_id)
-                # with self.subTest():  # uncomment on python >= 3.4 to get full list of wrong bodies at once
+                # uncomment on python >= 3.4 to get full list of wrong bodies at once
+                # with self.subTest():
                 self.assertIn(joint[12].decode(), one_kg_bodies)
         pybullet.disconnect(client_id)
 

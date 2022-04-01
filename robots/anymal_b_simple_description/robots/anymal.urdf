@@ -3,7 +3,7 @@
 <!-- |    This URDF was edited to fix inertias.                                        | -->
 <!-- =================================================================================== -->
 <!-- This file contains the description of the ANYmal B robot. -->
-<robot name="anymal" 
+<robot name="anymal"
   xmlns:xacro="http://www.ros.org/wiki/xacro">
   <material name="black">
     <color rgba="0.0 0.0 0.0 1.0"/>
@@ -877,4 +877,3 @@
     <origin rpy="0 3.14159265359 0" xyz="0.038 0.06245 0.1837"/>
   </joint>
 </robot>
-

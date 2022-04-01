@@ -108,7 +108,7 @@
     <disable_collisions link1="LF_HIP" link2="RH_THIGH" reason="Never" />
     <disable_collisions link1="LF_HIP" link2="RH_SHANK" reason="Never" />
     <disable_collisions link1="LF_HIP" link2="RH_FOOT" reason="Never" />
-    
+
     <disable_collisions link1="base" link2="LF_HIP" reason="Adjacent" />
     <disable_collisions link1="base" link2="LH_HIP" reason="Adjacent" />
     <disable_collisions link1="base" link2="RF_HIP" reason="Adjacent" />
@@ -137,7 +137,7 @@
     <disable_collisions link1="RH_ADAPTER" link2="RH_SHANK" reason="Adjacent" />
 
     <disable_collisions link1="base" link2="imu_link" reason="Adjacent" />
-    
+
     <!-- Need to check these 4 ? there may be auto-collisions ...  -->
     <disable_collisions link1="base" link2="LF_THIGH" reason="Adjacent" />
     <disable_collisions link1="base" link2="LH_THIGH" reason="Adjacent" />

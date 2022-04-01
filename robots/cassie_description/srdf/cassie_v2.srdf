@@ -15,9 +15,9 @@
     <joint name="left-crank-rod-joint1" />
     <joint name="left-foot-op" />
     <joint name="right-roll-op" />
-    <joint name="right-yaw-op" />         
-    <joint name="right-pitch-op" />     
-    <joint name="right-knee-op" /> 
+    <joint name="right-yaw-op" />
+    <joint name="right-pitch-op" />
+    <joint name="right-knee-op" />
     <joint name="right-knee-shin-joint" />
     <joint name="right-shin-tarsus-joint" />
     <joint name="right-tarsus-spring-joint" />

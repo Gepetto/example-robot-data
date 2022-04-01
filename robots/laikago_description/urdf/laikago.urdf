@@ -295,7 +295,7 @@
       <inertia ixx="1.6854e-05" ixy="0.0" ixz="0.0" iyy="1.6854e-05" iyz="0.0" izz="1.6854e-05"/>
     </inertial>
   </link>
-  
+
   <joint name="RR_hip_joint" type="revolute">
     <origin rpy="0 0 0" xyz="-0.21935 -0.0875 0"/>
     <parent link="trunk"/>
@@ -417,7 +417,7 @@
       <inertia ixx="1.6854e-05" ixy="0.0" ixz="0.0" iyy="1.6854e-05" iyz="0.0" izz="1.6854e-05"/>
     </inertial>
   </link>
-  
+
   <joint name="RL_hip_joint" type="revolute">
     <origin rpy="0 0 0" xyz="-0.21935 0.0875 0"/>
     <parent link="trunk"/>
@@ -538,4 +538,3 @@
     </inertial>
   </link>
 </robot>
-

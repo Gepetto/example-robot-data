@@ -12,7 +12,7 @@ Romeo Aldebaran
 base_link --- base_joint ---> torso --- trunkYaw --> body
 
 Romeo sot
-base_link -- waist --> body -- trunkYaw --> torso  
+base_link -- waist --> body -- trunkYaw --> torso
 
 
 

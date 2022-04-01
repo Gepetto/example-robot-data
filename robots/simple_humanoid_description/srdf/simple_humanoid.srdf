@@ -51,7 +51,7 @@
     <joint name="RLEG_KNEE"       />
     <joint name="RLEG_ANKLE_P"    />
     <joint name="RLEG_ANKLE_R"    />
-    
+
     <joint name="LLEG_HIP_R"      />
     <joint name="LLEG_HIP_P"      />
     <joint name="LLEG_HIP_Y"      />
@@ -78,9 +78,9 @@
     <joint name="LARM_WRIST_Y"    />
     <joint name="LARM_WRIST_P"    />
     <joint name="LARM_WRIST_R"    />
-    
+
   </group>
-  
+
   <!-- end effector -->
   <!-- To remove when the grippers will be added
   <end_effector name="r_arm" parent_link="r_gripper" group="r_arm"/>

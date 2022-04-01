@@ -16,7 +16,7 @@
       <timeout>5</timeout>
       <powerStateTopic>power_state</powerStateTopic>
       <powerStateRate>10.0</powerStateRate>
-      <fullChargeCapacity>87.78</fullChargeCapacity>     
+      <fullChargeCapacity>87.78</fullChargeCapacity>
       <dischargeRate>-474</dischargeRate>
       <chargeRate>525</chargeRate>
       <dischargeVoltage>15.52</dischargeVoltage>
@@ -232,7 +232,7 @@
       <mass value="0.0"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-    </inertial>        
+    </inertial>
   </link>
   <transmission name="shoulder_pan_trans">
     <type>transmission_interface/SimpleTransmission</type>
@@ -315,9 +315,9 @@
       <mass value="0.0"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-    </inertial>        
+    </inertial>
   </link>
-  
+
   <joint name="base_link-base_fixed_joint" type="fixed">
     <!-- NOTE: this rotation is only needed as long as base_link itself is
                  not corrected wrt the real robot (ie: rotated over 180
@@ -328,12 +328,12 @@
     <child link="base"/>
   </joint>
   <!-- Frame coincident with all-zeros TCP on UR controller -->
-  <link name="tool0">        
+  <link name="tool0">
     <inertial>
       <mass value="0.0"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
-    </inertial>        
+    </inertial>
   </link>
 
   <joint name="wrist_3_link-tool0_fixed_joint" type="fixed">
@@ -348,4 +348,3 @@
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
 </robot>
-
