@@ -1,5 +1,4 @@
 import sys
-import warnings
 from os.path import dirname, exists, join
 
 import numpy as np
@@ -155,11 +154,6 @@ class RobotLoader(object):
         lb = self.robot.model.lowerPositionLimit
         lb[:7] = -1
         self.robot.model.lowerPositionLimit = lb
-
-    @property
-    def q0(self):
-        warnings.warn("`q0` is deprecated. Please use `robot.q0`", FutureWarning, 2)
-        return self.robot.q0
 
 
 class A1Loader(RobotLoader):
@@ -345,12 +339,6 @@ class Solo8Loader(RobotLoader):
     srdf_filename = "solo.srdf"
     ref_posture = "standing"
     free_flyer = True
-
-
-class SoloLoader(Solo8Loader):
-    def __init__(self, *args, **kwargs):
-        warnings.warn('"solo" is deprecated, please try to load "solo8"')
-        return super(SoloLoader, self).__init__(*args, **kwargs)
 
 
 class Solo12Loader(Solo8Loader):
