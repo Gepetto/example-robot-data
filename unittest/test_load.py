@@ -50,7 +50,8 @@ class RobotTestCase(unittest.TestCase):
         except ImportError:
             import pinocchio
 
-            self.assertLess(int(pinocchio.__version__.split(".")[0]), 3)
+            pin_version = tuple(int(i) for i in pinocchio.__version__.split("."))
+            self.assertLess(pin_version, (2, 9, 1))
 
     def test_double_pendulum(self):
         self.check("double_pendulum", 2, 2)
