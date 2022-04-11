@@ -1,0 +1,41 @@
+# format (Guilhem Saurel, 2022-04-11)
+a6aa4f4b6cf0a1857fba3075566745dbf4c22e18
+
+# pre-commit clean (Guilhem Saurel, 2022-04-01)
+3ff105e250d5f984d5200a52c2791263be96da5d
+
+# update tooling (Guilhem Saurel, 2022-03-31)
+d27092f3d16c077b70216e47635d1d29247a5dde
+
+# format (Rohan Budhiraja, 2022-03-31)
+98c7ea06d36d670e6d1f6377b2728e33540af4c7
+
+# update python format (Guilhem Saurel, 2022-02-17)
+4dba3f86c0a96379fa479e8b768d315daca70bc2
+
+# Address python code formatting (Julian Viereck, 2021-06-14)
+c3e1dffe22d450e5301d4f7801a14974286d7c61
+
+# format (Guilhem Saurel, 2021-05-26)
+2abddbc5c3833379bace126ab7cb0a07f1addaff
+
+# [cleanup] Fixed code format (Carlos Mastalli, 2021-05-04)
+c89f2524bf9b1a76ec29b99910caea641c1b2496
+
+# python: format (Guilhem Saurel, 2020-10-13)
+2f6b85c741b981d90185e25845a4614a7a97e98b
+
+# [Format] fix linters (Guilhem Saurel, 2019-08-28)
+9f92ecdf27449c8404bce0d5756fa65ab1a4912c
+
+# [format] Formatted the robot_loader script (Carlos Mastalli, 2019-08-28)
+34d3182c9ee99568706921f3e94c5fdd75254c17
+
+# [format] Fixed further errors in the code (Carlos Mastalli, 2019-04-16)
+9ce3cc472c367373812b3401a8efbc85094f8423
+
+# [format] Added format configuration (Carlos Mastalli, 2019-04-16)
+5c6492c035e9f98c686dc8859af1ae0fe56b2b60
+
+# [format] Fixed format issues (Carlos Mastalli, 2019-04-16)
+be1a995b9683a9989755c9a5be8676d82a4589bc
