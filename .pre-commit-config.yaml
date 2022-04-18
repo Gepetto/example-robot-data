@@ -1,12 +1,12 @@
 exclude: tests/test_python-syntax_error.py
 repos:
 -   repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v13.0.1
+    rev: v14.0.1
     hooks:
     -   id: clang-format
         args: [-i, --style=Google]
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.2.0
     hooks:
     -   id: trailing-whitespace
     -   id: check-added-large-files
