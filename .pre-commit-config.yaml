@@ -1,3 +1,5 @@
+ci:
+    autoupdate_branch: 'devel'
 exclude: tests/test_python-syntax_error.py
 ci:
     autoupdate_branch: 'devel'
