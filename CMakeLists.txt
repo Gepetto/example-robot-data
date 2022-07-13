@@ -32,6 +32,19 @@ COMPUTE_PROJECT_ARGS(PROJECT_ARGS LANGUAGES CXX)
 PROJECT(${PROJECT_NAME} ${PROJECT_ARGS})
 
 IF(BUILD_PYTHON_INTERFACE)
+  set(PYTHON_COMPONENTS Interpreter)
+  if(CMAKE_VERSION VERSION_LESS "3.18")
+    # Development.Module only require headers, so it's best for our module
+    # But it's not available before CMake 3.18
+    set(PYTHON_COMPONENTS ${PYTHON_COMPONENTS} Development)
+  else()
+    set(PYTHON_COMPONENTS ${PYTHON_COMPONENTS} Development.Module)
+  endif()
+  if(NOT CMAKE_VERSION VERSION_LESS "3.14")
+    # NumPy provides a standard CMake imported target,
+    # But it's not available before CMake 3.14
+    set(PYTHON_COMPONENTS ${PYTHON_COMPONENTS} NumPy)
+  endif()
   FINDPYTHON()
   ADD_PROJECT_DEPENDENCY(pinocchio)
   STRING(REGEX REPLACE "-" "_" PY_NAME ${PROJECT_NAME})
