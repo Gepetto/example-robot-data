@@ -6,7 +6,7 @@
 <robot name="allegro_hand_left" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!--
 rosrun xacro xacro.py allegro_hand_description_right.urdf.xacro > allegro_hand_description_right.urdf
-roslaunch launchers/fuerte/allegro_hand_jgui_right_virtual.launch 
+roslaunch launchers/fuerte/allegro_hand_jgui_right_virtual.launch
 -->
   <!-- ======================== BASE PARAMS ========================= -->
   <!-- ======================== FINGER PARAMS ======================== -->
@@ -361,20 +361,20 @@ and one fixed link will be added for the tip. -->
   <!-- THUMB -->
   <!--
 <xacro:thumb_right
-	finger_num=			"3" 
-	offset_origin_x=	"-0.0182"	
-	offset_origin_y=	"0.019333" 
+	finger_num=			"3"
+	offset_origin_x=	"-0.0182"
+	offset_origin_y=	"0.019333"
 	offset_origin_z=	"-0.045987"
-	
-	
+
+
 	finger_angle_r=		"0"
-	finger_angle_p=		"-${95*DEG2RAD}"	
+	finger_angle_p=		"-${95*DEG2RAD}"
 	finger_angle_y=		"-${90*DEG2RAD}"
 />
 -->
   <!--
 	finger_angle_r=		"${90*DEG2RAD}"
-	finger_angle_p=		"-${100*DEG2RAD}"	
+	finger_angle_p=		"-${100*DEG2RAD}"
 	finger_angle_y=		"${0*DEG2RAD}"
 	-->
   <link name="link_12.0">
