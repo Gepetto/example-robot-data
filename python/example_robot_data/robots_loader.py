@@ -387,9 +387,9 @@ class PandaLoader(RobotLoader):
     urdf_subpath = "urdf"
 
 
-class AllegroHandLoader(RobotLoader):
+class AllegroRightHandLoader(RobotLoader):
     path = "allegro_hand_description"
-    urdf_filename = "allegro_hand.urdf"
+    urdf_filename = "allegro_right_hand.urdf"
     urdf_subpath = "urdf"
 
 
@@ -495,7 +495,7 @@ ROBOTS = {
     "kinova": KinovaLoader,
     "laikago": LaikagoLoader,
     "panda": PandaLoader,
-    "allegro_hand": AllegroHandLoader,
+    "allegro_right_hand": AllegroRightHandLoader,
     "romeo": RomeoLoader,
     "simple_humanoid": SimpleHumanoidLoader,
     "simple_humanoid_classical": SimpleHumanoidClassicalLoader,
