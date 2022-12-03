@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="go1">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="lf_leg">
+        <joint name="FL_hip_joint"/>
+        <joint name="FL_thigh_joint"/>
+        <joint name="FL_calf_joint"/>
+    </group>
+    <group name="lh_leg">
+        <joint name="RL_hip_joint"/>
+        <joint name="RL_thigh_joint"/>
+        <joint name="RL_calf_joint"/>
+    </group>
+    <group name="rf_leg">
+        <joint name="FR_hip_joint"/>
+        <joint name="FR_thigh_joint"/>
+        <joint name="FR_calf_joint"/>
+    </group>
+    <group name="rh_leg">
+        <joint name="RR_hip_joint"/>
+        <joint name="RR_thigh_joint"/>
+        <joint name="RR_calf_joint"/>
+    </group>
+    <group name="all_legs">
+        <group name="lf_leg"/>
+        <group name="lh_leg"/>
+        <group name="rf_leg"/>
+        <group name="rh_leg"/>
+    </group>
+    <group name="r_legs">
+        <group name="rf_leg"/>
+        <group name="rh_leg"/>
+    </group>
+    <group name="l_legs">
+        <group name="lf_leg"/>
+        <group name="lh_leg"/>
+    </group>
+    <group name="f_legs">
+        <group name="lf_leg"/>
+        <group name="rf_leg"/>
+    </group>
+    <group name="h_legs">
+        <group name="lh_leg"/>
+        <group name="rh_leg"/>
+    </group>
+    <group name="ld_legs">
+        <group name="lf_leg"/>
+        <group name="rh_leg"/>
+    </group>
+    <group name="rd_legs">
+        <group name="rf_leg"/>
+        <group name="lh_leg"/>
+    </group>
+    <group name="whole_body">
+        <joint name="root_joint"/>
+        <joint name="FL_hip_joint"/>
+        <joint name="FL_thigh_joint"/>
+        <joint name="FL_calf_joint"/>
+        <joint name="RL_hip_joint"/>
+        <joint name="RL_thigh_joint"/>
+        <joint name="RL_calf_joint"/>
+        <joint name="FR_hip_joint"/>
+        <joint name="FR_thigh_joint"/>
+        <joint name="FR_calf_joint"/>
+        <joint name="RR_hip_joint"/>
+        <joint name="RR_thigh_joint"/>
+        <joint name="RR_calf_joint"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="standing" group="whole_body">
+        <joint name="FL_calf_joint" value="-1.853"/>
+        <joint name="FL_hip_joint" value="0"/>
+        <joint name="FL_thigh_joint" value="0"/>
+        <joint name="FR_calf_joint" value="-1.853"/>
+        <joint name="FR_hip_joint" value="0"/>
+        <joint name="FR_thigh_joint" value="0"/>
+        <joint name="RL_calf_joint" value="-1.853"/>
+        <joint name="RL_hip_joint" value="0"/>
+        <joint name="RL_thigh_joint" value="0"/>
+        <joint name="RR_calf_joint" value="-1.853"/>
+        <joint name="RR_hip_joint" value="0"/>
+        <joint name="RR_thigh_joint" value="0"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="lf_foot" parent_link="FL_foot" group="lf_leg"/>
+    <end_effector name="rf_foot" parent_link="FR_foot" group="rf_leg"/>
+    <end_effector name="lh_foot" parent_link="RL_foot" group="lh_leg"/>
+    <end_effector name="rh_foot" parent_link="RR_foot" group="rh_leg"/>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="root_joint" type="floating" parent_frame="world_frame" child_link="base"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="FL_calf" link2="FL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="FL_foot" reason="Adjacent"/>
+    <disable_collisions link1="FL_calf" link2="FL_hip" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="FL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="FL_thigh" reason="Adjacent"/>
+    <disable_collisions link1="FL_calf" link2="FL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="FR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="FR_foot" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="trunk" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FL_calf" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FL_foot" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FL_hip" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FL_thigh" reason="Adjacent"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FR_calf" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FR_foot" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FL_calf_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FL_hip" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FL_thigh" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FR_calf" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FR_foot" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="trunk" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FL_foot" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="FL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="FL_thigh" reason="Adjacent"/>
+    <disable_collisions link1="FL_hip" link2="FL_thigh_rotor" reason="Adjacent"/>
+    <disable_collisions link1="FL_hip" link2="FR_calf" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="FR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="FR_foot" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="FR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="FL_hip" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FL_hip" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FL_thigh" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FR_calf" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FR_foot" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="FL_hip_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FL_hip_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="FL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="FR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="FR_foot" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="trunk" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FL_thigh" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="FR_calf" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="FR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="FR_foot" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="FR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="trunk" reason="Default"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FL_thigh_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="FR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="FR_foot" reason="Adjacent"/>
+    <disable_collisions link1="FR_calf" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="FR_thigh" reason="Adjacent"/>
+    <disable_collisions link1="FR_calf" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="trunk" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FR_calf" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="FR_foot" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="FR_thigh" reason="Adjacent"/>
+    <disable_collisions link1="FR_calf_rotor" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FR_calf_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="FR_hip" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="FR_thigh" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="trunk" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FR_foot" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="FR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="FR_thigh" reason="Adjacent"/>
+    <disable_collisions link1="FR_hip" link2="FR_thigh_rotor" reason="Adjacent"/>
+    <disable_collisions link1="FR_hip" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="FR_hip" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FR_hip" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="FR_thigh" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="FR_hip_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FR_hip_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="FR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="trunk" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FR_thigh" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RL_calf" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="trunk" reason="Default"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="FR_thigh_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="RL_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="RL_foot" reason="Adjacent"/>
+    <disable_collisions link1="RL_calf" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="RL_thigh" reason="Adjacent"/>
+    <disable_collisions link1="RL_calf" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="trunk" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RL_calf" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RL_foot" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RL_thigh" reason="Adjacent"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RL_calf_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RL_hip" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="trunk" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RL_foot" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="RL_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="RL_thigh" reason="Adjacent"/>
+    <disable_collisions link1="RL_hip" link2="RL_thigh_rotor" reason="Adjacent"/>
+    <disable_collisions link1="RL_hip" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="RL_hip" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RL_hip" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RL_thigh" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="RL_hip_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RL_hip_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="RL_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="trunk" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RL_thigh" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="RR_calf" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="trunk" reason="Default"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RL_thigh_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="RR_calf_rotor" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="RR_foot" reason="Adjacent"/>
+    <disable_collisions link1="RR_calf" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="RR_thigh" reason="Adjacent"/>
+    <disable_collisions link1="RR_calf" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="trunk" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RR_calf" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="RR_foot" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="RR_thigh" reason="Adjacent"/>
+    <disable_collisions link1="RR_calf_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RR_calf_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="RR_hip" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="trunk" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RR_foot" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="RR_hip_rotor" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="RR_thigh" reason="Adjacent"/>
+    <disable_collisions link1="RR_hip" link2="RR_thigh_rotor" reason="Adjacent"/>
+    <disable_collisions link1="RR_hip" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="RR_hip" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RR_hip" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="RR_thigh" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="RR_hip_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RR_hip_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="RR_thigh_rotor" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="trunk" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RR_thigh" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="camera_chin" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="trunk" reason="Default"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="RR_thigh_rotor" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="camera_chin" link2="camera_face" reason="Never"/>
+    <disable_collisions link1="camera_chin" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="camera_chin" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="camera_chin" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="camera_chin" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="camera_chin" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="camera_chin" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="camera_chin" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="camera_chin" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="camera_face" link2="camera_left" reason="Never"/>
+    <disable_collisions link1="camera_face" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="camera_face" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="camera_face" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="camera_face" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="camera_face" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="camera_face" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="camera_face" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="camera_left" link2="camera_rearDown" reason="Never"/>
+    <disable_collisions link1="camera_left" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="camera_left" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="camera_left" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="camera_left" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="camera_left" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="camera_left" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="camera_rearDown" link2="camera_right" reason="Never"/>
+    <disable_collisions link1="camera_rearDown" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="camera_rearDown" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="camera_rearDown" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="camera_rearDown" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="camera_rearDown" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="camera_right" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="camera_right" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="camera_right" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="camera_right" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="camera_right" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="trunk" reason="Adjacent"/>
+    <disable_collisions link1="imu_link" link2="ultraSound_face" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="imu_link" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="trunk" link2="ultraSound_face" reason="Adjacent"/>
+    <disable_collisions link1="trunk" link2="ultraSound_left" reason="Adjacent"/>
+    <disable_collisions link1="trunk" link2="ultraSound_right" reason="Adjacent"/>
+    <disable_collisions link1="ultraSound_face" link2="ultraSound_left" reason="Never"/>
+    <disable_collisions link1="ultraSound_face" link2="ultraSound_right" reason="Never"/>
+    <disable_collisions link1="ultraSound_left" link2="ultraSound_right" reason="Never"/>
+</robot>
