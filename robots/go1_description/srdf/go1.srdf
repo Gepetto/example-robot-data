@@ -76,18 +76,19 @@
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="standing" group="whole_body">
+        <joint name="root_joint" value="0. 0. 0.26 0. 0. 0. 1."/>
         <joint name="FL_calf_joint" value="-1.853"/>
         <joint name="FL_hip_joint" value="0"/>
-        <joint name="FL_thigh_joint" value="0"/>
+        <joint name="FL_thigh_joint" value="0.8"/>
         <joint name="FR_calf_joint" value="-1.853"/>
         <joint name="FR_hip_joint" value="0"/>
-        <joint name="FR_thigh_joint" value="0"/>
+        <joint name="FR_thigh_joint" value="0.8"/>
         <joint name="RL_calf_joint" value="-1.853"/>
         <joint name="RL_hip_joint" value="0"/>
-        <joint name="RL_thigh_joint" value="0"/>
+        <joint name="RL_thigh_joint" value="0.8"/>
         <joint name="RR_calf_joint" value="-1.853"/>
         <joint name="RR_hip_joint" value="0"/>
-        <joint name="RR_thigh_joint" value="0"/>
+        <joint name="RR_thigh_joint" value="0.8"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="lf_foot" parent_link="FL_foot" group="lf_leg"/>
