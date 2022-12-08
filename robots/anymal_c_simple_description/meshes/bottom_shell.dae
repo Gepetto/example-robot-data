@@ -43,7 +43,7 @@
     <image id="bottom_shell" name="bottom_shell">
       <init_from>bottom_shell.jpg</init_from>
     </image>
-  </library_images>  
+  </library_images>
   <library_materials>
     <material id="bottom_shell-material" name="Bottom shell">
       <instance_effect url="#bottom_shell-effect"/>

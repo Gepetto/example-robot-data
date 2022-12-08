@@ -43,7 +43,7 @@
     <image id="top_shell" name="top_shell">
       <init_from>top_shell.jpg</init_from>
     </image>
-  </library_images>  
+  </library_images>
   <library_materials>
     <material id="top_shell-material" name="top_shell">
       <instance_effect url="#top_shell-effect"/>

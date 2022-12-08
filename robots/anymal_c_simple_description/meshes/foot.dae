@@ -43,7 +43,7 @@
     <image id="foot" name="foot">
       <init_from>foot.jpg</init_from>
     </image>
-  </library_images>  
+  </library_images>
   <library_materials>
     <material id="foot-material" name="foot">
       <instance_effect url="#foot-effect"/>

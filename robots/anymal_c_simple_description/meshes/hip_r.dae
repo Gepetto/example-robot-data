@@ -43,7 +43,7 @@
     <image id="hip" name="hip">
       <init_from>hip.jpg</init_from>
     </image>
-  </library_images>  
+  </library_images>
   <library_materials>
     <material id="hip-material" name="hip">
       <instance_effect url="#hip-effect"/>

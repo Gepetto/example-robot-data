@@ -43,7 +43,7 @@
     <image id="thigh" name="thigh">
       <init_from>thigh.jpg</init_from>
     </image>
-  </library_images>  
+  </library_images>
   <library_materials>
     <material id="thigh-material" name="thigh">
       <instance_effect url="#thigh-effect"/>

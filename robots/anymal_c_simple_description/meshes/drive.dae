@@ -43,7 +43,7 @@
     <image id="drive" name="drive">
       <init_from>drive.jpg</init_from>
     </image>
-  </library_images>  
+  </library_images>
   <library_materials>
     <material id="drive-material" name="drive">
       <instance_effect url="#drive-effect"/>

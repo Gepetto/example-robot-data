@@ -43,7 +43,7 @@
     <image id="shank" name="shank">
       <init_from>shank.jpg</init_from>
     </image>
-  </library_images>  
+  </library_images>
   <library_materials>
     <material id="shank-material" name="shank">
       <instance_effect url="#shank-effect"/>
