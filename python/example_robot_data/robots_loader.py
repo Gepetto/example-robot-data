@@ -541,7 +541,7 @@ ROBOTS = {
 
 
 def loader(name, display=False, rootNodeName=""):
-    """Load a robot by its name, and optionnaly display it in a viewer."""
+    """Load a robot by its name, and optionally display it in a viewer."""
     if name not in ROBOTS:
         robots = ", ".join(sorted(ROBOTS.keys()))
         raise ValueError(
