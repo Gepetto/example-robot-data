@@ -1,0 +1,366 @@
+<?xml version="1.0" ?>
+<robot name="anymal">
+    <group name="whole_body">
+        <joint name="root_joint" />
+        <joint name="LF_HAA" />
+        <joint name="LF_HFE" />
+        <joint name="LF_KFE" />
+        <joint name="LH_HAA" />
+        <joint name="LH_HFE" />
+        <joint name="LH_KFE" />
+        <joint name="RF_HAA" />
+        <joint name="RF_HFE" />
+        <joint name="RF_KFE" />
+        <joint name="RH_HAA" />
+        <joint name="RH_HFE" />
+        <joint name="RH_KFE" />
+    </group>
+    <virtual_joint name="root_joint" type="floating" parent_frame="world_frame" child_link="base" />
+
+    <group name="lf_leg">
+        <joint name="LF_HAA" />
+        <joint name="LF_HFE" />
+        <joint name="LF_KFE" />
+        <chain base_link="base" tip_link="LF_FOOT" />
+    </group>
+    <group name="lh_leg">
+        <joint name="LH_HAA" />
+        <joint name="LH_HFE" />
+        <joint name="LH_KFE" />
+        <chain base_link="base" tip_link="LH_FOOT" />
+    </group>
+    <group name="rf_leg">
+        <joint name="RF_HAA" />
+        <joint name="RF_HFE" />
+        <joint name="RF_KFE" />
+        <chain base_link="base" tip_link="RF_FOOT" />
+    </group>
+    <group name="rh_leg">
+        <joint name="RH_HAA" />
+        <joint name="RH_HFE" />
+        <joint name="RH_KFE" />
+        <chain base_link="base" tip_link="RH_FOOT" />
+    </group>
+    <group name="all_legs">
+        <group name="lf_leg" />
+        <group name="rf_leg" />
+        <group name="lh_leg" />
+        <group name="rh_leg" />
+    </group>
+    <group name="r_legs">
+        <group name="rf_leg" />
+        <group name="rh_leg" />
+    </group>
+    <group name="l_legs">
+        <group name="lf_leg" />
+        <group name="lh_leg" />
+    </group>
+    <group name="f_legs">
+        <group name="lf_leg" />
+        <group name="rf_leg" />
+    </group>
+    <group name="h_legs">
+        <group name="lh_leg" />
+        <group name="rh_leg" />
+    </group>
+    <group name="ld_legs">
+        <group name="lf_leg" />
+        <group name="rh_leg" />
+    </group>
+    <group name="rd_legs">
+        <group name="rf_leg" />
+        <group name="lh_leg" />
+    </group>
+
+    <end_effector name="lf_foot" parent_link="LF_FOOT" group="lf_leg" />
+    <end_effector name="rf_foot" parent_link="RF_FOOT" group="rf_leg" />
+    <end_effector name="lh_foot" parent_link="LH_FOOT" group="lh_leg" />
+    <end_effector name="rh_foot" parent_link="RH_FOOT" group="rh_leg" />
+
+    <group_state name="standing" group="whole_body">
+        <joint name="root_joint" value="0. 0. 0.528 0. 0. 0. 1." />
+        <joint name="LF_HAA" value="-0.1" />
+        <joint name="LF_HFE" value="0.7" />
+        <joint name="LF_KFE" value="-1." />
+        <joint name="RF_HAA" value="0.1" />
+        <joint name="RF_HFE" value="0.7" />
+        <joint name="RF_KFE" value="-1." />
+        <joint name="LH_HAA" value="-0.1" />
+        <joint name="LH_HFE" value="-0.7" />
+        <joint name="LH_KFE" value="1." />
+        <joint name="RH_HAA" value="0.1" />
+        <joint name="RH_HFE" value="-0.7" />
+        <joint name="RH_KFE" value="1." />
+    </group_state>
+
+    <disable_collisions link1="LF_FOOT" link2="LF_HFE" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="LF_KFE" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="LF_shank_fixed" reason="Adjacent"/>
+    <disable_collisions link1="LF_FOOT" link2="LF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="LH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="base" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LF_FOOT" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="LF_KFE" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="LF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="LF_thigh_fixed" reason="Adjacent"/>
+    <disable_collisions link1="LF_HFE" link2="LH_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="LH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="LH_KFE" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="LH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="LH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="base" reason="Adjacent"/>
+    <disable_collisions link1="LF_HFE" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LF_HFE" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="LF_shank_fixed" reason="Adjacent"/>
+    <disable_collisions link1="LF_KFE" link2="LF_thigh_fixed" reason="Adjacent"/>
+    <disable_collisions link1="LF_KFE" link2="LH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="LH_KFE" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="LH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="base" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LF_KFE" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="LF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="LH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="LH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="base" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LF_shank_fixed" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="LH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="LH_KFE" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="LH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="LH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="base" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LF_thigh_fixed" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="LH_HFE" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="LH_KFE" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="LH_shank_fixed" reason="Adjacent"/>
+    <disable_collisions link1="LH_FOOT" link2="LH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="base" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LH_FOOT" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="LH_KFE" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="LH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="LH_thigh_fixed" reason="Adjacent"/>
+    <disable_collisions link1="LH_HFE" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="base" reason="Adjacent"/>
+    <disable_collisions link1="LH_HFE" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LH_HFE" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="LH_shank_fixed" reason="Adjacent"/>
+    <disable_collisions link1="LH_KFE" link2="LH_thigh_fixed" reason="Adjacent"/>
+    <disable_collisions link1="LH_KFE" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="base" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LH_KFE" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="LH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="base" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LH_shank_fixed" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="RF_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="base" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="face_front" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="LH_thigh_fixed" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="RF_HFE" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="RF_shank_fixed" reason="Adjacent"/>
+    <disable_collisions link1="RF_FOOT" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="base" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RF_FOOT" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="RF_KFE" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="RF_shank_fixed" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="RF_thigh_fixed" reason="Adjacent"/>
+    <disable_collisions link1="RF_HFE" link2="RH_FOOT" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="base" reason="Adjacent"/>
+    <disable_collisions link1="RF_HFE" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RF_HFE" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RF_KFE" link2="RF_shank_fixed" reason="Adjacent"/>
+    <disable_collisions link1="RF_KFE" link2="RF_thigh_fixed" reason="Adjacent"/>
+    <disable_collisions link1="RF_KFE" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="RF_KFE" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="RF_KFE" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="RF_KFE" link2="base" reason="Never"/>
+    <disable_collisions link1="RF_KFE" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RF_KFE" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RF_KFE" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RF_KFE" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RF_shank_fixed" link2="RF_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="RF_shank_fixed" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="RF_shank_fixed" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="RF_shank_fixed" link2="base" reason="Never"/>
+    <disable_collisions link1="RF_shank_fixed" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RF_shank_fixed" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RF_shank_fixed" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RF_shank_fixed" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="base" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RF_thigh_fixed" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="RH_HFE" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="RH_shank_fixed" reason="Adjacent"/>
+    <disable_collisions link1="RH_FOOT" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="base" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RH_FOOT" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RH_HFE" link2="RH_KFE" reason="Never"/>
+    <disable_collisions link1="RH_HFE" link2="RH_shank_fixed" reason="Never"/>
+    <disable_collisions link1="RH_HFE" link2="RH_thigh_fixed" reason="Adjacent"/>
+    <disable_collisions link1="RH_HFE" link2="base" reason="Adjacent"/>
+    <disable_collisions link1="RH_HFE" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RH_HFE" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RH_HFE" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RH_HFE" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RH_KFE" link2="RH_shank_fixed" reason="Adjacent"/>
+    <disable_collisions link1="RH_KFE" link2="RH_thigh_fixed" reason="Adjacent"/>
+    <disable_collisions link1="RH_KFE" link2="base" reason="Never"/>
+    <disable_collisions link1="RH_KFE" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RH_KFE" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RH_KFE" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RH_KFE" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RH_shank_fixed" link2="RH_thigh_fixed" reason="Never"/>
+    <disable_collisions link1="RH_shank_fixed" link2="base" reason="Never"/>
+    <disable_collisions link1="RH_shank_fixed" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RH_shank_fixed" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RH_shank_fixed" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RH_shank_fixed" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="RH_thigh_fixed" link2="base" reason="Never"/>
+    <disable_collisions link1="RH_thigh_fixed" link2="face_front" reason="Never"/>
+    <disable_collisions link1="RH_thigh_fixed" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="RH_thigh_fixed" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="RH_thigh_fixed" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="base" link2="face_front" reason="Adjacent"/>
+    <disable_collisions link1="base" link2="face_rear" reason="Adjacent"/>
+    <disable_collisions link1="base" link2="imu_link" reason="Adjacent"/>
+    <disable_collisions link1="base" link2="lidar_cage" reason="Adjacent"/>
+    <disable_collisions link1="face_front" link2="face_rear" reason="Never"/>
+    <disable_collisions link1="face_front" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="face_front" link2="lidar_cage" reason="Never"/>
+    <disable_collisions link1="face_rear" link2="imu_link" reason="Never"/>
+    <disable_collisions link1="face_rear" link2="lidar_cage" reason="Default"/>
+    <disable_collisions link1="imu_link" link2="lidar_cage" reason="Never"/>
+</robot>
