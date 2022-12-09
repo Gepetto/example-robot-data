@@ -170,6 +170,15 @@ class ANYmalLoader(RobotLoader):
     free_flyer = True
 
 
+class ANYmalCLoader(RobotLoader):
+    path = "anymal_c_simple_description"
+    urdf_subpath = "urdf"
+    urdf_filename = "anymal.urdf"
+    srdf_filename = "anymal.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
 class LaikagoLoader(RobotLoader):
     path = "laikago_description"
     urdf_subpath = "urdf"
@@ -486,6 +495,7 @@ class IrisLoader(RobotLoader):
 ROBOTS = {
     "a1": A1Loader,
     "anymal": ANYmalLoader,
+    "anymal_c": ANYmalCLoader,
     "anymal_kinova": ANYmalKinovaLoader,
     "asr_twodof": AsrTwoDofLoader,
     "baxter": BaxterLoader,
@@ -531,7 +541,7 @@ ROBOTS = {
 
 
 def loader(name, display=False, rootNodeName=""):
-    """Load a robot by its name, and optionnaly display it in a viewer."""
+    """Load a robot by its name, and optionally display it in a viewer."""
     if name not in ROBOTS:
         robots = ", ".join(sorted(ROBOTS.keys()))
         raise ValueError(

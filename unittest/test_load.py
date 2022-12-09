@@ -38,6 +38,9 @@ class RobotTestCase(unittest.TestCase):
     def test_anymal(self):
         self.check("anymal", 19, 18)
 
+    def test_anymal_c(self):
+        self.check("anymal_c", 19, 18)
+
     def test_anymal_kinova(self):
         self.check("anymal_kinova", 25, 24)
 
