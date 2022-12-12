@@ -349,4 +349,3 @@
         <dynamics damping="0.3"/>
     </joint>
 </robot>
-
