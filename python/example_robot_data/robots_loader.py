@@ -394,6 +394,8 @@ class PandaLoader(RobotLoader):
     path = "panda_description"
     urdf_filename = "panda.urdf"
     urdf_subpath = "urdf"
+    srdf_filename = "panda.srdf"
+    ref_posture = "default"
 
 
 class AllegroRightHandLoader(RobotLoader):
