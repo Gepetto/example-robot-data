@@ -102,12 +102,12 @@
     <link name="panda_link4">
         <visual>
             <geometry>
-                <mesh filename="package://franka_description/meshes/visual/link4.dae"/>
+                <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/link4.dae"/>
             </geometry>
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://franka_description/meshes/collision/link4.stl"/>
+                <mesh filename="package://example-robot-data/robots/panda_description/meshes/collision/link4.stl"/>
             </geometry>
         </collision>
         <inertial>
