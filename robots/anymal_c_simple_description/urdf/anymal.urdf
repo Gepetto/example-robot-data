@@ -211,7 +211,13 @@
         <origin rpy="0.0 0.0 0.0" xyz="0.0255 0.0175 0.0"/>
     </joint>
     <!-- Camera parent link -->
-    <link name="depth_camera_front_camera_parent"/>
+    <link name="depth_camera_front_camera_parent">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Depth optical frame joint -->
     <joint name="depth_camera_front_camera_parent_to_depth_optical_frame" type="fixed">
         <parent link="depth_camera_front_camera_parent"/>
@@ -219,7 +225,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Depth optical frame link -->
-    <link name="depth_camera_front_depth_optical_frame"/>
+    <link name="depth_camera_front_depth_optical_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera color frame joint -->
     <joint name="depth_camera_front_camera_parent_to_color_frame" type="fixed">
         <parent link="depth_camera_front_camera_parent"/>
@@ -227,7 +239,13 @@
         <origin rpy="0 0 0" xyz="0 0.015 0"/>
     </joint>
     <!-- Camera color frame link -->
-    <link name="depth_camera_front_color_frame"/>
+    <link name="depth_camera_front_color_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera color optical joint -->
     <joint name="depth_camera_front_color_frame_to_color_optical_frame" type="fixed">
         <parent link="depth_camera_front_color_frame"/>
@@ -235,7 +253,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Camera color optical link -->
-    <link name="depth_camera_front_color_optical_frame"/>
+    <link name="depth_camera_front_color_optical_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera joint -->
     <!-- Is located in the center of the mounting points. -->
     <joint name="face_front_to_wide_angle_camera_front_camera" type="fixed">
@@ -264,7 +288,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Camera parent link -->
-    <link name="wide_angle_camera_front_camera_parent"/>
+    <link name="wide_angle_camera_front_camera_parent">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Fixed joint base face -->
     <joint name="base_face_rear" type="fixed">
         <parent link="base"/>
@@ -332,7 +362,13 @@
         <origin rpy="0.0 0.0 0.0" xyz="0.0255 0.0175 0.0"/>
     </joint>
     <!-- Camera parent link -->
-    <link name="depth_camera_rear_camera_parent"/>
+    <link name="depth_camera_rear_camera_parent">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Depth optical frame joint -->
     <joint name="depth_camera_rear_camera_parent_to_depth_optical_frame" type="fixed">
         <parent link="depth_camera_rear_camera_parent"/>
@@ -340,7 +376,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Depth optical frame link -->
-    <link name="depth_camera_rear_depth_optical_frame"/>
+    <link name="depth_camera_rear_depth_optical_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera color frame joint -->
     <joint name="depth_camera_rear_camera_parent_to_color_frame" type="fixed">
         <parent link="depth_camera_rear_camera_parent"/>
@@ -348,7 +390,13 @@
         <origin rpy="0 0 0" xyz="0 0.015 0"/>
     </joint>
     <!-- Camera color frame link -->
-    <link name="depth_camera_rear_color_frame"/>
+    <link name="depth_camera_rear_color_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera color optical joint -->
     <joint name="depth_camera_rear_color_frame_to_color_optical_frame" type="fixed">
         <parent link="depth_camera_rear_color_frame"/>
@@ -356,7 +404,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Camera color optical link -->
-    <link name="depth_camera_rear_color_optical_frame"/>
+    <link name="depth_camera_rear_color_optical_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera joint -->
     <!-- Is located in the center of the mounting points. -->
     <joint name="face_rear_to_wide_angle_camera_rear_camera" type="fixed">
@@ -385,7 +439,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Camera parent link -->
-    <link name="wide_angle_camera_rear_camera_parent"/>
+    <link name="wide_angle_camera_rear_camera_parent">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Fixed joint base battery -->
     <joint name="base_battery" type="fixed">
         <parent link="base"/>
@@ -475,7 +535,13 @@
         <origin rpy="0.0 0.0 0.0" xyz="0.0255 0.0175 0.0"/>
     </joint>
     <!-- Camera parent link -->
-    <link name="depth_camera_left_camera_parent"/>
+    <link name="depth_camera_left_camera_parent">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Depth optical frame joint -->
     <joint name="depth_camera_left_camera_parent_to_depth_optical_frame" type="fixed">
         <parent link="depth_camera_left_camera_parent"/>
@@ -483,7 +549,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Depth optical frame link -->
-    <link name="depth_camera_left_depth_optical_frame"/>
+    <link name="depth_camera_left_depth_optical_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera color frame joint -->
     <joint name="depth_camera_left_camera_parent_to_color_frame" type="fixed">
         <parent link="depth_camera_left_camera_parent"/>
@@ -491,7 +563,13 @@
         <origin rpy="0 0 0" xyz="0 0.015 0"/>
     </joint>
     <!-- Camera color frame link -->
-    <link name="depth_camera_left_color_frame"/>
+    <link name="depth_camera_left_color_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera color optical joint -->
     <joint name="depth_camera_left_color_frame_to_color_optical_frame" type="fixed">
         <parent link="depth_camera_left_color_frame"/>
@@ -499,7 +577,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Camera color optical link -->
-    <link name="depth_camera_left_color_optical_frame"/>
+    <link name="depth_camera_left_color_optical_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera joint -->
     <!-- Is located between the two back screw holes at ground level. -->
     <joint name="base_to_depth_camera_right_camera" type="fixed">
@@ -529,7 +613,13 @@
         <origin rpy="0.0 0.0 0.0" xyz="0.0255 0.0175 0.0"/>
     </joint>
     <!-- Camera parent link -->
-    <link name="depth_camera_right_camera_parent"/>
+    <link name="depth_camera_right_camera_parent">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Depth optical frame joint -->
     <joint name="depth_camera_right_camera_parent_to_depth_optical_frame" type="fixed">
         <parent link="depth_camera_right_camera_parent"/>
@@ -537,7 +627,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Depth optical frame link -->
-    <link name="depth_camera_right_depth_optical_frame"/>
+    <link name="depth_camera_right_depth_optical_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera color frame joint -->
     <joint name="depth_camera_right_camera_parent_to_color_frame" type="fixed">
         <parent link="depth_camera_right_camera_parent"/>
@@ -545,7 +641,13 @@
         <origin rpy="0 0 0" xyz="0 0.015 0"/>
     </joint>
     <!-- Camera color frame link -->
-    <link name="depth_camera_right_color_frame"/>
+    <link name="depth_camera_right_color_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- Camera color optical joint -->
     <joint name="depth_camera_right_color_frame_to_color_optical_frame" type="fixed">
         <parent link="depth_camera_right_color_frame"/>
@@ -553,7 +655,13 @@
         <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0.0 0.0 0.0"/>
     </joint>
     <!-- Camera color optical link -->
-    <link name="depth_camera_right_color_optical_frame"/>
+    <link name="depth_camera_right_color_optical_frame">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+    </link>
     <!-- parent to cage joint, located between mounting plate on trunk and the cage -->
     <joint name="base_to_lidar_cage" type="fixed">
         <parent link="base"/>
