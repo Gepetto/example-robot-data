@@ -152,6 +152,7 @@ class RobotLoader(object):
         lb[:7] = -1
         self.robot.model.lowerPositionLimit = lb
 
+
 class B1Loader(RobotLoader):
     path = "b1_description"
     urdf_filename = "b1.urdf"
@@ -160,6 +161,7 @@ class B1Loader(RobotLoader):
     ref_posture = "standing"
     free_flyer = True
 
+
 class Go1Loader(RobotLoader):
     path = "go1_description"
     urdf_filename = "go1.urdf"
@@ -167,6 +169,7 @@ class Go1Loader(RobotLoader):
     srdf_filename = "go1.srdf"
     ref_posture = "standing"
     free_flyer = True
+
 
 class A1Loader(RobotLoader):
     path = "a1_description"
