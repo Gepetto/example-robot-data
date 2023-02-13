@@ -11,13 +11,13 @@ from example_robot_data import load_full
 
 
 class RobotTestCase(unittest.TestCase):
-    def check(self, name, expected_nq, expected_nv, one_kg_bodies=[], mass=True):
+    def check(self, name, expected_nq, expected_nv, one_kg_bodies=[]):
         """Helper function for the real tests"""
         robot, _, urdf, _ = load_full(name, display=False)
         self.assertEqual(robot.model.nq, expected_nq)
         self.assertEqual(robot.model.nv, expected_nv)
         self.assertTrue(hasattr(robot, "q0"))
-        if pybullet and mass:
+        if pybullet:
             self.check_pybullet(urdf, one_kg_bodies)
 
     def check_pybullet(self, urdf, one_kg_bodies):
@@ -96,10 +96,10 @@ class RobotTestCase(unittest.TestCase):
         self.check("panda", 9, 9)
 
     def test_allegro_right(self):
-        self.check("allegro_right_hand", 16, 16, mass=False)
+        self.check("allegro_right_hand", 16, 16)
 
     def test_allegro_left(self):
-        self.check("allegro_left_hand", 16, 16, mass=False)
+        self.check("allegro_left_hand", 16, 16)
 
     def test_romeo(self):
         self.check("romeo", 62, 61)
