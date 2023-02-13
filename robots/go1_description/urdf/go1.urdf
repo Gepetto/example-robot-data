@@ -1344,6 +1344,11 @@
     <child link="camera_optical_face"/>
   </joint>
   <link name="camera_optical_face">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
         </link>
   <gazebo reference="camera_face">
     <!-- <material>Gazebo/Black</material> -->
@@ -1418,6 +1423,11 @@
     <child link="camera_optical_chin"/>
   </joint>
   <link name="camera_optical_chin">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
         </link>
   <gazebo reference="camera_chin">
     <!-- <material>Gazebo/Black</material> -->
@@ -1492,6 +1502,11 @@
     <child link="camera_optical_left"/>
   </joint>
   <link name="camera_optical_left">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
         </link>
   <gazebo reference="camera_left">
     <!-- <material>Gazebo/Black</material> -->
@@ -1566,6 +1581,11 @@
     <child link="camera_optical_right"/>
   </joint>
   <link name="camera_optical_right">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
         </link>
   <gazebo reference="camera_right">
     <!-- <material>Gazebo/Black</material> -->
@@ -1640,6 +1660,11 @@
     <child link="camera_optical_rearDown"/>
   </joint>
   <link name="camera_optical_rearDown">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
         </link>
   <gazebo reference="camera_rearDown">
     <!-- <material>Gazebo/Black</material> -->
@@ -1690,6 +1715,11 @@
     <child link="camera_laserscan_link_left"/>
   </joint>
   <link name="camera_laserscan_link_left">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
     </link>
   <joint name="camera_laserscan_joint_right" type="fixed">
     <origin rpy="0 0.2618 0" xyz="0 0 0"/>
@@ -1697,6 +1727,11 @@
     <child link="camera_laserscan_link_right"/>
   </joint>
   <link name="camera_laserscan_link_right">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" iyy="0" izz="0" ixy="0" ixz="0" iyz="0" />
+    </inertial>
     </link>
   <joint name="ultraSound_joint_left" type="fixed">
     <origin rpy="0 0.2618 1.5707963267948966" xyz="-0.0535  0.0826 0.00868"/>
