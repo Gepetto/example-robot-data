@@ -5,8 +5,6 @@ import numpy as np
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
-pin.switchToNumpyArray()
-
 
 def getModelPath(subpath, printmsg=False):
     source = dirname(dirname(dirname(__file__)))  # top level source directory
