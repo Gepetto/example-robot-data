@@ -1,2 +1,3 @@
-CONFIGURE_FILE(path.hpp.in path.hpp)
-INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/path.hpp DESTINATION include/${CUSTOM_HEADER_DIR})
+configure_file(path.hpp.in path.hpp)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/path.hpp
+        DESTINATION include/${CUSTOM_HEADER_DIR})

@@ -1,12 +1,9 @@
-SET(${PROJECT_NAME}_PYTHON_FILES
-  robots_loader.py
-  __main__.py
-  __init__.py
-  )
+set(${PROJECT_NAME}_PYTHON_FILES robots_loader.py __main__.py __init__.py)
 
-FOREACH(python ${${PROJECT_NAME}_PYTHON_FILES})
-  PYTHON_INSTALL_ON_SITE(${PY_NAME} ${python})
-ENDFOREACH(python ${${PROJECT_NAME}_PYTHON_FILES})
+foreach(python ${${PROJECT_NAME}_PYTHON_FILES})
+  python_install_on_site(${PY_NAME} ${python})
+endforeach(python ${${PROJECT_NAME}_PYTHON_FILES})
 
-CONFIGURE_FILE(${PY_NAME}/path.py.in ${PY_NAME}/path.py)
-INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PY_NAME}/path.py DESTINATION "${PYTHON_SITELIB}/${PY_NAME}")
+configure_file(${PY_NAME}/path.py.in ${PY_NAME}/path.py)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PY_NAME}/path.py
+        DESTINATION "${PYTHON_SITELIB}/${PY_NAME}")
