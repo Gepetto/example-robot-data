@@ -10,6 +10,7 @@ try:
 except ImportError:
     pass
 
+
 def getModelPath(subpath, printmsg=False):
     source = dirname(dirname(dirname(__file__)))  # top level source directory
     paths = [
