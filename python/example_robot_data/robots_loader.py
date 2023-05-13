@@ -5,6 +5,11 @@ import numpy as np
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
+try:
+    from .path import EXAMPLE_ROBOT_DATA_MODEL_DIR, EXAMPLE_ROBOT_DATA_SOURCE_DIR
+except ImportError:
+    pass
+
 
 def getModelPath(subpath, printmsg=False):
     source = dirname(dirname(dirname(__file__)))  # top level source directory
@@ -17,13 +22,13 @@ def getModelPath(subpath, printmsg=False):
         join(source, "robots"),
     ]
     try:
-        from .path import EXAMPLE_ROBOT_DATA_MODEL_DIR, EXAMPLE_ROBOT_DATA_SOURCE_DIR
+        EXAMPLE_ROBOT_DATA_MODEL_DIR
 
         # function called from installed project
         paths.append(EXAMPLE_ROBOT_DATA_MODEL_DIR)
         # function called from off-tree build dir
         paths.append(EXAMPLE_ROBOT_DATA_SOURCE_DIR)
-    except ImportError:
+    except NameError:
         pass
     paths += [join(p, "../../../share/example-robot-data/robots") for p in sys.path]
     for path in paths:
