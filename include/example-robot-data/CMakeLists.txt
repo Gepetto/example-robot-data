@@ -1,2 +1,0 @@
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/path.hpp
-        DESTINATION include/${CUSTOM_HEADER_DIR})
