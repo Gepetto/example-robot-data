@@ -64,6 +64,11 @@ if(NOT INSTALL_PYTHON_INTERFACE_ONLY)
   add_library(${PROJECT_NAME} INTERFACE)
   target_include_directories(${PROJECT_NAME}
                              INTERFACE $<INSTALL_INTERFACE:include>)
+  target_compile_definitions(
+    ${PROJECT_NAME}
+    INTERFACE
+      EXAMPLE_ROBOT_DATA_MODEL_DIR="$<INSTALL_PREFIX>/share/${PROJECT_NAME}/robots"
+  )
   install(
     TARGETS ${PROJECT_NAME}
     EXPORT ${TARGETS_EXPORT_NAME}
