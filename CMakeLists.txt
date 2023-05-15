@@ -74,7 +74,8 @@ if(NOT INSTALL_PYTHON_INTERFACE_ONLY)
     EXPORT ${TARGETS_EXPORT_NAME}
     DESTINATION lib)
 
-  add_subdirectory(include/${CUSTOM_HEADER_DIR})
+  install(FILES include/${CUSTOM_HEADER_DIR}/path.hpp
+          DESTINATION include/${CUSTOM_HEADER_DIR})
   install(DIRECTORY robots DESTINATION share/${PROJECT_NAME})
   install(FILES package.xml DESTINATION share/${PROJECT_NAME})
 endif(NOT INSTALL_PYTHON_INTERFACE_ONLY)
