@@ -56,7 +56,7 @@ cmake .. && make && make install
 
 ### :writing_hand: Written by
 
-- [Carlos Mastalli](https://cmastalli.github.io/), The University of Edinburgh :uk:
+- [Carlos Mastalli](https://cmastalli.github.io/), Heriot-Watt University :uk:
 - [Guilhem Saurel](https://github.com/nim65s), LAAS-CNRS :fr:
 
 ### :construction_worker: With contributions from
@@ -67,3 +67,4 @@ cmake .. && make && make install
 - [Wolfgang Merkt](http://www.wolfgangmerkt.com/research/), University of Oxford :uk:
 - [Josep Martí Saumell](https://www.iri.upc.edu/staff/jmarti), IRI: CSIC-UPC :es:
 - [Louis Montaut](https://lmontaut.github.io/), INRIA :fr:, CTU :czech_republic:
+- [Sergi Martinez](https://www.romilab.org/team/sergi-martinez), Heriot-Watt University :uk:
