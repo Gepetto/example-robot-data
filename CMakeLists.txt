@@ -39,7 +39,7 @@ endif()
 
 # JRL-cmakemodule setup
 include("${JRL_CMAKE_MODULES}/base.cmake")
-INCLUDE("${JRL_CMAKE_MODULES}/python.cmake")
+include("${JRL_CMAKE_MODULES}/python.cmake")
 
 # Print initial message
 message(STATUS "${PROJECT_DESCRIPTION}, version ${PROJECT_VERSION}")
