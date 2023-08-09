@@ -278,8 +278,8 @@ class TalosArmLoader(TalosLoader):
 
 
 class TalosLegsLoader(TalosLoader):
-    def __init__(self):
-        super(TalosLegsLoader, self).__init__()
+    def __init__(self, verbose=False):
+        super(TalosLegsLoader, self).__init__(verbose=verbose)
         legMaxId = 14
         m1 = self.robot.model
         m2 = pin.Model()
@@ -572,7 +572,7 @@ def loader(name, display=False, rootNodeName="", verbose=False):
         raise ValueError(
             "Robot '%s' not found. Possible values are %s" % (name, robots)
         )
-    inst = ROBOTS[name]()
+    inst = ROBOTS[name](verbose=verbose)
     if display:
         if rootNodeName:
             inst.robot.initViewer()
