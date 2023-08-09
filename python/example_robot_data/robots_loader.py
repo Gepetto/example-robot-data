@@ -11,7 +11,7 @@ except ImportError:
     pass
 
 
-def getModelPath(subpath, printmsg=False):
+def getModelPath(subpath, verbose=False):
     source = dirname(dirname(dirname(__file__)))  # top level source directory
     paths = [
         # function called from "make release" in build/ dir
@@ -33,7 +33,7 @@ def getModelPath(subpath, printmsg=False):
     paths += [join(p, "../../../share/example-robot-data/robots") for p in sys.path]
     for path in paths:
         if exists(join(path, subpath.strip("/"))):
-            if printmsg:
+            if verbose:
                 print("using %s as modelPath" % path)
             return path
     raise IOError("%s not found" % subpath)
@@ -72,10 +72,10 @@ class RobotLoader(object):
     ref_posture = "half_sitting"
     has_rotor_parameters = False
     free_flyer = False
-    verbose = False
     model_path = None
 
-    def __init__(self):
+    def __init__(self, verbose=False):
+        self.verbose = verbose
         if self.urdf_filename:
             if self.sdf_filename:
                 raise AttributeError("Please choose between URDF *or* SDF")
@@ -278,8 +278,8 @@ class TalosArmLoader(TalosLoader):
 
 
 class TalosLegsLoader(TalosLoader):
-    def __init__(self):
-        super(TalosLegsLoader, self).__init__()
+    def __init__(self, verbose=False):
+        super(TalosLegsLoader, self).__init__(verbose=verbose)
         legMaxId = 14
         m1 = self.robot.model
         m2 = pin.Model()
@@ -565,14 +565,14 @@ ROBOTS = {
 }
 
 
-def loader(name, display=False, rootNodeName=""):
+def loader(name, display=False, rootNodeName="", verbose=False):
     """Load a robot by its name, and optionally display it in a viewer."""
     if name not in ROBOTS:
         robots = ", ".join(sorted(ROBOTS.keys()))
         raise ValueError(
             "Robot '%s' not found. Possible values are %s" % (name, robots)
         )
-    inst = ROBOTS[name]()
+    inst = ROBOTS[name](verbose=verbose)
     if display:
         if rootNodeName:
             inst.robot.initViewer()
@@ -583,13 +583,13 @@ def loader(name, display=False, rootNodeName=""):
     return inst
 
 
-def load(name, display=False, rootNodeName=""):
+def load(name, display=False, rootNodeName="", verbose=False):
     """Load a robot by its name, and optionnaly display it in a viewer."""
-    return loader(name, display, rootNodeName).robot
+    return loader(name, display, rootNodeName, verbose).robot
 
 
-def load_full(name, display=False, rootNodeName=""):
+def load_full(name, display=False, rootNodeName="", verbose=False):
     """Load a robot by its name, optionnaly display it in a viewer,
     and provide its q0 and paths."""
-    inst = loader(name, display, rootNodeName)
+    inst = loader(name, display, rootNodeName, verbose)
     return inst.robot, inst.robot.q0, inst.df_path, inst.srdf_path
