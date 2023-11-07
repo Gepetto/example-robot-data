@@ -4,6 +4,6 @@
 #include <example-robot-data/warning.hh>
 
 #pragma message EXAMPLE_ROBOT_DATA_WARN( \
-        "Header `example-robot-data/path.hpp` is deprecated and useless!")
+    "Header `example-robot-data/path.hpp` is deprecated and useless!")
 
 #endif
