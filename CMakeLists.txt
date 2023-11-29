@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 set(PROJECT_ORG gepetto)
 set(PROJECT_NAME example-robot-data)
 set(PROJECT_DESCRIPTION
-    "Set of robot URDFs for benchmarking and developed examples.")
+    "Set of robot URDFs for benchmarking and developed examples")
 set(PROJECT_URL https://github.com/${PROJECT_ORG}/${PROJECT_NAME})
 
 # Project options
