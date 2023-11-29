@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+- added CHANGELOG.md in https://github.com/Gepetto/example-robot-data/pull/193
+
 ## [4.0.9] - 2023-11-29
 
 ### What's Changed
