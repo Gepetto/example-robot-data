@@ -101,6 +101,9 @@ class RobotTestCase(unittest.TestCase):
     def test_allegro_left(self):
         self.check("allegro_left_hand", 16, 16)
 
+    def test_quadruped(self):
+        self.check("quadruped", 15, 14)
+
     def test_romeo(self):
         self.check("romeo", 62, 61)
 
