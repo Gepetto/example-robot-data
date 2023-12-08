@@ -312,7 +312,7 @@
   <link name="FR_LOWER_LEG">
     <!-- Right lower leg inertia -->
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0 0.00787644 -0.08928215"/>
+      <origin rpy="0 0 0" xyz="0.0 -0.00787644 -0.08928215"/>
       <mass value="0.03070001"/>
       <inertia ixx="0.00012024" ixy="0.0" ixz="0.0" iyy="0.00012029" iyz="-0.00000305" izz="0.00000216"/>
     </inertial>
@@ -660,7 +660,7 @@
   <link name="HR_LOWER_LEG">
     <!-- Right lower leg inertia -->
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0 0.00787644 -0.08928215"/>
+      <origin rpy="0 0 0" xyz="0.0 -0.00787644 -0.08928215"/>
       <mass value="0.03070001"/>
       <inertia ixx="0.00012024" ixy="0.0" ixz="0.0" iyy="0.00012029" iyz="-0.00000305" izz="0.00000216"/>
     </inertial>
