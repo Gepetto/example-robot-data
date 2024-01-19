@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="borinot_flynig_arm_2">
+  <material name="light_blue">
+      <color rgba="0.5569 0.6313 0.7479 1"/>
+  </material>
+  <material name="dark_blue">
+      <color rgba="0.3 0.3 0.3 1"/>
+  </material>
+  <link name="borinot__base_link">
+    <inertial>
+      <origin
+        xyz="0.0 0.00244 0.0202"
+        rpy="0 0 0" />
+      <mass value="2.647" />
+      <inertia ixx="0.027246422051605018" ixy="-0.0" ixz="0.0" iyy="0.026854677520396303" iyz="0.0"
+        izz="0.039807168462897885" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/borinot_description/meshes/borinot__base_link.dae" />
+      </geometry>
+      <material name="light_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/borinot_description/meshes/borinot__base_link.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- link imported from solo12, with axes properly swaped -->
+  <link name="flying_arm_2__link1">
+    <inertial>
+      <origin xyz="0.00001377 -0.07870700 -0.01935853" rpy="0 0 0" />
+      <mass value="0.14853845" />
+      <inertia ixx="0.00041107" ixy="0.0" ixz="0.0" iyy="0.00003024" iyz="-0.00004671"
+        izz="0.00041193" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/borinot_description/meshes/flying_arm_2__link1.dae" />
+      </geometry>
+      <material name="dark_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/borinot_description/meshes/flying_arm_2__link1.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="flying_arm_2__j_bl_link1" type="revolute">
+    <origin xyz="0.064701 -0.022177 -0.05075" rpy="1.5708 0 -3.1416" />
+    <parent link="borinot__base_link" />
+    <child link="flying_arm_2__link1" />
+    <axis xyz="0 0 -1" />
+    <limit effort="2.5" lower="-1.6707963267948966" upper="1.6707963267948966" velocity="10000" />
+  </joint>
+
+  <!-- link with the steel m24 nut at the end -->
+  <link name="flying_arm_2__link2">
+    <inertial>
+      <origin xyz="0.0 -0.1149 -0.021" rpy="0 0 0" />
+      <mass value="0.115" />
+      <inertia ixx="1.7554e-4" ixy="0.0" ixz="0.0"
+        iyy="1.972e-5" iyz="0.0" izz="1.7938e-4" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/borinot_description/meshes/flying_arm_2__link2.dae" />
+      </geometry>
+      <material name="dark_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/borinot_description/meshes/flying_arm_2__link2.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="flying_arm_2__j_link1_link2" type="revolute">
+    <origin xyz="0 -0.160 -0.03715" rpy="0 0 0" />
+    <parent link="flying_arm_2__link1" />
+    <child link="flying_arm_2__link2" />
+    <axis xyz="0 0 -1" />
+    <limit effort="2.5" lower="-1.6707963267948966" upper="1.6707963267948966" velocity="10000" />
+  </joint>
+
+  <link name="flying_arm_2__ee">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+
+  <joint name="flying_arm_2__j_link2_ee" type="fixed">
+    <!-- x pointing forward -->
+    <origin xyz="0 -0.130 0" rpy="0 0 -1.5708" />
+    <parent link="flying_arm_2__link2" />
+    <child link="flying_arm_2__ee" />
+    <axis xyz="0 0 -1" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+</robot>

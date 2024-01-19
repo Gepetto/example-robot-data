@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<robot name="hextilt_flying_arm_5">
+
+    <group name="end_effector">
+        <joint name="flying_arm_5__j_base_link_link_1" />
+        <joint name="flying_arm_5__j_link_1_link_2" />
+        <joint name="flying_arm_5__j_link_2_link_3" />
+        <joint name="flying_arm_5__j_link_3_link_4" />
+        <joint name="flying_arm_5__j_link_4_link_5" />
+        <joint name="flying_arm_5__j_link_5_gripper" />
+        <chain base_link="base" tip_link="flying_arm_5__gripper" />
+    </group>
+
+    <end_effector name="end_effector" parent_link="flying_arm_5__gripper" group="end_effector" />
+
+    <group_state name="home">
+        <joint name="flying_arm_5__j_base_link_link_1" value="0." />
+        <joint name="flying_arm_5__j_link_1_link_2" value="0." />
+        <joint name="flying_arm_5__j_link_2_link_3" value="0." />
+        <joint name="flying_arm_5__j_link_3_link_4" value="0." />
+        <joint name="flying_arm_5__j_link_4_link_5" value="0." />
+        <joint name="flying_arm_5__j_link_5_gripper" value="0." />
+    </group_state>
+
+</robot>

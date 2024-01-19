@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="hextilt_flying_arm_5">
+  <material name="light_blue">
+      <color rgba="0.5569 0.6313 0.7479 1"/>
+  </material>
+  <material name="grey">
+      <color rgba="0.3 0.3 0.3 1"/>
+  </material>
+  <link name="hextilt__base_link">
+    <inertial>
+      <origin xyz="-0.0054412 0.003948 -0.0087555" />
+      <mass value="1.0194" />
+      <inertia ixx="0.0015891"
+        ixy="-3.0072E-06"
+        ixz="-4.0534E-07"
+        iyy="0.0015947"
+        iyz="2.85E-06"
+        izz="0.0029281" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/hextilt.dae" />
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/hextilt.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="flying_arm_5__base_link">
+    <inertial>
+      <origin xyz="5.4471E-05 0.00055544 0.0045971" rpy="0 0 0" />
+      <mass value="0.27973" />
+      <inertia ixx="0.00010284" ixy="5.704E-10" ixz="7.6592E-09" iyy="7.9509E-05" iyz="5.7105E-10" izz="9.2151E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/base_link.dae" />
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/base_link.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="flying_arm_5__j_base_link" type="fixed">
+    <origin xyz="0.0 0 -0.0516" rpy="0 0 0" />
+    <parent link="hextilt__base_link" />
+    <child link="flying_arm_5__base_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <link name="flying_arm_5__link_1">
+    <inertial>
+      <origin xyz="0.097289 5.2467E-05 -0.012147" rpy="0 0 0" />
+      <mass value="0.12284" />
+      <inertia ixx="2.3846E-05" ixy="-5.0883E-13" ixz="3.5276E-06" iyy="0.00021635" iyz="-1.2916E-12" izz="0.00023624" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_1.dae" />
+      </geometry>
+      <material name="light_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_1.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="flying_arm_5__j_base_link_link_1" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 1.5708 0" />
+    <parent link="flying_arm_5__base_link" />
+    <child link="flying_arm_5__link_1" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-1.6707963267948966" upper="1.6707963267948966" velocity="10000" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <link name="flying_arm_5__link_2">
+    <inertial>
+      <origin xyz="0.043238 2.4308E-05 -0.0087926" rpy="0 0 0" />
+      <mass value="0.11474" />
+      <inertia ixx="1.174E-05" ixy="1.3294E-09" ixz="-2.0499E-06" iyy="4.7747E-05" iyz="-1.6102E-08" izz="5.2344E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_2.dae" />
+      </geometry>
+      <material name="light_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_2.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="flying_arm_5__j_link_1_link_2" type="revolute">
+    <origin xyz="0.132 0 0" rpy="0 0 0" />
+    <parent link="flying_arm_5__link_1" />
+    <child link="flying_arm_5__link_2" />
+    <axis xyz="0 0 1" />
+    <limit effort="1" lower="-1.6707963267948966" upper="1.6707963267948966" velocity="10000" />
+    <dynamics damping="0.1" friction="0.1" />
+  </joint>
+
+  <link name="flying_arm_5__link_3">
+    <inertial>
+      <origin xyz="0.00020827 -0.0031223 -0.011966" rpy="0 0 0" />
+      <mass value="0.068772" />
+      <inertia ixx="6.8293E-06" ixy="4.2309E-08" ixz="1.548E-09" iyy="7.2432E-06" iyz="1.6138E-08" izz="7.1043E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_3.dae" />
+      </geometry>
+      <material name="light_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_3.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="flying_arm_5__j_link_2_link_3" type="revolute">
+    <origin xyz="0.075 0 0" rpy="0 0 0" />
+    <parent link="flying_arm_5__link_2" />
+    <child link="flying_arm_5__link_3" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.3" lower="-1.6707963267948966" upper="1.6707963267948966" velocity="10000"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <link name="flying_arm_5__link_4">
+    <inertial>
+      <origin xyz="0.026125 2.9724E-09 0.0016875" rpy="0 0 0" />
+      <mass value="0.05914" />
+      <inertia ixx="2.2712E-05" ixy="2.3256E-12" ixz="5.2509E-09" iyy="2.472E-05" iyz="3.3225E-09" izz="1.0444E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_4.dae" />
+      </geometry>
+      <material name="light_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_4.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="flying_arm_5__j_link_3_link_4" type="revolute">
+    <origin xyz="0 0 -0.011925" rpy="1.5708 0 0" />
+    <parent link="flying_arm_5__link_3" />
+    <child link="flying_arm_5__link_4" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.3" lower="-1.6707963267948966" upper="1.6707963267948966" velocity="10000"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <link name="flying_arm_5__link_5">
+    <inertial>
+      <origin xyz="1.7347E-18 -1.0246E-17 0.025817" rpy="0 0 0" />
+      <mass value="0.021791" />
+      <inertia ixx="7.9107E-06" ixy="1.6653E-13" ixz="2.9904E-21" iyy="1.5446E-05" iyz="-1.1963E-21" izz="1.0818E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_5.dae" />
+      </geometry>
+      <material name="light_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/hextilt_description/meshes/link_5.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="flying_arm_5__j_link_4_link_5" type="revolute">
+    <origin xyz="0.034 0 -0.00025" rpy="1.5708 0 1.5708" />
+    <parent link="flying_arm_5__link_4" />
+    <child link="flying_arm_5__link_5" />
+    <axis xyz="0 0 1" />
+    <limit effort="0.3" lower="-1.6707963267948966" upper="1.6707963267948966" velocity="10000"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <link name="flying_arm_5__gripper">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+  </link>
+
+  <joint name="flying_arm_5__j_link_5_gripper" type="fixed">
+    <origin rpy="0 0 0" xyz="0.00 0 0.06"/>
+    <parent link="flying_arm_5__link_5"/>
+    <child link="flying_arm_5__gripper"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+</robot>

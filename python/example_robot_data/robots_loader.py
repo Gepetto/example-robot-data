@@ -374,6 +374,16 @@ class BoltLoader(RobotLoader):
     free_flyer = True
 
 
+class BorinotLoader(RobotLoader):
+    path = "borinot_description"
+    urdf_subpath = "urdf"
+    srdf_subpath = "srdf"
+    urdf_filename = "borinot_flying_arm_2.urdf"
+    srdf_filename = "borinot_flying_arm_2.srdf"
+    ref_posture = "home"
+    free_flyer = True
+
+
 class Solo8Loader(RobotLoader):
     path = "solo_description"
     urdf_filename = "solo.urdf"
@@ -489,6 +499,16 @@ class HectorLoader(RobotLoader):
     free_flyer = True
 
 
+class HextiltLoader(RobotLoader):
+    path = "hextilt_description"
+    urdf_subpath = "urdf"
+    srdf_subpath = "srdf"
+    urdf_filename = "hextilt_flying_arm_5.urdf"
+    srdf_filename = "hextilt_flying_arm_5.srdf"
+    ref_posture = "home"
+    free_flyer = True
+
+
 class DoublePendulumLoader(RobotLoader):
     path = "double_pendulum_description"
     urdf_filename = "double_pendulum.urdf"
@@ -545,6 +565,7 @@ ROBOTS = {
     "double_pendulum_continuous": DoublePendulumContinuousLoader,
     "double_pendulum_simple": DoublePendulumSimpleLoader,
     "hector": HectorLoader,
+    "hextilt": HextiltLoader,
     "hyq": HyQLoader,
     "icub": ICubLoader,
     "icub_reduced": ICubReducedLoader,
@@ -558,6 +579,7 @@ ROBOTS = {
     "simple_humanoid": SimpleHumanoidLoader,
     "simple_humanoid_classical": SimpleHumanoidClassicalLoader,
     "bolt": BoltLoader,
+    "borinot": BorinotLoader,
     "solo8": Solo8Loader,
     "solo12": Solo12Loader,
     "finger_edu": FingerEduLoader,
