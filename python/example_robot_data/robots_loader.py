@@ -182,6 +182,12 @@ class A1Loader(RobotLoader):
     ref_posture = "standing"
     free_flyer = True
 
+class Z1Loader(RobotLoader):
+    path = "z1_description"
+    urdf_filename = "z1.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "z1.srdf"
+    ref_posture = "arm_up"
 
 class ANYmalLoader(RobotLoader):
     path = "anymal_b_simple_description"
@@ -514,11 +520,11 @@ class IrisLoader(RobotLoader):
     urdf_filename = "iris_simple.urdf"
     free_flyer = True
 
-
 ROBOTS = {
     "b1": B1Loader,
     "go1": Go1Loader,
     "a1": A1Loader,
+    "z1": Z1Loader,
     "anymal": ANYmalLoader,
     "anymal_c": ANYmalCLoader,
     "anymal_kinova": ANYmalKinovaLoader,
