@@ -377,7 +377,10 @@ class BoltLoader(RobotLoader):
 class BorinotLoader(RobotLoader):
     path = "borinot_description"
     urdf_subpath = "urdf"
+    srdf_subpath = "srdf"
     urdf_filename = "borinot_flying_arm_2.urdf"
+    srdf_filename = "borinot_flying_arm_2.srdf"
+    ref_posture = "home"
     free_flyer = True
 
 
@@ -499,7 +502,10 @@ class HectorLoader(RobotLoader):
 class HextiltLoader(RobotLoader):
     path = "hextilt_description"
     urdf_subpath = "urdf"
+    srdf_subpath = "srdf"
     urdf_filename = "hextilt_flying_arm_5.urdf"
+    srdf_filename = "hextilt_flying_arm_5.srdf"
+    ref_posture = "home"
     free_flyer = True
 
 

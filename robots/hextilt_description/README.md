@@ -6,4 +6,5 @@ license: NA
 
 ### Modifications:
 
+ - Added SRDF
  - Added colors in URDF

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<robot name="borinot_flynig_arm_2">
+
+    <group name="end_effector">
+        <joint name="flying_arm_2__j_bl_link1" />
+        <joint name="flying_arm_2__j_link1_link2" />
+        <joint name="flying_arm_2__j_link2_ee" />
+        <chain base_link="base" tip_link="flying_arm_2__ee" />
+    </group>
+
+    <end_effector name="end_effector" parent_link="flying_arm_2__ee" group="end_effector" />
+
+    <group_state name="home">
+        <joint name="flying_arm_2__j_bl_link1" value="0." />
+        <joint name="flying_arm_2__j_link1_link2" value="0." />
+        <joint name="flying_arm_2__j_link2_ee" value="0." />
+    </group_state>
+
+</robot>
