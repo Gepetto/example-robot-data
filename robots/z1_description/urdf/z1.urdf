@@ -4,6 +4,12 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="z1_description">
+  <material name="light_blue">
+      <color rgba="0.6980 0.7529 0.8392 1"/>
+  </material>
+  <material name="dark_blue">
+      <color rgba="0.5569 0.6313 0.7479 1"/>
+  </material>
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
       <robotNamespace>/z1_gazebo</robotNamespace>
@@ -31,6 +37,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_Link00.dae" scale="1 1 1"/>
       </geometry>
+      <material name="light_blue"/>
     </visual>
     <collision>
       <geometry>
@@ -58,6 +65,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_Link01.dae" scale="1 1 1"/>
       </geometry>
+      <material name="light_blue"/>
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="2.47e-06 -0.00025198 0.02317169"/>
@@ -79,6 +87,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_Link02.dae" scale="1 1 1"/>
       </geometry>
+      <material name="light_blue"/>
     </visual>
     <collision>
       <geometry>
@@ -118,6 +127,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_Link03.dae" scale="1 1 1"/>
       </geometry>
+      <material name="light_blue"/>
     </visual>
     <collision>
       <geometry>
@@ -151,6 +161,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_Link04.dae" scale="1 1 1"/>
       </geometry>
+      <material name="light_blue"/>
     </visual>
     <collision>
       <geometry>
@@ -178,6 +189,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_Link05.dae" scale="1 1 1"/>
       </geometry>
+      <material name="light_blue"/>
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="0.03121533 0.0 0.00646316"/>
@@ -199,6 +211,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_Link06.dae" scale="1 1 1"/>
       </geometry>
+      <material name="light_blue"/>
     </visual>
     <collision>
       <geometry>
@@ -222,6 +235,7 @@
           <geometry>
               <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_GripperStator.dae" scale="1 1 1"/>
           </geometry>
+          <material name="dark_blue"/>
       </visual>
       <collision>
           <geometry>
@@ -247,6 +261,7 @@
           <geometry>
               <mesh filename="package://example-robot-data/robots/z1_description/meshes/visual/z1_GripperMover.dae" scale="1 1 1"/>
           </geometry>
+          <material name="dark_blue"/>
       </visual>
       <collision>
           <geometry>
