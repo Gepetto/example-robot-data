@@ -8,3 +8,4 @@ license: MPL-2.0
 
  - Removed Gazebo and transmission tags
  - Added SRDF
+ - Added colors in collada files and URDF
