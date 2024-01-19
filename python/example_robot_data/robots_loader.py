@@ -374,6 +374,13 @@ class BoltLoader(RobotLoader):
     free_flyer = True
 
 
+class BorinotLoader(RobotLoader):
+    path = "borinot_description"
+    urdf_subpath = "urdf"
+    urdf_filename = "borinot_flying_arm_2.urdf"
+    free_flyer = True
+
+
 class Solo8Loader(RobotLoader):
     path = "solo_description"
     urdf_filename = "solo.urdf"
@@ -558,6 +565,7 @@ ROBOTS = {
     "simple_humanoid": SimpleHumanoidLoader,
     "simple_humanoid_classical": SimpleHumanoidClassicalLoader,
     "bolt": BoltLoader,
+    "borinot": BorinotLoader,
     "solo8": Solo8Loader,
     "solo12": Solo12Loader,
     "finger_edu": FingerEduLoader,
