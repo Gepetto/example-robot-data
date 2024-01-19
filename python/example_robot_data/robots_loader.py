@@ -496,6 +496,13 @@ class HectorLoader(RobotLoader):
     free_flyer = True
 
 
+class HextiltLoader(RobotLoader):
+    path = "hextilt_description"
+    urdf_subpath = "urdf"
+    urdf_filename = "hextilt_flying_arm_5.urdf"
+    free_flyer = True
+
+
 class DoublePendulumLoader(RobotLoader):
     path = "double_pendulum_description"
     urdf_filename = "double_pendulum.urdf"
@@ -552,6 +559,7 @@ ROBOTS = {
     "double_pendulum_continuous": DoublePendulumContinuousLoader,
     "double_pendulum_simple": DoublePendulumSimpleLoader,
     "hector": HectorLoader,
+    "hextilt": HextiltLoader,
     "hyq": HyQLoader,
     "icub": ICubLoader,
     "icub_reduced": ICubReducedLoader,
