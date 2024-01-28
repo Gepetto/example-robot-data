@@ -143,6 +143,8 @@ class RobotLoader(object):
         else:
             self.srdf_path = None
             self.robot.q0 = pin.neutral(self.robot.model)
+        root = getModelPath(self.path)
+        self.robot.urdf = join(root, self.path, self.urdf_subpath, self.urdf_filename)
 
         if self.free_flyer:
             self.addFreeFlyerJointLimits()

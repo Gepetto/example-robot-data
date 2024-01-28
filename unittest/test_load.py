@@ -17,6 +17,7 @@ class RobotTestCase(unittest.TestCase):
         self.assertEqual(robot.model.nq, expected_nq)
         self.assertEqual(robot.model.nv, expected_nv)
         self.assertTrue(hasattr(robot, "q0"))
+        self.assertTrue(hasattr(robot, "urdf"))
         if pybullet:
             self.check_pybullet(urdf, one_kg_bodies)
 
