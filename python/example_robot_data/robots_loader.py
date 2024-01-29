@@ -525,6 +525,13 @@ class DoublePendulumSimpleLoader(DoublePendulumLoader):
     urdf_filename = "double_pendulum_simple.urdf"
 
 
+class QuadrupedLoader(RobotLoader):
+    path = "quadruped_description"
+    urdf_subpath = "urdf"
+    urdf_filename = "quadruped.urdf"
+    free_flyer = True
+
+
 class RomeoLoader(RobotLoader):
     path = "romeo_description"
     urdf_filename = "romeo.urdf"
@@ -577,6 +584,7 @@ ROBOTS = {
     "panda": PandaLoader,
     "allegro_right_hand": AllegroRightHandLoader,
     "allegro_left_hand": AllegroLeftHandLoader,
+    "quadruped": QuadrupedLoader,
     "romeo": RomeoLoader,
     "simple_humanoid": SimpleHumanoidLoader,
     "simple_humanoid_classical": SimpleHumanoidClassicalLoader,
