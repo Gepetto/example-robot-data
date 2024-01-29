@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [4.1.0] - 2024-01-29
+
 - added CHANGELOG.md in https://github.com/Gepetto/example-robot-data/pull/193
 - added a simple `quadruped` robot
 - Fix wrong position of the center of mass for Solo-8 and Solo-12 lower legs
@@ -293,7 +295,8 @@ Added optionnal python helpers, which depend on pinocchio
 
 Initial release
 
-[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v4.0.9...HEAD
+[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/gepetto/example-robot-data/compare/v4.0.9...v4.1.0
 [4.0.9]: https://github.com/gepetto/example-robot-data/compare/v4.0.8...v4.0.9
 [4.0.8]: https://github.com/gepetto/example-robot-data/compare/v4.0.7...v4.0.8
 [4.0.7]: https://github.com/gepetto/example-robot-data/compare/v4.0.6...v4.0.7
