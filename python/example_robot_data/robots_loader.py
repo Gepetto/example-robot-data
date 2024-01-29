@@ -100,9 +100,9 @@ class RobotLoader(object):
                     self.robot = builder(
                         self.df_path,
                         package_dirs=[join(self.model_path, "../..")],
-                        root_joint=pin.JointModelFreeFlyer()
-                        if self.free_flyer
-                        else None,
+                        root_joint=(
+                            pin.JointModelFreeFlyer() if self.free_flyer else None
+                        ),
                         root_link_name=self.sdf_root_link_name,
                         parent_guidance=self.sdf_parent_guidance,
                     )
@@ -110,9 +110,9 @@ class RobotLoader(object):
                     self.robot = builder(
                         self.df_path,
                         package_dirs=[join(self.model_path, "../..")],
-                        root_joint=pin.JointModelFreeFlyer()
-                        if self.free_flyer
-                        else None,
+                        root_joint=(
+                            pin.JointModelFreeFlyer() if self.free_flyer else None
+                        ),
                     )
             except AttributeError:
                 raise ImportError("Building SDF models require pinocchio >= 3.0.0")
