@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 - added CHANGELOG.md in https://github.com/Gepetto/example-robot-data/pull/193
 - added a simple `quadruped` robot
+- Fix wrong position of the center of mass for Solo-8 and Solo-12 lower legs
+- Added the Unitree's Z1 robot
+- Store urdf file in robot
+- Updated borinot & hextilt
 
 ## [4.0.9] - 2023-11-29
 
