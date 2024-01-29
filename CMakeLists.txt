@@ -52,11 +52,8 @@ compute_project_args(PROJECT_ARGS LANGUAGES CXX)
 project(${PROJECT_NAME} ${PROJECT_ARGS})
 
 if(BUILD_PYTHON_INTERFACE)
-  add_project_dependency(eigenpy 2.7.11 REQUIRED)
-  include("${JRL_CMAKE_MODULES}/python.cmake")
-  set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/find-external/CppAD/"
-                        ${CMAKE_MODULE_PATH})
-  add_project_dependency(pinocchio REQUIRED)
+  add_project_dependency(eigenpy 3.0.0 REQUIRED)
+  add_project_dependency(pinocchio 2.7.0 REQUIRED)
   string(REGEX REPLACE "-" "_" PY_NAME ${PROJECT_NAME})
   add_subdirectory(python)
   if(BUILD_TESTING)
