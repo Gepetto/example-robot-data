@@ -61,7 +61,8 @@ class RobotTestCase(unittest.TestCase):
             import pinocchio
 
             pin_version = tuple(int(i) for i in pinocchio.__version__.split("."))
-            self.assertLess(pin_version, (2, 9, 1))
+            if pin_version >= (2, 9, 1):
+                self.skipTest("Pinocchio v3 release is in progress.")
 
     def test_double_pendulum(self):
         self.check("double_pendulum", 2, 2)
