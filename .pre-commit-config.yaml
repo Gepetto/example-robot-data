@@ -3,7 +3,7 @@ ci:
 exclude: tests/test_python-syntax_error.py
 repos:
 -   repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v18.1.5
+    rev: v18.1.6
     hooks:
     -   id: clang-format
         args: [-i, --style=Google]
