@@ -1,4 +1,5 @@
 import sys
+import typing
 from os.path import dirname, exists, join
 
 import numpy as np
@@ -34,9 +35,9 @@ def getModelPath(subpath, verbose=False):
     for path in paths:
         if exists(join(path, subpath.strip("/"))):
             if verbose:
-                print("using %s as modelPath" % path)
+                print(f"using {path} as modelPath")
             return path
-    raise IOError("%s not found" % subpath)
+    raise OSError(f"{subpath} not found")
 
 
 def readParamsFromSrdf(
@@ -59,13 +60,13 @@ def readParamsFromSrdf(
     return q0
 
 
-class RobotLoader(object):
+class RobotLoader:
     path = ""
     urdf_filename = ""
     srdf_filename = ""
     sdf_filename = ""
     sdf_root_link_name = ""
-    sdf_parent_guidance = []
+    sdf_parent_guidance: typing.ClassVar = []
     urdf_subpath = "robots"
     srdf_subpath = "srdf"
     sdf_subpath = ""
@@ -246,7 +247,7 @@ class CassieLoader(RobotLoader):
     ref_posture = "standing"
     free_flyer = True
     sdf_root_link_name = "pelvis"
-    sdf_parent_guidance = [
+    sdf_parent_guidance: typing.ClassVar = [
         "left-roll-op",
         "left-yaw-op",
         "left-pitch-op",
@@ -295,7 +296,7 @@ class TalosArmLoader(TalosLoader):
 
 class TalosLegsLoader(TalosLoader):
     def __init__(self, verbose=False):
-        super(TalosLegsLoader, self).__init__(verbose=verbose)
+        super().__init__(verbose=verbose)
         legMaxId = 14
         m1 = self.robot.model
         m2 = pin.Model()
@@ -627,9 +628,7 @@ def loader(name, display=False, rootNodeName="", verbose=False):
     """Load a robot by its name, and optionally display it in a viewer."""
     if name not in ROBOTS:
         robots = ", ".join(sorted(ROBOTS.keys()))
-        raise ValueError(
-            "Robot '%s' not found. Possible values are %s" % (name, robots)
-        )
+        raise ValueError(f"Robot '{name}' not found. Possible values are {robots}")
     inst = ROBOTS[name](verbose=verbose)
     if display:
         if rootNodeName:
