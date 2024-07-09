@@ -1,2 +1,11 @@
-[tool.isort]
-line_length = 88
+[tool.ruff]
+extend-exclude = ["cmake"]
+
+[tool.ruff.lint]
+extend-select = ["I", "NPY", "RUF", "UP", "W"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["example_robot_data"]
+
+[tool.tomlsort]
+all = true
