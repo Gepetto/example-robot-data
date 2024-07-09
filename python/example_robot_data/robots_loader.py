@@ -559,6 +559,15 @@ class IrisLoader(RobotLoader):
     free_flyer = True
 
 
+class PR2Loader(RobotLoader):
+    path = "pr2_description"
+    urdf_filename = "pr2.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "pr2.srdf"
+    free_flyer = True
+    ref_posture = "tuck_left_arm"
+
+
 ROBOTS = {
     "b1": B1Loader,
     "go1": Go1Loader,
@@ -594,6 +603,7 @@ ROBOTS = {
     "solo8": Solo8Loader,
     "solo12": Solo12Loader,
     "finger_edu": FingerEduLoader,
+    "pr2": PR2Loader,
     "talos": TalosLoader,
     "talos_box": TalosBoxLoader,
     "talos_arm": TalosArmLoader,
