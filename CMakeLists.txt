@@ -6,7 +6,10 @@ set(PROJECT_NAME example-robot-data)
 set(PROJECT_DESCRIPTION
     "Set of robot URDFs for benchmarking and developed examples")
 set(PROJECT_URL https://github.com/${PROJECT_ORG}/${PROJECT_NAME})
+# To enable jrl-cmakemodules compatibility with workspace we must define the two
+# following lines
 set(PROJECT_AUTO_RUN_FINALIZE FALSE)
+set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 # Project options
 option(BUILD_PYTHON_INTERFACE "Build the python unit tests and helpers" ON)
