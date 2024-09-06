@@ -333,7 +333,10 @@ class TalosLegsLoader(TalosLoader):
 
         # q2 = self.robot.q0[:19]
         for f in m1.frames:
-            if f.parent < legMaxId:
+            if tuple(int(i) for i in pin.__version__.split(".")) >= (3, 0, 0):
+                if f.parentJoint < legMaxId:
+                    m2.addFrame(f)
+            elif f.parent < legMaxId:
                 m2.addFrame(f)
 
         g2 = pin.GeometryModel()
