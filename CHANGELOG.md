@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- Add compatibility with jrl-cmakemodules workspace ([#225](https://github.com/Gepetto/example-robot-data/pull/225))
+
 ## [4.1.0] - 2024-01-29
 
 - added CHANGELOG.md in https://github.com/Gepetto/example-robot-data/pull/193
