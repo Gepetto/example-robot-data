@@ -176,6 +176,14 @@ class Go1Loader(RobotLoader):
     ref_posture = "standing"
     free_flyer = True
 
+class Go2Loader(RobotLoader):
+    path = "go2_description"
+    urdf_filename = "go2.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "go2.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
 
 class A1Loader(RobotLoader):
     path = "a1_description"
@@ -574,6 +582,7 @@ class PR2Loader(RobotLoader):
 ROBOTS = {
     "b1": B1Loader,
     "go1": Go1Loader,
+    "go2": Go2Loader,
     "a1": A1Loader,
     "z1": Z1Loader,
     "b1_z1": B1Z1Loader,
