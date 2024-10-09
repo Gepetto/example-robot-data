@@ -176,6 +176,7 @@ class Go1Loader(RobotLoader):
     ref_posture = "standing"
     free_flyer = True
 
+
 class Go2Loader(RobotLoader):
     path = "go2_description"
     urdf_filename = "go2.urdf"
