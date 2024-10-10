@@ -38,6 +38,9 @@ class RobotTestCase(unittest.TestCase):
 
     def test_go1(self):
         self.check("go1", 19, 18)
+        
+    def test_go2(self):
+        self.check("go2", 19, 18)
 
     def test_a1(self):
         self.check("a1", 19, 18)
