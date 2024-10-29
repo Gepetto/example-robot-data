@@ -3,6 +3,7 @@ import typing
 from os.path import dirname, exists, join
 
 import numpy as np
+import hppfcl
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -458,6 +459,74 @@ class PandaLoader(RobotLoader):
     ref_posture = "default"
 
 
+class PandaLoaderCollision(RobotLoader):
+    path = "panda_description"
+    urdf_filename = "panda_collision.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "panda_collision.srdf"
+    ref_posture = "default"
+    
+    def __init__(self, verbose=False):
+        super(RobotLoader, self).__init__()
+
+        self.verbose = verbose
+        df_path = join(self.path, self.urdf_subpath, self.urdf_filename)
+        builder = RobotWrapper.BuildFromURDF
+        self.model_path = getModelPath(df_path, self.verbose)
+        self.df_path = join(self.model_path, df_path)
+        self.robot = builder(
+            self.df_path,
+            [join(self.model_path, "../..")],
+        )
+        cmodel= self.robot.collision_model.copy() 
+        list_names_capsules = []
+        # Iterate through geometry objects in the collision model
+        for geom_object in cmodel.geometryObjects:
+            geometry = geom_object.geometry
+            base_name = geom_object.name[:-1]  # Remove the last character from the name
+            
+            # Convert cylinders to capsules
+            if isinstance(geometry, hppfcl.Cylinder):
+                name = self.generate_capsule_name(base_name, list_names_capsules)
+                list_names_capsules.append(name)
+                capsule = pin.GeometryObject(
+                    name=name,
+                    parent_frame=int(geom_object.parentFrame),
+                    parent_joint=int(geom_object.parentJoint),
+                    collision_geometry=hppfcl.Capsule(geometry.radius, geometry.halfLength),
+                    placement=geom_object.placement,
+                )
+                capsule.meshColor = np.array([249, 136, 126, 125]) / 255 # Red color
+                self.robot.collision_model.addGeometryObject(capsule)
+                self.robot.collision_model.removeGeometryObject(geom_object.name)
+
+            # Remove spheres associated with links
+            elif isinstance(geometry, hppfcl.Sphere) and "link" in geom_object.name:
+                self.robot.collision_model.removeGeometryObject(geom_object.name)
+
+
+        # Recreate collision data since the collision pairs changed
+        self.robot.collision_data = self.robot.collision_model.createData()
+        
+        self.srdf_path = None
+        self.robot.q0 = pin.neutral(self.robot.model)
+        root = getModelPath(self.path)
+        self.robot.urdf = join(root, self.path, self.urdf_subpath, self.urdf_filename)
+
+    @staticmethod
+    def generate_capsule_name(base_name: str, existing_names: list) -> str:
+        """Generates a unique capsule name for a geometry object.
+
+        Args:
+            base_name (str): The base name of the geometry object.
+            existing_names (list): List of names already assigned to capsules.
+
+        Returns:
+            str: Unique capsule name.
+        """
+        suffix = "capsule_1" if f"{base_name}capsule_0" in existing_names else "capsule_0"
+        return f"{base_name}{suffix}"
+    
 class AllegroRightHandLoader(RobotLoader):
     path = "allegro_hand_description"
     urdf_filename = "allegro_right_hand.urdf"
@@ -605,6 +674,7 @@ ROBOTS = {
     "kinova": KinovaLoader,
     "laikago": LaikagoLoader,
     "panda": PandaLoader,
+    "panda_collision": PandaLoaderCollision,
     "allegro_right_hand": AllegroRightHandLoader,
     "allegro_left_hand": AllegroLeftHandLoader,
     "quadruped": QuadrupedLoader,
