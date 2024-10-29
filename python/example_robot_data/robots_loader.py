@@ -2,8 +2,8 @@ import sys
 import typing
 from os.path import dirname, exists, join
 
-import numpy as np
 import hppfcl
+import numpy as np
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
@@ -465,7 +465,7 @@ class PandaLoaderCollision(RobotLoader):
     urdf_subpath = "urdf"
     srdf_filename = "panda_collision.srdf"
     ref_posture = "default"
-    
+
     def __init__(self, verbose=False):
         super(RobotLoader, self).__init__()
 
@@ -478,13 +478,13 @@ class PandaLoaderCollision(RobotLoader):
             self.df_path,
             [join(self.model_path, "../..")],
         )
-        cmodel= self.robot.collision_model.copy() 
+        cmodel = self.robot.collision_model.copy()
         list_names_capsules = []
         # Iterate through geometry objects in the collision model
         for geom_object in cmodel.geometryObjects:
             geometry = geom_object.geometry
             base_name = geom_object.name[:-1]  # Remove the last character from the name
-            
+
             # Convert cylinders to capsules
             if isinstance(geometry, hppfcl.Cylinder):
                 name = self.generate_capsule_name(base_name, list_names_capsules)
@@ -493,10 +493,12 @@ class PandaLoaderCollision(RobotLoader):
                     name=name,
                     parent_frame=int(geom_object.parentFrame),
                     parent_joint=int(geom_object.parentJoint),
-                    collision_geometry=hppfcl.Capsule(geometry.radius, geometry.halfLength),
+                    collision_geometry=hppfcl.Capsule(
+                        geometry.radius, geometry.halfLength
+                    ),
                     placement=geom_object.placement,
                 )
-                capsule.meshColor = np.array([249, 136, 126, 125]) / 255 # Red color
+                capsule.meshColor = np.array([249, 136, 126, 125]) / 255  # Red color
                 self.robot.collision_model.addGeometryObject(capsule)
                 self.robot.collision_model.removeGeometryObject(geom_object.name)
 
@@ -504,10 +506,9 @@ class PandaLoaderCollision(RobotLoader):
             elif isinstance(geometry, hppfcl.Sphere) and "link" in geom_object.name:
                 self.robot.collision_model.removeGeometryObject(geom_object.name)
 
-
         # Recreate collision data since the collision pairs changed
         self.robot.collision_data = self.robot.collision_model.createData()
-        
+
         self.srdf_path = None
         self.robot.q0 = pin.neutral(self.robot.model)
         root = getModelPath(self.path)
@@ -524,9 +525,12 @@ class PandaLoaderCollision(RobotLoader):
         Returns:
             str: Unique capsule name.
         """
-        suffix = "capsule_1" if f"{base_name}capsule_0" in existing_names else "capsule_0"
+        suffix = (
+            "capsule_1" if f"{base_name}capsule_0" in existing_names else "capsule_0"
+        )
         return f"{base_name}{suffix}"
-    
+
+
 class AllegroRightHandLoader(RobotLoader):
     path = "allegro_hand_description"
     urdf_filename = "allegro_right_hand.urdf"
