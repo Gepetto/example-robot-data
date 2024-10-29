@@ -366,6 +366,12 @@
                 <mesh filename="package://example-robot-data/robots/panda_description/meshes/visual/hand.dae" />
             </geometry>
         </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 3e-2"/>
+            <geometry>
+                <box size="40e-3 20e-2 75e-3"/>
+            </geometry>
+        </collision>
         <inertial>
             <origin rpy="0 0 0" xyz="-0.01 0 0.03"/>
             <mass value="0.73"/>
