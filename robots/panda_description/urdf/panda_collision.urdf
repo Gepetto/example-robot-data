@@ -367,9 +367,9 @@
             </geometry>
         </visual>
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 3e-2"/>
+            <origin rpy="1.57 0 0" xyz="0 0 3e-2"/>
             <geometry>
-                <box size="40e-3 20e-2 75e-3"/>
+                <cylinder length="0.25" radius="0.04"/>
             </geometry>
         </collision>
         <inertial>
