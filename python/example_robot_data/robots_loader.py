@@ -465,14 +465,7 @@ class PandaLoaderCollision(PandaLoader):
 
     def __init__(self, verbose=False):
         super().__init__(verbose=verbose)
-        df_path = join(self.path, self.urdf_subpath, self.urdf_filename)
-        builder = RobotWrapper.BuildFromURDF
-        self.model_path = getModelPath(df_path, self.verbose)
-        self.df_path = join(self.model_path, df_path)
-        self.robot = builder(
-            self.df_path,
-            [join(self.model_path, "../..")],
-        )
+        
         cmodel = self.robot.collision_model.copy()
         list_names_capsules = []
         # Iterate through geometry objects in the collision model
