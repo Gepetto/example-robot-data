@@ -39,6 +39,9 @@ class RobotTestCase(unittest.TestCase):
     def test_go1(self):
         self.check("go1", 19, 18)
 
+    def test_go2(self):
+        self.check("go2", 19, 18)
+
     def test_a1(self):
         self.check("a1", 19, 18)
 
@@ -61,7 +64,8 @@ class RobotTestCase(unittest.TestCase):
             import pinocchio
 
             pin_version = tuple(int(i) for i in pinocchio.__version__.split("."))
-            self.assertLess(pin_version, (2, 9, 1))
+            if pin_version >= (2, 9, 1):
+                self.skipTest("Pinocchio v3 release is in progress.")
 
     def test_double_pendulum(self):
         self.check("double_pendulum", 2, 2)
@@ -138,6 +142,9 @@ class RobotTestCase(unittest.TestCase):
 
     def test_laikago(self):
         self.check("laikago", 19, 18)
+
+    def test_pr2(self):
+        self.check("pr2", 41, 36)
 
     def test_talos_box(self):
         self.check("talos_box", 39, 38)
