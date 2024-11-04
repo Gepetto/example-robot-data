@@ -464,9 +464,7 @@ class PandaLoaderCollision(PandaLoader):
     srdf_filename = "panda_collision.srdf"
 
     def __init__(self, verbose=False):
-        super(RobotLoader, self).__init__()
-
-        self.verbose = verbose
+        super().__init__(verbose=verbose)
         df_path = join(self.path, self.urdf_subpath, self.urdf_filename)
         builder = RobotWrapper.BuildFromURDF
         self.model_path = getModelPath(df_path, self.verbose)
