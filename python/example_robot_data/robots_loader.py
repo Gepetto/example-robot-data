@@ -177,6 +177,15 @@ class Go1Loader(RobotLoader):
     free_flyer = True
 
 
+class FalconBravo7Loader(RobotLoader):
+    path = "falcon_bravo7_description"
+    urdf_filename = "falcon_bravo7.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "falcon_bravo7.srdf"
+    ref_posture = "ready4contact"
+    free_flyer = True
+
+
 class Go2Loader(RobotLoader):
     path = "go2_description"
     urdf_filename = "go2.urdf"
@@ -582,6 +591,7 @@ class PR2Loader(RobotLoader):
 
 ROBOTS = {
     "b1": B1Loader,
+    "falcon_bravo7": FalconBravo7Loader,
     "go1": Go1Loader,
     "go2": Go2Loader,
     "a1": A1Loader,
