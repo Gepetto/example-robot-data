@@ -520,10 +520,10 @@ class PandaLoaderCollision(PandaLoader):
         Returns:
             str: Unique capsule name.
         """
-        suffix = (
-            "capsule_1" if f"{base_name}capsule_0" in existing_names else "capsule_0"
-        )
-        return f"{base_name}{suffix}"
+        i = 0
+        while f"{base_name}_capsule_{i}" in existing_names:
+            i += 1
+        return f"{base_name}_capsule_{i}"
 
 
 class AllegroRightHandLoader(RobotLoader):
