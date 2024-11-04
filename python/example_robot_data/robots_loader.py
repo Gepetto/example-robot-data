@@ -159,7 +159,6 @@ class RobotLoader:
         lb[:7] = -1
         self.robot.model.lowerPositionLimit = lb
 
-
     def generate_capsule_name(self, base_name: str, existing_names: list) -> str:
         """Generates a unique capsule name for a geometry object.
 
@@ -174,6 +173,7 @@ class RobotLoader:
         while f"{base_name}_capsule_{i}" in existing_names:
             i += 1
         return f"{base_name}_capsule_{i}"
+
 
 class B1Loader(RobotLoader):
     path = "b1_description"
