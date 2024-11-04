@@ -177,6 +177,60 @@ class Go1Loader(RobotLoader):
     free_flyer = True
 
 
+class FalconBravo7NoEndEffectorLoader(RobotLoader):
+    path = "falcon_description"
+    urdf_filename = "falcon_bravo7_no_ee.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "falcon_bravo7_no_ee.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
+class BluevoltaBravo7NoEndEffectorLoader(RobotLoader):
+    path = "bluevolta_description"
+    urdf_filename = "bluevolta_bravo7_no_ee.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "bluevolta_bravo7_no_ee.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
+class FalconBravo7GripperLoader(RobotLoader):
+    path = "falcon_description"
+    urdf_filename = "falcon_bravo7_gripper.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "falcon_bravo7_gripper.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
+class BluevoltaBravo7GripperLoader(RobotLoader):
+    path = "bluevolta_description"
+    urdf_filename = "bluevolta_bravo7_gripper.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "bluevolta_bravo7_gripper.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
+class Bravo7NoEndEffectorLoader(RobotLoader):
+    path = "bravo7_description"
+    urdf_filename = "bravo7_no_ee.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "bravo7_no_ee.srdf"
+    ref_posture = "standing"
+    free_flyer = False
+
+
+class Bravo7GripperLoader(RobotLoader):
+    path = "bravo7_description"
+    urdf_filename = "bravo7_gripper.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "bravo7_gripper.srdf"
+    ref_posture = "standing"
+    free_flyer = False
+
+
 class Go2Loader(RobotLoader):
     path = "go2_description"
     urdf_filename = "go2.urdf"
@@ -582,6 +636,12 @@ class PR2Loader(RobotLoader):
 
 ROBOTS = {
     "b1": B1Loader,
+    "bravo7_gripper": Bravo7GripperLoader,
+    "bravo7_no_ee": Bravo7NoEndEffectorLoader,
+    "falcon_bravo7_no_ee": FalconBravo7NoEndEffectorLoader,
+    "falcon_bravo7_gripper": FalconBravo7GripperLoader,
+    "bluevolta_bravo7_no_ee": BluevoltaBravo7NoEndEffectorLoader,
+    "bluevolta_bravo7_gripper": BluevoltaBravo7GripperLoader,
     "go1": Go1Loader,
     "go2": Go2Loader,
     "a1": A1Loader,
