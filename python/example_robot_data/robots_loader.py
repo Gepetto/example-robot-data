@@ -465,7 +465,7 @@ class PandaLoaderCollision(PandaLoader):
 
     def __init__(self, verbose=False):
         super().__init__(verbose=verbose)
-        
+
         cmodel = self.robot.collision_model.copy()
         list_names_capsules = []
         # Iterate through geometry objects in the collision model
