@@ -160,6 +160,21 @@ class RobotLoader:
         self.robot.model.lowerPositionLimit = lb
 
 
+    def generate_capsule_name(self, base_name: str, existing_names: list) -> str:
+        """Generates a unique capsule name for a geometry object.
+
+        Args:
+            base_name (str): The base name of the geometry object.
+            existing_names (list): List of names already assigned to capsules.
+
+        Returns:
+            str: Unique capsule name.
+        """
+        i = 0
+        while f"{base_name}_capsule_{i}" in existing_names:
+            i += 1
+        return f"{base_name}_capsule_{i}"
+
 class B1Loader(RobotLoader):
     path = "b1_description"
     urdf_filename = "b1.urdf"
@@ -501,22 +516,6 @@ class PandaLoaderCollision(PandaLoader):
         self.robot.q0 = pin.neutral(self.robot.model)
         root = getModelPath(self.path)
         self.robot.urdf = join(root, self.path, self.urdf_subpath, self.urdf_filename)
-
-    @staticmethod
-    def generate_capsule_name(base_name: str, existing_names: list) -> str:
-        """Generates a unique capsule name for a geometry object.
-
-        Args:
-            base_name (str): The base name of the geometry object.
-            existing_names (list): List of names already assigned to capsules.
-
-        Returns:
-            str: Unique capsule name.
-        """
-        i = 0
-        while f"{base_name}_capsule_{i}" in existing_names:
-            i += 1
-        return f"{base_name}_capsule_{i}"
 
 
 class AllegroRightHandLoader(RobotLoader):
