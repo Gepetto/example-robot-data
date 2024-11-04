@@ -459,12 +459,9 @@ class PandaLoader(RobotLoader):
     ref_posture = "default"
 
 
-class PandaLoaderCollision(RobotLoader):
-    path = "panda_description"
+class PandaLoaderCollision(PandaLoader):
     urdf_filename = "panda_collision.urdf"
-    urdf_subpath = "urdf"
     srdf_filename = "panda_collision.srdf"
-    ref_posture = "default"
 
     def __init__(self, verbose=False):
         super(RobotLoader, self).__init__()
