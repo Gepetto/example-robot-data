@@ -512,6 +512,30 @@ class PandaLoader(RobotLoader):
     ref_posture = "default"
 
 
+class AlexNubHandsLoader(RobotLoader):
+    path = "alex_description"
+    urdf_filename = "alex_nub_hands.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "alex_nub_hands.srdf"
+    ref_posture = "default"
+
+
+class AlexPsyonicHandsLoader(RobotLoader):
+    path = "alex_description"
+    urdf_filename = "alex_psyonic_hands.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "alex_psyonic_hands.srdf"
+    ref_posture = "default"
+
+
+class AlexSakeHandsLoader(RobotLoader):
+    path = "alex_description"
+    urdf_filename = "alex_sake_hands.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "alex_sake_hands.srdf"
+    ref_posture = "default"
+
+
 class AllegroRightHandLoader(RobotLoader):
     path = "allegro_hand_description"
     urdf_filename = "allegro_right_hand.urdf"
@@ -665,6 +689,9 @@ ROBOTS = {
     "kinova": KinovaLoader,
     "laikago": LaikagoLoader,
     "panda": PandaLoader,
+    "alex_nub_hands": AlexNubHandsLoader,
+    "alex_psyonic_hands": AlexPsyonicHandsLoader,
+    "alex_sake_hands": AlexSakeHandsLoader,
     "allegro_right_hand": AllegroRightHandLoader,
     "allegro_left_hand": AllegroLeftHandLoader,
     "quadruped": QuadrupedLoader,
