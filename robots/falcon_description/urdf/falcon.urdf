@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<robot name="falcon">
+
+    <material name="green">
+            <color rgba="0.235 0.702 0.443 1"/>
+    </material>
+
+    <material name="blue">
+            <color rgba="0.263 0.733 0.984 1"/>
+    </material>
+
+    <material name="purple">
+            <color rgba="0.5 0.733 0.984 1"/>
+    </material>
+
+    <material name="red">
+            <color rgba="1 0 0 1"/>
+    </material>
+
+    <material name="black">
+            <color rgba="0.8 0.8 0.8 1"/>
+    </material>
+
+    <material name="orange">
+            <color rgba="1 0.369 0.047 1"/>
+    </material>
+    
+            <link name="falcon">
+                <!--Inertial parameters are not correct-->
+                <inertial>
+                    <mass value="200.0"/>
+                    <origin xyz="0 0 0"/>
+                    <inertia ixx="0.01152" ixy="0.0" ixz="0.0" iyy="0.01152" iyz="0.0" izz="0.0218"/>
+                </inertial>
+                <visual>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/falcon_rov.stl"/>
+                    </geometry>
+                    <material name="black"/>
+                </visual>
+                <collision>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/falcon_rov_convex_hull.stl"/>
+                    </geometry>
+                </collision>
+            </link>
+
+            <link name="chassis">
+                <!--Inertial parameters are not correct-->
+                <inertial>
+                    <mass value="200.0"/>
+                    <origin xyz="0 0 0"/>
+                    <inertia ixx="0.01152" ixy="0.0" ixz="0.0" iyy="0.01152" iyz="0.0" izz="0.0218"/>
+                </inertial>
+                <visual>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/chassis_rov.stl"/>
+                    </geometry>
+                    <material name="black"/>
+                </visual>
+                <collision>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/chassis_rov_convex_hull.stl"/>
+                    </geometry>
+                </collision>
+            </link>
+                    
+                    <joint name="falcon2chassis" type="fixed">
+                        <parent link="falcon"/>
+                        <child link="chassis"/>
+                        <origin rpy="-1.57 3.14  0" xyz="0.295 -0.73 -0.275"/>
+                    </joint>
+            
+            <link name="floaterR">
+                <!--Inertial parameters are not correct-->
+                <inertial>
+                    <mass value="2.0"/>
+                    <origin xyz="0 0 0"/>
+                    <inertia ixx="0.01152" ixy="0.0" ixz="0.0" iyy="0.01152" iyz="0.0" izz="0.0218"/>
+                </inertial>
+                <visual>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/floater.stl"/>
+                    </geometry>
+                    <material name="orange"/>
+                </visual>
+                <collision>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/floater.stl"/>
+                    </geometry>
+                </collision>
+            </link>
+
+                    <joint name="falcon2floaterR" type="fixed">
+                        <parent link="falcon"/>
+                        <child link="floaterR"/>
+                        <origin rpy="-1.57 0 -1.57" xyz="0.29 0.45 0.45"/>
+                    </joint>
+
+            <link name="floaterL">
+                <!--Inertial parameters are not correct-->
+                <inertial>
+                    <mass value="2.0"/>
+                    <origin xyz="0 0 0"/>
+                    <inertia ixx="0.01152" ixy="0.0" ixz="0.0" iyy="0.01152" iyz="0.0" izz="0.0218"/>
+                </inertial>
+                <visual>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/floater.stl"/>
+                    </geometry>
+                    <material name="orange"/>
+                </visual>
+                <collision>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/floater.stl"/>
+                    </geometry>
+                </collision>
+            </link>
+
+                    <joint name="falcon2floaterL" type="fixed">
+                        <parent link="falcon"/>
+                        <child link="floaterL"/>
+                        <origin rpy="-1.57 0 -1.57" xyz="-0.365 0.45 0.45"/>
+                    </joint>
+            
+            <!--PROPELLERS-->
+            <link name="top_propeller">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/propeller_rov.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+            
+            <link name="FR_propeller">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/propeller_rov.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+            
+            <link name="FL_propeller">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/propeller_rov.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+            
+            <link name="BL_propeller">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/propeller_rov.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+            
+            <link name="BR_propeller">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/falcon_description/meshes/propeller_rov.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+                    
+                    <joint name="top_propeller_joint" type="fixed">
+                        <parent link="falcon"/>
+                        <child link="Z_propeller"/>
+                        <origin rpy="0.0 1.57 0" xyz="-0.005 0.015 0.35"/>
+                    </joint>
+                    
+                    <joint name="BR_propeller_joint" type="fixed">
+                        <parent link="falcon"/>
+                        <child link="BR_propeller"/>
+                        <origin rpy="0.0 0.0 -2.0944" xyz="-0.19 0.31 0.165"/>
+                    </joint>
+                    
+                    <joint name="BL_propeller_joint" type="fixed">
+                        <parent link="falcon"/>
+                        <child link="BL_propeller"/>
+                        <origin rpy="0.0 0.0 -1.0472" xyz="0.19 0.31 0.165"/>
+                    </joint>
+                    
+                    <joint name="FL_propeller_joint" type="fixed">
+                        <parent link="falcon"/>
+                        <child link="FL_propeller"/>
+                        <origin rpy="0.0 0.0 -1.0472" xyz="0.165 -0.307 0.165"/>
+                    </joint>
+                                        
+                    <joint name="FR_propeller_joint" type="fixed">
+                        <parent link="falcon"/>
+                        <child link="FR_propeller"/>
+                        <origin rpy="0.0 0.0 -2.094395327" xyz="-0.165 -0.307 0.165"/>
+                    </joint>
+
+</robot>

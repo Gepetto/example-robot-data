@@ -177,14 +177,37 @@ class Go1Loader(RobotLoader):
     free_flyer = True
 
 
-class FalconBravo7Loader(RobotLoader):
-    path = "falcon_bravo7_description"
-    urdf_filename = "falcon_bravo7.urdf"
+class FalconBravo7SphereEndEffectorLoader(RobotLoader):
+    path = "falcon_description"
+    urdf_filename = "falcon_bravo7_sphere_endeffector.urdf"
     urdf_subpath = "urdf"
-    srdf_filename = "falcon_bravo7.srdf"
-    ref_posture = "ready4contact"
+    srdf_filename = "falcon_bravo7_sphere_endeffector.srdf"
+    ref_posture = "standing"
     free_flyer = True
+    
+class BluevoltaBravo7SphereEndEffectorLoader(RobotLoader):
+    path = "bluevolta_description"
+    urdf_filename = "bluevolta_bravo7_sphere_endeffector.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "bluevolta_bravo7_sphere_endeffector.srdf"
+    ref_posture = "standing"
+    free_flyer = True
+    
+class Bravo7SphereEndEffectorLoader(RobotLoader):
+    path = "bravo7_description"
+    urdf_filename = "bravo7_sphere_endeffector.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "bravo7_sphere_endeffector.srdf"
+    ref_posture = "standing"
+    free_flyer = False
 
+class Bravo7GripperLoader(RobotLoader):
+    path = "bravo7_description"
+    urdf_filename = "bravo7_gripper.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "bravo7_gripper.srdf"
+    ref_posture = "standing"
+    free_flyer = False
 
 class Go2Loader(RobotLoader):
     path = "go2_description"
@@ -591,7 +614,10 @@ class PR2Loader(RobotLoader):
 
 ROBOTS = {
     "b1": B1Loader,
-    "falcon_bravo7": FalconBravo7Loader,
+    "bravo7_gripper": Bravo7GripperLoader,
+    "bravo7_sphere_endeffector": Bravo7SphereEndEffectorLoader,
+    "falcon_bravo7_sphere_endeffector": FalconBravo7SphereEndEffectorLoader,
+    "bluevolta_bravo7_sphere_endeffector": BluevoltaBravo7SphereEndEffectorLoader,
     "go1": Go1Loader,
     "go2": Go2Loader,
     "a1": A1Loader,

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="bluevolta_bravo7_sphere_endeffector">
+
+    <group name="whole_body">
+        <joint name="joint1"/>
+        <joint name="joint2"/>
+        <joint name="joint3"/>
+        <joint name="joint4"/>
+        <joint name="joint5"/>
+        <joint name="joint6"/>
+    </group>
+
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="standing" group="whole_body">
+        <joint name="joint1" value="0.0"/>
+        <joint name="joint2" value="2.305"/>
+        <joint name="joint3" value="1.059"/>
+        <joint name="joint4" value="1.566"/>
+        <joint name="joint5" value="1.570"/>
+        <joint name="joint6" value="1.532"/>
+    </group_state>
+
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="contact_point" parent_link="force_torque_sensor" group="whole_body"/>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="root_joint" type="floating" parent_frame="world_frame" child_link="bluevolta"/>
+    
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="bluevolta" link2="force_torque_sensor" reason="Default"/>
+    <disable_collisions link1="bluevolta" link2="link1" reason="Adjacent"/>
+    <disable_collisions link1="bluevolta" link2="link2" reason="Default"/>
+    <disable_collisions link1="bluevolta" link2="link3" reason="Default"/>
+    <disable_collisions link1="bluevolta" link2="link4" reason="Default"/>
+    <disable_collisions link1="bluevolta" link2="link5" reason="Default"/>
+    <disable_collisions link1="bluevolta" link2="link6" reason="Default"/>
+    <disable_collisions link1="end_effector_ball" link2="force_torque_sensor" reason="Never"/>
+    <disable_collisions link1="end_effector_ball" link2="link4" reason="Never"/>
+    <disable_collisions link1="end_effector_ball" link2="link5" reason="Never"/>
+    <disable_collisions link1="end_effector_ball" link2="link6" reason="Never"/>
+    <disable_collisions link1="end_effector_ball" link2="link7" reason="Adjacent"/>
+    <disable_collisions link1="force_torque_sensor" link2="link3" reason="Default"/>
+    <disable_collisions link1="force_torque_sensor" link2="link4" reason="Default"/>
+    <disable_collisions link1="force_torque_sensor" link2="link5" reason="Never"/>
+    <disable_collisions link1="force_torque_sensor" link2="link6" reason="Never"/>
+    <disable_collisions link1="force_torque_sensor" link2="link7" reason="Adjacent"/>
+    <disable_collisions link1="link1" link2="link2" reason="Adjacent"/>
+    <disable_collisions link1="link1" link2="link3" reason="Default"/>
+    <disable_collisions link1="link1" link2="link4" reason="Never"/>
+    <disable_collisions link1="link1" link2="link5" reason="Default"/>
+    <disable_collisions link1="link1" link2="link6" reason="Default"/>
+    <disable_collisions link1="link2" link2="link3" reason="Adjacent"/>
+    <disable_collisions link1="link2" link2="link4" reason="Never"/>
+    <disable_collisions link1="link2" link2="link5" reason="Never"/>
+    <disable_collisions link1="link3" link2="link4" reason="Adjacent"/>
+    <disable_collisions link1="link3" link2="link5" reason="Default"/>
+    <disable_collisions link1="link3" link2="link6" reason="Default"/>
+    <disable_collisions link1="link3" link2="link7" reason="Default"/>
+    <disable_collisions link1="link4" link2="link5" reason="Adjacent"/>
+    <disable_collisions link1="link4" link2="link6" reason="Default"/>
+    <disable_collisions link1="link4" link2="link7" reason="Default"/>
+    <disable_collisions link1="link5" link2="link6" reason="Adjacent"/>
+    <disable_collisions link1="link5" link2="link7" reason="Never"/>
+    <disable_collisions link1="link6" link2="link7" reason="Adjacent"/>
+
+</robot>
