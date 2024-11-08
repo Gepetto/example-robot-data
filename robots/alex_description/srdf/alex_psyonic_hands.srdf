@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<robot name="alex_nub_hands">
+    <group name="left_arm">
+        <joint name="LeftShoulderPitch"/>
+        <joint name="LeftShoulderRoll"/>
+        <joint name="LeftShoulderYaw"/>
+        <joint name="LeftElbowPitch"/>
+        <joint name="LeftWristYaw"/>
+        <joint name="LeftWristRoll"/>
+        <joint name="LeftGripperYaw"/>
+    </group>
+
+    <group name="right_arm">
+        <joint name="RightShoulderPitch"/>
+        <joint name="RightShoulderRoll"/>
+        <joint name="RightShoulderYaw"/>
+        <joint name="RightElbowPitch"/>
+        <joint name="RightWristYaw"/>
+        <joint name="RightWristRoll"/>
+        <joint name="RightGripperYaw"/>
+    </group>
+
+    <group name="spine">
+        <joint name="SpineYaw"/>
+        <joint name="SpineRoll"/>
+        <joint name="SpinePitch"/>
+    </group>
+
+    <group name="neck">
+        <joint name="NeckYaw"/>
+        <joint name="NeckPitch"/>
+    </group>
+
+    <group name="left_hand">
+        <joint name="Left_index_q1"/>
+        <joint name="Left_index_q2"/>
+        <joint name="Left_middle_q1"/>
+        <joint name="Left_middle_q2"/>
+        <joint name="Left_ring_q1"/>
+        <joint name="Left_ring_q2"/>
+        <joint name="Left_pinky_q1"/>
+        <joint name="Left_pinky_q2"/>
+        <joint name="Left_thumb_q1"/>
+        <joint name="Left_thumb_q2"/>
+    </group>
+
+    <group name="right_hand">
+        <joint name="Right_index_q1"/>
+        <joint name="Right_index_q2"/>
+        <joint name="Right_middle_q1"/>
+        <joint name="Right_middle_q2"/>
+        <joint name="Right_ring_q1"/>
+        <joint name="Right_ring_q2"/>
+        <joint name="Right_pinky_q1"/>
+        <joint name="Right_pinky_q2"/>
+        <joint name="Right_thumb_q1"/>
+        <joint name="Right_thumb_q2"/>
+    </group>
+
+    <group name="arms_spine_neck_hands">
+        <group name="left_arm"/>
+        <group name="right_arm"/>
+        <group name="spine"/>
+        <group name="neck"/>
+        <group name="left_hand"/>
+        <group name="right_hand"/>
+    </group>
+
+    <group_state name="default" group="arms_spine_neck_hands">
+        <joint name="LeftShoulderPitch"     value="0.0"/>
+        <joint name="LeftShoulderRoll"      value="0.0"/>
+        <joint name="LeftShoulderYaw"       value="0.0"/>
+        <joint name="LeftElbowPitch"        value="0.0"/>
+        <joint name="LeftWristYaw"          value="0.0"/>
+        <joint name="LeftWristRoll"         value="0.0"/>
+        <joint name="LeftGripperYaw"        value="0.0"/>
+
+        <joint name="RightShoulderPitch"    value="0.0"/>
+        <joint name="RightShoulderRoll"     value="0.0"/>
+        <joint name="RightShoulderYaw"      value="0.0"/>
+        <joint name="RightElbowPitch"       value="0.0"/>
+        <joint name="RightWristYaw"         value="0.0"/>
+        <joint name="RightWristRoll"        value="0.0"/>
+        <joint name="RightGripperYaw"       value="0.0"/>
+
+        <joint name="SpineYaw"              value="0.0"/>
+        <joint name="SpineRoll"             value="0.0"/>
+        <joint name="SpinePitch"            value="0.0"/>
+
+        <joint name="NeckYaw"               value="0.0"/>
+        <joint name="NeckPitch"             value="0.0"/>
+
+        <joint name="Left_index_q1"         value="0.001"/>
+        <joint name="Left_index_q2"         value="0.001"/>
+        <joint name="Left_middle_q1"        value="0.001"/>
+        <joint name="Left_middle_q2"        value="0.001"/>
+        <joint name="Left_ring_q1"          value="0.001"/>
+        <joint name="Left_ring_q2"          value="0.001"/>
+        <joint name="Left_pinky_q1"         value="0.001"/>
+        <joint name="Left_pinky_q2"         value="0.001"/>
+        <joint name="Left_thumb_q1"         value="0.001"/>
+        <joint name="Left_thumb_q2"         value="0.001"/>
+
+        <joint name="Right_index_q1"        value="0.001"/>
+        <joint name="Right_index_q2"        value="0.001"/>
+        <joint name="Right_middle_q1"       value="0.001"/>
+        <joint name="Right_middle_q2"       value="0.001"/>
+        <joint name="Right_ring_q1"         value="0.001"/>
+        <joint name="Right_ring_q2"         value="0.001"/>
+        <joint name="Right_pinky_q1"        value="0.001"/>
+        <joint name="Right_pinky_q2"        value="0.001"/>
+        <joint name="Right_thumb_q1"        value="0.001"/>
+        <joint name="Right_thumb_q2"        value="0.001"/>
+
+    </group_state>
+
+    <end_effector name="left_arm_end_effector" parent_link="LeftGripperYaw" group="left_arm"/>
+    <end_effector name="right_arm_end_effector" parent_link="RightGripperYaw" group="right_arm"/>
+
+</robot>
