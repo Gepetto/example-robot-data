@@ -60,14 +60,20 @@ class RobotTestCase(unittest.TestCase):
     def test_bravo7_gripper(self):
         self.check("bravo7_gripper", 11, 8)
     
-    def test_bravo7_sphere_endeffector(self):
-        self.check("bravo7_sphere_endeffector", 9, 6)
+    def test_bravo7_no_ee(self):
+        self.check("bravo7_no_ee", 9, 6)
 
-    def test_falcon_bravo7_sphere_endeffector(self):
-        self.check("falcon_bravo7_sphere_endeffector", 16, 12)
+    def test_falcon_bravo7_no_ee(self):
+        self.check("falcon_bravo7_no_ee", 16, 12)
     
-    def test_bluevolta_bravo7_sphere_endeffector(self):
-        self.check("bluevolta_bravo7_sphere_endeffector", 16, 12)
+    def test_bluevolta_bravo7_no_ee(self):
+        self.check("bluevolta_bravo7_no_ee", 16, 12)
+    
+    def test_falcon_bravo7_gripper(self):
+        self.check("falcon_bravo7_gripper", 18, 14)
+    
+    def test_bluevolta_bravo7_gripeer(self):
+        self.check("bluevolta_bravo7_gripper", 18, 14)
 
     def test_cassie(self):
         try:

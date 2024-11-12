@@ -1,26 +1,177 @@
 <?xml version="1.0"?>
-<robot name="bravo7_gripper">
+<robot name="bluevolta_bravo7_gripper">
 
-    <material name="green">
-            <color rgba="0.235 0.702 0.443 1"/>
-    </material>
+        <material name="green">
+                <color rgba="0.235 0.702 0.443 1"/>
+        </material>
 
-    <material name="blue">
-            <color rgba="0.263 0.733 0.984 1"/>
-    </material>
+        <material name="blue">
+                <color rgba="0.263 0.733 0.984 1"/>
+        </material>
 
-    <material name="red">
-            <color rgba="1 0 0 1"/>
-    </material>
+        <material name="red">
+                <color rgba="1 0 0 1"/>
+        </material>
 
-    <material name="black">
-            <color rgba="0.8 0.8 0.8 1"/>
-    </material>
+        <material name="black">
+                <color rgba="0.8 0.8 0.8 1"/>
+        </material>
 
-    <material name="orange">
-            <color rgba="1 0.369 0.047 1"/>
-    </material>
-                             
+        <material name="orange">
+                <color rgba="1 0.369 0.047 1"/>
+        </material>
+
+            <link name="bluevolta">
+                <!--Inertial parameters are not correct-->
+                <inertial>
+                    <mass value="200.0"/>
+                    <origin xyz="0 0 0"/>
+                    <inertia ixx="0.01152" ixy="0.0" ixz="0.0" iyy="0.01152" iyz="0.0" izz="0.0218"/>
+                </inertial>
+                <visual>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta.stl"/>
+                    </geometry>
+                    <material name="black"/>
+                </visual>
+                <collision>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta_convex_hull.stl"/>
+                    </geometry>
+                </collision>
+            </link>
+            
+            <!--THRUSTERS-->
+            <link name="Thruster_TOP_FL">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta_propeller.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+
+            <link name="Thruster_TOP_FR">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta_propeller.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+
+            <link name="Thruster_TOP_B">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta_propeller.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+            
+            <link name="Thruster_BOTTOM_FL">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta_propeller.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+            
+            <link name="Thruster_BOTTOM_FR">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta_propeller.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+            
+            <link name="Thruster_BOTTOM_BL">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta_propeller.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+
+            <link name="Thruster_BOTTOM_BR">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://example-robot-data/robots/bluevolta_description/meshes/bluevolta_propeller.stl"/>
+                    </geometry>
+                    <material name="red"/>
+                </visual>
+            </link>
+
+                    <joint name="Thruster_TOP_FL_joint" type="fixed">
+                        <parent link="bluevolta"/>
+                        <child link="Thruster_TOP_FL"/>
+                        <origin rpy="0.0 1.8 0.0" xyz="0.34 0.25 -0.28"/>
+                    </joint>
+                    
+                    <joint name="Thruster_TOP_FR_joint" type="fixed">
+                        <parent link="bluevolta"/>
+                        <child link="Thruster_TOP_FR"/>
+                        <origin rpy="0.0 1.34 0.0" xyz="-0.34 0.25 -0.28"/>
+                    </joint>
+                    
+                    <joint name="Thruster_TOP_B_joint" type="fixed">
+                        <parent link="bluevolta"/>
+                        <child link="Thruster_TOP_B"/>
+                        <origin rpy="0.0 1.8 -1.57" xyz="0.0 -0.6 -0.3"/>
+                    </joint>
+
+                    <joint name="Thruster_BOTTOM_FR_joint" type="fixed">
+                        <parent link="bluevolta"/>
+                        <child link="Thruster_BOTTOM_FR"/>
+                        <origin rpy="0.0 0.0 -2.24" xyz="-0.31 0.52 -0.1"/>
+                    </joint>
+                    
+                    <joint name="Thruster_BOTTOM_BL_joint" type="fixed">
+                        <parent link="bluevolta"/>
+                        <child link="Thruster_BOTTOM_BL"/>
+                        <origin rpy="0.0 0.0 -2.24" xyz="0.27 -0.6 -0.11"/>
+                    </joint>
+                                        
+                    <joint name="Thruster_BOTTOM_FL_joint" type="fixed">
+                        <parent link="bluevolta"/>
+                        <child link="Thruster_BOTTOM_FL"/>
+                        <origin rpy="0.0 0.0 -0.9" xyz="0.31 0.52 -0.1"/>
+                    </joint>
+
+                    <joint name="Thruster_BOTTOM_BR_joint" type="fixed">
+                        <parent link="bluevolta"/>
+                        <child link="Thruster_BOTTOM_BR"/>
+                        <origin rpy="0.0 0.0 -0.9" xyz="-0.27 -0.6 -0.11"/>
+                    </joint>
+        
+        <!--Arm attaching link--> 
+        <link name="box_base_bravo">
+            <visual>
+                <geometry>
+                    <box size="0.1 0.1 0.1"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+        </link>
+
+                <joint name="box_base_bravo_joint" type="fixed">
+                        <origin xyz="-0.25 0.835 0.17" rpy="0 0 0"/>
+                    <parent link="bluevolta"/>
+                    <child link="box_base_bravo"/>
+                </joint>
+                
+                <joint name="base2arm" type="fixed">
+                    <parent link="box_base_bravo"/>
+                    <child link="link1"/>
+                    <origin rpy="3.14 0.0 1.57" xyz="0 -0.05 -0.05"/>
+                </joint>
+                    
+          <!-- Bravo7 with sphere end-effector -->
             <link name="link1">
                 <visual>
                     <geometry>
@@ -220,7 +371,7 @@
                         <parent link="link7"/>
                         <child link="force_torque_sensor"/>
                     </joint>
-        
+
                     <joint name="bravo_finger_jaws_joint" type="fixed">
                         <parent link="link7"/>
                         <child link="bravo_finger_jaws_base_link" />

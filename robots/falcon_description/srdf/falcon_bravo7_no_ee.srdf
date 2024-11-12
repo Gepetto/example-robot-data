@@ -3,7 +3,7 @@
     This is a format for representing semantic information about the robot structure.
     A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
 -->
-<robot name="falcon_bravo7_sphere_endeffector">
+<robot name="falcon_bravo7_no_ee">
 
     <group name="whole_body">
         <joint name="joint1"/>
@@ -33,14 +33,7 @@
     <disable_collisions link1="chassis" link2="falcon" reason="Adjacent"/>
     <disable_collisions link1="chassis" link2="floaterL" reason="Never"/>
     <disable_collisions link1="chassis" link2="floaterR" reason="Never"/>
-    <disable_collisions link1="chassis" link2="force_torque_sensor" reason="Default"/>
-    <disable_collisions link1="chassis" link2="link1" reason="Default"/>
     <disable_collisions link1="chassis" link2="link2" reason="Never"/>
-    <disable_collisions link1="chassis" link2="link3" reason="Default"/>
-    <disable_collisions link1="chassis" link2="link4" reason="Default"/>
-    <disable_collisions link1="chassis" link2="link5" reason="Default"/>
-    <disable_collisions link1="chassis" link2="link6" reason="Default"/>
-    <disable_collisions link1="chassis" link2="link7" reason="Default"/>
     <disable_collisions link1="end_effector_ball" link2="force_torque_sensor" reason="Never"/>
     <disable_collisions link1="end_effector_ball" link2="link4" reason="Never"/>
     <disable_collisions link1="end_effector_ball" link2="link5" reason="Never"/>
@@ -60,26 +53,16 @@
     <disable_collisions link1="floaterR" link2="link4" reason="Never"/>
     <disable_collisions link1="floaterR" link2="link5" reason="Never"/>
     <disable_collisions link1="floaterR" link2="link6" reason="Never"/>
-    <disable_collisions link1="force_torque_sensor" link2="link3" reason="Default"/>
-    <disable_collisions link1="force_torque_sensor" link2="link4" reason="Default"/>
     <disable_collisions link1="force_torque_sensor" link2="link5" reason="Never"/>
     <disable_collisions link1="force_torque_sensor" link2="link6" reason="Never"/>
     <disable_collisions link1="force_torque_sensor" link2="link7" reason="Adjacent"/>
     <disable_collisions link1="link1" link2="link2" reason="Adjacent"/>
-    <disable_collisions link1="link1" link2="link3" reason="Default"/>
     <disable_collisions link1="link1" link2="link4" reason="Never"/>
-    <disable_collisions link1="link1" link2="link5" reason="Default"/>
-    <disable_collisions link1="link1" link2="link6" reason="Default"/>
     <disable_collisions link1="link2" link2="link3" reason="Adjacent"/>
     <disable_collisions link1="link2" link2="link4" reason="Never"/>
     <disable_collisions link1="link2" link2="link5" reason="Never"/>
     <disable_collisions link1="link3" link2="link4" reason="Adjacent"/>
-    <disable_collisions link1="link3" link2="link5" reason="Default"/>
-    <disable_collisions link1="link3" link2="link6" reason="Default"/>
-    <disable_collisions link1="link3" link2="link7" reason="Default"/>
     <disable_collisions link1="link4" link2="link5" reason="Adjacent"/>
-    <disable_collisions link1="link4" link2="link6" reason="Default"/>
-    <disable_collisions link1="link4" link2="link7" reason="Default"/>
     <disable_collisions link1="link5" link2="link6" reason="Adjacent"/>
     <disable_collisions link1="link5" link2="link7" reason="Never"/>
     <disable_collisions link1="link6" link2="link7" reason="Adjacent"/>
