@@ -104,10 +104,10 @@ class RobotTestCase(unittest.TestCase):
         self.check("alex_nub_hands", 19, 19)
 
     def test_alex_psyonic_hands(self):
-        self.check("alex_psyonic_hands", 39, 39)    
+        self.check("alex_psyonic_hands", 39, 39)
 
     def test_alex_sake_hands(self):
-        self.check("alex_sake_hands", 23, 23)    
+        self.check("alex_sake_hands", 23, 23)
 
     def test_allegro_right(self):
         self.check("allegro_right_hand", 16, 16)

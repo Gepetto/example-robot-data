@@ -953,7 +953,7 @@
       </geometry>
     </collision>
     </link>
-	
+
 	<joint name="Right_GRIPPER_X1" type="revolute">
         <origin xyz="0.0 0.0299 -0.0754" rpy="-0.25 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
@@ -986,7 +986,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>
 	</joint>
-		
+
 	<link name="RightSakeBaseFingerLink1">
         <inertial>
             <mass value="0.05"/>
@@ -1084,7 +1084,7 @@
       </geometry>
     </collision>
     </link>
-	
+
 	<joint name="Left_GRIPPER_X1" type="revolute">
         <origin xyz="0.0 0.0299 -0.0754" rpy="-0.25 0.0 0.0"/>
         <axis xyz="1.0 0.0 0.0"/>
@@ -1117,7 +1117,7 @@
         <dynamics damping="0.05" friction="0.0"/>
         <limit effort="1.0" lower="-1.0" upper="0.0" velocity="3.67"/>
     </joint>
-	
+
 	<link name="LeftSakeBaseFingerLink1">
         <inertial>
             <mass value="0.05"/>

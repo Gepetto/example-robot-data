@@ -918,20 +918,20 @@
 			<imu> <!-- placeholder tag for IMU --> </imu>
 		</sensor>
 	</gazebo>
-	
+
 <!-- Gripper Fixed Joints -->
 	<joint name="rightGrippertAttachmentFixedJoint" type="fixed">
 		<origin rpy="-3.141592 0 3.141592" xyz="0 0 -0.02560000"/>
 		<parent link="RightGripperYawLink"/>
 		<child link="RightPsyonicAbilityBaseLink"/>
     </joint>
-	
+
 	<joint name="leftGrippertAttachmentFixedJoint" type="fixed">
 		<origin rpy="3.141592 0 0" xyz="0 0 -0.02560000"/>
 		<parent link="LeftGripperYawLink"/>
 		<child link="LeftPsyonicAbilityBaseLink"/>
     </joint>
-	
+
 	<!-- Left Psyonic Ability Hand -->
 	<link name="LeftPsyonicAbilityBaseLink">
 		<visual name="wrist_mesh">
@@ -939,7 +939,7 @@
 			<geometry>
 				<mesh filename="package://example-robot-data/robots/alex_description/meshes/wristmesh.obj"/>
 			</geometry>
-		</visual>		
+		</visual>
 		<inertial>	<!-- the mass and inertia here are NOT correct -->
 			<mass value = "0.200"/>
 			<inertia ixx="978.26e-6" ixy = "87.34e-6" ixz = "322.99e-6" iyy = "1244.78e-6" iyz = "244.74e-6" izz = "456.22e-6" />
@@ -964,13 +964,13 @@
 			<inertia ixx="978.26e-6" ixy = "87.34e-6" ixz = "322.99e-6" iyy = "1244.78e-6" iyz = "244.74e-6" izz = "456.22e-6" />
 			<origin xyz = "22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy = "0 0 0"/>
 		</inertial>
-						
+
 		<visual name="palm_mesh">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
 				<mesh filename="package://example-robot-data/robots/alex_description/meshes/fb_palm_ref.obj"/>
 			</geometry>
-		</visual>		
+		</visual>
 		<collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
@@ -978,9 +978,9 @@
       </geometry>
     </collision>
 	</link>
-	
-	
-	
+
+
+
 	<link name="Left_index_L1" >
 		<inertial>
 			<mass value = "0.00635888"/>
@@ -1005,7 +1005,7 @@
 			<mass value = "0.00645"/>
 			<inertia ixx="0.82671e-6" ixy = "-1.08876e-6" ixz = "-0.00037e-6" iyy = "1.98028e-6" iyz = "0.00081e-6" izz = "2.64638e-6" />
 			<origin rpy = "0 0 0" xyz = "13.36818e-3 -8.75392e-3 -0.02886e-3"/>
-		</inertial>		
+		</inertial>
 		<visual name="index_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1018,7 +1018,7 @@
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj" />
       </geometry>
     </collision>
-	</link>	
+	</link>
 	<joint name="Left_index_q1" type="revolute">
 		<parent link="Left_thumb_base"/>
 		<child link="Left_index_L1"/>
@@ -1043,7 +1043,7 @@
 		<origin rpy = "0 0 0" xyz = "31.5541e-3  -10.44e-3 0.14e-3"/>
 	</joint>
 
-	
+
 
 	<link name="Left_middle_L1" >
 		<inertial>
@@ -1051,7 +1051,7 @@
 			<inertia ixx="0.29766e-6" ixy = "-0.06447133e-6" ixz = "-0.00423315e-6" iyy = "3.6947967e-6" iyz = "0.00083028e-6" izz = "3.8176336e-6" />
 			<origin xyz = "22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy = "0 0 0"/>
 		</inertial>
-		
+
 		<visual name="middle_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1064,7 +1064,7 @@
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f1.obj" />
       </geometry>
     </collision>
-		
+
 	</link>
 	<link name="Left_middle_L2" >
 		<inertial>
@@ -1119,7 +1119,7 @@
 			<inertia ixx="0.29766e-6" ixy = "-0.06447133e-6" ixz = "-0.00423315e-6" iyy = "3.6947967e-6" iyz = "0.00083028e-6" izz = "3.8176336e-6" />
 			<origin xyz = "22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy = "0 0 0"/>
 		</inertial>
-		
+
 		<visual name="ring_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1144,13 +1144,13 @@
 			<geometry>
 				<mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj"/>
 			</geometry>
-		</visual>	
+		</visual>
 		<collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<joint name="Left_ring_q1" type="revolute">
 		<parent link="Left_thumb_base"/>
@@ -1184,7 +1184,7 @@
 			<inertia ixx="0.29766e-6" ixy = "-0.06447133e-6" ixz = "-0.00423315e-6" iyy = "3.6947967e-6" iyz = "0.00083028e-6" izz = "3.8176336e-6" />
 			<origin xyz = "22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy = "0 0 0"/>
 		</inertial>
-		
+
 		<visual name="pinky_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1196,7 +1196,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f1.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<link name="Left_pinky_L2" >
 		<inertial>
@@ -1209,13 +1209,13 @@
 			<geometry>
 				<mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj"/>
 			</geometry>
-		</visual>		
+		</visual>
 		<collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<joint name="Left_pinky_q1" type="revolute">
 		<parent link="Left_thumb_base"/>
@@ -1249,7 +1249,7 @@
 			<inertia ixx="0.16931e-6" ixy = "-0.076214e-6" ixz = "-0.16959148e-6" iyy = "0.77769934e-6" iyz = "0.0156622e-6" izz = "0.7249122e-6" />
 			<origin rpy = "0 0 0" xyz = "14.606e-3 -1.890854e-3 -3.1155356e-3"/>
 		</inertial>
-		
+
 		<visual name="thumb_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1261,8 +1261,8 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/thumb-f1.obj" />
       </geometry>
-    </collision>	
-		
+    </collision>
+
 	</link>
 	<link name="Left_thumb_L2" >
 		<inertial>
@@ -1270,7 +1270,7 @@
 			<inertia ixx="4.4789082e-6" ixy = "4.4789082e-6" ixz = "-0.62144934e-6" iyy = "15.600996e-6" iyz = "-0.07466143e-6" izz = "17.908554e-6" />
 			<origin rpy = "0 0 0" xyz = "30.020522e-3 5.59476e-3 -4.1504356e-3"/>
 		</inertial>
-		
+
 		<visual name="thumb_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1282,8 +1282,8 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/thumb-f2-left.obj" />
       </geometry>
-    </collision>	
-		
+    </collision>
+
 	</link>
 	<joint name="Left_thumb_q1" type="revolute">
 		<parent link="Left_thumb_base"/>
@@ -1299,7 +1299,7 @@
 		<origin xyz = "27.8283501e-3 0 -14.7507000e-3" rpy = "4.450589592585541 0 0" />
 		<axis xyz="0 0 1"/>
 		<limit lower = "0" upper = "2.0943951" effort = "6.0" velocity = "8.0677777442"/>		<!-- angles in rad, efforts in N-m, velocity in rad/s -->
-		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->		
+		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 	</joint>
 	<link name="Left_thumb_anchor"/>
 	<joint name="Left_thmb_anchor" type="fixed">
@@ -1309,7 +1309,7 @@
 	</joint>
 	<!-- End of Left Psyonic Ability Hand -->
 
-	
+
 	<!-- Right Psyonic Ability Hand -->
 	<link name="RightPsyonicAbilityBaseLink">
 		<visual name="wrist_mesh">
@@ -1317,7 +1317,7 @@
 			<geometry>
 				<mesh filename="package://example-robot-data/robots/alex_description/meshes/wristmesh.obj"/>
 			</geometry>
-		</visual>		
+		</visual>
 		<inertial>	<!-- the mass and inertia here are NOT correct -->
 			<mass value = "0.200"/>
 			<inertia ixx="978.26e-6" ixy = "87.34e-6" ixz = "322.99e-6" iyy = "1244.78e-6" iyz = "244.74e-6" izz = "456.22e-6" />
@@ -1328,35 +1328,35 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/wristmesh.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<joint name="Right_wrist2thumb" type="fixed">
 		<parent link="RightPsyonicAbilityBaseLink"/>
 		<child link="Right_thumb_base"/>
 		<origin xyz = "-24.0476665e-3 3.78124745e-3 32.32964923e-3" rpy = "3.14148426 -0.08848813 -3.14036612"/>
 	</joint>
-  
+
 	<link name="Right_thumb_base" >
 		<inertial>
 			<mass value = "0.200"/>
 			<inertia ixx="978.26e-6" ixy = "87.34e-6" ixz = "322.99e-6" iyy = "1244.78e-6" iyz = "244.74e-6" izz = "456.22e-6" />
 			<origin xyz = "22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy = "0 0 0"/>
 		</inertial>
-						
+
 		<visual name="palm_mesh">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
 				<mesh filename="package://example-robot-data/robots/alex_description/meshes/fb_palm_ref_mir.obj"/>
 			</geometry>
-		</visual>		
+		</visual>
 		<collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/fb_palm_ref_mir.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
-	
+
 	<link name="Right_index_L1" >
 		<inertial>
 			<mass value = "0.00635888"/>
@@ -1374,14 +1374,14 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f1.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<link name="Right_index_L2" >
 		<inertial>
 			<mass value = "0.00645"/>
 			<inertia ixx="0.82671e-6" ixy = "-1.08876e-6" ixz = "-0.00037e-6" iyy = "1.98028e-6" iyz = "0.00081e-6" izz = "2.64638e-6" />
 			<origin rpy = "0 0 0" xyz = "13.36818e-3 -8.75392e-3 -0.02886e-3"/>
-		</inertial>		
+		</inertial>
 		<visual name="index_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1393,7 +1393,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<joint name="Right_index_q1" type="revolute">
 		<parent link="Right_thumb_base"/>
@@ -1418,7 +1418,7 @@
 		<child link="Right_index_anchor"/>
 		<origin rpy = "0 0 0" xyz = "31.5541e-3  -10.44e-3 0.14e-3"/>
 	</joint>
-	
+
 
 	<link name="Right_middle_L1" >
 		<inertial>
@@ -1426,7 +1426,7 @@
 			<inertia ixx="0.29766e-6" ixy = "-0.06447133e-6" ixz = "-0.00423315e-6" iyy = "3.6947967e-6" iyz = "0.00083028e-6" izz = "3.8176336e-6" />
 			<origin xyz = "22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy = "0 0 0"/>
 		</inertial>
-		
+
 		<visual name="middle_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1438,8 +1438,8 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f1.obj" />
       </geometry>
-    </collision>	
-		
+    </collision>
+
 	</link>
 	<link name="Right_middle_L2" >
 		<inertial>
@@ -1458,7 +1458,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<joint name="Right_middle_q1" type="revolute">
 		<parent link="Right_thumb_base"/>
@@ -1490,7 +1490,7 @@
 			<inertia ixx="0.29766e-6" ixy = "-0.06447133e-6" ixz = "-0.00423315e-6" iyy = "3.6947967e-6" iyz = "0.00083028e-6" izz = "3.8176336e-6" />
 			<origin xyz = "22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy = "0 0 0"/>
 		</inertial>
-		
+
 		<visual name="ring_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1502,7 +1502,7 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f1.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<link name="Right_ring_L2" >
 		<inertial>
@@ -1515,13 +1515,13 @@
 			<geometry>
 				<mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj"/>
 			</geometry>
-		</visual>		
+		</visual>
 		<collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj" />
       </geometry>
-    </collision>	
+    </collision>
 	</link>
 	<joint name="Right_ring_q1" type="revolute">
 		<parent link="Right_thumb_base"/>
@@ -1553,7 +1553,7 @@
 			<inertia ixx="0.29766e-6" ixy = "-0.06447133e-6" ixz = "-0.00423315e-6" iyy = "3.6947967e-6" iyz = "0.00083028e-6" izz = "3.8176336e-6" />
 			<origin xyz = "22.41911e-3 -0.15798201e-3 -0.01319866e-3" rpy = "0 0 0"/>
 		</inertial>
-		
+
 		<visual name="pinky_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1565,8 +1565,8 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f1.obj" />
       </geometry>
-    </collision>	
-		
+    </collision>
+
 	</link>
 	<link name="Right_pinky_L2" >
 		<inertial>
@@ -1585,8 +1585,8 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/idx-f2.obj" />
       </geometry>
-    </collision>	
-		
+    </collision>
+
 	</link>
 	<joint name="Right_pinky_q1" type="revolute">
 		<parent link="Right_thumb_base"/>
@@ -1618,7 +1618,7 @@
 			<inertia ixx="0.16931e-6" ixy = "-0.076214e-6" ixz = "-0.16959148e-6" iyy = "0.77769934e-6" iyz = "0.0156622e-6" izz = "0.7249122e-6" />
 			<origin rpy = "0 0 0" xyz = "14.606e-3 -1.890854e-3 -3.1155356e-3"/>
 		</inertial>
-		
+
 		<visual name="thumb_mesh_1">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1630,8 +1630,8 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/thumb-f1-mir.obj" />
       </geometry>
-    </collision>	
-		
+    </collision>
+
 	</link>
 	<link name="Right_thumb_L2" >
 		<inertial>
@@ -1639,7 +1639,7 @@
 			<inertia ixx="4.4789082e-6" ixy = "4.4789082e-6" ixz = "-0.62144934e-6" iyy = "15.600996e-6" iyz = "-0.07466143e-6" izz = "17.908554e-6" />
 			<origin rpy = "0 0 0" xyz = "30.020522e-3 5.59476e-3 -4.1504356e-3"/>
 		</inertial>
-		
+
 		<visual name="thumb_mesh_2">
 			<origin rpy = "0 0 0" xyz = "0 0 0"/>
 			<geometry>
@@ -1651,8 +1651,8 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/alex_description/meshes/thumb-f2-right.obj" />
       </geometry>
-    </collision>	
-		
+    </collision>
+
 	</link>
 	<joint name="Right_thumb_q1" type="revolute">
 		<parent link="Right_thumb_base"/>
@@ -1668,7 +1668,7 @@
 		<origin xyz = " 27.8283501e-3 1.7436510745838653e-19 14.7507e-3 " rpy = " 1.832595714594045 -0.0 5.366520605522463e-18 " />
 		<axis xyz="0 0 1"/>
 		<limit lower = "0" upper = "2.0943951" effort = "6.0" velocity = "8.0677777442"/>		<!-- angles in rad, efforts in N-m, velocity in rad/s -->
-		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->		
+		<dynamics damping = "0.001" friction = "0.001" />	<!-- Friction coefficient is not from quantitative measurement -->
 	</joint>
 	<link name="Right_thumb_anchor"/>
 	<joint name="Right_thmb_anchor" type="fixed">
@@ -1676,5 +1676,5 @@
 		<child link="Right_thumb_anchor"/>
 		<origin rpy = "0 0 0" xyz = "52.00122724e-3 28.00869333e-3 6.98483578e-3"/>
 	</joint>
-	<!-- End of Right Psyonic Ability Hand -->	
+	<!-- End of Right Psyonic Ability Hand -->
 </robot>
