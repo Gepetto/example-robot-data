@@ -24,7 +24,7 @@
     <material name="orange">
             <color rgba="1 0.369 0.047 1"/>
     </material>
-    
+
             <link name="falcon">
                 <!--Inertial parameters are not correct-->
                 <inertial>
@@ -68,13 +68,13 @@
                     </geometry>
                 </collision>
             </link>
-                    
+
                     <joint name="falcon2chassis" type="fixed">
                         <parent link="falcon"/>
                         <child link="chassis"/>
                         <origin rpy="-1.57 3.14  0" xyz="0.295 -0.73 -0.275"/>
                     </joint>
-            
+
             <link name="floaterR">
                 <!--Inertial parameters are not correct-->
                 <inertial>
@@ -130,7 +130,7 @@
                         <child link="floaterL"/>
                         <origin rpy="-1.57 0 -1.57" xyz="-0.365 0.45 0.45"/>
                     </joint>
-            
+
             <!--PROPELLERS-->
             <link name="top_propeller">
                 <visual>
@@ -140,7 +140,7 @@
                     <material name="red"/>
                 </visual>
             </link>
-            
+
             <link name="FR_propeller">
                 <visual>
                     <geometry>
@@ -149,7 +149,7 @@
                     <material name="red"/>
                 </visual>
             </link>
-            
+
             <link name="FL_propeller">
                 <visual>
                     <geometry>
@@ -158,7 +158,7 @@
                     <material name="red"/>
                 </visual>
             </link>
-            
+
             <link name="BL_propeller">
                 <visual>
                     <geometry>
@@ -167,7 +167,7 @@
                     <material name="red"/>
                 </visual>
             </link>
-            
+
             <link name="BR_propeller">
                 <visual>
                     <geometry>
@@ -176,43 +176,43 @@
                     <material name="red"/>
                 </visual>
             </link>
-                    
+
                     <joint name="top_propeller_joint" type="fixed">
                         <parent link="falcon"/>
                         <child link="top_propeller"/>
                         <origin rpy="0.0 1.57 0" xyz="-0.005 0.015 0.35"/>
                     </joint>
-                    
+
                     <joint name="BR_propeller_joint" type="fixed">
                         <parent link="falcon"/>
                         <child link="BR_propeller"/>
                         <origin rpy="0.0 0.0 -2.0944" xyz="-0.19 0.31 0.165"/>
                     </joint>
-                    
+
                     <joint name="BL_propeller_joint" type="fixed">
                         <parent link="falcon"/>
                         <child link="BL_propeller"/>
                         <origin rpy="0.0 0.0 -1.0472" xyz="0.19 0.31 0.165"/>
                     </joint>
-                    
+
                     <joint name="FL_propeller_joint" type="fixed">
                         <parent link="falcon"/>
                         <child link="FL_propeller"/>
                         <origin rpy="0.0 0.0 -1.0472" xyz="0.165 -0.307 0.165"/>
                     </joint>
-                                        
+
                     <joint name="FR_propeller_joint" type="fixed">
                         <parent link="falcon"/>
                         <child link="FR_propeller"/>
                         <origin rpy="0.0 0.0 -2.094395327" xyz="-0.165 -0.307 0.165"/>
                     </joint>
-          
+
                     <joint name="base2arm" type="fixed">
                         <parent link="falcon"/>
                         <child link="link1"/>
                         <origin rpy="0 0 3.14" xyz="-0.325 -0.65 -0.09"/>
                     </joint>
-                    
+
           <!-- Bravo7 with sphere end-effector -->
             <link name="link1">
                 <visual>
@@ -258,7 +258,7 @@
                     </geometry>
                 </collision>
             </link>
-            
+
                     <joint name="joint2" type="revolute">
                         <parent link="link2"/>
                         <child link="link3"/>
@@ -320,7 +320,7 @@
                         <origin rpy="0 0 0" xyz="0.0408 0 0.09695"/>
                         <axis xyz="0 0 -1"/>
                     </joint>
-                    
+
             <link name="link5">
                 <visual>
                     <geometry>
@@ -331,7 +331,7 @@
                 <inertial>
                     <mass value="1.03" />
                     <origin xyz="0.020 -0.024 0.001" />
-                    <inertia ixx="0.00243" ixy="-0.001144" ixz="-0.00004" iyy="0.002026" iyz="0.000011" izz="0.00333"/>               
+                    <inertia ixx="0.00243" ixy="-0.001144" ixz="-0.00004" iyy="0.002026" iyz="0.000011" izz="0.00333"/>
                 </inertial>
                 <collision>
                     <geometry>
@@ -384,7 +384,7 @@
                 <inertial>
                     <origin xyz="0.0 0.003 -0.098" />
                     <mass value="1.04" />
-                    <inertia ixx="0.022359" ixy="0.000001" ixz="-0.000019" iyy="0.022363" iyz="0.000015" izz="0.000936"/>               
+                    <inertia ixx="0.022359" ixy="0.000001" ixz="-0.000019" iyy="0.022363" iyz="0.000015" izz="0.000936"/>
                 </inertial>
                 <collision>
                     <geometry>
@@ -413,7 +413,7 @@
                         <parent link="link7"/>
                         <child link="force_torque_sensor"/>
                     </joint>
-                    
+
                     <joint name="bravo_finger_jaws_joint" type="fixed">
                         <parent link="link7"/>
                         <child link="bravo_finger_jaws_base_link" />
@@ -480,7 +480,7 @@
                         <axis xyz="0 0 1"/>
                         <limit lower="0" upper="1.0" effort="10" velocity="10"/>
                     </joint>
-            
+
             <link name="grasping_poing"/>
 
                     <joint name="grasping_point_joint" type="fixed">

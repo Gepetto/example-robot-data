@@ -42,7 +42,7 @@
                     </geometry>
                 </collision>
             </link>
-            
+
             <!--THRUSTERS-->
             <link name="Thruster_TOP_FL">
                 <visual>
@@ -70,7 +70,7 @@
                     <material name="red"/>
                 </visual>
             </link>
-            
+
             <link name="Thruster_BOTTOM_FL">
                 <visual>
                     <geometry>
@@ -79,7 +79,7 @@
                     <material name="red"/>
                 </visual>
             </link>
-            
+
             <link name="Thruster_BOTTOM_FR">
                 <visual>
                     <geometry>
@@ -88,7 +88,7 @@
                     <material name="red"/>
                 </visual>
             </link>
-            
+
             <link name="Thruster_BOTTOM_BL">
                 <visual>
                     <geometry>
@@ -112,13 +112,13 @@
                         <child link="Thruster_TOP_FL"/>
                         <origin rpy="0.0 1.8 0.0" xyz="0.34 0.25 -0.28"/>
                     </joint>
-                    
+
                     <joint name="Thruster_TOP_FR_joint" type="fixed">
                         <parent link="bluevolta"/>
                         <child link="Thruster_TOP_FR"/>
                         <origin rpy="0.0 1.34 0.0" xyz="-0.34 0.25 -0.28"/>
                     </joint>
-                    
+
                     <joint name="Thruster_TOP_B_joint" type="fixed">
                         <parent link="bluevolta"/>
                         <child link="Thruster_TOP_B"/>
@@ -130,13 +130,13 @@
                         <child link="Thruster_BOTTOM_FR"/>
                         <origin rpy="0.0 0.0 -2.24" xyz="-0.31 0.52 -0.1"/>
                     </joint>
-                    
+
                     <joint name="Thruster_BOTTOM_BL_joint" type="fixed">
                         <parent link="bluevolta"/>
                         <child link="Thruster_BOTTOM_BL"/>
                         <origin rpy="0.0 0.0 -2.24" xyz="0.27 -0.6 -0.11"/>
                     </joint>
-                                        
+
                     <joint name="Thruster_BOTTOM_FL_joint" type="fixed">
                         <parent link="bluevolta"/>
                         <child link="Thruster_BOTTOM_FL"/>
@@ -148,8 +148,8 @@
                         <child link="Thruster_BOTTOM_BR"/>
                         <origin rpy="0.0 0.0 -0.9" xyz="-0.27 -0.6 -0.11"/>
                     </joint>
-        
-        <!--Arm attaching link--> 
+
+        <!--Arm attaching link-->
         <link name="box_base_bravo">
             <visual>
                 <geometry>

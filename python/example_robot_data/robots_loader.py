@@ -184,7 +184,8 @@ class FalconBravo7NoEndEffectorLoader(RobotLoader):
     srdf_filename = "falcon_bravo7_no_ee.srdf"
     ref_posture = "standing"
     free_flyer = True
-    
+
+
 class BluevoltaBravo7NoEndEffectorLoader(RobotLoader):
     path = "bluevolta_description"
     urdf_filename = "bluevolta_bravo7_no_ee.urdf"
@@ -193,6 +194,7 @@ class BluevoltaBravo7NoEndEffectorLoader(RobotLoader):
     ref_posture = "standing"
     free_flyer = True
 
+
 class FalconBravo7GripperLoader(RobotLoader):
     path = "falcon_description"
     urdf_filename = "falcon_bravo7_gripper.urdf"
@@ -200,7 +202,8 @@ class FalconBravo7GripperLoader(RobotLoader):
     srdf_filename = "falcon_bravo7_gripper.srdf"
     ref_posture = "standing"
     free_flyer = True
-    
+
+
 class BluevoltaBravo7GripperLoader(RobotLoader):
     path = "bluevolta_description"
     urdf_filename = "bluevolta_bravo7_gripper.urdf"
@@ -208,7 +211,8 @@ class BluevoltaBravo7GripperLoader(RobotLoader):
     srdf_filename = "bluevolta_bravo7_gripper.srdf"
     ref_posture = "standing"
     free_flyer = True
-    
+
+
 class Bravo7NoEndEffectorLoader(RobotLoader):
     path = "bravo7_description"
     urdf_filename = "bravo7_no_ee.urdf"
@@ -217,6 +221,7 @@ class Bravo7NoEndEffectorLoader(RobotLoader):
     ref_posture = "standing"
     free_flyer = False
 
+
 class Bravo7GripperLoader(RobotLoader):
     path = "bravo7_description"
     urdf_filename = "bravo7_gripper.urdf"
@@ -224,6 +229,7 @@ class Bravo7GripperLoader(RobotLoader):
     srdf_filename = "bravo7_gripper.srdf"
     ref_posture = "standing"
     free_flyer = False
+
 
 class Go2Loader(RobotLoader):
     path = "go2_description"
