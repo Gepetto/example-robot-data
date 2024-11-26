@@ -20,7 +20,7 @@
         <material name="orange">
                 <color rgba="1 0.369 0.047 1"/>
         </material>
-            
+
             <link name="bluevolta_base_link"/>
 
                 <joint name="bluevolta_fixed_joint" type="fixed">
