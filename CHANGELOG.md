@@ -7,7 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- Add PR2 robots ([#210](https://github.com/Gepetto/example-robot-data/pull/210))
+- Add GO2 robots ([#239](https://github.com/Gepetto/example-robot-data/pull/239))
+- Add Falcon Bravo7 Bluevolta robots ([#244](https://github.com/Gepetto/example-robot-data/pull/244))
+- Add alex robots ([#247](https://github.com/Gepetto/example-robot-data/pull/247))
 - Add compatibility with jrl-cmakemodules workspace ([#225](https://github.com/Gepetto/example-robot-data/pull/225))
+
 
 ## [4.1.0] - 2024-01-29
 
