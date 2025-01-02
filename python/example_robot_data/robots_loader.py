@@ -486,9 +486,8 @@ class PandaLoaderCollision(PandaLoader):
         # Iterate through geometry objects in the collision model
         for geom_object in cmodel.geometryObjects:
             geometry = geom_object.geometry
-            base_name = geom_object.name[
-                :-2
-            ]  # Remove the last characters from the name
+            # Remove superfluous suffix from the name
+            base_name = "_".join(geom_object.split("_")[:-1])
 
             # Convert cylinders to capsules
             if isinstance(geometry, hppfcl.Cylinder):
