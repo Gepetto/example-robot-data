@@ -6,8 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [4.2.0] - 2024-12-08
+
 ### Added
+- Add PR2 robots ([#210](https://github.com/Gepetto/example-robot-data/pull/210))
+- Add GO2 robots ([#239](https://github.com/Gepetto/example-robot-data/pull/239))
+- Add Falcon Bravo7 Bluevolta robots ([#244](https://github.com/Gepetto/example-robot-data/pull/244))
+- Add alex robots ([#247](https://github.com/Gepetto/example-robot-data/pull/247))
 - Add compatibility with jrl-cmakemodules workspace ([#225](https://github.com/Gepetto/example-robot-data/pull/225))
+
 
 ## [4.1.0] - 2024-01-29
 
@@ -298,7 +305,8 @@ Added optionnal python helpers, which depend on pinocchio
 
 Initial release
 
-[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v4.1.0...HEAD
+[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v4.2.0...HEAD
+[4.2.0]: https://github.com/gepetto/example-robot-data/compare/v4.1.0...v4.2.0
 [4.1.0]: https://github.com/gepetto/example-robot-data/compare/v4.0.9...v4.1.0
 [4.0.9]: https://github.com/gepetto/example-robot-data/compare/v4.0.8...v4.0.9
 [4.0.8]: https://github.com/gepetto/example-robot-data/compare/v4.0.7...v4.0.8
