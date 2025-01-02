@@ -541,7 +541,7 @@ class PandaLoaderCollision(PandaLoader):
         for geom_object in cmodel.geometryObjects:
             geometry = geom_object.geometry
             # Remove superfluous suffix from the name
-            base_name = "_".join(geom_object.split("_")[:-1])
+            base_name = "_".join(geom_object.name.split("_")[:-1])
 
             # Convert cylinders to capsules
             if isinstance(geometry, hppfcl.Cylinder):
