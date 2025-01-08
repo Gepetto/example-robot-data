@@ -118,6 +118,9 @@ class RobotTestCase(unittest.TestCase):
     def test_panda(self):
         self.check("panda", 9, 9)
 
+    def test_panda_collision(self):
+        self.check("panda_collision", 9, 9)
+
     def test_alex_nub_hands(self):
         self.check("alex_nub_hands", 19, 19)
 
