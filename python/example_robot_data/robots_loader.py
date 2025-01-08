@@ -530,7 +530,6 @@ class PandaLoader(RobotLoader):
 
 class PandaLoaderCollision(PandaLoader):
     urdf_filename = "panda_collision.urdf"
-    srdf_filename = "panda.srdf"
 
     def __init__(self, verbose=False):
         super().__init__(verbose=verbose)
