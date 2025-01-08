@@ -271,9 +271,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="9.6e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
@@ -284,12 +281,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.002 0 0" />
-      <geometry>
-        <sphere radius="0.022" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="FL_foot_joint"
@@ -519,9 +513,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="9.6e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
@@ -532,12 +523,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.002 0 0" />
-      <geometry>
-        <sphere radius="0.022" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="FR_foot_joint"
@@ -767,9 +755,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="9.6e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
@@ -780,12 +765,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.002 0 0" />
-      <geometry>
-        <sphere radius="0.022" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="RL_foot_joint"
@@ -1015,9 +997,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="9.6e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
@@ -1028,12 +1007,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.002 0 0" />
-      <geometry>
-        <sphere radius="0.022" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="RR_foot_joint"
