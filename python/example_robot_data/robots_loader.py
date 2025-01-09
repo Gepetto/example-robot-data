@@ -317,6 +317,7 @@ class BaxterLoader(RobotLoader):
     srdf_subpath = "srdf"
     ref_posture = "neutral"
 
+
 class CassieLoader(RobotLoader):
     path = "cassie_description"
     if tuple(int(i) for i in pin.__version__.split(".")) > (2, 9, 1):
