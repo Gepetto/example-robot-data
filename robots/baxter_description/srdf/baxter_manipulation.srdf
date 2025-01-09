@@ -13,6 +13,50 @@
       <position>0 0 -0.005 -0.7071067811865476 0 0.7071067811865476 0</position>
     </gripper>
 
+    <!-- reference configuration -->
+    <group name="whole_body">
+      <joint name="baxter/head_pan" />
+      <joint name="baxter/left_s0" />
+      <joint name="baxter/left_s1" />
+      <joint name="baxter/left_e0" />
+      <joint name="baxter/left_e1" />
+      <joint name="baxter/left_w0" />
+      <joint name="baxter/left_w1" />
+      <joint name="baxter/left_w2" />
+      <joint name="baxter/l_gripper_l_finger_joint" />
+      <joint name="baxter/l_gripper_r_finger_joint" />
+      <joint name="baxter/right_s0" />
+      <joint name="baxter/right_s1" />
+      <joint name="baxter/right_e0" />
+      <joint name="baxter/right_e1" />
+      <joint name="baxter/right_w0" />
+      <joint name="baxter/right_w1" />
+      <joint name="baxter/right_w2" />
+      <joint name="baxter/r_gripper_l_finger_joint" />
+      <joint name="baxter/r_gripper_r_finger_joint" />
+    </group>
+    <group_state name="neutral" group="whole_body" >
+      <joint name="baxter/head_pan" value="0.0" />
+      <joint name="baxter/left_s0" value="0.0" />
+      <joint name="baxter/left_s1" value="0.0" />
+      <joint name="baxter/left_e0" value="0.0" />
+      <joint name="baxter/left_e1" value="0.0" />
+      <joint name="baxter/left_w0" value="0.0" />
+      <joint name="baxter/left_w1" value="0.0" />
+      <joint name="baxter/left_w2" value="0.0" />
+      <joint name="baxter/l_gripper_l_finger_joint" value="0.0" />
+      <joint name="baxter/l_gripper_r_finger_joint" value="0.0" />
+      <joint name="baxter/right_s0" value="0.0" />
+      <joint name="baxter/right_s1" value="0.0" />
+      <joint name="baxter/right_e0" value="0.0" />
+      <joint name="baxter/right_e1" value="0.0" />
+      <joint name="baxter/right_w0" value="0.0" />
+      <joint name="baxter/right_w1" value="0.0" />
+      <joint name="baxter/right_w2" value="0.0" />
+      <joint name="baxter/r_gripper_l_finger_joint" value="0.0" />
+      <joint name="baxter/r_gripper_r_finger_joint" value="0.0" />
+    </group_state>
+
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
     <disable_collisions link1="collision_head_link_1" link2="collision_head_link_2" reason="Adjacent" />
     <disable_collisions link1="collision_head_link_1" link2="display" reason="Default" />
