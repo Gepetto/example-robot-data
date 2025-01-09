@@ -312,8 +312,10 @@ class ANYmalKinovaLoader(ANYmalLoader):
 class BaxterLoader(RobotLoader):
     path = "baxter_description"
     urdf_filename = "baxter.urdf"
+    srdf_filename = "baxter_manipulation.srdf"
     urdf_subpath = "urdf"
-
+    srdf_subpath = "srdf"
+    ref_posture = "neutral"
 
 class CassieLoader(RobotLoader):
     path = "cassie_description"
