@@ -73,9 +73,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.000596" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
@@ -86,12 +83,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0.08 0" />
-      <geometry>
-        <cylinder length="0.04" radius="0.046" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/hip_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="FL_hip_joint"
@@ -329,9 +323,11 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 -0.08 0" />
+      <origin
+      xyz="0 0 0"
+      rpy="3.1415 0 0" />
       <geometry>
-        <cylinder length="0.04" radius="0.046" />
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/hip_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -571,9 +567,11 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0.08 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.1415 0" />
       <geometry>
-        <cylinder length="0.04" radius="0.046" />
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/hip_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -813,9 +811,11 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 -0.08 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="3.1415 3.1415 0" />
       <geometry>
-        <cylinder length="0.04" radius="0.046" />
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/hip_convex.stl" />
       </geometry>
     </collision>
   </link>
