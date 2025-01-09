@@ -134,9 +134,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.00103" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/thigh.dae" />
@@ -147,12 +144,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.1065" />
-      <geometry>
-        <box size="0.213 0.0245 0.034" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="FL_thigh_joint"
@@ -378,9 +372,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.00103" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/thigh_mirror.dae" />
@@ -391,12 +382,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.1065" />
-      <geometry>
-        <box size="0.213 0.0245 0.034" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_mirror_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="FR_thigh_joint"
@@ -622,9 +610,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.00103" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/thigh.dae" />
@@ -635,12 +620,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.1065" />
-      <geometry>
-        <box size="0.213 0.0245 0.034" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="RL_thigh_joint"
@@ -866,9 +848,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.00103" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh
           filename="package://example-robot-data/robots/go2_description/visuals/thigh_mirror.dae" />
@@ -879,12 +858,9 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.1065" />
-      <geometry>
-        <box size="0.213 0.0245 0.034" />
-      </geometry>
-    </collision>
+    <collision><geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_mirror_convex.stl" />
+    </geometry></collision>
   </link>
   <joint
     name="RR_thigh_joint"
