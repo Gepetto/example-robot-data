@@ -22,9 +22,6 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.107" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
         <mesh filename="package://example-robot-data/robots/go2_description/visuals/base.dae" />
       </geometry>
@@ -34,27 +31,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_body_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_neck_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_head_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_fl_support_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_fr_support_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_rl_support_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_rr_support_convex.stl" />
-    </geometry></collision>
+    <collision>
+      <geometry>
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <link
     name="FL_hip">
