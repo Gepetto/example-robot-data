@@ -55,8 +55,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
       </geometry>
       <material
         name="">
@@ -113,8 +112,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/thigh.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/thigh.dae" />
       </geometry>
       <material
         name="">
@@ -122,9 +120,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="FL_thigh_joint"
@@ -174,8 +174,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/calf.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/calf.dae" />
       </geometry>
       <material
         name="">
@@ -183,12 +182,16 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_convex.stl" />
+      </geometry>
+    </collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="FL_calf_joint"
@@ -238,8 +241,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
       </geometry>
       <material
         name="">
@@ -247,9 +249,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="FL_foot_joint"
@@ -285,8 +289,7 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="3.1415 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
       </geometry>
       <material
         name="">
@@ -343,8 +346,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/thigh_mirror.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/thigh_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -352,9 +354,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_mirror_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_mirror_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="FR_thigh_joint"
@@ -404,8 +408,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/calf_mirror.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/calf_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -413,12 +416,16 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_mirror_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_mirror_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_mirror_convex.stl" />
+      </geometry>
+    </collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_mirror_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="FR_calf_joint"
@@ -468,8 +475,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
       </geometry>
       <material
         name="">
@@ -477,9 +483,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="FR_foot_joint"
@@ -515,8 +523,7 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="0 3.1415 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
       </geometry>
       <material
         name="">
@@ -581,8 +588,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/thigh.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/thigh.dae" />
       </geometry>
       <material
         name="">
@@ -590,9 +596,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="RL_thigh_joint"
@@ -642,8 +650,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/calf.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/calf.dae" />
       </geometry>
       <material
         name="">
@@ -651,12 +658,16 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_convex.stl" />
+      </geometry>
+    </collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="RL_calf_joint"
@@ -706,8 +717,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
       </geometry>
       <material
         name="">
@@ -715,9 +725,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="RL_foot_joint"
@@ -753,8 +765,7 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="3.1415 3.1415 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
       </geometry>
       <material
         name="">
@@ -819,8 +830,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/thigh_mirror.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/thigh_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -828,9 +838,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_mirror_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_mirror_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="RR_thigh_joint"
@@ -880,8 +892,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/calf_mirror.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/calf_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -889,12 +900,16 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_mirror_convex.stl" />
-    </geometry></collision>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_mirror_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_mirror_convex.stl" />
+      </geometry>
+    </collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_mirror_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="RR_calf_joint"
@@ -944,8 +959,7 @@ Stephen Brawner (brawner@gmail.com)
     </inertial>
     <visual>
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
       </geometry>
       <material
         name="">
@@ -953,9 +967,11 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision><geometry>
-        <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
-    </geometry></collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
+      </geometry>
+    </collision>
   </link>
   <joint
     name="RR_foot_joint"
