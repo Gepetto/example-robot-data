@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+- Update Go2 collision for convex hull of mesh and remove "Head_upper", "Head_lower", "XX_calflower", "XX_calflower1" links and joints ([#260](https://github.com/Gepetto/example-robot-data/pull/260))
+
 ## [4.2.0] - 2024-12-08
 
 ### Added
