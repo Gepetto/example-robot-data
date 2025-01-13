@@ -22,12 +22,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.107" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/base.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/base.dae" />
       </geometry>
       <material
         name="">
@@ -36,88 +32,11 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
       <geometry>
-        <box size="0.3762 0.0935 0.114" />
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/base_convex.stl" />
       </geometry>
     </collision>
   </link>
-  <link
-    name="Head_upper">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.001" />
-      <inertia
-        ixx="9.6e-06"
-        ixy="0"
-        ixz="0"
-        iyy="9.6e-06"
-        iyz="0"
-        izz="9.6e-06" />
-    </inertial>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <cylinder radius="0.05" length="0.09" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Head_upper_joint"
-    type="fixed" dont_collapse="true">
-    <origin
-      xyz="0.285 0 0.01"
-      rpy="0 0 0" />
-    <parent
-      link="base" />
-    <child
-      link="Head_upper" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="Head_lower">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.001" />
-      <inertia
-        ixx="9.6e-06"
-        ixy="0"
-        ixz="0"
-        iyy="9.6e-06"
-        iyz="0"
-        izz="9.6e-06" />
-    </inertial>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <sphere radius="0.047" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="Head_lower_joint"
-    type="fixed" dont_collapse="true">
-    <origin
-      xyz="0.008 0 -0.07"
-      rpy="0 0 0" />
-    <parent
-      link="Head_upper" />
-    <child
-      link="Head_lower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
   <link
     name="FL_hip">
     <inertial>
@@ -135,12 +54,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.000596" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/hip.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
       </geometry>
       <material
         name="">
@@ -148,12 +63,6 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0.08 0" />
-      <geometry>
-        <cylinder length="0.04" radius="0.046" />
-      </geometry>
-    </collision>
   </link>
   <joint
     name="FL_hip_joint"
@@ -202,12 +111,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.00103" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/thigh.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/thigh.dae" />
       </geometry>
       <material
         name="">
@@ -216,9 +121,8 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.1065" />
-      <geometry>
-        <box size="0.213 0.0245 0.034" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -269,12 +173,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="3.29E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/calf.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/calf.dae" />
       </geometry>
       <material
         name="">
@@ -283,9 +183,13 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.21 0" xyz="0.008 0 -0.06" />
-      <geometry>
-        <cylinder length="0.12" radius="0.012" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_convex.stl" />
+      </geometry>
+    </collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -306,78 +210,6 @@ Stephen Brawner (brawner@gmail.com)
       upper="-0.83776"
       effort="45.43"
       velocity="15.70" />
-  </joint>
-  <link
-    name="FL_calflower">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0." />
-      <inertia
-        ixx="0.0"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.065" radius="0.011" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="FL_calflower_joint"
-    type="fixed">
-    <origin
-      xyz="0.020 0 -0.148"
-      rpy="0 0.05 0" />
-    <parent
-      link="FL_calf" />
-    <child
-      link="FL_calflower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="FL_calflower1">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0." />
-      <inertia
-        ixx="0.0"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.03" radius="0.0155" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="FL_calflower1_joint"
-    type="fixed">
-    <origin
-      xyz="-0.01 0 -0.04"
-      rpy="0 0.48 0" />
-    <parent
-      link="FL_calflower" />
-    <child
-      link="FL_calflower1" />
-    <axis
-      xyz="0 0 0" />
   </joint>
   <link name="FL_calf_rotor">
     <inertial>
@@ -408,12 +240,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="9.6e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/foot.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
       </geometry>
       <material
         name="">
@@ -422,9 +250,8 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.002 0 0" />
-      <geometry>
-        <sphere radius="0.022" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -462,8 +289,7 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="3.1415 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/hip.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
       </geometry>
       <material
         name="">
@@ -471,12 +297,6 @@ Stephen Brawner (brawner@gmail.com)
           rgba="1 1 1 1" />
       </material>
     </visual>
-    <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 -0.08 0" />
-      <geometry>
-        <cylinder length="0.04" radius="0.046" />
-      </geometry>
-    </collision>
   </link>
   <joint
     name="FR_hip_joint"
@@ -525,12 +345,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.00103" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/thigh_mirror.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/thigh_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -539,9 +355,8 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.1065" />
-      <geometry>
-        <box size="0.213 0.0245 0.034" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_mirror_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -592,12 +407,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="3.29E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/calf_mirror.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/calf_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -606,9 +417,13 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.2 0" xyz="0.01 0 -0.06" />
-      <geometry>
-        <cylinder length="0.12" radius="0.013" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_mirror_convex.stl" />
+      </geometry>
+    </collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_mirror_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -629,78 +444,6 @@ Stephen Brawner (brawner@gmail.com)
       upper="-0.83776"
       effort="45.43"
       velocity="15.70" />
-  </joint>
-  <link
-    name="FR_calflower">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0." />
-      <inertia
-        ixx="0.0"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.065" radius="0.011" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="FR_calflower_joint"
-    type="fixed">
-    <origin
-      xyz="0.020 0 -0.148"
-      rpy="0 0.05 0" />
-    <parent
-      link="FR_calf" />
-    <child
-      link="FR_calflower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="FR_calflower1">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0." />
-      <inertia
-        ixx="0.0"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.03" radius="0.0155" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="FR_calflower1_joint"
-    type="fixed">
-    <origin
-      xyz="-0.01 0 -0.04"
-      rpy="0 0.48 0" />
-    <parent
-      link="FR_calflower" />
-    <child
-      link="FR_calflower1" />
-    <axis
-      xyz="0 0 0" />
   </joint>
   <link name="FR_calf_rotor">
     <inertial>
@@ -731,12 +474,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="9.6e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/foot.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
       </geometry>
       <material
         name="">
@@ -745,9 +484,8 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.002 0 0" />
-      <geometry>
-        <sphere radius="0.022" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -785,8 +523,7 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="0 3.1415 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/hip.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
       </geometry>
       <material
         name="">
@@ -795,9 +532,11 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0.08 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="0 3.1415 0" />
       <geometry>
-        <cylinder length="0.04" radius="0.046" />
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/hip_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -848,12 +587,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.00103" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/thigh.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/thigh.dae" />
       </geometry>
       <material
         name="">
@@ -862,9 +597,8 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.1065" />
-      <geometry>
-        <box size="0.213 0.0245 0.034" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -915,12 +649,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="3.29E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/calf.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/calf.dae" />
       </geometry>
       <material
         name="">
@@ -929,9 +659,13 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.2 0" xyz="0.01 0 -0.06" />
-      <geometry>
-        <cylinder length="0.12" radius="0.013" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_convex.stl" />
+      </geometry>
+    </collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -952,78 +686,6 @@ Stephen Brawner (brawner@gmail.com)
       upper="-0.83776"
       effort="45.43"
       velocity="15.70" />
-  </joint>
-  <link
-    name="RL_calflower">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0." />
-      <inertia
-        ixx="0.0"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.065" radius="0.011" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RL_calflower_joint"
-    type="fixed">
-    <origin
-      xyz="0.020 0 -0.148"
-      rpy="0 0.05 0" />
-    <parent
-      link="RL_calf" />
-    <child
-      link="RL_calflower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="RL_calflower1">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0." />
-      <inertia
-        ixx="0.0"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.03" radius="0.0155" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RL_calflower1_joint"
-    type="fixed">
-    <origin
-      xyz="-0.01 0 -0.04"
-      rpy="0 0.48 0" />
-    <parent
-      link="RL_calflower" />
-    <child
-      link="RL_calflower1" />
-    <axis
-      xyz="0 0 0" />
   </joint>
   <link name="RL_calf_rotor">
     <inertial>
@@ -1054,12 +716,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="9.6e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/foot.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
       </geometry>
       <material
         name="">
@@ -1068,9 +726,8 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.002 0 0" />
-      <geometry>
-        <sphere radius="0.022" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -1108,8 +765,7 @@ Stephen Brawner (brawner@gmail.com)
         xyz="0 0 0"
         rpy="3.1415 3.1415 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/hip.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/hip.dae" />
       </geometry>
       <material
         name="">
@@ -1118,9 +774,11 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 -0.08 0" />
+      <origin
+        xyz="0 0 0"
+        rpy="3.1415 3.1415 0" />
       <geometry>
-        <cylinder length="0.04" radius="0.046" />
+        <mesh filename="package://example-robot-data/robots/go2_description/collisions/hip_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -1171,12 +829,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="0.00103" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/thigh_mirror.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/thigh_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -1185,9 +839,8 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 1.5707963267948966 0" xyz="0 0 -0.1065" />
-      <geometry>
-        <box size="0.213 0.0245 0.034" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/thigh_mirror_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -1238,12 +891,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="3.29E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/calf_mirror.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/calf_mirror.dae" />
       </geometry>
       <material
         name="">
@@ -1252,9 +901,13 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 -0.2 0" xyz="0.01 0 -0.06" />
-      <geometry>
-        <cylinder length="0.12" radius="0.013" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_upper_mirror_convex.stl" />
+      </geometry>
+    </collision>
+    <collision>
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/calf_lower_mirror_convex.stl" />
       </geometry>
     </collision>
   </link>
@@ -1275,78 +928,6 @@ Stephen Brawner (brawner@gmail.com)
       upper="-0.83776"
       effort="45.43"
       velocity="15.70" />
-  </joint>
-  <link
-    name="RR_calflower">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0." />
-      <inertia
-        ixx="0.0"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.065" radius="0.011" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RR_calflower_joint"
-    type="fixed">
-    <origin
-      xyz="0.020 0 -0.148"
-      rpy="0 0.05 0" />
-    <parent
-      link="RR_calf" />
-    <child
-      link="RR_calflower" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link
-    name="RR_calflower1">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0." />
-      <inertia
-        ixx="0.0"
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.03" radius="0.0155" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="RR_calflower1_joint"
-    type="fixed">
-    <origin
-      xyz="-0.01 0 -0.04"
-      rpy="0 0.48 0" />
-    <parent
-      link="RR_calflower" />
-    <child
-      link="RR_calflower1" />
-    <axis
-      xyz="0 0 0" />
   </joint>
   <link name="RR_calf_rotor">
     <inertial>
@@ -1377,12 +958,8 @@ Stephen Brawner (brawner@gmail.com)
         izz="9.6e-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://example-robot-data/robots/go2_description/dae/foot.dae" />
+        <mesh filename="package://example-robot-data/robots/go2_description/visuals/foot.dae" />
       </geometry>
       <material
         name="">
@@ -1391,9 +968,8 @@ Stephen Brawner (brawner@gmail.com)
       </material>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.002 0 0" />
-      <geometry>
-        <sphere radius="0.022" />
+        <geometry>
+          <mesh filename="package://example-robot-data/robots/go2_description/collisions/foot_convex.stl" />
       </geometry>
     </collision>
   </link>
