@@ -1,0 +1,6 @@
+{
+    "hooks": [
+        "share/example-robot-data/hook/ament_prefix_path.dsv",
+        "share/example-robot-data/hook/python_path.dsv"
+    ]
+}
