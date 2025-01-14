@@ -311,21 +311,21 @@
             </geometry>
         </collision>
         <collision>
-            <origin rpy="0 1.5707963267948966 0" xyz="0.06 0 0.082"/>
+            <origin rpy="1.57 0 -0.785" xyz="0.04 0.04 0.09"/>
             <geometry>
-                <cylinder length="0.01" radius="0.06"/>
+                <cylinder length="0.01" radius="0.045"/>
             </geometry>
         </collision>
         <collision>
-            <origin xyz="0.065 0 0.082"/>
+            <origin xyz="0.043535534 0.043535534 0.09"/>
             <geometry>
-                <sphere radius="0.06"/>
+                <sphere radius="0.045"/>
             </geometry>
         </collision>
         <collision>
-            <origin xyz="0.055 0 0.082"/>
+            <origin xyz="0.036464466 0.036464466 0.09"/>
             <geometry>
-                <sphere radius="0.06"/>
+                <sphere radius="0.045"/>
         </geometry>
         </collision>
         <inertial>
@@ -369,7 +369,19 @@
         <collision>
             <origin rpy="1.57 0 0" xyz="0 0 3e-2"/>
             <geometry>
-                <cylinder length="0.25" radius="0.04"/>
+                <cylinder length="0.15" radius="0.05"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 -0.075 3e-2"/>
+            <geometry>
+                <sphere radius="0.05"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 0.075 3e-2"/>
+            <geometry>
+                <sphere radius="0.05"/>
             </geometry>
         </collision>
         <inertial>
@@ -401,7 +413,19 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 15e-3 3e-2"/>
             <geometry>
-                <cylinder length="0.07" radius="0.015"/>
+                <cylinder length="0.03" radius="0.015"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 15e-3 15e-3"/>
+            <geometry>
+                <sphere radius="0.015"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 15e-3 45e-3"/>
+            <geometry>
+                <sphere radius="0.015"/>
             </geometry>
         </collision>
         <inertial>
@@ -418,10 +442,22 @@
             </geometry>
         </visual>
         <!-- screw mount -->
-        <collision>
+         <collision>
             <origin rpy="0 0 0" xyz="0 -15e-3 3e-2"/>
             <geometry>
-                <cylinder length="0.07" radius="0.015"/>
+                <cylinder length="0.03" radius="0.015"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 -15e-3 15e-3"/>
+            <geometry>
+                <sphere radius="0.015"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 -15e-3 45e-3"/>
+            <geometry>
+                <sphere radius="0.015"/>
             </geometry>
         </collision>
         <inertial>
