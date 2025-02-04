@@ -1,0 +1,57 @@
+collision_model_parameters:
+  padding: 0.025
+  links_with_padding: [arm_4_link,
+  arm_5_link, arm_6_link, arm_7_link, gripper_link, gripper_right_finger_link,
+  gripper_left_finger_link]
+  blacklist:
+    default:
+      - first: arm_2_link
+        second: torso_lift_link
+      - first: arm_5_link
+        second: wrist_ft_link
+      - first: arm_5_link
+        second: wrist_ft_tool_link
+      - first: arm_6_link
+        second: wrist_ft_link
+      - first: arm_6_link
+        second: wrist_ft_tool_link
+      - first: arm_tool_link
+        second: wrist_ft_link
+      - first: ground_plane
+        second: base_link
+      - first: ground_plane
+        second: caster_back_left_1_link
+      - first: ground_plane
+        second: caster_back_left_1_link
+      - first: ground_plane
+        second: caster_back_left_2_link
+      - first: ground_plane
+        second: caster_back_right_1_link
+      - first: ground_plane
+        second: caster_back_right_2_link
+      - first: ground_plane
+        second: caster_front_left_1_link
+      - first: ground_plane
+        second: caster_front_left_2_link
+      - first: ground_plane
+        second: caster_front_right_1_link
+      - first: ground_plane
+        second: caster_front_right_2_link
+      - first: ground_plane
+        second: wheel_right_link
+      - first: ground_plane
+        second: wheel_left_link
+      - first: wrist_ft_link
+        second: wrist_ft_tool_link
+      - first: gripper_link
+        second: gripper_tool_link
+      - first: gripper_link
+        second: wrist_ft_tool_link
+      - first: gripper_link
+        second: wrist_ft_link
+      - first: gripper_tool_link
+        second: gripper_right_finger_link
+      - first: gripper_tool_link
+        second: gripper_left_finger_link
+      - first: gripper_tool_link
+        second: wrist_ft_tool_link
