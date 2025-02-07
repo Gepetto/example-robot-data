@@ -512,6 +512,11 @@ class TiagoNoHandLoader(TiagoLoader):
     urdf_filename = "tiago_no_hand.urdf"
 
 
+class TiagoProLoader(RobotLoader):
+    path = "tiago_pro_description"
+    urdf_filename = "tiago_pro.urdf"
+
+
 class ICubLoader(RobotLoader):
     path = "icub_description"
     urdf_filename = "icub.urdf"
@@ -777,6 +782,7 @@ ROBOTS = {
     "tiago": TiagoLoader,
     "tiago_dual": TiagoDualLoader,
     "tiago_no_hand": TiagoNoHandLoader,
+    "tiago_pro": TiagoProLoader,
     "ur3": UR5Loader,
     "ur3_gripper": UR3GripperLoader,
     "ur3_limited": UR3LimitedLoader,
