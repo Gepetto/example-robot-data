@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-## [4.3.0] - 1980-01-01
+## [4.3.0] - 2025-03-18
 
 - Add panda collision ([#242](https://github.com/Gepetto/example-robot-data/pull/242)) + ([#263](https://github.com/Gepetto/example-robot-data/pull/263))
 - Add baxter srdf ([#259](https://github.com/Gepetto/example-robot-data/pull/259))
