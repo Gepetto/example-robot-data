@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update Go2 collision for convex hull of mesh and remove "Head_upper", "Head_lower", "XX_calflower", "XX_calflower1" links and joints ([#260](https://github.com/Gepetto/example-robot-data/pull/260))
 - Fix ROS2 installation ([#261](https://github.com/Gepetto/example-robot-data/pull/261))
 - Add tiago pro ([#265](https://github.com/Gepetto/example-robot-data/pull/265))
+- Add nix flake
 
 ## [4.2.0] - 2024-12-08
 
