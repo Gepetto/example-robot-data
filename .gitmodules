@@ -1,3 +1,4 @@
 [submodule "cmake"]
+	branch = master
 	path = cmake
 	url = https://github.com/jrl-umi3218/jrl-cmakemodules.git
