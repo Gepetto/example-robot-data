@@ -43,9 +43,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur5/visual/base.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -71,9 +68,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur5/visual/shoulder.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -99,9 +93,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur5/visual/upperarm.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -127,9 +118,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur5/visual/forearm.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -155,9 +143,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur5/visual/wrist1.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -183,9 +168,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur5/visual/wrist2.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -211,9 +193,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur5/visual/wrist3.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>

@@ -47,9 +47,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur3/visual/base.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -75,9 +72,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur3/visual/shoulder.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -103,9 +97,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur3/visual/upperarm.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -131,9 +122,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur3/visual/forearm.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -159,9 +147,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur3/visual/wrist1.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -187,9 +172,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur3/visual/wrist2.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -215,9 +197,6 @@
       <geometry>
         <mesh filename="package://example-robot-data/robots/ur_description/meshes/ur3/visual/wrist3.dae"/>
       </geometry>
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <collision>
       <geometry>
@@ -332,27 +311,18 @@
 	<box size="0.005 0.02 0.05" />
       </geometry>
       <origin xyz="0.03 0 0.035" />
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <visual>
       <geometry>
 	<box size="0.005 0.02 0.05" />
       </geometry>
       <origin xyz="-0.03 0 0.035" />
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
     <visual>
       <geometry>
 	<box size="0.065 0.02 0.005" />
       </geometry>
       <origin xyz="0 0 0.01" />
-      <material name="LightGrey">
-        <color rgba="0.7 0.7 0.7 1.0"/>
-      </material>
     </visual>
 
     <collision>
