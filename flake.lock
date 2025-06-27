@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "coal": {
+      "inputs": {
+        "flake-parts": "flake-parts",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1751006818,
+        "narHash": "sha256-1C1/I0jQrlqdtHjgiZe/xKBfbRIAqf+juHISIK2dIiE=",
+        "owner": "nim65s",
+        "repo": "coal",
+        "rev": "9a9f74436ca9e9584cf5001828b66502dcd45df2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nim65s",
+        "ref": "only-py",
+        "repo": "coal",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -49,10 +69,50 @@
         "type": "github"
       }
     },
+    "pinocchio": {
+      "inputs": {
+        "coal": "coal",
+        "flake-parts": [
+          "pinocchio",
+          "coal",
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "pinocchio",
+          "coal",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1751292585,
+        "narHash": "sha256-D3KV+CM1rnOWamTrZoMgEFQAD2fH7y6bkBsCPz+Ln+w=",
+        "owner": "nim65s",
+        "repo": "pinocchio",
+        "rev": "94e71c1517dca51ee24295d81efd32fd6616cffd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nim65s",
+        "ref": "only-py",
+        "repo": "pinocchio",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "flake-parts": "flake-parts",
-        "nixpkgs": "nixpkgs"
+        "coal": [
+          "pinocchio",
+          "coal"
+        ],
+        "flake-parts": [
+          "pinocchio",
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "pinocchio",
+          "nixpkgs"
+        ],
+        "pinocchio": "pinocchio"
       }
     }
   },
