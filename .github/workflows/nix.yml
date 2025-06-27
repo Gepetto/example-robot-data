@@ -11,7 +11,7 @@ on:
       - master
 
 jobs:
-  tests:
+  tests-full:
     name: "Nix build on ${{ matrix.os }}"
     runs-on: "${{ matrix.os }}-latest"
     strategy:
@@ -25,3 +25,19 @@ jobs:
           name: gepetto
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - run: nix build -L
+
+  tests-split:
+    name: "Nix build on ${{ matrix.os }}"
+    runs-on: "${{ matrix.os }}-latest"
+    strategy:
+      matrix:
+        os: [ubuntu, macos]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - uses: cachix/cachix-action@v16
+        with:
+          name: gepetto
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - run: nix build -L .#example-robot-data-cpp
+      - run: nix build -L .#example-robot-data-py
