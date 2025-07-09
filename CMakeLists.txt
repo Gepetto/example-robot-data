@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.22)
 
 # Project properties
 set(PROJECT_ORG gepetto)
@@ -101,7 +101,6 @@ if(NOT INSTALL_PYTHON_INTERFACE_ONLY)
   install(FILES include/${CUSTOM_HEADER_DIR}/path.hpp
           DESTINATION include/${CUSTOM_HEADER_DIR})
   install(DIRECTORY robots DESTINATION share/${PROJECT_NAME})
-  install(FILES package.xml DESTINATION share/${PROJECT_NAME})
 endif()
 
 setup_project_finalize()
