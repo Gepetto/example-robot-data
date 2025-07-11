@@ -10,24 +10,24 @@
     </material>
     <link name="middle_pelvis">
         <inertial>
-            <mass value="13.3963" />
-            <origin xyz="-0.07526 -0.027216 -0.000567" rpy="0 -0 0" />
-            <inertia ixx="0.134392" ixy="0.0068219" ixz="0.00172127" iyy="0.134423" iyz="0.000558921" izz="0.120176" />
+            <mass value="10.65" />
+            <origin xyz="0.03 -0.025 -0.001" rpy="0 -0 0" />
+            <inertia ixx="0.08977" ixy="-0.0055" ixz="-0.00127" iyy="0.09888" iyz="-0.00056" izz="0.07942" />
         </inertial>
         <visual>
-	        <origin xyz="0.0 0.0 0.0" rpy="0 1.57 0" />
+	        <origin xyz="0.0 -0.05 0.0" rpy="0 0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/pelvis_mesh.STL" scale="0.006 0.0055 0.0055"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/pelvis_mesh.STL" scale="0.0063 0.0058 0.0058"/>
             </geometry>
             <material name="body_color"/>
         </visual>
     </link>
     <joint name="left_hip_Z" type="revolute">
-        <origin xyz="0.053 -0.075 -0.080" rpy="0 -0 0" />
+        <origin xyz="0.023 -0.1 -0.082" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="middle_pelvis" />
         <child link="left_upperleg_virtual" />
-        <limit effort="190" velocity="0" lower="-1.047196667" upper="3.14159" />
+        <limit effort="185" velocity="12.0" lower="-1.047196667" upper="3.14159" />
     </joint>
     <link name="left_upperleg_virtual" />
     <joint name="left_hip_X" type="revolute">
@@ -35,7 +35,7 @@
         <axis xyz="1 0 0" />
         <parent link="left_upperleg_virtual" />
         <child link="left_upperleg_virtual_2" />
-        <limit effort="190" velocity="0" lower="-1.047196667" upper="1.570795" />
+        <limit effort="120" velocity="12.0" lower="-1.047196667" upper="1.570795" />
     </joint>
     <link name="left_upperleg_virtual_2"/>
     <joint name="left_hip_Y" type="revolute">
@@ -43,49 +43,56 @@
         <axis xyz="0 1 0" />
         <parent link="left_upperleg_virtual_2" />
         <child link="left_upperleg" />
-        <limit effort="60" velocity="0" lower="-1.047196667" upper="1.570795" />
+        <limit effort="60" velocity="12.0" lower="-1.047196667" upper="1.570795" />
     </joint>
     <link name="left_upperleg">
         <inertial>
-            <mass value="11.6038" />
-            <origin xyz="-0.0180072 -0.188417 0.0144936" rpy="0 -0 0" />
-            <inertia ixx="0.602628" ixy="-0.0284023" ixz="0.00213314" iyy="0.0565628" iyz="0.0207203" izz="0.617159" />
+            <mass value="9.22" />
+            <origin xyz="-0.018 -0.188 0.014" rpy="0 -0 0" />
+            <inertia ixx="0.1497" ixy="0.00872" ixz="-0.00071" iyy="0.04005" iyz="-0.00872" izz="0.1602" />
         </inertial>
         <visual>
-            <origin xyz="0 0.0 0.0" rpy="0.0 0 0" />
+            <origin xyz="0 -0.05 0.0" rpy="0.0 0 0" />
             <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/upperleg_mesh.STL" scale="0.0063 0.0065 0.007"/>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/upperleg_mesh.STL" scale="0.0062 0.0064 0.0069"/>
             </geometry>
             <material name="body_color_L"/>
         </visual>
     </link>
-    <joint name="left_knee" type="revolute">
-        <origin xyz="0 -0.43 0" rpy="0 -0 0" />
+    <joint name="left_knee_Z" type="revolute">
+        <origin xyz="0. -0.439 0." rpy="0 -0 0" />
         <axis xyz="0 0 -1" />
         <parent link="left_upperleg" />
         <child link="left_lowerleg" />
-        <limit effort="168" velocity="0" lower="0" upper="3.14159" />
+        <limit effort="130" velocity="18.6" lower="0" upper="3.14159" />
     </joint>
     <link name="left_lowerleg">
         <inertial>
-            <mass value="4.52832" />
-            <origin xyz="-0.0211334 -0.180515 -0.00308196" rpy="0 -0 0" />
-            <inertia ixx="0.21642" ixy="-0.0158706" ixz="-0.00064606" iyy="0.0108434" iyz="-0.00392376" izz="0.2184" />
+            <mass value="3.6" />
+            <origin xyz="-0.021 -0.181 0.003" rpy="0 -0 0" />
+            <inertia ixx="0.05471" ixy="0.00112" ixz="0.00028" iyy="0.00698" iyz="0.00174" izz="0.05471" />
         </inertial>
         <visual>
             <origin xyz="-0.0 -0.0 0.0" rpy="0.0 0.0 0" />
             <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/lowerleg_mesh.STL" scale="0.0063 0.0065 0.007"/>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/lowerleg_mesh.STL" scale="0.0063 0.0066 0.007"/>
             </geometry>
             <material name="body_color_L"/>
 	    </visual>
+        <visual>
+            <origin xyz="-0.0 0.0 -0.0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/knee_mesh.STL" scale="0.0056 0.0056 0.0056"/>
+            </geometry>
+            <material name="body_color_L"/>
+        </visual>
     </link>
     <joint name="left_ankle_Z" type="revolute">
-        <origin xyz="0 -0.43 0" rpy="0 -0 0" />
+        <origin xyz="0 -0.44 0" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="left_lowerleg" />
         <child link="left_foot_virtual" />
-        <limit effort="126" velocity="0" lower="-1.570795" upper="0.7853975" />
+        <limit effort="126" velocity="12.7" lower="-1.570795" upper="0.7853975" />
     </joint>
     <link name="left_foot_virtual" />
     <joint name="left_ankle_X" type="revolute">
@@ -93,18 +100,18 @@
         <axis xyz="-1 0 0" />
         <parent link="left_foot_virtual" />
         <child link="left_foot" />
-        <limit effort="20" velocity="0" lower="-0.523598333" upper="0.785398" />
+        <limit effort="20" velocity="2.0" lower="-0.523598333" upper="0.785398" />
     </joint>
     <link name="left_foot">
         <inertial>
-            <mass value="1.13208" />
-            <origin xyz="0.0709326 -0.0281187 -0.0048042" rpy="0 -0 0" />
-            <inertia ixx="0.00201519" ixy="0.00291119" ixz="0.000112291" iyy="0.011149" iyz="-0.00015293" izz="0.0117988" />
+            <mass value="0.9" />
+            <origin xyz="0.068 -0.027 0.005" rpy="0 -0 0" />
+            <inertia ixx="0.00081" ixy="0.00048" ixz="-0.00018" iyy="0.00385" iyz="0.0" izz="0.00364" />
         </inertial>
         <visual>
             <origin xyz="-0.0 -0.0 0.00" rpy="0 0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/foot_mesh.STL" scale="0.0060 0.0060 0.0060"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/foot_mesh.STL" scale="0.0067 0.0067 0.0067"/>
                 <!--<box size="0.03 0.085239 0.06" />-->
             </geometry>
             <material name="body_color_L"/>
@@ -115,7 +122,7 @@
         <axis xyz="0 0 -1" />
         <parent link="middle_pelvis" />
         <child link="middle_abdomen_virtual" />
-        <limit effort="243" velocity="0" lower="-3.14159" upper="0.785398" />
+        <limit effort="190" velocity="5.2" lower="-3.14159" upper="0.785398" />
     </joint>
     <link name="middle_abdomen_virtual" />
     <joint name="middle_lumbar_X" type="revolute">
@@ -123,29 +130,37 @@
         <axis xyz="1 0 0" />
         <parent link="middle_abdomen_virtual" />
         <child link="middle_abdomen" />
-        <limit effort="159" velocity="0" lower="-0.785398" upper="0.785398" />
+        <limit effort="160" velocity="5.2" lower="-0.785398" upper="0.785398" />
     </joint>
     <link name="middle_abdomen">
         <inertial>
-            <mass value="2.73586" />
-            <origin xyz="0.027023 0.0554279 -0.00506682" rpy="0 -0 0" />
-            <inertia ixx="0.0272827" ixy="0.00487827" ixz="0.000606784" iyy="0.0301628" iyz="-0.000607107" izz="0.0207226" />
+            <mass value="12.25" />
+            <origin xyz="-0.008 0.1 0.0" rpy="0 -0 0" />
+            <inertia ixx="0.04427" ixy="0.01968" ixz="-0.00024" iyy="0.03796" iyz="-0.00097" izz="0.04761" />
         </inertial>
-	    <visual>
-            <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
+        <visual>
+            <origin xyz="-0.0 0.0 -0.0" rpy="0 -0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/abdomen_mesh.STL" scale="0.0055 0.0055 0.0055"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/abdomen_mesh.STL" scale="0.0074 0.0074 0.0074"/>
                 <!--<box size="0.15 0.161217 0.198658" />-->
+            </geometry>
+            <material name="body_color"/>
+        </visual>
+        <visual>
+	    <origin xyz="-0.0 -0.1 0.0" rpy="0 -0 0" />
+            <geometry>
+		        <!--<box size="0.15 0.356643 0.329994" />-->
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/torso_mesh.STL" scale="0.007 0.007 0.007"/>
             </geometry>
             <material name="body_color"/>
         </visual>
     </link>
     <joint name="middle_thoracic_Z" type="revolute">
-        <origin xyz="0 0.15 0" rpy="0 -0 0" />
+        <origin xyz="0 0.223 0" rpy="0 -0 0" />
         <axis xyz="0 0 -1" />
         <parent link="middle_abdomen" />
         <child link="middle_thorax_virtual" />
-        <limit effort="159" velocity="0" lower="-1.0472" upper="0.392699" />
+        <limit effort="190" velocity="5.2" lower="-1.0472" upper="0.392699" />
     </joint>
     <link name="middle_thorax_virtual" />
     <joint name="middle_thoracic_X" type="revolute">
@@ -153,7 +168,7 @@
         <axis xyz="1 0 0" />
         <parent link="middle_thorax_virtual" />
         <child link="middle_thorax_virtual_2" />
-        <limit effort="159" velocity="0" lower="-1.0472" upper="1.0472" />
+        <limit effort="190" velocity="5.2" lower="-1.0472" upper="1.0472" />
     </joint>
     <link name="middle_thorax_virtual_2" />
     <joint name="middle_thoracic_Y" type="revolute">
@@ -161,45 +176,29 @@
         <axis xyz="0 1 0" />
         <parent link="middle_thorax_virtual_2" />
         <child link="middle_thorax" />
-        <limit effort="159" velocity="0" lower="-1.0472" upper="1.0472" />
+        <limit effort="185" velocity="2.0" lower="-1.0472" upper="1.0472" />
     </joint>
     <link name="middle_thorax" >
         <inertial>
-            <mass value="28.6794" />
-            <origin xyz="0 0.188511 -0.00135864" rpy="0 -0 0" />
-            <inertia ixx="1.60287" ixy="0.0400354" ixz="0.000330871" iyy="0.360371" iyz="-0.00436749" izz="1.44797" />
+            <mass value="11.97" />
+            <origin xyz="-0.009 0.127 -0.001" rpy="0 -0 0" />
+            <inertia ixx="0.05463" ixy="0.02428" ixz="-0.0003" iyy="0.04683" iyz="-0.0012" izz="0.05875" />
         </inertial>
-        <visual>
-	    <origin xyz="-0.0 -0.188511 -0.00" rpy="0 -0 0" />
-            <geometry>
-		        <!--<box size="0.15 0.356643 0.329994" />-->
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/torso_mesh.STL" scale="0.0065 0.0065 0.0065"/>
-            </geometry>
-            <material name="body_color"/>
-        </visual>
     </link>
     <joint name="middle_cervical_Z" type="revolute">
-        <origin xyz="0 0.33 0" rpy="0 -0 0" />
+        <origin xyz="0 0.25 0" rpy="0 -0 0" />
         <axis xyz="0 0 -1" />
         <parent link="middle_thorax" />
         <child link="middle_head_virtual" />
-        <limit effort="0" velocity="0" lower="-1.5708" upper="1.5708" />
+        <limit effort="100" velocity="8.7" lower="-1.5708" upper="1.5708" />
     </joint>
-    <link name="middle_head_virtual" >
-    <visual>
-	     <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
-            <geometry>
-		<mesh filename="package://example-robot-data/robots/human_description/meshes/neck_mesh.STL" scale="0.005 0.005 0.005"/>
-            </geometry>
-            <material name="body_color"/>
-        </visual>
-    </link>
+    <link name="middle_head_virtual" />
     <joint name="middle_cervical_X" type="revolute">
         <origin xyz="0 0 0" rpy="0 -0 0" />
         <axis xyz="1 0 0" />
         <parent link="middle_head_virtual" />
         <child link="middle_head_virtual_2" />
-        <limit effort="0" velocity="0" lower="-1.5708" upper="1.5708" />
+        <limit effort="100" velocity="8.7" lower="-1.5708" upper="1.5708" />
     </joint>
     <link name="middle_head_virtual_2" />
     <joint name="middle_cervical_Y" type="revolute">
@@ -207,28 +206,35 @@
         <axis xyz="0 1 0" />
         <parent link="middle_head_virtual_2" />
         <child link="middle_head" />
-        <limit effort="0" velocity="0" lower="-1.5708" upper="1.5708" />
+        <limit effort="100" velocity="8.7" lower="-1.5708" upper="1.5708" />
     </joint>
     <link name="middle_head">
         <inertial>
-            <mass value="6.32078" />
-            <origin xyz="0.005652 0.05652 0.0002826" rpy="0 -0 0" />
-            <inertia ixx="0.0656238" ixy="0.000454315" ixz="0.000191822" iyy="0.0292786" iyz="0.000353356" izz="0.0689045" />
+            <mass value="5.03" />
+            <origin xyz="-0.015 0.131 0.0" rpy="0 -0 0" />
+            <inertia ixx="0.02688" ixy="-0.00227" ixz="-0.00011" iyy="0.01748" iyz="0.00025" izz="0.03046" />
         </inertial>
         <visual>
 	        <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/head_mesh.STL" scale="0.0055 0.0055 0.0055"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/head_mesh.STL" scale="0.0056 0.0056 0.0056"/>
+            </geometry>
+            <material name="body_color"/>
+        </visual>
+        <visual>
+	     <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
+            <geometry>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/neck_mesh.STL" scale="0.005 0.005 0.005"/>
             </geometry>
             <material name="body_color"/>
         </visual>
     </link>
     <joint name="left_clavicle_joint_X" type="revolute">
-        <origin xyz="0 0.33 0" rpy="0 -0 0" />
+        <origin xyz="0 0.176 0" rpy="0 -0 0" />
         <axis xyz="1 0 0" />
         <parent link="middle_thorax" />
         <child link="left_clavicle" />
-        <limit effort="0" velocity="0" lower="-1.0472" upper="0.314159" />
+        <limit effort="100" velocity="14.0" lower="-1.0472" upper="0.349066" />
     </joint>
     <link name="left_clavicle">
         <inertial>
@@ -238,11 +244,11 @@
         </inertial>
     </link>
     <joint name="left_shoulder_Z" type="revolute">
-        <origin xyz="0.008 -0.073 -0.204" rpy="0 -0 0" />
+        <origin xyz="0.008 -0.075 -0.21" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="left_clavicle" />
         <child link="left_upperarm_virtual" />
-        <limit effort="92" velocity="0" lower="-3.14159" upper="3.14159" />
+        <limit effort="92" velocity="17.6" lower="-3.14159" upper="3.14159" />
     </joint>
     <link name="left_upperarm_virtual"/>
     <joint name="left_shoulder_X" type="revolute">
@@ -250,7 +256,7 @@
         <axis xyz="1 0 0" />
         <parent link="left_upperarm_virtual" />
         <child link="left_upperarm_virtual_2" />
-        <limit effort="71" velocity="0" lower="-1.0472" upper="3.14159" />
+        <limit effort="71" velocity="6.0" lower="-1.0472" upper="3.14159" />
     </joint>
     <link name="left_upperarm_virtual_2" />
     <joint name="left_shoulder_Y" type="revolute">
@@ -258,35 +264,35 @@
         <axis xyz="0 1 0" />
         <parent link="left_upperarm_virtual_2" />
         <child link="left_upperarm" />
-        <limit effort="0" velocity="0" lower="-1.5708" upper="3.14159" />
+        <limit effort="52" velocity="6.0" lower="-1.5708" upper="3.14159" />
     </joint>
     <link name="left_upperarm">
         <inertial>
-            <mass value="2.26416" />
-            <origin xyz="0.00506736 -0.135693 0.00872712" rpy="0 -0 0" />
-            <inertia ixx="0.0569524" ixy="0.00200545" ixz="-0.000261627" iyy="0.00326316" iyz="-0.000351349" izz="0.0578968" />
+            <mass value="1.8" />
+            <origin xyz="0.005 -0.125 -0.007" rpy="0 -0 0" />
+            <inertia ixx="0.01314" ixy="0.00049" ixz="0.00034" iyy="0.00268" iyz="0.00005" izz="0.014" />
         </inertial>
         <visual>
 	         <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/shoulder_mesh.STL" scale="0.0055 0.0055 0.0055"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/shoulder_mesh.STL" scale="0.0039 0.0039 0.0039"/>
             </geometry>
             <material name="body_color_L"/>
         </visual>
         <visual>
-            <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
+            <origin xyz="-0.0 0.05 -0.00" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/upperarm_mesh.STL" scale="0.0063 0.0060 0.007"/>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/upperarm_mesh.STL" scale="0.0063 0.006 0.0069"/>
             </geometry>
             <material name="body_color_L"/>
         </visual>
     </link>
     <joint name="left_elbow_Z" type="revolute">
-        <origin xyz="0 -0.274 0" rpy="0 -0 0" />
+        <origin xyz="0 -0.276 0" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="left_upperarm" />
         <child link="left_lowerarm_virtual" />
-        <limit effort="77" velocity="0" lower="0" upper="2.617991667" />
+        <limit effort="77" velocity="19.9" lower="0" upper="2.617991667" />
     </joint>
     <link name="left_lowerarm_virtual"/>
     <joint name="left_elbow_Y" type="revolute">
@@ -294,18 +300,18 @@
         <axis xyz="0 1 0" />
         <parent link="left_lowerarm_virtual" />
         <child link="left_lowerarm" />
-        <limit effort="15" velocity="0" lower="-3.14159" upper="0.2" />
+        <limit effort="15" velocity="6.0" lower="-3.14159" upper="0.349066" />
     </joint>
     <link name="left_lowerarm">
         <inertial>
-            <mass value="1.60378" />
-            <origin xyz="-0.00373932 -0.119946 -0.00316404" rpy="0 -0 0" />
-            <inertia ixx="0.0334927" ixy="0.000129905" ixz="-3.22441e-05" iyy="0.00164405" iyz="-0.000661733" izz="0.033499" />
+            <mass value="1.28" />
+            <origin xyz="0.003 -0.12 0.004" rpy="0 -0 0" />
+            <inertia ixx="0.00825" ixy="0.00009" ixz="0.00004" iyy="0.00127" iyz="-0.00067" izz="0.00767" />
         </inertial>
         <visual>
             <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/lowerarm_mesh.STL" scale="0.0060 0.0060 0.0060"/>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/lowerarm_mesh.STL" scale="0.0064 0.0064 0.0064"/>
             </geometry>
             <material name="body_color_L"/>
         </visual>
@@ -318,11 +324,11 @@
         </visual>
     </link>
     <joint name="left_wrist_Z" type="revolute">
-        <origin xyz="0 -0.28 0" rpy="0 -0 0" />
+        <origin xyz="0 -0.287 0" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="left_lowerarm" />
         <child link="left_hand_virtual" />
-        <limit effort="185" velocity="0" lower="-1.5708" upper="1.5708" />
+        <limit effort="185" velocity="25.0" lower="-1.5708" upper="1.5708" />
     </joint>
     <link name="left_hand_virtual" />
     <joint name="left_wrist_X" type="revolute">
@@ -330,29 +336,29 @@
         <axis xyz="-1 0 0" />
         <parent link="left_hand_virtual" />
         <child link="left_hand" />
-        <limit effort="0" velocity="0" lower="-0.785398" upper="0.785398" />
+        <limit effort="100" velocity="6.0" lower="-0.785398" upper="0.785398" />
     </joint>
     <link name="left_hand">
         <inertial>
-            <mass value="0.56604" />
-            <origin xyz="0.00665676 -0.06811 -0.0060885" rpy="0 -0 0" />
-            <inertia ixx="0.00403488" ixy="0.000437185" ixz="-6.09906e-05" iyy="0.000584723" iyz="-0.000383942" izz="0.00382075" />
+            <mass value="0.45" />
+            <origin xyz="0.015 -0.153 0.014" rpy="0 -0 0" />
+            <inertia ixx="0.00558" ixy="0.00073" ixz="0.00034" iyy="0.00216" iyz="-0.0006" izz="0.0047" />
         </inertial>
         <visual>
             <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/hand_mesh.STL" scale="0.0060 0.0060 0.0060"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/hand_mesh.STL" scale="0.0061 0.0061 0.0061"/>
                 <!--<box size="0.03 0.085239 0.06" />-->
             </geometry>
             <material name="body_color_L"/>
         </visual>
     </link>
     <joint name="right_clavicle_joint_X" type="revolute">
-        <origin xyz="0 0.33 0" rpy="0 -0 0" />
+        <origin xyz="0 0.176 0" rpy="0 -0 0" />
         <axis xyz="-1 0 0" />
         <parent link="middle_thorax" />
         <child link="right_clavicle" />
-        <limit effort="0" velocity="0" lower="-0.392699" upper="1.0472" />
+        <limit effort="100" velocity="14.0" lower="-0.349066" upper="1.0472" />
     </joint>
     <link name="right_clavicle">
         <inertial>
@@ -362,11 +368,11 @@
         </inertial>
     </link>
     <joint name="right_shoulder_Z" type="revolute">
-        <origin xyz="0.008 -0.073 0.204" rpy="0 -0 0" />
+        <origin xyz="0.008 -0.075 0.21" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="right_clavicle" />
         <child link="right_upperarm_virtual" />
-        <limit effort="0" velocity="0" lower="-3.14159" upper="3.14159" />
+        <limit effort="92" velocity="17.6" lower="-3.14159" upper="3.14159" />
     </joint>
     <link name="right_upperarm_virtual"/>
     <joint name="right_shoulder_X" type="revolute">
@@ -374,7 +380,7 @@
         <axis xyz="-1 0 0" />
         <parent link="right_upperarm_virtual" />
         <child link="right_upperarm_virtual_2" />
-        <limit effort="71" velocity="0" lower="-1.0472" upper="3.14159" />
+        <limit effort="71" velocity="6.0" lower="-1.0472" upper="3.14159" />
     </joint>
     <link name="right_upperarm_virtual_2" />
     <joint name="right_shoulder_Y" type="revolute">
@@ -382,35 +388,35 @@
         <axis xyz="0 -1 0" />
         <parent link="right_upperarm_virtual_2" />
         <child link="right_upperarm" />
-        <limit effort="0" velocity="0" lower="-1.5708" upper="3.14159" />
+        <limit effort="52" velocity="6.0" lower="-1.5708" upper="3.14159" />
     </joint>
     <link name="right_upperarm">
         <inertial>
-            <mass value="2.26416" />
-            <origin xyz="0.00506736 -0.135693 -0.00872712" rpy="0 -0 0" />
-            <inertia ixx="0.0569524" ixy="0.00200545" ixz="0.000261627" iyy="0.00326316" iyz="0.000351349" izz="0.0578968" />
+            <mass value="1.8" />
+            <origin xyz="0.005 -0.125 -0.007" rpy="0 -0 0" />
+            <inertia ixx="0.01314" ixy="0.00049" ixz="0.00034" iyy="0.00268" iyz="0.00005" izz="0.014" />
         </inertial>
         <visual>
-            <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
+	        <origin xyz="-0.0 0.0 -0.0" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/upperarm_mesh.STL" scale="0.0063 0.0060 0.007"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/shoulder_mesh.STL" scale="0.0039 0.0039 0.0039"/>
             </geometry>
             <material name="body_color_R"/>
         </visual>
         <visual>
-	        <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
+            <origin xyz="-0.0 0.05 -0.00" rpy="0 -0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/shoulder_mesh.STL" scale="0.0055 0.0055 0.0055"/>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/upperarm_mesh.STL" scale="0.0063 0.006 0.0069"/>
             </geometry>
             <material name="body_color_R"/>
         </visual>
     </link>
     <joint name="right_elbow_Z" type="revolute">
-        <origin xyz="0 -0.274 0" rpy="0 -0 0" />
+        <origin xyz="0 -0.276 0" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="right_upperarm" />
         <child link="right_lowerarm_virtual" />
-        <limit effort="77" velocity="0" lower="0" upper="2.617991667" />
+        <limit effort="77" velocity="19.9" lower="0" upper="2.617991667" />
     </joint>
     <link name="right_lowerarm_virtual"/>
     <joint name="right_elbow_Y" type="revolute">
@@ -418,18 +424,18 @@
         <axis xyz="0 1 0" />
         <parent link="right_lowerarm_virtual" />
         <child link="right_lowerarm" />
-        <limit effort="15" velocity="0" lower="-0.2" upper="3.14159" />
+        <limit effort="15" velocity="6.0" lower="-0.349066" upper="3.14159" />
     </joint>
     <link name="right_lowerarm">
         <inertial>
-            <mass value="1.60378" />
-            <origin xyz="-0.00373932 -0.119946 0.00316404" rpy="0 -0 0" />
-            <inertia ixx="0.0334927" ixy="0.000129905" ixz="3.22441e-05" iyy="0.00164405" iyz="0.000661733" izz="0.033499" />
+            <mass value="1.28" />
+            <origin xyz="0.003 -0.12 0.004" rpy="0 -0 0" />
+            <inertia ixx="0.00825" ixy="0.00009" ixz="0.00004" iyy="0.00127" iyz="-0.00067" izz="0.00767" />
         </inertial>
         <visual>
             <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/lowerarm_mesh.STL" scale="0.0060 0.0060 0.0060"/>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/lowerarm_mesh.STL" scale="0.0064 0.0064 0.0064"/>
             </geometry>
             <material name="body_color_R"/>
         </visual>
@@ -442,11 +448,11 @@
         </visual>
     </link>
     <joint name="right_wrist_Z" type="revolute">
-        <origin xyz="0 -0.28 0" rpy="0 -0 0" />
+        <origin xyz="0 -0.287 0" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="right_lowerarm" />
         <child link="right_hand_virtual" />
-        <limit effort="185" velocity="0" lower="-1.5708" upper="1.5708" />
+        <limit effort="100" velocity="25.0" lower="-1.5708" upper="1.5708" />
     </joint>
     <link name="right_hand_virtual" />
     <joint name="right_wrist_X" type="revolute">
@@ -454,29 +460,29 @@
         <axis xyz="1 0 0" />
         <parent link="right_hand_virtual" />
         <child link="right_hand" />
-        <limit effort="0" velocity="0" lower="-0.785398" upper="0.785398" />
+        <limit effort="100" velocity="6.0" lower="-0.785398" upper="0.785398" />
     </joint>
     <link name="right_hand">
         <inertial>
-            <mass value="0.56604" />
-            <origin xyz="0.00665676 -0.06811 0.0060885" rpy="0 -0 0" />
-            <inertia ixx="0.00403488" ixy="0.000437185" ixz="6.09906e-05" iyy="0.000584723" iyz="0.000383942" izz="0.00382075" />
+            <mass value="0.45" />
+            <origin xyz="0.015 -0.153 0.014" rpy="0 -0 0" />
+            <inertia ixx="0.00558" ixy="0.00073" ixz="0.00034" iyy="0.00216" iyz="-0.0006" izz="0.0047" />
         </inertial>
         <visual>
             <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/hand_mesh.STL" scale="0.0060 0.0060 0.0060"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/hand_mesh.STL" scale="0.0061 0.0061 0.0061"/>
                 <!--<box size="0.03 0.085239 0.06" />-->
             </geometry>
             <material name="body_color_R"/>
         </visual>
     </link>
     <joint name="right_hip_Z" type="revolute">
-        <origin xyz="0.053 -0.075 -0.080" rpy="0 -0 0" />
+        <origin xyz="0.023 -0.1 0.082" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="middle_pelvis" />
         <child link="right_upperleg_virtual" />
-        <limit effort="190" velocity="0" lower="-1.047196667" upper="3.14159" />
+        <limit effort="185" velocity="12.0" lower="-1.047196667" upper="3.14159" />
     </joint>
     <link name="right_upperleg_virtual" />
     <joint name="right_hip_X" type="revolute">
@@ -484,7 +490,7 @@
         <axis xyz="1 0 0" />
         <parent link="right_upperleg_virtual" />
         <child link="right_upperleg_virtual_2" />
-        <limit effort="190" velocity="0" lower="-1.570795" upper="1.047196667" />
+        <limit effort="120" velocity="6.0" lower="-1.570795" upper="1.047196667" />
     </joint>
     <link name="right_upperleg_virtual_2"/>
     <joint name="right_hip_Y" type="revolute">
@@ -492,56 +498,56 @@
         <axis xyz="0 1 0" />
         <parent link="right_upperleg_virtual_2" />
         <child link="right_upperleg" />
-        <limit effort="190" velocity="0" lower="-1.570795" upper="1.047196667" />
+        <limit effort="60" velocity="6.0" lower="-1.570795" upper="1.047196667" />
     </joint>
     <link name="right_upperleg">
         <inertial>
-            <mass value="11.6038" />
-            <origin xyz="-0.0180072 -0.188417 -0.0144936" rpy="0 -0 0" />
-            <inertia ixx="0.602628" ixy="-0.0284023" ixz="-0.00213314" iyy="0.0565628" iyz="-0.0207203" izz="0.617159" />
+            <mass value="9.22" />
+            <origin xyz="-0.018 -0.188 0.014" rpy="0 -0 0" />
+            <inertia ixx="0.1497" ixy="0.00872" ixz="-0.00071" iyy="0.04005" iyz="-0.00872" izz="0.1602" />
         </inertial>
         <visual>
-            <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
+            <origin xyz="-0.0 -0.05 -0.00" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/upperleg_mesh.STL" scale="0.0063 0.0065 0.007"/>
-            </geometry>
-            <material name="body_color_R"/>
-        </visual>
-        <visual>
-            <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
-            <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/knee_mesh.STL" scale="0.006 0.006 0.006"/>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/upperleg_mesh.STL" scale="0.0062 0.0064 0.0069"/>
             </geometry>
             <material name="body_color_R"/>
         </visual>
     </link>
-    <joint name="right_knee" type="revolute">
-        <origin xyz="0 -0.43 0" rpy="0 -0 0" />
+    <joint name="right_knee_Z" type="revolute">
+        <origin xyz="0 -0.439 0" rpy="0 -0 0" />
         <axis xyz="0 0 -1" />
         <parent link="right_upperleg" />
         <child link="right_lowerleg" />
-        <limit effort="168" velocity="0" lower="0" upper="3.14159" />
+        <limit effort="130" velocity="18.6" lower="0" upper="3.14159" />
     </joint>
     <link name="right_lowerleg">
         <inertial>
-            <mass value="4.52832" />
-            <origin xyz="-0.0211334 -0.180515 0.00308196" rpy="0 -0 0" />
-            <inertia ixx="0.21642" ixy="-0.0158706" ixz="0.00064606" iyy="0.0108434" iyz="0.00392376" izz="0.2184" />
+            <mass value="3.6" />
+            <origin xyz="-0.021 -0.181 0.003" rpy="0 -0 0" />
+            <inertia ixx="0.05471" ixy="0.00112" ixz="0.00028" iyy="0.00698" iyz="0.00174" izz="0.05471" />
         </inertial>
         <visual>
             <origin xyz="-0.0 0.00 -0.00" rpy="0 -0 0" />
             <geometry>
-                <mesh filename="package://example-robot-data/robots/human_description/meshes/lowerleg_mesh.STL" scale="0.0063 0.0065 0.007"/>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/lowerleg_mesh.STL" scale="0.0063 0.0066 0.007"/>
+            </geometry>
+            <material name="body_color_R"/>
+        </visual>
+        <visual>
+            <origin xyz="-0.0 0.0 -0.0" rpy="0 -0 0" />
+            <geometry>
+                <mesh filename="package://example-robot-data/robots/human_description/meshes/knee_mesh.STL" scale="0.0056 0.0056 0.0056"/>
             </geometry>
             <material name="body_color_R"/>
         </visual>
     </link>
     <joint name="right_ankle_Z" type="revolute">
-        <origin xyz="0 -0.43 0" rpy="0 -0 0" />
+        <origin xyz="0 -0.44 0" rpy="0 -0 0" />
         <axis xyz="0 0 1" />
         <parent link="right_lowerleg" />
         <child link="right_foot_virtual" />
-        <limit effort="126" velocity="0" lower="-1.570795" upper="0.7853975" />
+        <limit effort="126" velocity="12.7" lower="-1.570795" upper="0.7853975" />
     </joint>
     <link name="right_foot_virtual" />
     <joint name="right_ankle_X" type="revolute">
@@ -549,18 +555,18 @@
         <axis xyz="1 0 0" />
         <parent link="right_foot_virtual" />
         <child link="right_foot" />
-        <limit effort="20" velocity="0" lower="-0.523598333" upper="0.785398" />
+        <limit effort="20" velocity="6.0" lower="-0.523598333" upper="0.785398" />
     </joint>
     <link name="right_foot">
         <inertial>
-            <mass value="1.13208" />
-            <origin xyz="0.0709326 -0.0281187 0.0048042" rpy="0 -0 0" />
-            <inertia ixx="0.00201519" ixy="0.00291119" ixz="-0.000112291" iyy="0.011149" iyz="0.00015293" izz="0.0117988" />
+            <mass value="0.9" />
+            <origin xyz="0.068 -0.027 0.005" rpy="0 -0 0" />
+            <inertia ixx="0.00081" ixy="0.00048" ixz="-0.00018" iyy="0.00385" iyz="0.0" izz="0.00364" />
         </inertial>
         <visual>
             <origin xyz="-0.00 -0.00 0.00" rpy="0 0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/foot_mesh.STL" scale="0.0060 0.0060 0.0060"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/foot_mesh.STL" scale="0.0067 0.0067 0.0067"/>
                 <!--<box size="0.03 0.085239 0.06" />-->
             </geometry>
             <material name="body_color_R"/>
