@@ -20,7 +20,7 @@ from .talos import (
     TalosLegsLoader,
     TalosLoader,
 )
-from .utils import RobotLoader, getModelPath  # noqa: F401
+from .utils import RobotLoader, getModelPath, readParamsFromSrdf  # noqa: F401
 
 
 class B1Loader(RobotLoader):
