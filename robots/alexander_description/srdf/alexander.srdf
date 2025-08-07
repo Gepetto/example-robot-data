@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<robot name="alexander">
+
+    <group name="right_leg">
+        <joint name="RIGHT_HIP_X" />
+        <joint name="RIGHT_HIP_Z" />
+        <joint name="RIGHT_HIP_Y" />
+        <joint name="RIGHT_KNEE_Y" />
+        <joint name="RIGHT_ANKLE_Y" />
+        <joint name="RIGHT_ANKLE_X" />
+        <chain base_link="PELVIS_LINK" tip_link="RIGHT_FOOT" />
+    </group>
+    <group name="left_leg">
+        <joint name="LEFT_HIP_X" />
+        <joint name="LEFT_HIP_Z" />
+        <joint name="LEFT_HIP_Y" />
+        <joint name="LEFT_KNEE_Y" />
+        <joint name="LEFT_ANKLE_Y" />
+        <joint name="LEFT_ANKLE_X" />
+        <chain base_link="PELVIS_LINK" tip_link="LEFT_FOOT" />
+    </group>
+    <group name="right_arm">
+        <joint name="RIGHT_SHOULDER_Y" />
+        <joint name="RIGHT_SHOULDER_X" />
+        <joint name="RIGHT_SHOULDER_Z" />
+        <joint name="RIGHT_ELBOW_Y" />
+        <joint name="RIGHT_WRIST_Z" />
+        <joint name="RIGHT_WRIST_X" />
+        <joint name="RIGHT_GRIPPER_Z" />
+        <chain base_link="PELVIS_LINK" tip_link="RIGHT_GRIPPER_Z_LINK" />
+    </group>
+    <group name="left_arm">
+        <joint name="LEFT_SHOULDER_Y" />
+        <joint name="LEFT_SHOULDER_X" />
+        <joint name="LEFT_SHOULDER_Z" />
+        <joint name="LEFT_ELBOW_Y" />
+        <joint name="LEFT_WRIST_Z" />
+        <joint name="LEFT_WRIST_X" />
+        <joint name="LEFT_GRIPPER_Z" />
+        <chain base_link="PELVIS_LINK" tip_link="LEFT_GRIPPER_Z_LINK" />
+    </group>
+    <group name="head">
+        <joint name="NECK_Z" />
+        <joint name="NECK_Y" />
+        <chain base_link="TORSO_LINK" tip_link="HEAD_LINK" />
+    </group>
+    <group name="torso">
+        <joint name="SPINE_Z" />
+        <chain base_link="PELVIS_LINK" tip_link="TORSO_LINK" />
+    </group>
+    <group name="all">
+        <group name="left_arm" />
+        <group name="right_arm" />
+        <group name="left_leg" />
+        <group name="right_leg" />
+        <group name="head" />
+        <group name="torso" />
+    </group>
+    <group name="all_legs">
+        <group name="left_leg" />
+        <group name="right_leg" />
+    </group>
+    <group name="all_arms">
+        <group name="left_arm" />
+        <group name="right_arm" />
+    </group>
+    <group name="all_arms_torso">
+        <group name="left_arm" />
+        <group name="right_arm" />
+        <group name="torso" />
+    </group>
+    <group name="right_arm_torso">
+        <group name="right_arm" />
+        <group name="torso" />
+    </group>
+    <group name="left_arm_torso">
+        <group name="left_arm" />
+        <group name="torso" />
+    </group>
+
+    <end_effector name="RIGHT_FOOT" parent_link="right_sole_link" group="right_leg" />
+    <end_effector name="LEFT_FOOT" parent_link="left_sole_link" group="left_leg" />
+
+    <group_state name="default" group="all">
+        <joint name="root_joint" value="0. 0. 0.9268 0. 0. 0. 1." />
+        <joint name="SPINE_Z" value="0.0"/>
+        <joint name="NECK_Z" value="0.0"/>
+        <joint name="NECK_Y" value="0.0"/>
+        <joint name="LEFT_SHOULDER_Y" value="0.6"/>
+        <joint name="LEFT_SHOULDER_X" value="0.3"/>
+        <joint name="LEFT_SHOULDER_Z" value="-0.6"/>
+        <joint name="LEFT_ELBOW_Y" value="-1.3"/>
+        <joint name="LEFT_WRIST_Z" value="0.0"/>
+        <joint name="LEFT_WRIST_X" value="0.0"/>
+        <joint name="LEFT_GRIPPER_Z" value="0.0"/>
+        <joint name="RIGHT_SHOULDER_Y" value="0.6"/>
+        <joint name="RIGHT_SHOULDER_X" value="-0.3"/>
+        <joint name="RIGHT_SHOULDER_Z" value="0.6"/>
+        <joint name="RIGHT_ELBOW_Y" value="-1.3"/>
+        <joint name="RIGHT_WRIST_Z" value="0.0"/>
+        <joint name="RIGHT_WRIST_X" value="0.0"/>
+        <joint name="RIGHT_GRIPPER_Z" value="0.0"/>
+        <joint name="LEFT_HIP_X" value="0.0"/>
+        <joint name="LEFT_HIP_Z" value="0.0"/>
+        <joint name="LEFT_HIP_Y" value="-0.25"/>
+        <joint name="LEFT_KNEE_Y" value="0.5"/>
+        <joint name="LEFT_ANKLE_Y" value="-0.25"/>
+        <joint name="LEFT_ANKLE_X" value="0.0"/>
+        <joint name="RIGHT_HIP_X" value="0.0"/>
+        <joint name="RIGHT_HIP_Z" value="0.0"/>
+        <joint name="RIGHT_HIP_Y" value="-0.25"/>
+        <joint name="RIGHT_KNEE_Y" value="0.5"/>
+        <joint name="RIGHT_ANKLE_Y" value="-0.25"/>
+        <joint name="RIGHT_ANKLE_X" value="0.0"/>
+    </group_state>
+
+    <specificities>
+        <feet>
+            <right>
+                <size height="0.06" width="0.18" depth="0.085" />
+                <anklePosition x="-0.049" y="0.0" z="0.06" />
+            </right>
+            <left>
+                <size height="0.06" width="0.18" depth="0.085" />
+                <anklePosition x="-0.049" y="0.0" z="0.06" />
+            </left>
+        </feet>
+    </specificities>
+
+</robot>

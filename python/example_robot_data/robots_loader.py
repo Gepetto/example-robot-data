@@ -281,11 +281,19 @@ class ICubReducedLoader(ICubLoader):
     urdf_filename = "icub_reduced.urdf"
 
 
+class AlexanderLoader(RobotLoader):
+    path = "alexander_description"
+    urdf_filename = "alexander_v1.lowerBodyOnly.urdf"
+    urdf_subpath = "urdf"
+    free_flyer = True
+    ref_posture = "default"
+    srdf_filename = "alexander.srdf"
+
+
 class AlexNubHandsLoader(RobotLoader):
     path = "alex_description"
     urdf_filename = "alex_nub_hands.urdf"
     urdf_subpath = "urdf"
-    srdf_filename = "alex_nub_hands.srdf"
     ref_posture = "default"
 
 
@@ -460,6 +468,7 @@ ROBOTS = {
     "laikago": LaikagoLoader,
     "panda": PandaLoader,
     "panda_collision": PandaLoaderCollision,
+    "alexander": AlexanderLoader,
     "alex_nub_hands": AlexNubHandsLoader,
     "alex_psyonic_hands": AlexPsyonicHandsLoader,
     "alex_sake_hands": AlexSakeHandsLoader,
