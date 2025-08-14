@@ -236,5 +236,6 @@ class RobotTestCase(unittest.TestCase):
     def test_xarm7(self):
         self.check("xarm7", 7, 7)
 
+
 if __name__ == "__main__":
     unittest.main()
