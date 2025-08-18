@@ -434,11 +434,13 @@ class PR2Loader(RobotLoader):
     free_flyer = True
     ref_posture = "tuck_left_arm"
 
+
 class xArm7Loader(RobotLoader):
     path = "xarm_description"
     urdf_subpath = "urdf"
     urdf_filename = "xarm7.urdf"
     srdf_filename = "xarm7.srdf"
+
 
 ROBOTS = {
     "b1": B1Loader,
@@ -507,7 +509,7 @@ ROBOTS = {
     "ur5_limited": UR5LimitedLoader,
     "ur10": UR10Loader,
     "ur10_limited": UR10LimitedLoader,
-    "xarm7": xArm7Loader
+    "xarm7": xArm7Loader,
 }
 
 
