@@ -40,10 +40,10 @@
     <link name="left_upperleg_virtual_2"/>
     <joint name="left_hip_Y" type="revolute">
         <origin xyz="0 0 0" rpy="0 -0 0" />
-        <axis xyz="0 1 0" />
+        <axis xyz="0 -1 0" />
         <parent link="left_upperleg_virtual_2" />
         <child link="left_upperleg" />
-        <limit effort="60" velocity="12.0" lower="-1.047196667" upper="1.570795" />
+        <limit effort="60" velocity="12.0" lower="-1.570795" upper="1.047196667" />
     </joint>
     <link name="left_upperleg">
         <inertial>
@@ -122,7 +122,7 @@
         <axis xyz="0 0 -1" />
         <parent link="middle_pelvis" />
         <child link="middle_abdomen_virtual" />
-        <limit effort="190" velocity="5.2" lower="-3.14159" upper="0.785398" />
+        <limit effort="190" velocity="5.2" lower="-0.785398" upper="3.14159" />
     </joint>
     <link name="middle_abdomen_virtual" />
     <joint name="middle_lumbar_X" type="revolute">
@@ -160,7 +160,7 @@
         <axis xyz="0 0 -1" />
         <parent link="middle_abdomen" />
         <child link="middle_thorax_virtual" />
-        <limit effort="190" velocity="5.2" lower="-1.0472" upper="0.392699" />
+        <limit effort="190" velocity="5.2" lower="-0.392699" upper="1.0472" />
     </joint>
     <link name="middle_thorax_virtual" />
     <joint name="middle_thoracic_X" type="revolute">
@@ -234,7 +234,7 @@
         <axis xyz="1 0 0" />
         <parent link="middle_thorax" />
         <child link="left_clavicle" />
-        <limit effort="100" velocity="14.0" lower="-1.0472" upper="0.349066" />
+        <limit effort="100" velocity="14.0" lower="-0.349066" upper="1.0472" />
     </joint>
     <link name="left_clavicle">
         <inertial>
@@ -261,7 +261,7 @@
     <link name="left_upperarm_virtual_2" />
     <joint name="left_shoulder_Y" type="revolute">
         <origin xyz="0 0 0" rpy="0 -0 0" />
-        <axis xyz="0 1 0" />
+        <axis xyz="0 -1 0" />
         <parent link="left_upperarm_virtual_2" />
         <child link="left_upperarm" />
         <limit effort="52" velocity="6.0" lower="-1.5708" upper="3.14159" />
@@ -297,10 +297,10 @@
     <link name="left_lowerarm_virtual"/>
     <joint name="left_elbow_Y" type="revolute">
         <origin xyz="0 0 0" rpy="0 -0 0" />
-        <axis xyz="0 1 0" />
+        <axis xyz="0 -1 0" />
         <parent link="left_lowerarm_virtual" />
         <child link="left_lowerarm" />
-        <limit effort="15" velocity="6.0" lower="-3.14159" upper="0.349066" />
+        <limit effort="15" velocity="6.0" lower="-0.349066" upper="3.14159" />
     </joint>
     <link name="left_lowerarm">
         <inertial>
@@ -333,7 +333,7 @@
     <link name="left_hand_virtual" />
     <joint name="left_wrist_X" type="revolute">
         <origin xyz="0 0 0" rpy="0 -0 0" />
-        <axis xyz="-1 0 0" />
+        <axis xyz="1 0 0" />
         <parent link="left_hand_virtual" />
         <child link="left_hand" />
         <limit effort="100" velocity="6.0" lower="-0.785398" upper="0.785398" />
@@ -385,7 +385,7 @@
     <link name="right_upperarm_virtual_2" />
     <joint name="right_shoulder_Y" type="revolute">
         <origin xyz="0 0 0" rpy="0 -0 0" />
-        <axis xyz="0 -1 0" />
+        <axis xyz="0 1 0" />
         <parent link="right_upperarm_virtual_2" />
         <child link="right_upperarm" />
         <limit effort="52" velocity="6.0" lower="-1.5708" upper="3.14159" />
@@ -457,7 +457,7 @@
     <link name="right_hand_virtual" />
     <joint name="right_wrist_X" type="revolute">
         <origin xyz="0 0 0" rpy="0 -0 0" />
-        <axis xyz="1 0 0" />
+        <axis xyz="-1 0 0" />
         <parent link="right_hand_virtual" />
         <child link="right_hand" />
         <limit effort="100" velocity="6.0" lower="-0.785398" upper="0.785398" />
@@ -487,10 +487,10 @@
     <link name="right_upperleg_virtual" />
     <joint name="right_hip_X" type="revolute">
         <origin xyz="0 0 0" rpy="0 -0 0" />
-        <axis xyz="1 0 0" />
+        <axis xyz="-1 0 0" />
         <parent link="right_upperleg_virtual" />
         <child link="right_upperleg_virtual_2" />
-        <limit effort="120" velocity="6.0" lower="-1.570795" upper="1.047196667" />
+        <limit effort="120" velocity="6.0" lower="-1.047196667" upper="1.570795" />
     </joint>
     <link name="right_upperleg_virtual_2"/>
     <joint name="right_hip_Y" type="revolute">
