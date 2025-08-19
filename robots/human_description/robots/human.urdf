@@ -146,14 +146,6 @@
             </geometry>
             <material name="body_color"/>
         </visual>
-        <visual>
-	    <origin xyz="-0.0 -0.1 0.0" rpy="0 -0 0" />
-            <geometry>
-		        <!--<box size="0.15 0.356643 0.329994" />-->
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/torso_mesh.STL" scale="0.007 0.007 0.007"/>
-            </geometry>
-            <material name="body_color"/>
-        </visual>
     </link>
     <joint name="middle_thoracic_Z" type="revolute">
         <origin xyz="0 0.223 0" rpy="0 -0 0" />
@@ -184,6 +176,14 @@
             <origin xyz="-0.009 0.127 -0.001" rpy="0 -0 0" />
             <inertia ixx="0.05463" ixy="0.02428" ixz="-0.0003" iyy="0.04683" iyz="-0.0012" izz="0.05875" />
         </inertial>
+        <visual>
+	    <origin xyz="-0.0 -0.32 0.0" rpy="0 -0 0" />
+            <geometry>
+		        <!--<box size="0.15 0.356643 0.329994" />-->
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/torso_mesh.STL" scale="0.007 0.007 0.007"/>
+            </geometry>
+            <material name="body_color"/>
+        </visual>
     </link>
     <joint name="middle_cervical_Z" type="revolute">
         <origin xyz="0 0.25 0" rpy="0 -0 0" />
