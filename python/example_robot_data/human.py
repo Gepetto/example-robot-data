@@ -911,7 +911,7 @@ class HumanLoader(RobotLoader):
             "left_lowerleg_1",
             "left_foot_0",
             "middle_abdomen_0",
-            "middle_abdomen_1",
+            "middle_thorax_0",
             "middle_head_0",
             "middle_head_1",
             "left_upperarm_0",
@@ -1020,7 +1020,7 @@ class HumanLoader(RobotLoader):
                 )
                 scales.append(scale)
             elif (
-                name == "middle_abdomen_1"
+                name == "middle_thorax_0"
             ):  # torso mesh size is : X = 36.991m, Y = 35m, Z = 40.029m
                 scale = np.round(
                     np.array(
