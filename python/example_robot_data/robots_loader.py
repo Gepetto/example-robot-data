@@ -440,6 +440,7 @@ class xArm7Loader(RobotLoader):
     urdf_subpath = "urdf"
     urdf_filename = "xarm7.urdf"
     srdf_filename = "xarm7.srdf"
+    ref_posture = "home"
 
 
 ROBOTS = {
