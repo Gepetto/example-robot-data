@@ -138,14 +138,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link_base.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link_base.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="White"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link_base.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link_base.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -158,14 +158,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link1.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link1.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="White"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link1.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link1.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -186,14 +186,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link2.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link2.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="White"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link2.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link2.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -214,14 +214,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link3.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link3.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="White"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link3.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link3.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -242,14 +242,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link4.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link4.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="White"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link4.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link4.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -270,14 +270,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link5.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link5.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="White"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link5.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link5.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -298,14 +298,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link6.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link6.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="White"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link6.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link6.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -326,14 +326,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/xarm7/visual/link7.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link7.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="Silver"/>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://xarm_description/meshes/end_tool/collision/end_tool.stl"/>
+        <mesh filename="package://example-robot-data/robots/xarm_description/meshes/xarm7/visual/link7.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
