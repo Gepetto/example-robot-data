@@ -11,14 +11,17 @@ set(PROJECT_URL https://github.com/${PROJECT_ORG}/${PROJECT_NAME})
 set(PROJECT_AUTO_RUN_FINALIZE FALSE)
 set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
-# Project options
-option(BUILD_PYTHON_INTERFACE "Build the python unit tests and helpers" ON)
-option(INSTALL_PYTHON_INTERFACE_ONLY "Install *ONLY* the python interface" OFF)
+if(DEFINED INSTALL_PYTHON_INTERFACE_ONLY)
+  message(
+    FATAL_ERROR
+      "CMake option INSTALL_PYTHON_INTERFACE_ONLY has been renamed BUILD_STANDALONE_PYTHON_INTERFACE"
+  )
+endif()
 
 # Project configuration
-if(NOT INSTALL_PYTHON_INTERFACE_ONLY)
+if(NOT BUILD_STANDALONE_PYTHON_INTERFACE)
   set(PROJECT_USE_CMAKE_EXPORT TRUE)
-endif(NOT INSTALL_PYTHON_INTERFACE_ONLY)
+endif()
 set(CUSTOM_HEADER_DIR ${PROJECT_NAME})
 set(PROJECT_COMPATIBILITY_VERSION AnyNewerVersion)
 
@@ -34,14 +37,6 @@ else()
       TARGET jrl-cmakemodules::jrl-cmakemodules
       PROPERTY INTERFACE_INCLUDE_DIRECTORIES)
     message(STATUS "JRL cmakemodules found on system at ${JRL_CMAKE_MODULES}")
-  elseif(${CMAKE_VERSION} VERSION_LESS "3.14.0")
-    message(
-      FATAL_ERROR
-        "\nCan't find jrl-cmakemodules. Please either:\n"
-        "  - use git submodule: 'git submodule update --init'\n"
-        "  - or install https://github.com/jrl-umi3218/jrl-cmakemodules\n"
-        "  - or upgrade your CMake version to >= 3.14 to allow automatic fetching\n"
-    )
   else()
     message(STATUS "JRL cmakemodules not found. Let's fetch it.")
     include(FetchContent)
@@ -68,18 +63,9 @@ message(STATUS "Released under the BSD 3-Clause License.")
 compute_project_args(PROJECT_ARGS LANGUAGES CXX)
 project(${PROJECT_NAME} ${PROJECT_ARGS})
 
-if(BUILD_PYTHON_INTERFACE)
-  add_project_dependency(eigenpy 3.0.0 REQUIRED)
-  add_project_dependency(pinocchio 2.7.0 REQUIRED)
-  string(REGEX REPLACE "-" "_" PY_NAME ${PROJECT_NAME})
-  findpython(REQUIRED)
-  add_subdirectory(python)
-  if(BUILD_TESTING)
-    add_subdirectory(unittest)
-  endif(BUILD_TESTING)
-endif()
-
-if(NOT INSTALL_PYTHON_INTERFACE_ONLY)
+if(BUILD_STANDALONE_PYTHON_INTERFACE)
+  add_project_dependency(${PROJECT_NAME} REQUIRED CONFIG)
+else()
   add_library(${PROJECT_NAME} INTERFACE)
   add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
   target_include_directories(
@@ -101,6 +87,17 @@ if(NOT INSTALL_PYTHON_INTERFACE_ONLY)
   install(FILES include/${CUSTOM_HEADER_DIR}/path.hpp
           DESTINATION include/${CUSTOM_HEADER_DIR})
   install(DIRECTORY robots DESTINATION share/${PROJECT_NAME})
+endif()
+
+if(BUILD_PYTHON_INTERFACE)
+  add_project_dependency(eigenpy 3.0.0 REQUIRED)
+  add_project_dependency(pinocchio 2.7.0 REQUIRED)
+  string(REGEX REPLACE "-" "_" PY_NAME ${PROJECT_NAME})
+  findpython(REQUIRED)
+  add_subdirectory(python)
+  if(BUILD_TESTING)
+    add_subdirectory(unittest)
+  endif(BUILD_TESTING)
 endif()
 
 setup_project_finalize()
