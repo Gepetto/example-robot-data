@@ -1,25 +1,5 @@
 {
   "nodes": {
-    "coal": {
-      "inputs": {
-        "flake-parts": "flake-parts",
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1751006818,
-        "narHash": "sha256-1C1/I0jQrlqdtHjgiZe/xKBfbRIAqf+juHISIK2dIiE=",
-        "owner": "nim65s",
-        "repo": "coal",
-        "rev": "9a9f74436ca9e9584cf5001828b66502dcd45df2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nim65s",
-        "ref": "only-py",
-        "repo": "coal",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -40,11 +20,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1758427187,
-        "narHash": "sha256-pHpxZ/IyCwoTQPtFIAG2QaxuSm8jWzrzBGjwQZIttJc=",
+        "lastModified": 1758277210,
+        "narHash": "sha256-iCGWf/LTy+aY0zFu8q12lK8KuZp7yvdhStehhyX1v8w=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "554be6495561ff07b6c724047bdd7e0716aa7b46",
+        "rev": "8eaee110344796db060382e15d3af0a9fc396e0e",
         "type": "github"
       },
       "original": {
@@ -71,39 +51,25 @@
     },
     "pinocchio": {
       "inputs": {
-        "coal": "coal",
-        "flake-parts": [
-          "pinocchio",
-          "coal",
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "pinocchio",
-          "coal",
-          "nixpkgs"
-        ]
+        "flake-parts": "flake-parts",
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1751292585,
-        "narHash": "sha256-D3KV+CM1rnOWamTrZoMgEFQAD2fH7y6bkBsCPz+Ln+w=",
-        "owner": "nim65s",
+        "lastModified": 1758544381,
+        "narHash": "sha256-lYbGiwABBgfQSzHbtuTnQ0KFvU+yXV+/y7GEWbKUfR4=",
+        "owner": "stack-of-tasks",
         "repo": "pinocchio",
-        "rev": "94e71c1517dca51ee24295d81efd32fd6616cffd",
+        "rev": "fb6514a491e35487c116b4b9af9fa4b9ba76fa5b",
         "type": "github"
       },
       "original": {
-        "owner": "nim65s",
-        "ref": "only-py",
+        "owner": "stack-of-tasks",
         "repo": "pinocchio",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "coal": [
-          "pinocchio",
-          "coal"
-        ],
         "flake-parts": [
           "pinocchio",
           "flake-parts"

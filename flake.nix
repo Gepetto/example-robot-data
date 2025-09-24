@@ -2,8 +2,7 @@
   description = "Set of robot URDFs for benchmarking and developed examples";
 
   inputs = {
-    pinocchio.url = "github:nim65s/pinocchio/only-py";
-    coal.follows = "pinocchio/coal";
+    pinocchio.url = "github:stack-of-tasks/pinocchio";
     flake-parts.follows = "pinocchio/flake-parts";
     nixpkgs.follows = "pinocchio/nixpkgs";
   };
@@ -25,12 +24,10 @@
             inherit system;
             overlays = [
               (final: prev: {
-                coal = inputs'.coal.packages.coal-cpp;
-                pinocchio = inputs'.pinocchio.packages.pinocchio-cpp;
+                inherit (inputs'.pinocchio.packages) libpinocchio;
                 pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
                   (python-final: python-prev: {
-                    coal = inputs'.coal.packages.coal-py;
-                    pinocchio = inputs'.pinocchio.packages.pinocchio-py;
+                    inherit (inputs'.pinocchio.packages) pinocchio;
                   })
                 ];
               })
