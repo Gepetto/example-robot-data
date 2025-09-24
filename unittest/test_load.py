@@ -233,6 +233,9 @@ class RobotTestCase(unittest.TestCase):
     def test_ur10_limited(self):
         self.check("ur10_limited", 6, 6)
 
+    def test_xarm7(self):
+        self.check("xarm7", 7, 7)
+
 
 if __name__ == "__main__":
     unittest.main()
