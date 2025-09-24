@@ -2,9 +2,8 @@
   description = "Set of robot URDFs for benchmarking and developed examples";
 
   inputs = {
-    pinocchio.url = "github:stack-of-tasks/pinocchio";
-    flake-parts.follows = "pinocchio/flake-parts";
-    nixpkgs.follows = "pinocchio/nixpkgs";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs =
@@ -13,26 +12,11 @@
       systems = inputs.nixpkgs.lib.systems.flakeExposed;
       perSystem =
         {
-          inputs',
           pkgs,
           self',
-          system,
           ...
         }:
         {
-          _module.args.pkgs = import inputs.nixpkgs {
-            inherit system;
-            overlays = [
-              (final: prev: {
-                inherit (inputs'.pinocchio.packages) libpinocchio;
-                pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
-                  (python-final: python-prev: {
-                    inherit (inputs'.pinocchio.packages) pinocchio;
-                  })
-                ];
-              })
-            ];
-          };
           apps.default = {
             type = "app";
             program = pkgs.python3.withPackages (p: [
@@ -52,62 +36,21 @@
           };
           packages = {
             default = self'.packages.example-robot-data;
-            example-robot-data = pkgs.python3Packages.toPythonModule (
-              (pkgs.example-robot-data.override { pythonSupport = true; }).overrideAttrs (super: {
-                src = pkgs.lib.fileset.toSource {
-                  root = ./.;
-                  fileset = pkgs.lib.fileset.unions [
-                    ./CMakeLists.txt
-                    ./colcon.pkg
-                    ./include
-                    ./package.xml
-                    ./pyproject.toml
-                    ./python
-                    ./robots
-                    ./unittest
-                  ];
-                };
-              })
-            );
-            example-robot-data-cpp =
-              (self'.packages.example-robot-data.override { pythonSupport = false; }).overrideAttrs
-                (super: {
-                  src = pkgs.lib.fileset.toSource {
-                    root = ./.;
-                    fileset = pkgs.lib.fileset.unions [
-                      ./CMakeLists.txt
-                      ./colcon.pkg
-                      ./include
-                      ./package.xml
-                      ./pyproject.toml
-                      # ./python
-                      ./robots
-                      # ./unittest
-                    ];
-                  };
-
-                });
-            example-robot-data-py =
-              (self'.packages.example-robot-data.override { pythonSupport = true; }).overrideAttrs
-                (super: {
-                  cmakeFlags = super.cmakeFlags ++ [ "-DBUILD_STANDALONE_PYTHON_INTERFACE=ON" ];
-                  src = pkgs.lib.fileset.toSource {
-                    root = ./.;
-                    fileset = pkgs.lib.fileset.unions [
-                      ./CMakeLists.txt
-                      ./colcon.pkg
-                      # ./include
-                      # ./package.xml
-                      ./pyproject.toml
-                      ./python
-                      # ./robots
-                      ./unittest
-                    ];
-                  };
-                  propagatedBuildInputs = super.propagatedBuildInputs ++ [
-                    self'.packages.example-robot-data-cpp
-                  ];
-                });
+            example-robot-data = pkgs.python3Packages.example-robot-data.overrideAttrs (_: {
+              src = pkgs.lib.fileset.toSource {
+                root = ./.;
+                fileset = pkgs.lib.fileset.unions [
+                  ./CMakeLists.txt
+                  ./colcon.pkg
+                  ./include
+                  ./package.xml
+                  ./pyproject.toml
+                  ./python
+                  ./robots
+                  ./unittest
+                ];
+              };
+            });
           };
         };
     };
