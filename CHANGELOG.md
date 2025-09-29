@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 - The default git branch is now devel
+- ur_description : remove ALL "LightGrey" materials
+- CMake: allow BUILD_STANDALONE_PYTHON_INTERFACE
+- new robots:
+    - human whole body model
+    - IHMC Alexander
+    - xarm7
 
 ## [4.3.0] - 2025-03-18
 
