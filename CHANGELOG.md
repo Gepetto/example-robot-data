@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-## [4.4.0] - 1980-01-01
+## [4.4.0] - 2025-09-29
 
 - The default git branch is now devel
 - ur_description : remove ALL "LightGrey" materials
