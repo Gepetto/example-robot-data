@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [4.4.0] - 1980-01-01
+
 - The default git branch is now devel
 - ur_description : remove ALL "LightGrey" materials
 - CMake: allow BUILD_STANDALONE_PYTHON_INTERFACE
@@ -322,7 +324,8 @@ Added optionnal python helpers, which depend on pinocchio
 
 Initial release
 
-[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v4.3.0...HEAD
+[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v4.4.0...HEAD
+[4.4.0]: https://github.com/gepetto/example-robot-data/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/gepetto/example-robot-data/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/gepetto/example-robot-data/compare/v4.1.0...v4.2.0
 [4.1.0]: https://github.com/gepetto/example-robot-data/compare/v4.0.9...v4.1.0
