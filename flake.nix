@@ -28,7 +28,7 @@
             inputsFrom = [ self'.packages.default ];
             packages = [
               (pkgs.python3.withPackages (p: [
-                p.gepetto-gui
+                # p.gepetto-gui TODO, ref https://github.com/NixOS/nixpkgs/pull/437521
                 p.pinocchio
                 p.tomlkit # for "make release"
               ]))
