@@ -1,5 +1,3 @@
-import typing
-
 import numpy as np
 import pinocchio as pin
 
@@ -22,8 +20,8 @@ class HumanLoader(RobotLoader):
 
     def __init__(
         self,
-        height: typing.Optional[float] = None,
-        weight: typing.Optional[float] = None,
+        height: float | None = None,
+        weight: float | None = None,
         gender: str = "m",
         verbose: bool = False,
     ):
