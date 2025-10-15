@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+- ROS: jrl_cmakemodules dependency ([#330](https://github.com/Gepetto/example-robot-data/pull/330))
+
 ## [4.4.0] - 2025-09-29
 
 - The default git branch is now devel
