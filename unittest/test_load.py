@@ -164,6 +164,12 @@ class RobotTestCase(unittest.TestCase):
     def test_bolt(self):
         self.check("bolt", 13, 12)
 
+    def test_so100(self):
+        self.check("so100", 13, 12)
+
+    def test_so101(self):
+        self.check("so101", 13, 12)
+
     def test_solo8(self):
         self.check("solo8", 15, 14)
 
