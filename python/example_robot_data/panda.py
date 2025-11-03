@@ -5,7 +5,7 @@ import pinocchio as pin
 
 try:
     import hppfcl as fcl
-except Exception:
+except ImportError:
     fcl = None
 
 from .utils import RobotLoader, getModelPath
