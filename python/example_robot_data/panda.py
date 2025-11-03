@@ -32,7 +32,9 @@ class PandaLoaderCollision(PandaLoader):
 
         # If hppfcl is not available, gracefully skip collision edits
         if fcl is None or not getattr(pin, "WITH_HPP_FCL", True):
-            print("[PandaLoaderCollision] hppfcl not available – skipping collision geometry processing.")
+            print(
+                "[PandaLoaderCollision] hppfcl not available – skipping collision geometry processing."
+            )
             return
 
         cmodel = self.robot.collision_model.copy()
@@ -66,4 +68,3 @@ class PandaLoaderCollision(PandaLoader):
 
         # Recreate collision data since the collision pairs changed
         self.robot.collision_data = self.robot.collision_model.createData()
-
