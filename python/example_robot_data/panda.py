@@ -1,8 +1,12 @@
 from os.path import join
 
-import hppfcl
 import numpy as np
 import pinocchio as pin
+
+try:
+    import hppfcl as fcl
+except Exception:
+    fcl = None
 
 from .utils import RobotLoader, getModelPath
 
@@ -21,6 +25,16 @@ class PandaLoaderCollision(PandaLoader):
     def __init__(self, verbose=False):
         super().__init__(verbose=verbose)
 
+        self.srdf_path = None
+        self.robot.q0 = pin.neutral(self.robot.model)
+        root = getModelPath(self.path)
+        self.robot.urdf = join(root, self.path, self.urdf_subpath, self.urdf_filename)
+
+        # If hppfcl is not available, gracefully skip collision edits
+        if fcl is None or not getattr(pin, "WITH_HPP_FCL", True):
+            print("[PandaLoaderCollision] hppfcl not available – skipping collision geometry processing.")
+            return
+
         cmodel = self.robot.collision_model.copy()
         list_names_capsules = []
         # Iterate through geometry objects in the collision model
@@ -30,14 +44,14 @@ class PandaLoaderCollision(PandaLoader):
             base_name = "_".join(geom_object.name.split("_")[:-1])
 
             # Convert cylinders to capsules
-            if isinstance(geometry, hppfcl.Cylinder):
+            if isinstance(geometry, fcl.Cylinder):
                 name = self.generate_capsule_name(base_name, list_names_capsules)
                 list_names_capsules.append(name)
                 capsule = pin.GeometryObject(
                     name=name,
                     parent_frame=int(geom_object.parentFrame),
                     parent_joint=int(geom_object.parentJoint),
-                    collision_geometry=hppfcl.Capsule(
+                    collision_geometry=fcl.Capsule(
                         geometry.radius, geometry.halfLength
                     ),
                     placement=geom_object.placement,
@@ -47,13 +61,9 @@ class PandaLoaderCollision(PandaLoader):
                 self.robot.collision_model.removeGeometryObject(geom_object.name)
 
             # Remove spheres associated with links
-            elif isinstance(geometry, hppfcl.Sphere) and "link" in geom_object.name:
+            elif isinstance(geometry, fcl.Sphere) and "link" in geom_object.name:
                 self.robot.collision_model.removeGeometryObject(geom_object.name)
 
         # Recreate collision data since the collision pairs changed
         self.robot.collision_data = self.robot.collision_model.createData()
 
-        self.srdf_path = None
-        self.robot.q0 = pin.neutral(self.robot.model)
-        root = getModelPath(self.path)
-        self.robot.urdf = join(root, self.path, self.urdf_subpath, self.urdf_filename)
