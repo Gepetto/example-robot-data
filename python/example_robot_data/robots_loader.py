@@ -426,6 +426,20 @@ class IrisLoader(RobotLoader):
     free_flyer = True
 
 
+class SO100Loader(RobotLoader):
+    path = "so_arm_description"
+    urdf_filename = "so100.urdf"
+    urdf_subpath = "urdf"
+    free_flyer = True
+
+
+class SO101Loader(RobotLoader):
+    path = "so_arm_description"
+    urdf_filename = "so101.urdf"
+    urdf_subpath = "urdf"
+    free_flyer = True
+
+
 class PR2Loader(RobotLoader):
     path = "pr2_description"
     urdf_filename = "pr2.urdf"
@@ -488,6 +502,8 @@ ROBOTS = {
     "simple_humanoid_classical": SimpleHumanoidClassicalLoader,
     "bolt": BoltLoader,
     "borinot": BorinotLoader,
+    "so100": SO100Loader,
+    "so101": SO101Loader,
     "solo8": Solo8Loader,
     "solo12": Solo12Loader,
     "finger_edu": FingerEduLoader,
