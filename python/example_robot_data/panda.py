@@ -33,7 +33,7 @@ class PandaLoaderCollision(PandaLoader):
         # If hppfcl is not available, gracefully skip collision edits
         if fcl is None or not getattr(pin, "WITH_HPP_FCL", True):
             print(
-                "[PandaLoaderCollision] hppfcl not available – skipping collision geometry processing."
+                "[PandaLoaderCollision] hppfcl not available - skipping collision geometry processing."
             )
             return
 
