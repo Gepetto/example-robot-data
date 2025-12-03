@@ -15,7 +15,7 @@
   <material name="dark_grey">
     <color rgba="0.2 0.2 0.2 1"/>
   </material>
-  
+
   <link name="pelvis">
     <inertial>
       <origin xyz="-0.0016320207 0.0026534004000000003 0.079167428"/>

@@ -31,6 +31,7 @@ class CentauroLoader(RobotLoader):
     ref_posture = "homing_balanced"
     free_flyer = True
 
+
 class B1Loader(RobotLoader):
     path = "b1_description"
     urdf_filename = "b1.urdf"
