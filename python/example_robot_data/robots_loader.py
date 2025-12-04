@@ -23,6 +23,15 @@ from .talos import (
 from .utils import RobotLoader, getModelPath, readParamsFromSrdf  # noqa: F401
 
 
+class CentauroLoader(RobotLoader):
+    path = "centauro_description"
+    urdf_filename = "centauro.urdf"
+    urdf_subpath = "urdf"
+    srdf_filename = "centauro.srdf"
+    ref_posture = "homing_balanced"
+    free_flyer = True
+
+
 class B1Loader(RobotLoader):
     path = "b1_description"
     urdf_filename = "b1.urdf"
@@ -458,6 +467,7 @@ class xArm7Loader(RobotLoader):
 
 
 ROBOTS = {
+    "centauro": CentauroLoader,
     "b1": B1Loader,
     "bravo7_gripper": Bravo7GripperLoader,
     "bravo7_no_ee": Bravo7NoEndEffectorLoader,

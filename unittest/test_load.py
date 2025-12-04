@@ -33,6 +33,9 @@ class RobotTestCase(unittest.TestCase):
                 self.assertIn(joint[12].decode(), one_kg_bodies)
         pybullet.disconnect(client_id)
 
+    def test_centauro(self):
+        self.check("centauro", 46, 45)
+
     def test_b1(self):
         self.check("b1", 19, 18)
 
