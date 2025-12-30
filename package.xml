@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>example-robot-data</name>
+  <name>example_robot_data</name>
   <version>4.4.0</version>
   <description>Set of robot URDFs for benchmarking and developed examples.</description>
   <!-- The maintainer listed here is for the ROS release to receive emails for the buildfarm.
@@ -8,7 +8,12 @@
   <author email="carlos.mastalli@ed.ac.uk">Carlos Mastalli</author>
   <maintainer email="guilhem.saurel@laas.fr">Guilhem Saurel</maintainer>
   <maintainer email="opensource@wolfgangmerkt.com">Wolfgang Merkt</maintainer>
-  <license>BSD</license>
+  <license>Apache-2.0</license>
+  <license>Apache-2.0</license>
+  <license>BSD-2-Clause</license>
+  <license>LGPL-3.0</license>
+  <license>MPL-2.0</license>
+  <license>CC-BY-NC-ND-4.0</license>
 
   <url type="repository">https://github.com/gepetto/example-robot-data</url>
 
