@@ -137,6 +137,7 @@ class G1WithHandsLoader(G1Loader):
     ref_posture = "standing"
     free_flyer = True
 
+
 class Z1Loader(RobotLoader):
     path = "z1_description"
     urdf_filename = "z1.urdf"
