@@ -122,6 +122,22 @@ class A1Loader(RobotLoader):
     free_flyer = True
 
 
+class G1Loader(RobotLoader):
+    path = "g1_description"
+    urdf_subpath = "urdf"
+    urdf_filename = "g1_29dof_rev_1_0.urdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
+class G1WithHandsLoader(G1Loader):
+    path = "g1_description"
+    urdf_subpath = "urdf"
+    urdf_filename = "g1_29dof_with_hand_rev_1_0.urdf"
+    ref_posture = "standing"
+    free_flyer = True
+
+
 class Z1Loader(RobotLoader):
     path = "z1_description"
     urdf_filename = "z1.urdf"
@@ -478,6 +494,8 @@ ROBOTS = {
     "go1": Go1Loader,
     "go2": Go2Loader,
     "a1": A1Loader,
+    "g1": G1Loader,
+    "g1_with_hands": G1WithHandsLoader,
     "z1": Z1Loader,
     "b1_z1": B1Z1Loader,
     "anymal": ANYmalLoader,

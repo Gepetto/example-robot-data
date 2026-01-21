@@ -48,6 +48,12 @@ class RobotTestCase(unittest.TestCase):
     def test_a1(self):
         self.check("a1", 19, 18)
 
+    def test_g1(self):
+        self.check("g1", 36, 35)
+
+    def test_g1_with_hands(self):
+        self.check("g1_with_hands", 50, 49)
+
     def test_anymal(self):
         self.check("anymal", 19, 18)
 
