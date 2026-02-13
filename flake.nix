@@ -26,7 +26,7 @@
             (_python-final: python-prev: {
 
               example-robot-data =
-                (python-prev.example-robot-data.override { standalone = false; }).overrideAttrs
+                (python-prev.example-robot-data.override { buildStandalone = false; }).overrideAttrs
                   {
                     src = lib.fileset.toSource {
                       root = ./.;
