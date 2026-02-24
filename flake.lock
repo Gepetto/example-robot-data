@@ -360,6 +360,10 @@
           "gepetto",
           "flake-parts"
         ],
+        "gazebros2nix": [
+          "gepetto",
+          "gazebros2nix"
+        ],
         "gepetto": "gepetto",
         "nix-ros-overlay": [
           "gepetto",
