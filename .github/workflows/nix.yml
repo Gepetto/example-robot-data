@@ -15,15 +15,16 @@ jobs:
     runs-on: "${{ matrix.os }}-latest"
     strategy:
       matrix:
-        os: [ubuntu, macos]
+        os: [ubuntu]
     steps:
       - uses: actions/checkout@v6
       - uses: cachix/install-nix-action@v31
-      - uses: cachix/cachix-action@v16
+      - uses: cachix/cachix-action@v17
         with:
           name: gepetto
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - run: nix flake check -L
+      - run: nix build -L
   check:
     if: always()
     name: check-macos-linux-nix

@@ -5,6 +5,7 @@ pull_request_rules:
       - check-success = "pre-commit.ci - pr"
       - or:
           - author = dependabot[bot]
+          - author = gepetto-flake-updater[bot]
           - author = github-actions[bot]
           - author = hrp2-14
           - author = pre-commit-ci[bot]
