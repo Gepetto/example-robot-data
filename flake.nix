@@ -14,7 +14,7 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      { lib, self, ... }:
+      { lib, ... }:
       {
         systems = import inputs.systems;
         imports = [
