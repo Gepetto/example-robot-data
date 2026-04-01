@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+- Unit testing inertia validity and projected rotation inertial to the fully-physical consistent set in https://github.com/Gepetto/example-robot-data/pull/370
 - Installing example-robot-data without hppfcl in https://github.com/Gepetto/example-robot-data/pull/338
 - ROS: jrl_cmakemodules dependency ([#330](https://github.com/Gepetto/example-robot-data/pull/330))
 - Added Centauro ([#346](https://github.com/Gepetto/example-robot-data/pull/346))
