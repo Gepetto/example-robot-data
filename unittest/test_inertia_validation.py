@@ -49,9 +49,7 @@ def _validate_rigid_body_inertia(inertia, context, atol=1e-12):
 
     i0, i1, i2 = principal_moments
     if i0 + i1 < i2 - atol or i0 + i2 < i1 - atol or i1 + i2 < i0 - atol:
-        raise ValueError(
-            f"{context} violates rigid-body inertia triangle inequalities"
-        )
+        raise ValueError(f"{context} violates rigid-body inertia triangle inequalities")
 
 
 def _pinocchio_version():
