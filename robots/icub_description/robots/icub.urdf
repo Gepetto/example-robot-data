@@ -3,7 +3,7 @@
     <link name="base_link">
         <inertial>
             <mass value="1e-6"/>
-            <inertia ixx="1e-6" ixy="1e-6" ixz="1e-6" iyy="1e-6" iyz="1e-6" izz="1e-6"/>
+            <inertia ixx="1.33333344444444e-06" ixy="3.33333111111111e-07" ixz="3.33333111111111e-07" iyy="1.33333344444444e-06" iyz="3.3333311111111e-07" izz="1.33333344444444e-06"/>
         </inertial>
     </link>
     <link name="chest">

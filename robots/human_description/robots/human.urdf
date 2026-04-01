@@ -240,7 +240,7 @@
         <inertial>
             <mass value="0.15600" />
             <origin xyz="-0.011096 0.00637 0.05417" rpy="0 -0 0" />
-            <inertia ixx="0.00024" ixy="-0.00002" ixz="-0.00007" iyy="0.00026" iyz="0.00005" izz="0.00004" />
+            <inertia ixx="0.000244475910987392" ixy="-3.13116477521894e-06" ixz="-6.28348311160782e-05" iyy="0.000259091764354603" iyz="4.16006826280581e-05" izz="5.52984590300221e-05" />
         </inertial>
     </link>
     <joint name="left_shoulder_Z" type="revolute">
@@ -364,7 +364,7 @@
         <inertial>
             <mass value="0.15600" />
             <origin xyz="-0.011096 0.00637 0.05417" rpy="0 -0 0" />
-            <inertia ixx="0.00024" ixy="-0.00002" ixz="-0.00007" iyy="0.00026" iyz="0.00005" izz="0.00004" />
+            <inertia ixx="0.000244475910987392" ixy="-3.13116477521894e-06" ixz="-6.28348311160782e-05" iyy="0.000259091764354603" iyz="4.16006826280581e-05" izz="5.52984590300221e-05" />
         </inertial>
     </link>
     <joint name="right_shoulder_Z" type="revolute">
