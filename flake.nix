@@ -3,12 +3,8 @@
 
   inputs = {
     gepetto.url = "github:gepetto/nix";
-    flakoboros.follows = "gepetto/flakoboros";
-    gazebros2nix.follows = "gepetto/gazebros2nix";
     flake-parts.follows = "gepetto/flake-parts";
-    nixpkgs.follows = "gepetto/nixpkgs";
     systems.follows = "gepetto/systems";
-    treefmt-nix.follows = "gepetto/treefmt-nix";
   };
 
   outputs =
@@ -21,7 +17,7 @@
           inputs.gepetto.flakeModule
           {
             flakoboros = {
-              extraPythonModules = [
+              extraPyPackages = [
                 "meshcat"
                 "pinocchio"
                 "viser"

@@ -21,11 +21,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1772408722,
-        "narHash": "sha256-rHuJtdcOjK7rAHpHphUb1iCvgkU3GpfvicLMwwnfMT0=",
+        "lastModified": 1775087534,
+        "narHash": "sha256-91qqW8lhL7TLwgQWijoGBbiD4t7/q75KTi8NxjVmSmA=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "f20dc5d9b8027381c474144ecabc9034d6a839a3",
+        "rev": "3107b77cd68437b9a76194f0f7f9c55f2329ca5b",
         "type": "github"
       },
       "original": {
@@ -97,11 +97,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1774365635,
-        "narHash": "sha256-QjJ/CURzUwkO54xMKmGS1U4q+dog3KNQotxUtJ+JFz8=",
+        "lastModified": 1775253014,
+        "narHash": "sha256-FkBoiFcTxu4I4QYBV731G30zfEpowFHaQla95mpgBqY=",
         "owner": "gepetto",
         "repo": "flakoboros",
-        "rev": "a42bc6287c3f47a7f2aea0699a344df22426e581",
+        "rev": "f01c99b0c3e2e75de484bd350353d4f7383385c2",
         "type": "github"
       },
       "original": {
@@ -148,11 +148,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1774365734,
-        "narHash": "sha256-ZgPXr7KvYJBxD2t8DgT2u1dQ96JMvbrX0jXo27SxtsA=",
+        "lastModified": 1775341473,
+        "narHash": "sha256-RiWQZm+fm+GyWREPrcbzBc17z9MdllzhxI6WvIYu6cY=",
         "owner": "gepetto",
         "repo": "gazebros2nix",
-        "rev": "e96f1edcccb79b73658ffbddc60ad61d6a30a75c",
+        "rev": "873b616afa62f305911880c0b39ebd9df1a86947",
         "type": "github"
       },
       "original": {
@@ -186,8 +186,6 @@
           "gazebros2nix",
           "nixpkgs"
         ],
-        "src-odri-control-interface": "src-odri-control-interface",
-        "src-odri-masterboard-sdk": "src-odri-masterboard-sdk",
         "system-manager": "system-manager",
         "systems": [
           "gepetto",
@@ -201,11 +199,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774366015,
-        "narHash": "sha256-oDObEgISQ8wl04ZvKaEZI98Oqu/eg0LJgtEhIYwl598=",
+        "lastModified": 1775497725,
+        "narHash": "sha256-7AEzFWwP5t+iLw663b27Tm7DCyCV6G7DGnNrBi+tVvE=",
         "owner": "gepetto",
         "repo": "nix",
-        "rev": "667588de0ee8669b8db974c217e13e756391876d",
+        "rev": "a3c788ed38891251ae710fd9864df2befedd5932",
         "type": "github"
       },
       "original": {
@@ -246,11 +244,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774274588,
-        "narHash": "sha256-dnHvv5EMUgTzGZmA+3diYjQU2O6BEpGLEOgJ1Qe9LaY=",
+        "lastModified": 1775077333,
+        "narHash": "sha256-OXcxobt7lBkh1B8AjwreU+24myhtKpqeLfAeIyNLFY8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cf9686ba26f5ef788226843bc31fda4cf72e373b",
+        "rev": "49ca96b2714c5931e17401eff87f3edd42d2b0f2",
         "type": "github"
       },
       "original": {
@@ -266,11 +264,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1774047596,
-        "narHash": "sha256-UNT8fGmAm2ZlaktMmiVYPeHgok2IJoCfLg698rO3Kq8=",
+        "lastModified": 1775242455,
+        "narHash": "sha256-6k6GChuNuVU70rq5Stp7PHsH1haAX7q4uRv6hBwGMoc=",
         "owner": "lopsided98",
         "repo": "nix-ros-overlay",
-        "rev": "c0659dc45d4c1736d71d5578b17f12e3b1afe190",
+        "rev": "909dbfd8cbe571a6cb63ac7a526e71c8d3f85a26",
         "type": "github"
       },
       "original": {
@@ -303,27 +301,27 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1759381078,
-        "narHash": "sha256-gTrEEp5gEspIcCOx9PD8kMaF1iEmfBcTbO0Jag2QhQs=",
+        "lastModified": 1771369470,
+        "narHash": "sha256-0NBlEBKkN3lufyvFegY4TYv5mCNHbi5OmBDrzihbBMQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7df7ff7d8e00218376575f0acdcc5d66741351ee",
+        "rev": "0182a361324364ae3f436a63005877674cf45efb",
         "type": "github"
       },
       "original": {
-        "owner": "lopsided98",
-        "ref": "nix-ros",
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "nixpkgs-lib": {
       "locked": {
-        "lastModified": 1772328832,
-        "narHash": "sha256-e+/T/pmEkLP6BHhYjx6GmwP5ivonQQn0bJdH9YrRB+Q=",
+        "lastModified": 1774748309,
+        "narHash": "sha256-+U7gF3qxzwD5TZuANzZPeJTZRHS29OFQgkQ2kiTJBIQ=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "c185c7a5e5dd8f9add5b2f8ebeff00888b070742",
+        "rev": "333c4e0545a6da976206c74db8773a1645b5870a",
         "type": "github"
       },
       "original": {
@@ -403,11 +401,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773909723,
-        "narHash": "sha256-HmcZQ/hMPHR22Ri/6Sl7Z0B5J8nZa9bRnZJtDFInM7I=",
+        "lastModified": 1775197701,
+        "narHash": "sha256-W9dcvnvbpZZexKVnDp/8NiNXqy2gnq1FWCD142/Skp8=",
         "owner": "pyproject-nix",
         "repo": "pyproject.nix",
-        "rev": "d37dcf34ac7194eac4b0d10520d01298c434267d",
+        "rev": "946e5fb82c3443940c45e5a61686d173e2e21155",
         "type": "github"
       },
       "original": {
@@ -422,61 +420,11 @@
           "gepetto",
           "flake-parts"
         ],
-        "flakoboros": [
-          "gepetto",
-          "flakoboros"
-        ],
-        "gazebros2nix": [
-          "gepetto",
-          "gazebros2nix"
-        ],
         "gepetto": "gepetto",
-        "nixpkgs": [
-          "gepetto",
-          "nixpkgs"
-        ],
         "systems": [
           "gepetto",
           "systems"
-        ],
-        "treefmt-nix": [
-          "gepetto",
-          "treefmt-nix"
         ]
-      }
-    },
-    "src-odri-control-interface": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1749138911,
-        "narHash": "sha256-+x+1NxiTwyg5Pwd1oBUMG3Z+eIj+VtVIRFvdPpXStU8=",
-        "owner": "gwennlbh",
-        "repo": "odri_control_interface",
-        "rev": "1137873714fd326fd3ab86cc5632bae72f965866",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gwennlbh",
-        "ref": "nix",
-        "repo": "odri_control_interface",
-        "type": "github"
-      }
-    },
-    "src-odri-masterboard-sdk": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1749026399,
-        "narHash": "sha256-0VhxOdC2cQwAJfAdHfeHovXrj9jrWb56F35rPN/u+eA=",
-        "owner": "gwennlbh",
-        "repo": "master-board",
-        "rev": "facc7f954294523a0f4b8389ac89fabad4c536db",
-        "type": "github"
-      },
-      "original": {
-        "owner": "gwennlbh",
-        "ref": "nix",
-        "repo": "master-board",
-        "type": "github"
       }
     },
     "system-manager": {
@@ -489,11 +437,11 @@
         "userborn": "userborn"
       },
       "locked": {
-        "lastModified": 1774356431,
-        "narHash": "sha256-rJXu3F4MibH9VBElraCgceZZdAaVapCYFMqL7VEFF+o=",
+        "lastModified": 1775069719,
+        "narHash": "sha256-NO8/XIfx/MVpWPL4KzdezhmdwDLT6B699cS/RkhoVb0=",
         "owner": "numtide",
         "repo": "system-manager",
-        "rev": "62a1be911f9e24bdb357377587c73544c2aec719",
+        "rev": "7dced4829576f6e540e2b985b9e47859ac5b8421",
         "type": "github"
       },
       "original": {
@@ -542,11 +490,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773297127,
-        "narHash": "sha256-6E/yhXP7Oy/NbXtf1ktzmU8SdVqJQ09HC/48ebEGBpk=",
+        "lastModified": 1775125835,
+        "narHash": "sha256-2qYcPgzFhnQWchHo0SlqLHrXpux5i6ay6UHA+v2iH4U=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "71b125cd05fbfd78cab3e070b73544abe24c5016",
+        "rev": "75925962939880974e3ab417879daffcba36c4a3",
         "type": "github"
       },
       "original": {
@@ -600,11 +548,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774315256,
-        "narHash": "sha256-jhlzSXk0Rv4cSHoRgEecEcv+veN0q3sD3PIAgqgpwcI=",
+        "lastModified": 1775195476,
+        "narHash": "sha256-uaPmLBiYfd6dpTJD8SI6+8Cg0ciUpHc5uN5EbFmd6SE=",
         "owner": "pyproject-nix",
         "repo": "uv2nix",
-        "rev": "0623db9a65da877e4f6f67ed946ffd65401720f0",
+        "rev": "7fac30f496a7d9853e8c301a8edbfc35af50d418",
         "type": "github"
       },
       "original": {
