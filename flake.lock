@@ -416,15 +416,7 @@
     },
     "root": {
       "inputs": {
-        "flake-parts": [
-          "gepetto",
-          "flake-parts"
-        ],
-        "gepetto": "gepetto",
-        "systems": [
-          "gepetto",
-          "systems"
-        ]
+        "gepetto": "gepetto"
       }
     },
     "system-manager": {
