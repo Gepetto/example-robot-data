@@ -14,7 +14,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added Centauro ([#346](https://github.com/Gepetto/example-robot-data/pull/346))
 
 ### Changed
+
 - Use coal instead of hppfcl ([#374](https://github.com/Gepetto/example-robot-data/pull/374))
+
+### Removed
+
+- removed cmake submodule ([#375](https://github.com/Gepetto/example-robot-data/pull/375))
 
 ## [4.4.0] - 2025-09-29
 
