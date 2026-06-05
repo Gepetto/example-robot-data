@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [5.0.0] - 2026-06-05
+
 ### Added
 
 - Unit testing inertia validity and projected rotation inertial to the fully-physical consistent set ([#370](https://github.com/Gepetto/example-robot-data/pull/370))
@@ -339,7 +341,8 @@ Added optionnal python helpers, which depend on pinocchio
 
 Initial release
 
-[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v4.4.0...HEAD
+[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v5.0.0...HEAD
+[5.0.0]: https://github.com/gepetto/example-robot-data/compare/v4.4.0...v5.0.0
 [4.4.0]: https://github.com/gepetto/example-robot-data/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/gepetto/example-robot-data/compare/v4.2.0...v4.3.0
 [4.2.0]: https://github.com/gepetto/example-robot-data/compare/v4.1.0...v4.2.0
