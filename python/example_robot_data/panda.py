@@ -4,9 +4,9 @@ import numpy as np
 import pinocchio as pin
 
 try:
-    import hppfcl as fcl
+    import coal
 except ImportError:
-    fcl = None
+    coal = None
 
 from .utils import RobotLoader, getModelPath
 
@@ -30,10 +30,10 @@ class PandaLoaderCollision(PandaLoader):
         root = getModelPath(self.path)
         self.robot.urdf = join(root, self.path, self.urdf_subpath, self.urdf_filename)
 
-        # If hppfcl is not available, gracefully skip collision edits
-        if fcl is None or not getattr(pin, "WITH_HPP_FCL", True):
+        # If coal is not available, gracefully skip collision edits
+        if coal is None or not getattr(pin, "WITH_COLLISION", True):
             print(
-                "[PandaLoaderCollision] hppfcl not available - skipping collision geometry processing."
+                "[PandaLoaderCollision] coal not available - skipping collision geometry processing."
             )
             return
 
@@ -46,14 +46,14 @@ class PandaLoaderCollision(PandaLoader):
             base_name = "_".join(geom_object.name.split("_")[:-1])
 
             # Convert cylinders to capsules
-            if isinstance(geometry, fcl.Cylinder):
+            if isinstance(geometry, coal.Cylinder):
                 name = self.generate_capsule_name(base_name, list_names_capsules)
                 list_names_capsules.append(name)
                 capsule = pin.GeometryObject(
                     name=name,
                     parent_frame=int(geom_object.parentFrame),
                     parent_joint=int(geom_object.parentJoint),
-                    collision_geometry=fcl.Capsule(
+                    collision_geometry=coal.Capsule(
                         geometry.radius, geometry.halfLength
                     ),
                     placement=geom_object.placement,
@@ -63,7 +63,7 @@ class PandaLoaderCollision(PandaLoader):
                 self.robot.collision_model.removeGeometryObject(geom_object.name)
 
             # Remove spheres associated with links
-            elif isinstance(geometry, fcl.Sphere) and "link" in geom_object.name:
+            elif isinstance(geometry, coal.Sphere) and "link" in geom_object.name:
                 self.robot.collision_model.removeGeometryObject(geom_object.name)
 
         # Recreate collision data since the collision pairs changed
