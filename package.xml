@@ -22,6 +22,7 @@
   <build_depend>jrl_cmakemodules</build_depend>
   <depend condition="$ROS_PYTHON_VERSION == 3">python3</depend>
   <depend condition="$ROS_PYTHON_VERSION == 3">python3-numpy</depend>
+  <depend>coal</depend>
   <!-- The default setting has BUILD_TESTING=ON, as thus we need to explicitly depend on Pinocchio -->
   <build_depend>pinocchio</build_depend>
   <exec_depend>pinocchio</exec_depend>

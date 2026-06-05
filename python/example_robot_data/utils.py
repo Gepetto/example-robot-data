@@ -130,7 +130,7 @@ class RobotLoader:
                 self.ref_posture,
             )
 
-            if pin.WITH_HPP_FCL and pin.WITH_HPP_FCL_BINDINGS:
+            if pin.WITH_COLLISION:
                 # Add all collision pairs
                 self.robot.collision_model.addAllCollisionPairs()
 
