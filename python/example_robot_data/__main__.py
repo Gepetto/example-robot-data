@@ -11,3 +11,5 @@ parser.add_argument("--no-display", action="store_true")
 args = parser.parse_args()
 
 load(args.robot, display=not args.no_display)
+print("Viewer started, press Enter to stop it")
+input()
