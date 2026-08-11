@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="kangaroo">
+  <group_state name="standing" group="whole_body">
+    <joint name="root_joint" value="0. 0. 0.92 0. 0. 0. 1."/>
+    
+    <joint name="arm_left_1_joint" value="0.24"/>
+    <joint name="arm_left_2_joint" value="1.32"/>
+    <joint name="arm_left_3_joint" value="1.57"/>
+    <joint name="arm_left_4_joint" value="0.8"/>
+    
+    <joint name="arm_right_1_joint" value="-0.24"/>
+    <joint name="arm_right_2_joint" value="1.32"/>
+    <joint name="arm_right_3_joint" value="-1.57"/>
+    <joint name="arm_right_4_joint" value="0.8"/>
+    
+    <joint name="pelvis_1_joint" value="0.0"/>
+    <joint name="pelvis_2_joint" value="0.0"/>
+    
+    <joint name="leg_left_1_joint" value="0.0"/>
+    <joint name="leg_left_2_joint" value="0.05"/>
+    <joint name="leg_left_3_joint" value="0.0"/>
+    <!-- levels the sole for the ankle placement taken from kangaroo_loop.urdf -->
+    <joint name="leg_left_4_joint" value="-0.025365"/>
+    <joint name="leg_left_5_joint" value="0.0"/>
+    <joint name="leg_left_femur_joint" value="1.1172"/>
+    <joint name="leg_left_knee_joint" value="2.2345"/>
+    
+    <joint name="leg_right_1_joint" value="0.0"/>
+    <joint name="leg_right_2_joint" value="0.05"/>
+    <joint name="leg_right_3_joint" value="0.0"/>
+    <!-- levels the sole for the ankle placement taken from kangaroo_loop.urdf -->
+    <joint name="leg_right_4_joint" value="-0.025365"/>
+    <joint name="leg_right_5_joint" value="0.0"/>
+    <joint name="leg_right_femur_joint" value="1.1172"/>
+    <joint name="leg_right_knee_joint" value="2.2345"/>
+  </group_state>
+</robot>

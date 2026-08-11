@@ -39,6 +39,9 @@ class RobotTestCase(unittest.TestCase):
     def test_b1(self):
         self.check("b1", 19, 18)
 
+    def test_b1_closed_loop(self):
+        self.check("b1_closed_loop", 31, 30)
+
     def test_go1(self):
         self.check("go1", 19, 18)
 
