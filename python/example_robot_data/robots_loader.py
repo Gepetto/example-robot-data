@@ -293,6 +293,7 @@ class TiagoNoHandLoader(TiagoLoader):
 class TiagoProLoader(RobotLoader):
     path = "tiago_pro_description"
     urdf_filename = "tiago_pro.urdf"
+    srdf_filename = "tiago_pro.srdf"
 
 
 class ICubLoader(RobotLoader):
