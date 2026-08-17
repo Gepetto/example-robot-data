@@ -1746,7 +1746,7 @@
    <gazebo reference="leg_${side}_5_link">
      <material>Gazebo/FlatBlack</material>
    </gazebo> -->
-  
+
 s
 
   <link name="arm_left_base_link">
@@ -2273,7 +2273,7 @@ s
   </joint>
   <link name="left_knee_bar_3D_A"/>
   <joint name="left_knee_bar_3D_A_frame" type="fixed">
-    <origin xyz="0.05 0 -0.21" rpy="0 0 0"/> 
+    <origin xyz="0.05 0 -0.21" rpy="0 0 0"/>
     <parent link="left_knee_bar" />
     <child link="left_knee_bar_3D_A" />
     <axis xyz="0 0 0" />
@@ -2304,7 +2304,7 @@ s
   </joint>
   <link name="right_knee_bar_3D_A"/>
   <joint name="right_knee_bar_3D_A_frame" type="fixed">
-    <origin xyz="0.05 0 -0.21" rpy="0 0 0"/> 
+    <origin xyz="0.05 0 -0.21" rpy="0 0 0"/>
     <parent link="right_knee_bar" />
     <child link="right_knee_bar_3D_A" />
     <axis xyz="0 0 0" />
@@ -2360,7 +2360,7 @@ s
   </joint>
   <link name="left_knee_bar_3D_B"/>
   <joint name="left_knee_bar_3D_B_frame" type="fixed">
-    <origin xyz="0.0 0 0.0" rpy="0 0 0"/> 
+    <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
     <parent link="left_femur_prismatic_out" />
     <child link="left_knee_bar_3D_B" />
     <axis xyz="0 0 0" />
@@ -2415,7 +2415,7 @@ s
   </joint>
   <link name="right_knee_bar_3D_B"/>
   <joint name="right_knee_bar_3D_B_frame" type="fixed">
-    <origin xyz="0.0 0 0.0" rpy="0 0 0"/> 
+    <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
     <parent link="right_femur_prismatic_out" />
     <child link="right_knee_bar_3D_B" />
     <axis xyz="0 0 0" />
@@ -2474,14 +2474,14 @@ s
   <!-- Dummy link for the constraint -->
   <link name="left_ankle_bar_l_3D_A"/>
   <joint name="left_ankle_bar_l_3D_A_frame" type="fixed">
-    <origin xyz="0 0 0.1875" rpy="0 0 0"/> 
+    <origin xyz="0 0 0.1875" rpy="0 0 0"/>
     <parent link="left_ankle_bar_l" />
     <child link="left_ankle_bar_l_3D_A" />
     <axis xyz="0 0 0" />
   </joint>
   <link name="right_ankle_bar_l_3D_A"/>
   <joint name="right_ankle_bar_l_3D_A_frame" type="fixed">
-    <origin xyz="0 0 0.1875" rpy="0 0 0"/> 
+    <origin xyz="0 0 0.1875" rpy="0 0 0"/>
     <parent link="right_ankle_bar_l" />
     <child link="right_ankle_bar_l_3D_A" />
     <axis xyz="0 0 0" />
@@ -2539,14 +2539,14 @@ s
   <!-- Dummy link for the constraint -->
   <link name="left_ankle_bar_r_3D_A"/>
   <joint name="left_ankle_bar_r_3D_A_frame" type="fixed">
-    <origin xyz="0 0 0.1875" rpy="0 0 0"/> 
+    <origin xyz="0 0 0.1875" rpy="0 0 0"/>
     <parent link="left_ankle_bar_r" />
     <child link="left_ankle_bar_r_3D_A" />
     <axis xyz="0 0 0" />
   </joint>
   <link name="right_ankle_bar_r_3D_A"/>
   <joint name="right_ankle_bar_r_3D_A_frame" type="fixed">
-    <origin xyz="0 0 0.1875" rpy="0 0 0"/> 
+    <origin xyz="0 0 0.1875" rpy="0 0 0"/>
     <parent link="right_ankle_bar_r" />
     <child link="right_ankle_bar_r_3D_A" />
     <axis xyz="0 0 0" />
@@ -2628,7 +2628,7 @@ s
   <!-- The rigid bar is cut at its midpoint for the loop constraint. -->
   <link name="left_ankle_bar_r_3D_B"/>
   <joint name="left_ankle_bar_r_3D_B_frame" type="fixed">
-    <origin xyz="0 0 -0.1875" rpy="0 0 0"/> 
+    <origin xyz="0 0 -0.1875" rpy="0 0 0"/>
     <parent link="left_ankle_bar_r_distal" />
     <child link="left_ankle_bar_r_3D_B" />
     <axis xyz="0 0 0" />
@@ -2659,7 +2659,7 @@ s
   </joint>
   <link name="right_ankle_bar_r_3D_B"/>
   <joint name="right_ankle_bar_r_3D_B_frame" type="fixed">
-    <origin xyz="0 0 -0.1875" rpy="0 0 0"/> 
+    <origin xyz="0 0 -0.1875" rpy="0 0 0"/>
     <parent link="right_ankle_bar_r_distal" />
     <child link="right_ankle_bar_r_3D_B" />
     <axis xyz="0 0 0" />
@@ -2741,7 +2741,7 @@ s
   <!-- The rigid bar is cut at its midpoint for the loop constraint. -->
   <link name="left_ankle_bar_l_3D_B"/>
   <joint name="left_ankle_bar_l_3D_B_frame" type="fixed">
-    <origin xyz="0 0 -0.1875" rpy="0 0 0"/> 
+    <origin xyz="0 0 -0.1875" rpy="0 0 0"/>
     <parent link="left_ankle_bar_l_distal" />
     <child link="left_ankle_bar_l_3D_B" />
     <axis xyz="0 0 0" />
@@ -2772,7 +2772,7 @@ s
   </joint>
   <link name="right_ankle_bar_l_3D_B"/>
   <joint name="right_ankle_bar_l_3D_B_frame" type="fixed">
-    <origin xyz="0 0 -0.1875" rpy="0 0 0"/> 
+    <origin xyz="0 0 -0.1875" rpy="0 0 0"/>
     <parent link="right_ankle_bar_l_distal" />
     <child link="right_ankle_bar_l_3D_B" />
     <axis xyz="0 0 0" />

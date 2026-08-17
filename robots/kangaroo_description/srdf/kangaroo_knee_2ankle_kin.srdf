@@ -6,20 +6,20 @@
 <robot name="kangaroo_knee_2ankle_kin">
   <group_state name="standing" group="whole_body">
     <joint name="root_joint" value="0. 0. 0.92 0. 0. 0. 1."/>
-    
+
     <joint name="arm_left_1_joint" value="0.24"/>
     <joint name="arm_left_2_joint" value="1.32"/>
     <joint name="arm_left_3_joint" value="1.57"/>
     <joint name="arm_left_4_joint" value="0.8"/>
-    
+
     <joint name="arm_right_1_joint" value="-0.24"/>
     <joint name="arm_right_2_joint" value="1.32"/>
     <joint name="arm_right_3_joint" value="-1.57"/>
     <joint name="arm_right_4_joint" value="0.8"/>
-    
+
     <joint name="pelvis_1_joint" value="0.0"/>
     <joint name="pelvis_2_joint" value="0.0"/>
-    
+
     <joint name="leg_left_1_joint" value="0.0"/>
     <joint name="leg_left_2_joint" value="0.05"/>
     <joint name="leg_left_3_joint" value="0.0"/>
@@ -41,7 +41,7 @@
     <joint name="leg_left_knee_joint" value="2.2345"/>
     <joint name="left_knee_bar_joint" value="-0.144796227115243"/>
     <joint name="left_femur_prismatic_joint" value="-0.037964008593818"/>
-    
+
     <joint name="leg_right_1_joint" value="0.0"/>
     <joint name="leg_right_2_joint" value="0.05"/>
     <joint name="leg_right_3_joint" value="0.0"/>

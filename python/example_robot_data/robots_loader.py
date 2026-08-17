@@ -1,8 +1,9 @@
+import os
 import typing
 import xml.etree.ElementTree as ET
 from types import MethodType
-import os
 
+import numpy as np
 import pinocchio as pin
 
 try:
@@ -33,14 +34,21 @@ def _robot_get_constraints(self, fallback_infer=True):
         if urdf_path is not None:
             base_dir = os.path.dirname(urdf_path)
             srdf_candidate = os.path.join(
-                os.path.dirname(base_dir), "srdf", os.path.splitext(os.path.basename(urdf_path))[0] + ".srdf"
+                os.path.dirname(base_dir),
+                "srdf",
+                os.path.splitext(os.path.basename(urdf_path))[0] + ".srdf",
             )
             if os.path.exists(srdf_candidate):
                 srdf_path = srdf_candidate
                 self.srdf_path = srdf_path
     if srdf_path is None:
         return []
-    return constraints_from_srdf(self.model, srdf_path, fallback_infer=fallback_infer)
+    return constraints_from_srdf(
+        self.model,
+        srdf_path,
+        fallback_infer=fallback_infer,
+        q=self.q0,
+    )
 
 
 class LoopConstraintDescription:
@@ -123,7 +131,76 @@ def _parse_constraint_mask(mask_txt):
     return mask
 
 
-def _mask_from_loop_tag(tag, frame1, frame2):
+def _frame_placement_in_parent(model, data, q, frame_id):
+    pin.forwardKinematics(model, data, q)
+    pin.updateFramePlacements(model, data)
+
+    joint_id = model.frames[frame_id].parentJoint
+    parent_id = model.parents[joint_id]
+    return data.oMi[parent_id].inverse() * data.oMf[frame_id]
+
+
+def _frame_motion_derivatives(model, q, frame_id, eps=1e-7, probe=0.5):
+    """Numerically differentiate a frame with respect to its supporting joint."""
+    joint_id = model.frames[frame_id].parentJoint
+    joint = model.joints[joint_id]
+    derivatives = []
+    data = model.createData()
+
+    for velocity_id in range(joint.idx_v, joint.idx_v + joint.nv):
+        tangent = np.zeros(model.nv)
+        tangent[velocity_id] = eps
+
+        # The second center avoids missing a coordinate at a singular sample,
+        # e.g. the z derivative of a planar revolute joint at angle zero.
+        probe_tangent = np.zeros(model.nv)
+        probe_tangent[velocity_id] = probe
+        centers = (q, pin.integrate(model, q, probe_tangent))
+        for center in centers:
+            minus = _frame_placement_in_parent(
+                model, data, pin.integrate(model, center, -tangent), frame_id
+            )
+            plus = _frame_placement_in_parent(
+                model, data, pin.integrate(model, center, tangent), frame_id
+            )
+            linear = (plus.translation - minus.translation) / (2.0 * eps)
+            angular = pin.log3(plus.rotation @ minus.rotation.T) / (2.0 * eps)
+            derivatives.append(np.concatenate((linear, angular)))
+
+    if not derivatives:
+        return np.empty((6, 0))
+    return np.column_stack(derivatives)
+
+
+def _numerical_constraint_mask(model, q, frame1_id, frame2_id):
+    derivatives = np.column_stack(
+        (
+            _frame_motion_derivatives(model, q, frame1_id),
+            _frame_motion_derivatives(model, q, frame2_id),
+        )
+    )
+    if derivatives.shape[1] == 0:
+        raise ValueError(
+            "Cannot infer a constraint mask from frames whose parent joints "
+            "have no degrees of freedom. Specify the mask explicitly."
+        )
+
+    magnitudes = np.max(np.abs(derivatives), axis=1)
+    mask = np.zeros(6, dtype=bool)
+    for rows in (slice(0, 3), slice(3, 6)):
+        scale = np.max(magnitudes[rows])
+        if scale > 1e-9:
+            mask[rows] = magnitudes[rows] > max(1e-9, 1e-6 * scale)
+
+    if not np.any(mask):
+        raise ValueError(
+            "The numerical frame derivatives are zero; specify the constraint "
+            "mask explicitly."
+        )
+    return mask.tolist()
+
+
+def _mask_from_loop_tag(tag, model, q, frame1_id, frame2_id):
     mask_txt = tag.attrib.get("mask")
     if mask_txt is not None:
         return _parse_constraint_mask(mask_txt)
@@ -132,10 +209,12 @@ def _mask_from_loop_tag(tag, frame1, frame2):
     if legacy_type is not None:
         return _legacy_mask(legacy_type.lower())
 
-    return _legacy_mask("3d" if "3d" in (frame1 + frame2).lower() else "6d")
+    return _numerical_constraint_mask(model, q, frame1_id, frame2_id)
 
 
-def constraints_from_srdf(model, srdf_path, fallback_infer=True):
+def constraints_from_srdf(model, srdf_path, fallback_infer=True, q=None):
+    if q is None:
+        q = pin.neutral(model)
     root = ET.parse(srdf_path).getroot()
     constraints = []
 
@@ -151,7 +230,7 @@ def constraints_from_srdf(model, srdf_path, fallback_infer=True):
                 joint1_placement=model.frames[id1].placement,
                 joint2_id=model.frames[id2].parentJoint,
                 joint2_placement=model.frames[id2].placement,
-                mask=_mask_from_loop_tag(tag, frame1, frame2),
+                mask=_mask_from_loop_tag(tag, model, q, id1, id2),
                 frame1=frame1,
                 frame2=frame2,
             )
@@ -184,7 +263,7 @@ def constraints_from_srdf(model, srdf_path, fallback_infer=True):
                 joint1_placement=model.frames[id1].placement,
                 joint2_id=model.frames[id2].parentJoint,
                 joint2_placement=model.frames[id2].placement,
-                mask=_legacy_mask("3d" if "3d" in (frame1 + frame2).lower() else "6d"),
+                mask=_numerical_constraint_mask(model, q, id1, id2),
                 frame1=frame1,
                 frame2=frame2,
             )
@@ -401,6 +480,7 @@ class B1Z1Loader(B1Loader):
     urdf_filename = "b1-z1.urdf"
     srdf_filename = "b1-z1.srdf"
     ref_posture = "standing_with_arm_home"
+
 
 class ANYmalLoader(RobotLoader):
     path = "anymal_b_simple_description"

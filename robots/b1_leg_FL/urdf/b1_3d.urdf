@@ -50,7 +50,7 @@
       <inertia ixx="0.183142146" ixy="-0.001379002" ixz="-0.027956055" iyy="0.756327752" iyz="0.000193774" izz="0.783777558"/>
     </inertial>
   </link>
-  
+
 
   <joint name="FL_hip_joint" type="revolute">
     <origin rpy="0 0 0" xyz="0.3455 0.072 0"/>
@@ -276,7 +276,7 @@
   <link name="closedloop3D_1A">
   </link>
   <joint name="closedloop3D_1A_frame" type="fixed">
-    <origin xyz="0 0 0.3" rpy="0 3.1415 0"/> 
+    <origin xyz="0 0 0.3" rpy="0 3.1415 0"/>
     <parent link="link_2_loop3D_bar3" />
     <child link="closedloop3D_1A" />
     <axis xyz="0 0 0" />

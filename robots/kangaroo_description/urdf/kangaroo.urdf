@@ -1786,7 +1786,7 @@
    <gazebo reference="leg_${side}_5_link">
      <material>Gazebo/FlatBlack</material>
    </gazebo> -->
-  
+
 s
 
   <link name="arm_left_base_link">
