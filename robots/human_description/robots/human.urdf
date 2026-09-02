@@ -17,7 +17,7 @@
         <visual>
 	        <origin xyz="0.0 -0.05 0.0" rpy="0 0 0" />
             <geometry>
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/pelvis_mesh.STL" scale="0.0063 0.0058 0.0058"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/pelvis_mesh.STL" scale="0.006430 0.005897 0.005897"/>
             </geometry>
             <material name="body_color"/>
         </visual>
@@ -177,10 +177,13 @@
             <inertia ixx="0.05463" ixy="0.02428" ixz="-0.0003" iyy="0.04683" iyz="-0.0012" izz="0.05875" />
         </inertial>
         <visual>
-	    <origin xyz="-0.0 -0.32 0.0" rpy="0 -0 0" />
+	    <!-- torso_mesh.STL begins at Y = 22.938 in its own frame, so the visual is
+	         offset to put the base of the torso on the lumbar joint (L5/S1).
+	         human.py rescales this offset along with the mesh, per subject. -->
+	    <origin xyz="-0.0 -0.3596 0.0" rpy="0 -0 0" />
             <geometry>
 		        <!--<box size="0.15 0.356643 0.329994" />-->
-		        <mesh filename="package://example-robot-data/robots/human_description/meshes/torso_mesh.STL" scale="0.007 0.007 0.007"/>
+		        <mesh filename="package://example-robot-data/robots/human_description/meshes/torso_mesh.STL" scale="0.005783 0.009093 0.005783"/>
             </geometry>
             <material name="body_color"/>
         </visual>
