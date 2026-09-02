@@ -836,12 +836,8 @@ class HumanLoader(RobotLoader):
                 # and a marker-based rescaling had to move it back down. These
                 # ratios put it where the joint actually is; the trunk total,
                 # L5/S1 to C7/T1, is unchanged at 0.2497 H (f) / 0.2627 H (m).
-                0.0776
-                if gender == "f"
-                else 0.0839,  # L_abdomen, L5/S1 to T12/L1
-                0.1721
-                if gender == "f"
-                else 0.1788,  # L_thorax, T12/L1 to C7/T1
+                0.0776 if gender == "f" else 0.0839,  # L_abdomen, L5/S1 to T12/L1
+                0.1721 if gender == "f" else 0.1788,  # L_thorax, T12/L1 to C7/T1
                 0.0821 if gender == "f" else 0.0980,  # from SUPR to XYPH (De Leva 1996)
                 0.1510 if gender == "f" else 0.1531,  # L_upperarm (Dumas 2007)
                 0.1534 if gender == "f" else 0.1593,  # L_lowerarm (Dumas 2007)
@@ -962,9 +958,7 @@ class HumanLoader(RobotLoader):
                 # read as one body.
                 width = sgt_lengths["middle_pelvis_0_width"]
                 scale = np.round(
-                    np.array(
-                        [1.09 * width / 39.252, width / 39.252, width / 39.252]
-                    ),
+                    np.array([1.09 * width / 39.252, width / 39.252, width / 39.252]),
                     6,
                 )
                 scales.append(scale)
@@ -1052,9 +1046,7 @@ class HumanLoader(RobotLoader):
                 # made it about 1.5x too long for whatever it was scaled to.
                 # 6 decimals because this scale is small enough that rounding to
                 # 4 moves the top of the trunk visibly.
-                trunk = (
-                    sgt_lengths["middle_abdomen_0"] + sgt_lengths["middle_thorax_0"]
-                )
+                trunk = sgt_lengths["middle_abdomen_0"] + sgt_lengths["middle_thorax_0"]
                 # Width is taken from the pelvis so the trunk reads as one body;
                 # scaling it uniformly from the length instead leaves the torso
                 # much wider than the pelvis below it.
@@ -1332,5 +1324,6 @@ class HumanLoader(RobotLoader):
             if urdf_scale[1]:
                 geom_obj.placement.translation = (
                     np.asarray(geom_obj.placement.translation, dtype=float)
-                    * scales[geom_obj.name][1] / urdf_scale[1]
+                    * scales[geom_obj.name][1]
+                    / urdf_scale[1]
                 )
