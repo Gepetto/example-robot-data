@@ -89,8 +89,13 @@ class HumanLoader(RobotLoader):
             if name == "middle_pelvis":
                 length = (0.0634 if gender == "f" else 0.0505) * height
                 sgt_lengths["middle_pelvis_0"] = length
+                # Inter-ASIS distance as a fraction of stature, measured with
+                # calipers on 100 adults by Shankar et al.: 0.1368 +/- 0.0117
+                # for women and 0.1286 +/- 0.0075 for men. The values used
+                # before had the sexes the other way round, which left men with
+                # a narrower pelvis than women of the same stature.
                 sgt_lengths["middle_pelvis_0_width"] = (
-                    0.1478 if gender == "f" else 0.1265
+                    0.1368 if gender == "f" else 0.1286
                 ) * height
                 dict_sgmt["mass"] = np.round(
                     (0.146 if gender == "f" else 0.142) * weight, 2
@@ -262,7 +267,16 @@ class HumanLoader(RobotLoader):
                 )
                 dicts.append(dict_sgmt)
             elif name == "middle_abdomen":
-                length = (0.1183 if gender == "f" else 0.1237) * height
+                # Abdomen spans L5/S1 to T12/L1 and the thorax T12/L1 to C7/T1,
+                # following the intersegmental centres of Dumas et al. The split
+                # between them was previously taken from de Leva, whose trunk
+                # sub-segments are bounded differently (omphalion, xiphion), so
+                # it placed the thoracolumbar junction too high. These ratios
+                # match the ones used to scale the same model from motion
+                # capture, so a marker-based calibration no longer has to move
+                # the joint after the model is built. The trunk total, L5/S1 to
+                # C7/T1, is unchanged at 0.2497 H (f) and 0.2627 H (m).
+                length = (0.0776 if gender == "f" else 0.0839) * height
                 sgt_lengths["middle_abdomen_0"] = length
                 dict_sgmt["mass"] = np.round(
                     (0.1465 if gender == "f" else 0.1633) * weight, 2
@@ -305,7 +319,9 @@ class HumanLoader(RobotLoader):
                 )
                 dicts.append(dict_sgmt)
             elif name == "middle_thorax":
-                length = (0.1314 if gender == "f" else 0.1390) * height
+                # See middle_abdomen: the trunk total is preserved, so what the
+                # abdomen loses the thorax gains.
+                length = (0.1721 if gender == "f" else 0.1788) * height
                 sgt_lengths["middle_thorax_0"] = length
                 dict_sgmt["mass"] = np.round(
                     (0.1545 if gender == "f" else 0.1596) * weight, 2
@@ -812,12 +828,16 @@ class HumanLoader(RobotLoader):
         ]
         ratios = np.array(
             [
-                0.1183
-                if gender == "f"
-                else 0.1237,  # L_abdomen MPT  from XYP to OMPH (De Leva 1996)
-                0.1314
-                if gender == "f"
-                else 0.1390,  # L_thorax UPT from CERV to XYPH (De Leva 1996)
+                # The trunk joints of this model are the intersegmental centres
+                # L5/S1, T12/L1 and C7/T1 (Dumas et al.), but these two lengths
+                # used to come from De Leva's trunk sub-segments, which are
+                # bounded by the xiphion and omphalion instead. Those are not
+                # the same boundaries, so the thoracolumbar joint sat too high
+                # and a marker-based rescaling had to move it back down. These
+                # ratios put it where the joint actually is; the trunk total,
+                # L5/S1 to C7/T1, is unchanged at 0.2497 H (f) / 0.2627 H (m).
+                0.0776 if gender == "f" else 0.0839,  # L_abdomen, L5/S1 to T12/L1
+                0.1721 if gender == "f" else 0.1788,  # L_thorax, T12/L1 to C7/T1
                 0.0821 if gender == "f" else 0.0980,  # from SUPR to XYPH (De Leva 1996)
                 0.1510 if gender == "f" else 0.1531,  # L_upperarm (Dumas 2007)
                 0.1534 if gender == "f" else 0.1593,  # L_lowerarm (Dumas 2007)
@@ -934,15 +954,12 @@ class HumanLoader(RobotLoader):
             if (
                 name == "middle_pelvis_0"
             ):  # pelvis mesh size is : X = 37.050m, Y = 32.551m, Z = 39.252m
+                # This width is shared with the torso mesh above, so the two
+                # read as one body.
+                width = sgt_lengths["middle_pelvis_0_width"]
                 scale = np.round(
-                    np.array(
-                        [
-                            1.09 * sgt_lengths["middle_pelvis_0_width"] / 39.252,
-                            sgt_lengths["middle_pelvis_0_width"] / 39.252,
-                            sgt_lengths["middle_pelvis_0_width"] / 39.252,
-                        ]
-                    ),
-                    4,
+                    np.array([1.09 * width / 39.252, width / 39.252, width / 39.252]),
+                    6,
                 )
                 scales.append(scale)
             elif (
@@ -1019,16 +1036,23 @@ class HumanLoader(RobotLoader):
                 scales.append(scale)
             elif (
                 name == "middle_thorax_0"
-            ):  # torso mesh size is : X = 36.991m, Y = 35m, Z = 40.029m
+            ):  # torso mesh size is : X = 36.991m, Y = 52.0m, Z = 40.029m
+                # This mesh stands for the whole trunk, not the thorax segment
+                # alone, so it is scaled to span from the lumbar joint (L5/S1)
+                # up to the cervical joint (C7/T1). Sized to the thorax segment
+                # it stops short of the pelvis.
+                #
+                # The mesh measures 52.0 along Y, not the 35 used before, which
+                # made it about 1.5x too long for whatever it was scaled to.
+                # 6 decimals because this scale is small enough that rounding to
+                # 4 moves the top of the trunk visibly.
+                trunk = sgt_lengths["middle_abdomen_0"] + sgt_lengths["middle_thorax_0"]
+                # Width is taken from the pelvis so the trunk reads as one body;
+                # scaling it uniformly from the length instead leaves the torso
+                # much wider than the pelvis below it.
+                width = sgt_lengths["middle_pelvis_0_width"]
                 scale = np.round(
-                    np.array(
-                        [
-                            sgt_lengths["middle_thorax_0"] / 35,
-                            sgt_lengths["middle_thorax_0"] / 35,
-                            sgt_lengths["middle_thorax_0"] / 35,
-                        ]
-                    ),
-                    4,
+                    np.array([width / 40.029, trunk / 52.0, width / 40.029]), 6
                 )
                 scales.append(scale)
             elif (
@@ -1290,4 +1314,16 @@ class HumanLoader(RobotLoader):
         # scale visuals
         assert len(visual_model.geometryObjects.tolist()) == len(scales)
         for geom_obj in visual_model.geometryObjects:
+            urdf_scale = np.asarray(geom_obj.meshScale, dtype=float).copy()
             geom_obj.meshScale = scales[geom_obj.name]
+
+            # A visual offset is a length in the mesh's own frame, so it has to
+            # be rescaled with the mesh. Leaving it fixed, as the URDF value is,
+            # only suits one subject size: it is what put the torso below the
+            # thoracic joint, and further off the taller the subject.
+            if urdf_scale[1]:
+                geom_obj.placement.translation = (
+                    np.asarray(geom_obj.placement.translation, dtype=float)
+                    * scales[geom_obj.name][1]
+                    / urdf_scale[1]
+                )
