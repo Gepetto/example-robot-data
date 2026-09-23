@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- :warning: Breaking (only for ROS packaging) :warning: renamed the ROS package as `example_robot_descriptions`.
+
 ## [5.0.0] - 2026-06-05
 
 ### Added
