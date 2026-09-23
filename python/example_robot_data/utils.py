@@ -122,6 +122,7 @@ class RobotLoader:
             self.srdf_path = join(
                 self.model_path, self.path, self.srdf_subpath, self.srdf_filename
             )
+            self.robot.srdf_path = self.srdf_path
             self.robot.q0 = readParamsFromSrdf(
                 self.robot.model,
                 self.srdf_path,
@@ -143,6 +144,7 @@ class RobotLoader:
                 self.robot.collision_data = self.robot.collision_model.createData()
         else:
             self.srdf_path = None
+            self.robot.srdf_path = None
             self.robot.q0 = pin.neutral(self.robot.model)
         root = getModelPath(self.path)
         self.robot.urdf = join(root, self.path, self.urdf_subpath, self.urdf_filename)
