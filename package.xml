@@ -9,9 +9,72 @@
   <maintainer email="guilhem.saurel@laas.fr">Guilhem Saurel</maintainer>
   <maintainer email="opensource@wolfgangmerkt.com">Wolfgang Merkt</maintainer>
 
-  <license>Apache-2.0</license>
+  <!-- This project -->
   <license>BSD-2-Clause</license>
-  <license>LGPL-3.0</license>
+
+  <!-- Robot descriptions for:
+        - alexander_description
+        - centauro_description
+        - hyq_description
+        - panda_description
+        - so_arm_description
+        - tiago_description
+        - tiago_pro_description
+  -->
+  <license>Apache-2.0</license>
+
+  <!-- Robot descriptions for:
+        - borinot_description
+        - hextilt_description
+        - human_description
+        - simple_humanoid_description
+  -->
+  <license>BSD-2-Clause</license>
+
+  <!-- Robot descriptions for:
+        - anymal_b_simple_description
+        - anymal_c_simple_description
+        - bolt_description
+        - finger_edu_description
+        - g1_description
+        - solo_description
+        - talos_descrition
+        - xarm_description
+  -->
+  <license>BSD-3-Clause</license>
+
+  <!-- Robot descriptions for:
+        - allegro_hand_description
+        - asr_twodof_description
+        - baxter_description
+        - double_pendulum_description
+        - hector_description
+        - kinova_description
+        - pr2_description
+        - romeo_description
+        - ur_description
+  -->
+  <license>BSD</license>
+
+  <!-- Robot descriptions for:
+        - alex_description
+  -->
+  <license>CC-BY-NC-ND-4.0</license>
+
+  <!-- Robot descriptions for:
+        - icub_description
+  -->
+  <license>CC-BY-SA-4.0</license>
+
+  <!-- Robot descriptions for:
+        - cassie_description
+  -->
+  <license>ISC</license>
+
+
+  <!-- Robot descriptions for:
+        - z1_description
+  -->
   <license>MPL-2.0</license>
 
   <url type="repository">https://github.com/gepetto/example-robot-data</url>
