@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="kangaroo_knee_2ankle_kin">
+  <group_state name="standing" group="whole_body">
+    <joint name="root_joint" value="0. 0. 0.92 0. 0. 0. 1."/>
+
+    <joint name="arm_left_1_joint" value="0.24"/>
+    <joint name="arm_left_2_joint" value="1.32"/>
+    <joint name="arm_left_3_joint" value="1.57"/>
+    <joint name="arm_left_4_joint" value="0.8"/>
+
+    <joint name="arm_right_1_joint" value="-0.24"/>
+    <joint name="arm_right_2_joint" value="1.32"/>
+    <joint name="arm_right_3_joint" value="-1.57"/>
+    <joint name="arm_right_4_joint" value="0.8"/>
+
+    <joint name="pelvis_1_joint" value="0.0"/>
+    <joint name="pelvis_2_joint" value="0.0"/>
+
+    <joint name="leg_left_1_joint" value="0.0"/>
+    <joint name="leg_left_2_joint" value="0.05"/>
+    <joint name="leg_left_3_joint" value="0.0"/>
+    <!-- levels the sole for the ankle placement taken from kangaroo_loop.urdf -->
+    <joint name="leg_left_4_joint" value="-0.025365"/>
+    <joint name="leg_left_5_joint" value="0.0"/>
+    <joint name="left_ankle_bar_l_joint" value="0.1482762767463911"/>
+    <joint name="left_ankle_bar_r_joint" value="0.1482762767463907"/>
+    <joint name="left_ankle_bar_l_distal_joint" value="0.7280779104799272"/>
+    <joint name="left_ankle_bar_r_distal_joint" value="0.7280779104799302"/>
+    <joint name="left_knee_triangle_l_joint" value="-0.1762056809414753"/>
+    <joint name="left_knee_triangle_r_joint" value="-0.1762056809414785"/>
+    <joint name="left_knee_bar_l_joint" value="0.02731999740047107"/>
+    <joint name="left_knee_bar_r_joint" value="0.02731999740047418"/>
+    <joint name="left_knee_bar_l_distal_joint" value="-0.4154727881847015"/>
+    <joint name="left_knee_bar_r_distal_joint" value="-0.4154727881846988"/>
+    <joint name="left_hip_pivot_l_joint" value="-0.03794337175233339"/>
+    <joint name="left_hip_pivot_r_joint" value="-0.0379433717523361"/>
+    <joint name="leg_left_knee_joint" value="2.2345"/>
+    <joint name="left_knee_bar_joint" value="-0.144796227115243"/>
+    <joint name="left_femur_prismatic_joint" value="-0.037964008593818"/>
+
+    <joint name="leg_right_1_joint" value="0.0"/>
+    <joint name="leg_right_2_joint" value="0.05"/>
+    <joint name="leg_right_3_joint" value="0.0"/>
+    <!-- levels the sole for the ankle placement taken from kangaroo_loop.urdf -->
+    <joint name="leg_right_4_joint" value="-0.025365"/>
+    <joint name="leg_right_5_joint" value="0.0"/>
+    <joint name="right_ankle_bar_l_joint" value="0.1482762767463913"/>
+    <joint name="right_ankle_bar_r_joint" value="0.1482762767463907"/>
+    <joint name="right_ankle_bar_l_distal_joint" value="0.7280779104799255"/>
+    <joint name="right_ankle_bar_r_distal_joint" value="0.7280779104799300"/>
+    <joint name="right_knee_triangle_l_joint" value="-0.1762056809414733"/>
+    <joint name="right_knee_triangle_r_joint" value="-0.1762056809414783"/>
+    <joint name="right_knee_bar_l_joint" value="0.02731999740046902"/>
+    <joint name="right_knee_bar_r_joint" value="0.02731999740047387"/>
+    <joint name="right_knee_bar_l_distal_joint" value="-0.4154727881847039"/>
+    <joint name="right_knee_bar_r_distal_joint" value="-0.4154727881847014"/>
+    <joint name="right_hip_pivot_l_joint" value="-0.0379433717523309"/>
+    <joint name="right_hip_pivot_r_joint" value="-0.03794337175233364"/>
+    <joint name="leg_right_knee_joint" value="2.2345"/>
+    <joint name="right_knee_bar_joint" value="-0.144796227115243"/>
+    <joint name="right_femur_prismatic_joint" value="-0.037964008593818"/>
+  </group_state>
+  <loop_constraint frame1="left_knee_bar_3D_B" frame2="left_knee_bar_3D_A" mask="x z"/>
+  <loop_constraint frame1="right_knee_bar_3D_B" frame2="right_knee_bar_3D_A" mask="x z"/>
+  <!-- Independent coordinates of the first-stage midpoint welds. -->
+  <loop_constraint frame1="left_ankle_bar_l_3D_B" frame2="left_ankle_bar_l_3D_A" mask="x z roll pitch"/>
+  <loop_constraint frame1="left_ankle_bar_r_3D_B" frame2="left_ankle_bar_r_3D_A" mask="x z pitch"/>
+  <loop_constraint frame1="right_ankle_bar_l_3D_B" frame2="right_ankle_bar_l_3D_A" mask="x z roll pitch"/>
+  <loop_constraint frame1="right_ankle_bar_r_3D_B" frame2="right_ankle_bar_r_3D_A" mask="x z pitch"/>
+  <!-- The first-stage roll rows already constrain the shared lateral modes,
+       so each second-stage weld contributes the three planar rigid-bar rows. -->
+  <loop_constraint frame1="left_knee_bar_l_3D_B" frame2="left_knee_bar_l_3D_A" mask="x z pitch"/>
+  <loop_constraint frame1="left_knee_bar_r_3D_B" frame2="left_knee_bar_r_3D_A" mask="x z pitch"/>
+  <loop_constraint frame1="right_knee_bar_l_3D_B" frame2="right_knee_bar_l_3D_A" mask="x z pitch"/>
+  <loop_constraint frame1="right_knee_bar_r_3D_B" frame2="right_knee_bar_r_3D_A" mask="x z pitch"/>
+</robot>

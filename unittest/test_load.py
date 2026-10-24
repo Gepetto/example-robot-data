@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import unittest
+from unittest.mock import patch
 
 try:
     import pybullet
@@ -38,6 +39,30 @@ class RobotTestCase(unittest.TestCase):
 
     def test_b1(self):
         self.check("b1", 19, 18)
+
+    def test_b1_closed_loop(self):
+        self.check("b1_closed_loop", 31, 30)
+
+    def test_b1_leg_3d_explicit_mask_skips_inference(self):
+        robot, _, _, _ = load_full("b1_leg_3D", display=False, verbose=True)
+        with patch(
+            "example_robot_data.robots_loader._numerical_constraint_mask"
+        ) as infer_mask:
+            constraints = robot.get_constraints()
+        infer_mask.assert_not_called()
+        self.assertEqual(
+            constraints[0].mask,
+            [True, False, True, False, False, False],
+        )
+
+    def test_b1_leg_6d_inferred_mask(self):
+        robot, _, _, _ = load_full("b1_leg_6D", display=False, verbose=True)
+        constraints = robot.get_constraints()
+        self.assertEqual(len(constraints), 1)
+        self.assertEqual(
+            constraints[0].mask,
+            [True, False, True, False, True, False],
+        )
 
     def test_go1(self):
         self.check("go1", 19, 18)
