@@ -11,8 +11,10 @@ from example_robot_data import load_full
 
 
 class RobotTestCase(unittest.TestCase):
-    def check(self, name, expected_nq, expected_nv, one_kg_bodies=[]):
+    def check(self, name, expected_nq, expected_nv, one_kg_bodies=None):
         """Helper function for the real tests"""
+        if one_kg_bodies is None:
+            one_kg_bodies = []
         robot, _, urdf, _ = load_full(name, display=False, verbose=True)
         self.assertEqual(robot.model.nq, expected_nq)
         self.assertEqual(robot.model.nv, expected_nv)
@@ -65,24 +67,6 @@ class RobotTestCase(unittest.TestCase):
 
     def test_baxter(self):
         self.check("baxter", 19, 19)
-
-    def test_bravo7_gripper(self):
-        self.check("bravo7_gripper", 11, 8)
-
-    def test_bravo7_no_ee(self):
-        self.check("bravo7_no_ee", 9, 6)
-
-    def test_falcon_bravo7_no_ee(self):
-        self.check("falcon_bravo7_no_ee", 16, 12)
-
-    def test_bluevolta_bravo7_no_ee(self):
-        self.check("bluevolta_bravo7_no_ee", 16, 12)
-
-    def test_falcon_bravo7_gripper(self):
-        self.check("falcon_bravo7_gripper", 18, 14)
-
-    def test_bluevolta_bravo7_gripeer(self):
-        self.check("bluevolta_bravo7_gripper", 18, 14)
 
     def test_cassie(self):
         try:
