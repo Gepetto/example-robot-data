@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [6.0.0] - 2026-10-30
+
 ### Changed
 
 - :warning: Breaking (only for ROS packaging) :warning: renamed the ROS package as `example_robot_descriptions`.
@@ -349,7 +351,8 @@ Added optionnal python helpers, which depend on pinocchio
 
 Initial release
 
-[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v5.0.0...HEAD
+[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v6.0.0...HEAD
+[6.0.0]: https://github.com/gepetto/example-robot-data/compare/v5.0.0...v6.0.0
 [5.0.0]: https://github.com/gepetto/example-robot-data/compare/v4.4.0...v5.0.0
 [4.4.0]: https://github.com/gepetto/example-robot-data/compare/v4.3.0...v4.4.0
 [4.3.0]: https://github.com/gepetto/example-robot-data/compare/v4.2.0...v4.3.0
