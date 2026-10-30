@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Removed
 
-- reverted addition of Falcon Bravo7 Bluevolta robots for license issues
+- :warning: Breaking :warning: removed Falcon Bravo7 Bluevolta robots for license issues
 
 ## [5.0.0] - 2026-06-05
 
