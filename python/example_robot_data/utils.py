@@ -23,7 +23,7 @@ def getModelPath(subpath, verbose=False):
         join(source, "robots"),
     ]
     try:
-        EXAMPLE_ROBOT_DATA_MODEL_DIR
+        _ = EXAMPLE_ROBOT_DATA_MODEL_DIR
 
         # function called from installed project
         paths.append(EXAMPLE_ROBOT_DATA_MODEL_DIR)

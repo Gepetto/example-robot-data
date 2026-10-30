@@ -1,7 +1,7 @@
 # Borinot
 
 upstream: https://github.com/PepMS/hidro_robots/tree/main/robots/hextilt_flying_arm_5
-license: NA
+license: BSD-2-Clause
 
 
 ### Modifications:

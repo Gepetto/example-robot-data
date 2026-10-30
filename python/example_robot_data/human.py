@@ -863,9 +863,7 @@ class HumanLoader(RobotLoader):
                 joint_placements.append(np.array([0, dict_lengths["L_abdomen"], 0]))
             elif j == "middle_cervical_Z":
                 joint_placements.append(np.array([0, dict_lengths["L_thorax_cerv"], 0]))
-            elif j == "left_clavicle_joint_X":
-                joint_placements.append(np.array([0, dict_lengths["L_thorax_supr"], 0]))
-            elif j == "right_clavicle_joint_X":
+            elif j == "left_clavicle_joint_X" or j == "right_clavicle_joint_X":
                 joint_placements.append(np.array([0, dict_lengths["L_thorax_supr"], 0]))
             elif j == "left_shoulder_Z":
                 joint_placements.append(
