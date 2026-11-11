@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [7.0.0] - 2026-11-11
+
 - :warning: soft-fork in https://github.com/Gepetto/example-robot-descriptions : drop alex & icub
 
 ## [6.0.0] - 2026-10-30
@@ -353,7 +355,8 @@ Added optionnal python helpers, which depend on pinocchio
 
 Initial release
 
-[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v6.0.0...HEAD
+[Unreleased]: https://github.com/gepetto/example-robot-data/compare/v7.0.0...HEAD
+[7.0.0]: https://github.com/gepetto/example-robot-data/compare/v6.0.0...v7.0.0
 [6.0.0]: https://github.com/gepetto/example-robot-data/compare/v5.0.0...v6.0.0
 [5.0.0]: https://github.com/gepetto/example-robot-data/compare/v4.4.0...v5.0.0
 [4.4.0]: https://github.com/gepetto/example-robot-data/compare/v4.3.0...v4.4.0

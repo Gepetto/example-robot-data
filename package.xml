@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>example_robot_descriptions</name>
-  <version>6.0.0</version>
+  <version>7.0.0</version>
   <description>Set of robot URDFs for benchmarking and developed examples.</description>
   <!-- The maintainer listed here is for the ROS release to receive emails for the buildfarm.
   Please check the repository URL for project maintainer. -->
@@ -67,7 +67,7 @@
   -->
   <license>MPL-2.0</license>
 
-  <url type="repository">https://github.com/gepetto/example-robot-data</url>
+  <url type="repository">https://github.com/gepetto/example-robot-descriptions</url>
 
   <exec_depend condition="$ROS_VERSION == 2">ament_cmake</exec_depend>
   <build_depend>git</build_depend>
